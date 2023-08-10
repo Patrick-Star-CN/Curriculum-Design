@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+  <script src="./js/config.js" ></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+  <style>
+    /* 添加自定义样式 */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 30px;
+      border: 1px solid #ccc;
+      border-radius: 18px;
+      background: var(--background-color);
+      box-shadow: var(--redefine-box-shadow);
+      color: var(--default-text-color);
+    }
+
+    form:hover {
+      box-shadow: var(--redefine-box-shadow-hover);
+    }
+
+    .form-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-row label {
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    .form-row input[type="text"],
+    .form-row input[type="file"],
+    .form-row input[type="email"],
+    .form-row input[type="password"] {
+      flex: 2;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    textarea {
+      width: 97%;
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    input[type="submit"] {
+      align-items: center;
+      background-color: #D3D3D3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto; /* 将按钮水平居中 */
+    }
+
+    input[type="submit"]:hover {
+
+      background-color: #8F8F8F;
+    }
+  </style>
+  <script>
+    // 数据验证函数
+    function validateForm() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // 检查姓名是否为空
+      if (name.trim() === '') {
+        alert('请输入姓名');
+        return false;
+      }
+
+      // 检查邮箱是否为空
+      if (email.trim() === '') {
+        alert('请输入邮箱');
+        return false;
+      }
+
+      // 检查邮箱格式是否正确
+      const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!emailRegex.test(email)) {
+        alert('请输入有效的邮箱地址');
+        return false;
+      }
+
+      // 检查留言是否为空
+      if (message.trim() === '') {
+        alert('请输入留言');
+        return false;
+      }
+
+      // 如果所有验证通过，则提交表单
+      alert('表单验证通过，可以提交！');
+      return true;
+    }
+  </script>
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content has-home-banner">
+          <div class="left"><a class="logo-title" href="/"><h1>比奇堡资讯站</h1></a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/index.html"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown active" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="../about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/Patrick-Star-CN">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://blog.cnpatrickstar.com">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.com/Patrick-Star-CN">GITHUB</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://blog.cnpatrickstar.com">BLOG</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="page-template-container">
+            <div class="page-template-content markdown-body">
+              <p>A student from ZJUT, who wants to be a fullstack developer.</p>
+              <p>如果想联系我，可以通过填写下面的表格进行提交。</p>
+            </div>
+          </div>
+            <div class="page-template-content markdown-body">
+
+              <form action="/submit_form" method="post" onsubmit="return validateForm();">
+                <div class="form-row">
+                  <label for="name">姓名：</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-row">
+                  <label for="email">邮箱：</label>
+                  <input type="text" id="email" name="email" required>
+                </div>
+
+                <label for="message">留言：</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <div class="form-row">
+                  <label for="image">附图：</label>
+                  <input type="file" id="image" name="image">
+                </div>
+
+                <input type="submit" value="提交">
+              </form>
+            </div>
+            <div class="page-template-comments"></div>
+          </div>
+        </div>
+      </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax"></div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<script>
+  // 写一个让 drop 元素可以被拖拽到任何地方的脚本
+  // 1. 获取到 drop 元素
+  const drop = document.getElementById('file');
+  // 2. 给 drop 元素绑定一个 ondragover 事件
+  drop.ondragover = function (e) {
+    // 3. 阻止浏览器对事件的默认行为
+    e.preventDefault()
+  }
+  // 4. 给 drop 元素绑定一个 ondrop 事件
+  drop.ondrop = function (e) {
+    // 5. 阻止浏览器对事件的默认行为
+    e.preventDefault()
+    // 6. 获取到拖拽过来的文件
+    var files = e.dataTransfer.files
+    // 7. 判断拖拽过来的文件是否是图片
+    if (files[0].type.indexOf('image') === -1) {
+      alert('您拖拽的不是图片，请重新拖拽')
+      return
+    }
+    // 8. 创建一个文件读取对象
+    var reader = new FileReader()
+    // 9. 读取拖拽过来的文件
+    reader.readAsDataURL(files[0])
+    // 10. 当文件读取完成后的回调函数
+    reader.onload = function () {
+      // 11. 获取到读取的结果，就是拖拽过来的图片的 base64 格式的数据
+      // 12. 在 file 中保存图片
+      document.getElementById('file').value = reader.result
+    }
+  }
+</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

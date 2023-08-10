@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">Redis</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-22 23:50:54</span> <span
+                      class="mobile">2023-02-22 23:50</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.8k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>6 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对
+                Redis 的学习<span id="more"></span></p>
+                <h2 id="redis"><a class="markdownIt-Anchor" href="#redis"></a> Redis</h2>
+                <h3 id="1redis-是什么"><a class="markdownIt-Anchor" href="#1redis-是什么"></a> 1.Redis 是什么</h3><h4
+                  id="为什么需要-redis"><a class="markdownIt-Anchor" href="#为什么需要-redis"></a> 为什么需要 Redis</h4>
+                <ul>
+                  <li>数据从单表，演进出了分库分表</li>
+                  <li>MySQL 从单机演进出了集群
+                    <ul>
+                      <li>数据量增长</li>
+                      <li>读写数据压力的不断增加</li>
+                    </ul>
+                  </li>
+                  <li>数据分冷热
+                    <ul>
+                      <li>热数据：经常被访问到的数据</li>
+                    </ul>
+                  </li>
+                  <li>将热数据存储到内存中</li>
+                </ul>
+                <h4 id="redis-基本工作原理"><a class="markdownIt-Anchor" href="#redis-基本工作原理"></a> Redis 基本工作原理
+                </h4>
+                <ul>
+                  <li>数据从内存中读写</li>
+                  <li>数据保存到硬盘上防止重启数据丢失
+                    <ul>
+                      <li>增量数据保存到 AOF 文件中</li>
+                      <li>全量数据保存到 RDB 文件中</li>
+                    </ul>
+                  </li>
+                  <li>单线程处理所有操作命令</li>
+                </ul>
+                <h3 id="2redis-应用案例"><a class="markdownIt-Anchor" href="#2redis-应用案例"></a> 2.Redis 应用案例</h3>
+                <h4 id="案例"><a class="markdownIt-Anchor" href="#案例"></a> 案例</h4>
+                <p><strong>1.连续签到</strong></p>
+                <p>app 每日签到，如果断签，连续签到计数将归 0。</p>
+                <p>连续签到的要求：每天必须在 23:59 前签到</p>
+                <ul>
+                  <li>Key：uuid…</li>
+                  <li>value：252</li>
+                  <li>expireAt：24:00</li>
+                </ul>
+                <p><strong>String 数据结构</strong></p>
+                <ul>
+                  <li>可以存储字符串、数字、二进制数据</li>
+                  <li>通常和 expire 配合使用</li>
+                  <li>场景：存储计数、Session</li>
+                </ul>
+                <p><strong>2.消息通知</strong></p>
+                <p>用 list 作为消息队列</p>
+                <ul>
+                  <li><p>使用场景：消息通知</p>
+                    <blockquote><p>例如当文章更新时，将更新后的文章推送到 ES，用户就能搜索到最新的文章数据。</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <p><strong>List 数据结构 Quicklist</strong></p>
+                <p>Quicklist 由一个双向链表和 listpack 实现</p>
+                <p><strong>3.计数</strong></p>
+                <p>一个用户有多项计数需求，可通过 hash 结构存储</p>
+                <p><strong>Hash 数据结构 dict</strong></p>
+                <ul>
+                  <li>rehash：rehash 操作是将 ht[0] 中的数据，全部迁移到 ht[1] 中。数据量小的场景下，直接将数据从 ht[0] 拷贝到
+                    ht[1] 速度是较快的。数据量大的场景，例如存有上百万的 KV 时，迁移过程将会明显阻塞用户请求。
+                  </li>
+                  <li>渐进式 rehash：为避免出现这种情况，使用了 rehash
+                    方案。基本原理就是，每次用户访问时都会迁移少量数据。将整个迁移过程，平摊到所有的访问请求过程中。
+                  </li>
+                </ul>
+                <p><strong>4.排行榜</strong></p>
+                <p>积分变化时，排名要实时变更</p>
+                <p><strong>zset 数据结构 zskiplist</strong></p>
+                <ul>
+                  <li>结合 dict 后，可实现通过 key 操作跳表的功能</li>
+                </ul>
+                <p><strong>5.限流</strong></p>
+                <ul>
+                  <li><p>要求1秒内放行的请求为 N，超过 N 则禁止访问</p></li>
+                  <li><p>Key：comment_freq_limit_1671356046</p>
+                    <p>对这个 Key 调用 incr，超过限制 N 则禁止访问</p>
+                    <p>1671356046 是当前时间戳</p></li>
+                </ul>
+                <p><strong>6.分布式锁</strong></p>
+                <p>并发场景：要求一次只能有一个协程执行。执行完成后，其它等待中的协程才能执行。</p>
+                <p>可以使用 Redis 的 setnx 实现，利用了两个特性</p>
+                <ul>
+                  <li>Redis 是单线程执行命令</li>
+                  <li>setnx 只有未设置过才能执行成功</li>
+                </ul>
+                <h3 id="3redis-使用注意事项"><a class="markdownIt-Anchor" href="#3redis-使用注意事项"></a> 3.Redis
+                  使用注意事项</h3><h4 id="31-大-key-热-key"><a class="markdownIt-Anchor" href="#31-大-key-热-key"></a>
+                  3.1 大 Key、热 Key</h4>
+                <p><strong>大 Key 的定义</strong></p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">数据类型</th>
+                    <th style="text-align:center">大 Key 标准</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">String 类型</td>
+                    <td style="text-align:center">value 的字节数大于 10KB 即为大Key</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Hash/Set/Zset/list 等复杂数据结构类型</td>
+                    <td style="text-align:center">元素个数大于5000个或总 value 字节数大于 10MB 即为大Key</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p><strong>大 Key 的危害</strong></p>
+                <ul>
+                  <li>读取成本高</li>
+                  <li>容易导致慢查询（过期、删除）</li>
+                  <li>主从复制异常，服务阻塞，无法正常响应请求</li>
+                </ul>
+                <p><strong>业务侧使用大 Key 的表现</strong></p>
+                <ul>
+                  <li>请求 Redis 超时报错</li>
+                </ul>
+                <p><strong>消除大 Key 的方法</strong></p>
+                <ol>
+                  <li><p>拆分</p>
+                    <p>将大 Key 拆分成为小 Key。例如一个 String 拆分成多个 String</p></li>
+                  <li><p>压缩</p>
+                    <p>将 value 压缩后写入 redis，读取时解压后再使用。压缩算法可以是 gzip、snappy、lz4
+                      等。通常情况下，一个压缩算法压缩率高，则解压耗时就长。需要对实际数据进行测试后，选择一个合适的算法。如果存储的是
+                      JSON 字符串，可以考虑使用 MessagePack 进行序列化。</p></li>
+                  <li><p>集合类结构 hash、list、set、zset</p>
+                    <ol>
+                      <li>拆分：可以用 hash 取余，位掩码的方式决定放在哪个 key 中。</li>
+                      <li>区分冷热：如榜单列表场景使用zset，只缓存前10页数据，后续数据走db。</li>
+                    </ol>
+                  </li>
+                </ol>
+                <p><strong>热 Key 的定义</strong></p>
+                <p>用户访问一个 Key 的 QPS 特别高，导致 Server 实例出现 CPU 负载突增或者不均的情况。</p>
+                <p>热 Key 没有明确的标准，QPS 超过500就有可能被识别为热 Key。</p>
+                <p><strong>解决热 Key 的方法</strong></p>
+                <ol>
+                  <li><p>设置 Localcache</p>
+                    <p>在访问 Redis 之前，在业务服务侧设置 Localcache，降低访问 Redis 的QPS。LocalCache 中缓存过期或未命中，则从
+                      Redis 中将数据更新到 LocalCache。Java 的 Guava、Golang 的 Bigcache 就是这类 LocalCache。</p></li>
+                  <li><p>拆分</p>
+                    <p>将 key: value 这一个热 Key 复制写入多份，例如 key1: value；key2: value，访问的时候访问多个 key，但
+                      value 是同一个，以此将qps 分散到不同实例上，降低负载。代价是更新时需要更新多个
+                      key，存在数据短暂不一致的风险。</p></li>
+                  <li><p>使用 Redis 代理的热 Key 承载能力</p>
+                    <p>字节跳动团队的 Redis 访问代理就具备热 Key 承载能力。本质上是结合了“热 Key
+                      发现”、“LocalCache”两个功能</p></li>
+                </ol>
+                <h4 id="32-慢查询场景"><a class="markdownIt-Anchor" href="#32-慢查询场景"></a> 3.2 慢查询场景</h4>
+                <p><strong>容易导致 redis 慢查询的操作</strong></p>
+                <ol>
+                  <li><p>批量操作一次性传入过多的 key/value，如 mset/hmset/sadd/zadd 等 O(n) 操作</p>
+                    <blockquote><p>建议单批次不要超过100，超过100之后性能下降明显。</p></blockquote>
+                  </li>
+                  <li><p>zset 大部分命令都是 O(log(n)) ，当大小超过5k以上时，简单的 zadd/zrem 也可能导致慢查询</p></li>
+                  <li><p>操作的单个 value 过大，超过 10KB，也就是说，要避免使用大 Key</p></li>
+                  <li><p>对大 Key 的 delete/expire 操作也可能导致慢查询，Redis4.0之前不支持异步删除unlink，大 Key 删除会阻塞
+                    Redis</p></li>
+                </ol>
+                <h4 id="33-缓存穿透-缓存雪崩"><a class="markdownIt-Anchor" href="#33-缓存穿透-缓存雪崩"></a> 3.3
+                  缓存穿透、缓存雪崩</h4>
+                <p>缓存穿透：热点数据查询绕过缓存，直接查询数据库</p>
+                <p>缓存雪崩：大量缓存同时过期</p>
+                <p><strong>缓存穿透、雪崩的危害</strong></p>
+                <ol>
+                  <li><p>查询一个一定不存在的数据</p>
+                    <p>
+                      通常不会缓存不存在的数据，这类查询请求都会直接打到db，如果有系统bug或人为攻击，那么容易导致db响应慢甚至宕机。</p>
+                  </li>
+                  <li><p>缓存过期时</p>
+                    <p>在高并发场景下，一个热 key 如果过期，会有大量请求同时击穿至db，容易影响db性能和稳定。</p>
+                    <p>同一时间有大量key集中过期时，也会导致大量请求落到db上，导致查询变慢，甚至出现db无法响应新的查询。</p>
+                  </li>
+                </ol>
+                <p><strong>如何减少缓存穿透</strong></p>
+                <ol>
+                  <li><p>缓存空值</p>
+                    <p>
+                      如一个不存在的userID，这个id在缓存和数据库中都不存在，则可以缓存一个空值，下次再查询缓存直接返回空值。</p>
+                  </li>
+                  <li><p>布隆过滤器</p>
+                    <p>通过 bloom filter 算法来存储合法 Key，得益于该算法超高的压缩率，只需占有极小的空间就能存储大量 key
+                      值。</p></li>
+                </ol>
+                <p><strong>如何避免缓存雪崩</strong></p>
+                <ol>
+                  <li><p>缓存空值</p>
+                    <p>
+                      将缓存失效时间分散开，比如在原有的失效时间基础上增加一个随机值，例如不同Key过期时间，可以设置为10分1秒过期，10分23秒过期，10分8秒过期。单位秒部分就是随机时间，这样过期时间就分散了。</p>
+                    <p>对于热点数据，过期时间尽量设置得长一些，冷门的数据可以相对设置过期时间短一些。</p></li>
+                  <li><p>使用缓存集群，避免单机宕机造成的缓存雪崩。</p></li>
+                </ol>
+              </div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">Redis</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#redis"><span
+                      class="nav-text">Redis</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#1redis-%E6%98%AF%E4%BB%80%E4%B9%88"><span
+                          class="nav-text">1.Redis 是什么</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2redis-%E5%BA%94%E7%94%A8%E6%A1%88%E4%BE%8B"><span
+                          class="nav-text">2.Redis 应用案例</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3redis-%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span
+                          class="nav-text">3.Redis 使用注意事项</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

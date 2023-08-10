@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8087
+
+sa-token:
+  token-name: sbtoken
+  timeout: 2592000
+  activity-timeout: -1
+  is-concurrent: false
+  is-share: false
+  token-style: tik
+  is-log: false
+  jwt-secret-key: kjvwy2jkfsdhk

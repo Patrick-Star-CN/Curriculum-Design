@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">多版本环境控制</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-03-12 16:05:02</span> <span
+                      class="mobile">2023-03-12 16:05</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 08:54:38</span> <span class="mobile">2023-04-01 08:54</span> <span
+                      class="hover-info">更新</span> </span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.2k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>9 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>在搭建开发环境时，通常是选择一个<code>LTS(Long Term
+                Support)</code>版本，但是有时候需要在新发布的版本或者是在某个历史版本上搭建环境进行测试，需要重新搭建新环境，带来诸多不便。<span
+                id="more"></span></p>
+                <p>关于多版本环境的搭建，笔者这里提供了<code>多版本管理工具</code>的方案，实现多个不同版本之间快速切换和管理，省去环境变量的重复配置。
+                </p>
+                <p>以下是一些常用的开发环境多版本管理工具，大部分工具支持多平台，这里笔者使用的是<code>Archlinux</code>，其他操作系统也可在官网寻找对应平台的安装教程。
+                </p>
+                <h2 id="java-开发环境"><a class="markdownIt-Anchor" href="#java-开发环境"></a> Java 开发环境</h2>
+                <p>JDK 多版本管理工具有很多种，这里主要介绍<code>SDKMAN</code>、<code>JEnv</code>、<code>Jabba</code>三种工具。
+                </p>
+                <h3 id="1sdkman"><a class="markdownIt-Anchor" href="#1sdkman"></a> 1.SDKMAN</h3><h4 id="11-安装"><a
+                  class="markdownIt-Anchor" href="#11-安装"></a> 1.1 安装</h4>
+                <p><a class="link" target="_blank" rel="noopener" href="https://sdkman.io/install">SDKMAN 官网安装教程
+                  <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，<code>SDKMAN</code>支持类<code>UNIX</code>的平台，<code>windows</code>系统可以使用<code>WSL</code>。
+                </p><img lazyload src="/images/loading.svg"
+                         data-src="/2023/03/12/more-env-control/image-20230312151735030.png"
+                         title="image-20230312151735030">
+                <p>下载安装命令，如果使用<code>zsh</code>或者<code>fish</code>，则将下面的<code>bash</code>替换为你所使用的<code>shell</code>
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">curl -s &quot;https://get.sdkman.io&quot; | bash</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>这里安装可能会出现缺少<code>zip</code>的问题，参考这篇<a class="link" target="_blank" rel="noopener"
+                                                                           href="http://leetschau.github.io/install-sdkman-on-windows-git-bash.html">文章
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>解决。</p>
+                <p>在<code>Archlinux</code>下直接用包管理器安装</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo pacman -S zip</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>在<code>windows</code>操作系统下，访问<a class="link" target="_blank" rel="noopener"
+                                                           href="https://sourceforge.net/projects/gnuwin32/files/">sourceforge
+                  <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>找到<code>zip</code>包文件列表，下载<a
+                  class="link" target="_blank" rel="noopener"
+                  href="https://sourceforge.net/projects/gnuwin32/files/zip/3.0/">zip-3.0-bin.zip <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，并将下载的包解压到<code>C:\Program
+                  Files\Git\usr\bin</code>目录下，再次执行下载安装命令。</p>
+                <p>通过上面的命令安装后，接着执行下面的命令手动使配置生效或者开启一个新的终端</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">source &quot;$HOME/.sdkman/bin/sdkman-init.sh&quot;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>测试<code>SDKMAN</code>是否安装成功</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk version</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>输出版本信息即表示安装成功。</p><h4 id="12-使用"><a class="markdownIt-Anchor" href="#12-使用"></a> 1.2
+                  使用</h4>
+                <p>查看可用的<code>JDK</code>版本列表</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk list java</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>使用<code>SDKMAN</code>安装<code>JDK</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk install java 17.0.6-tem</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>临时使用指定版本的<code>JDK</code>，在当前<code>shell</code>生效</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk use java 17.0.6-tem</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>指定全局<code>JDK</code>版本，在全局生效</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk default java 17.0.6-tem</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>卸载<code>JDK</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sdk uninstall java 17.0.6-tem</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="13-卸载"><a class="markdownIt-Anchor" href="#13-卸载"></a> 1.3 卸载</h4>
+                <p><code>SDKMAN</code>没有自动化卸载的方法，需要手动进行卸载</p>
+                <p>备份源文件目录</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tar zcvf ~/sdkman-backup_$(date +%F-%kh%M).tar.gz -C ~/ .sdkman</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>删除源文件目录</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">rm -rf ~/.sdkman</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>删除<code>.bashrc</code>，<code>.bash_profile</code>，<code>.zshrc</code>，<code>profile</code>文件中安装<code>SDKMAN</code>时写入的初始化配置信息，如果这些文件存在的话，具体要删除的代码片段如下
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span
+                            class="line">#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!</span><br><span
+                            class="line">[[ -s &quot;/home/dudette/.sdkman/bin/sdkman-init.sh&quot; ]] &amp;&amp; source &quot;/home/dudette/.sdkman/bin/sdkman-init.sh&quot;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="14-补充说明"><a class="markdownIt-Anchor" href="#14-补充说明"></a> 1.4 补充说明</h4>
+                <ul>
+                  <li><p><code>SDKMAN</code>在国内存在无法下载或下载很慢的问题，可访问国内镜像站<a class="link"
+                                                                                                  target="_blank"
+                                                                                                  rel="noopener"
+                                                                                                  href="https://www.injdk.cn/%E4%B8%8B%E8%BD%BD">https://www.injdk.cn/下载
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                  <li><p><code>SDKMAN</code>不仅支持<code>JDK</code>的多版本管理，还支持其他的<code>SDK</code>，具体参考<a
+                    class="link" target="_blank" rel="noopener" href="https://sdkman.io/sdks">https://sdkman.io/sdks <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                </ul>
+                <h3 id="2jenv"><a class="markdownIt-Anchor" href="#2jenv"></a> 2.jEnv</h3>
+                <p><code>JEnv</code>与<code>SDKMAN</code>不同，<code>JEnv</code>不能直接安装<code>JDK</code>，而是对不同版本<code>JDK</code>环境变量的配置进行管理。
+                </p><img lazyload src="/images/loading.svg"
+                         data-src="/2023/03/12/more-env-control/image-20230312123733364.png"
+                         title="image-20230312123733364"><h4 id="21-安装"><a class="markdownIt-Anchor"
+                                                                             href="#21-安装"></a> 2.1 安装</h4>
+                <p><a class="link" target="_blank" rel="noopener" href="https://www.jenv.be/">jEnv 官网 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，支持大部分类<code>Unix</code>系统平台。
+                </p>
+                <p><code>git</code>克隆下载</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span
+                            class="line">git clone https://github.com/gcuisinier/jenv.git ~/.jenv</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>在<code>Bash</code>中配置</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">echo &#x27;export PATH=&quot;$HOME/.jenv/bin:$PATH&quot;&#x27; &gt;&gt; ~/.bash_profile</span><br><span
+                            class="line">echo &#x27;eval &quot;$(jenv init -)&quot;&#x27; &gt;&gt; ~/.bash_profile</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>在<code>Zsh</code>中配置</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">echo &#x27;export PATH=&quot;$HOME/.jenv/bin:$PATH&quot;&#x27; &gt;&gt; ~/.zshrc</span><br><span
+                            class="line">echo &#x27;eval &quot;$(jenv init -)&quot;&#x27; &gt;&gt; ~/.zshrc</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="22-使用"><a class="markdownIt-Anchor" href="#22-使用"></a> 2.2 使用</h4>
+                <p>首先需要去官网下载好对应的<code>JDK</code>源文件<code>tar.gz</code>，并解压到一个合适的目录下。</p>
+                <p>将已经下载好的<code>JDK</code>添加到<code>jEnv</code>中，以下是参考命令，具体的目录根据实际情况配置。
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv add /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home</span><br><span
+                            class="line">jenv add /Library/Java/JavaVirtualMachines/jdk17011.jdk/Contents/Home</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>使用指定版本的<code>JDK</code></p>
+                <p>查看管理的<code>JDK</code>版本，当前使用的<code>JDK</code>版本会在前面有一个<code>*</code>的标记</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv versions</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>配置全局使用的<code>JDK</code>版本，版本根据实际情况选择，命令仅供参考</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv global oracle64-1.6.0.39</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>配置本地使用的<code>JDK</code>版本（每个目录）</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv local oracle64-1.6.0.39</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>配置<code>shell</code>使用的<code>JDK</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv shell oracle64-1.6.0.39</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>取消配置，默认会采用<code>system</code>的配置</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jenv global --unset</span><br><span
+                            class="line">jenv local --unset</span><br><span
+                            class="line">jenv shell --unset</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="23-卸载"><a class="markdownIt-Anchor" href="#23-卸载"></a> 2.3 卸载</h4>
+                <p>参考<code>SDKMAN</code>的卸载方法</p>
+                <p>删除源文件目录</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">rm -rf ~/.jenv</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>删除<code>.bashrc</code>，<code>.bash_profile</code>，<code>.zshrc</code>，<code>profile</code>文件中安装<code>SDKMAN</code>时写入的初始化配置信息，如果这些文件存在的话，具体要删除的代码片段如下
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">export PATH=&quot;$HOME/.jenv/bin:$PATH&quot;</span><br><span
+                            class="line">eval &quot;$(jenv init -)&quot;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h3 id="3jabba"><a class="markdownIt-Anchor" href="#3jabba"></a> 3.Jabba</h3>
+                <p><code>jabba</code>是跨平台的Java版本管理工具，它是受<code>Node.js</code>的<code>nvm</code>启发，并且采用<code>Go</code>语言开发
+                </p>
+                <p><code>jabba</code>的官方仓库：<a class="link" target="_blank" rel="noopener"
+                                                   href="https://github.com/shyiko/jabba">https://github.com/shyiko/jabba
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="31-安装"><a
+                  class="markdownIt-Anchor" href="#31-安装"></a> 3.1 安装</h4>
+                <p><code>jabba</code>的安装参考文档：<a class="link" target="_blank" rel="noopener"
+                                                       href="https://www.cjavapy.com/article/96/">Java JDK
+                  版本管理工具jabba的安装 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>安装最新版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">export JABBA_GET=&quot;curl -sLk&quot;</span><br><span class="line">curl -sLk https://github.com/shyiko/jabba/raw/master/install.sh | bash &amp;&amp; . ~/.jabba/jabba.sh</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>特别地，如果在<code>fish</code>下安装，使用以下命令</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">curl -sLk https://github.com/shyiko/jabba/raw/master/install.sh | bash; and . ~/.jabba/jabba.fish</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>测试安装是否成功</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba --version</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="32-使用"><a class="markdownIt-Anchor" href="#32-使用"></a> 3.2 使用</h4>
+                <p>安装指定版本的<code>JDK</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba install openjdk@1.14.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>查看所有安装的<code>JDK</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba ls</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>卸载指定版本的<code>JDK</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba uninstall openjdk@1.14.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>查看可用的<code>JDK</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba ls-remote</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>切换<code>JDK</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">jabba use openjdk@1.11.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>更多命令参考<a class="link" target="_blank" rel="noopener"
+                                  href="https://www.cjavapy.com/article/97/">jabba的常用命令 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="33-卸载"><a
+                  class="markdownIt-Anchor" href="#33-卸载"></a> 3.3 卸载</h4>
+                <p>删除源文件目录</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">rm -rf .jabba</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>删除<code>.bashrc</code>，<code>.bash_profile</code>，<code>.zshrc</code>，<code>profile</code>文件中安装<code>SDKMAN</code>时写入的初始化配置信息，如果这些文件存在的话，具体要删除的代码片段如下
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">[ -s &quot;/home/patrick_star/.jabba/jabba.sh&quot; ] &amp;&amp; source &quot;/home/patrick_star/.jabba/jabba.sh&quot;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="34-补充说明"><a class="markdownIt-Anchor" href="#34-补充说明"></a> 3.4 补充说明</h4>
+                <p><code>jabba</code>同样存在国内无法下载或者下载很慢的问题。</p>
+                <h3 id="4archlinux-java"><a class="markdownIt-Anchor" href="#4archlinux-java"></a> 4.Archlinux-java</h3>
+                <p>由<code>Archlinux</code>提供的<code>java</code>多版本管理方案，是<code>Archlinux</code>自带的一个脚本文件，具体可参考<a
+                  class="link" target="_blank" rel="noopener"
+                  href="https://wiki.archlinux.org/title/Java#:~:text=%7C%7C%20luytenAUR-,Switching%20between%20JVM,-The%20helper%20script">Arch
+                  Wiki <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+                <h2 id="go-开发环境"><a class="markdownIt-Anchor" href="#go-开发环境"></a> Go 开发环境</h2>
+                <h3 id="gvm"><a class="markdownIt-Anchor" href="#gvm"></a> GVM</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://github.com/moovweb/gvm">GVM 官方仓库 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，<code>GVM</code>是<code>Go</code>语言版本管理器，支持安装和管理多个<code>Go</code>版本
+                </p><h4 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h4>
+                <p>
+                  如果使用<code>zsh</code>或者<code>fish</code>，则将下面的<code>bash</code>替换为你所使用的<code>shell</code>
+                </p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">bash &lt; &lt;(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>执行下面的命令手动使配置生效或者打开一个新的终端</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">source $HOME/.gvm/scripts/gvm</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="使用"><a class="markdownIt-Anchor" href="#使用"></a> 使用</h4>
+                <p>
+                  先安装<code>Go1.4</code>的版本，之后再安装<code>Go1.5</code>及之后的版本，避免出现引导问题（由于<code>Go</code>在<code>1.5</code>版本实现了自举，因此安装高版本的<code>Go</code>还需要准备一个低版本的<code>Go</code>提供编译环境）
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm install go1.4 -B</span><br><span class="line">gvm use go1.4 [--default]</span><br><span
+                            class="line">export GOROOT_BOOTSTRAP=$GOROOT</span><br><span
+                            class="line">gvm install go1.5</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>临时使用指定的<code>Go</code>版本，加上<code>--default</code>参数指定，就可以默认使用该版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm use go1.4</span><br><span
+                            class="line">gvm use go1.4 --default</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>列出已安装的<code>Go</code>版本，在当前正在使用的版本前面会有<code>=&gt;</code>的前缀</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm list</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>列出所有可供下载的<code>Go</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm listall</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>卸载<code>Go1.5</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm uninstall go1.5</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="卸载"><a class="markdownIt-Anchor" href="#卸载"></a> 卸载</h4>
+                <p><code>GVM</code>提供了完全删除<code>GVM</code>自身和所有已安装的<code>Go</code>版本和软件包的命令</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gvm implode</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h2 id="nodejs-开发环境"><a class="markdownIt-Anchor" href="#nodejs-开发环境"></a> Node.js 开发环境</h2>
+                <h3 id="nvm"><a class="markdownIt-Anchor" href="#nvm"></a> NVM</h3>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/nvm-sh/nvm#installing-and-updating">NVM 官方仓库 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，<code>nvm</code>就是<code>node.js</code>的版本管理工具，在开发中可以通过它来安装和切换不同的<code>node.js</code>版本
+                </p><h4 id="安装-2"><a class="markdownIt-Anchor" href="#安装-2"></a> 安装</h4>
+                <p>
+                  如果使用<code>zsh</code>或者<code>fish</code>，则将下面的<code>bash</code>替换为你所使用的<code>shell</code>
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>测试安装是否成功，关闭终端打开一个新的终端执行以下命令，输出<code>nvm</code>则表示安装成功</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">command -v nvm</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="使用-2"><a class="markdownIt-Anchor" href="#使用-2"></a> 使用</h4>
+                <p>列出所以可下载安装的<code>Nodejs</code>版本</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm ls-remote</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>列出已安装的<code>Nodejs</code>版本，在当前正在使用的版本前面会有<code>-&gt;</code>的前缀</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm list</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>安装指定版本的<code>Nodejs</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm install v18.15.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>临时使用指定版本的<code>Nodejs</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm use v18.15.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>默认使用指定版本的<code>Nodejs</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm alias default v18.15.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>卸载指定版本的<code>Nodejs</code></p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">nvm uninstall v18.15.0</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="卸载-2"><a class="markdownIt-Anchor" href="#卸载-2"></a> 卸载</h4>
+                <p>删除源文件目录</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">rm -rf .nvm</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>删除<code>.bashrc</code>，<code>.bash_profile</code>，<code>.zshrc</code>，<code>profile</code>文件中安装<code>SDKMAN</code>时写入的初始化配置信息，如果这些文件存在的话，具体要删除的代码片段如下
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">source /usr/share/nvm/init-nvm.sh</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="补充说明"><a class="markdownIt-Anchor" href="#补充说明"></a> 补充说明</h4>
+                <p>
+                  <code>NVM</code>在国内可能存在无法下载或者下载很慢的问题，可在<code>.bashrc</code>，<code>.bash_profile</code>，<code>.zshrc</code>中选择<code>bash</code>或<code>zsh</code>对应的配置文件里添加以下配置
+                </p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">export NVM_NODEJS_ORG_MIRROR=https://npmmirror.com/mirrors/node</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+                <p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7044711294984781838">SDK管理利器：SDKMAN！
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/416897637">Java
+                  多版本管理工具（自由切换Java版本）Jenv使用（支持Linux Mac Windows） <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://www.cjavapy.com/article/631/">Java
+                  JDK使用SDKMAN、JEnv和Jabba安装配置及版本切换 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/83375992">如何灵活地进行
+                  Go 版本管理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/445799189">Golang
+                  多版本管理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/483015085">nvm安装-linux篇
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">多版本环境控制</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#java-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span
+                      class="nav-text">Java 开发环境</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#1sdkman"><span class="nav-text">1.SDKMAN</span></a>
+                        </li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#2jenv"><span
+                          class="nav-text">2.jEnv</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#3jabba"><span class="nav-text">3.Jabba</span></a>
+                        </li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#4archlinux-java"><span
+                          class="nav-text">4.Archlinux-java</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#go-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span
+                      class="nav-text">Go 开发环境</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#gvm"><span
+                          class="nav-text">GVM</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#nodejs-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span
+                      class="nav-text">Node.js 开发环境</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#nvm"><span
+                          class="nav-text">NVM</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                      class="nav-text">参考资料</span></a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

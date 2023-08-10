@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">黑灰产监控与防御</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-07 21:12:07</span> <span
+                      class="mobile">2023-02-07 21:12</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>630 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>2 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对黑灰产监控与防御的学习<span
+                id="more"></span></p>
+                <h2 id="黑灰产监控与防御"><a class="markdownIt-Anchor" href="#黑灰产监控与防御"></a> 黑灰产监控与防御
+                </h2>
+                <h3 id="1黑产介绍"><a class="markdownIt-Anchor" href="#1黑产介绍"></a> 1.黑产介绍</h3><h4
+                  id="一些常见的黑产"><a class="markdownIt-Anchor" href="#一些常见的黑产"></a> 一些常见的黑产</h4>
+                <p>诈骗、木马、薅羊毛、钓鱼、黄牛、病毒、博彩、拖库、引流、盗号、跑分、勒索软件</p><h4 id="黑色产业规模"><a
+                  class="markdownIt-Anchor" href="#黑色产业规模"></a> 黑色产业规模</h4>
+                <ul>
+                  <li><p>中国“网络黑产”从业人员已超过 150 万，市场规模已经达到千亿级别 - 中国法院网 2017 年</p></li>
+                  <li><p>截止 2022 年 12 曰，haveibeenpwned 已收录了约 120 亿条账号密码数据</p>
+                    <p>可访问 <a class="link" target="_blank" rel="noopener" href="https://haveibeenpwned.com/">https://haveibeenpwned.com/
+                      <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 查看一下自己的账号密码是否在其中
+                    </p></li>
+                  <li><p>某互联网风控公司统计，2018 年各类黑产攻击（业务层）总数超过 300 亿次</p></li>
+                  <li><p>据不完全统计，2019 年全网约有 5000 万左右的非实名手机卡被频繁用于各种欺诈活动</p></li>
+                  <li><p>据不完全统计，仅中国境内每天约有 350-400 万个代理 IP 被用于各类欺诈活动</p></li>
+                  <li><p>…</p></li>
+                </ul>
+                <h4 id="黑产发展趋势"><a class="markdownIt-Anchor" href="#黑产发展趋势"></a> 黑产发展趋势</h4>
+                <ul>
+                  <li>规模化：借助脚本软件实现自动化、批量化攻击</li>
+                  <li>组织化：以工作室甚至公司的形式运作，分工明确、合作紧密</li>
+                  <li>平台化：
+                    <ul>
+                      <li>出现很多平台级的爬虫、群控、钓鱼木马等，难以追查</li>
+                      <li>通过各类平台将黑产手中零散的资源进行整合</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="2常见的黑产技术分析"><a class="markdownIt-Anchor" href="#2常见的黑产技术分析"></a> 2.常见的黑产技术分析
+                </h3><h4 id="开户流程"><a class="markdownIt-Anchor" href="#开户流程"></a> 开户流程</h4>
+                <p>实名认证 —&gt; 绑定银行卡 —&gt; 审核开户</p><h4 id="对抗攻击手段"><a class="markdownIt-Anchor"
+                                                                                        href="#对抗攻击手段"></a> 对抗攻击手段
+                </h4>
+                <ul>
+                  <li>人脸识别对抗
+                    <ul>
+                      <li>伪造人脸数据</li>
+                    </ul>
+                  </li>
+                  <li>地理位置对抗
+                    <ul>
+                      <li>定位打卡</li>
+                      <li>摇一摇、附近的人</li>
+                      <li>出租车抢单</li>
+                      <li>某些线下优惠</li>
+                      <li>…</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="3安全防护体系的建设"><a class="markdownIt-Anchor" href="#3安全防护体系的建设"></a> 3.安全防护体系的建设
+                </h3><h4 id="事前"><a class="markdownIt-Anchor" href="#事前"></a> 事前</h4>
+                <ul>
+                  <li>情报监控
+                    <ul>
+                      <li>暗网</li>
+                      <li>贴吧</li>
+                      <li>TG</li>
+                      <li>破解论坛</li>
+                    </ul>
+                  </li>
+                  <li>SDLC：软件开发生命周期的阶段和模型</li>
+                  <li>漏洞扫描</li>
+                </ul>
+                <h4 id="事中"><a class="markdownIt-Anchor" href="#事中"></a> 事中</h4>
+                <ul>
+                  <li>渗透测试</li>
+                  <li>威胁感知
+                    <ul>
+                      <li>用户行为异常</li>
+                      <li>接口数据异常</li>
+                      <li>恶意流量检测</li>
+                    </ul>
+                  </li>
+                  <li>风控/安全策略</li>
+                </ul>
+                <h4 id="事后"><a class="markdownIt-Anchor" href="#事后"></a> 事后</h4>
+                <ul>
+                  <li>威胁建模</li>
+                  <li>攻击溯源</li>
+                </ul>
+                <h4 id="关键要素"><a class="markdownIt-Anchor" href="#关键要素"></a> 关键要素</h4>
+                <p>验证码、安全 SDK、代理检测、人脸识别、黑产名单、…</p>
+                <p>WAF（WEB应用程序防火墙）、IDS（入侵检测系统）、DLP、终端安全防护、行为审计、…</p>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/450678659">对抗攻击-人脸识别
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/575438524">解密地理位置模拟攻防之道
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://www.jianshu.com/p/8e570d9049e0">SDLC：软件开发生命周期的阶段和模型
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7196959046603227195">黑灰产监控与防御
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">黑灰产监控与防御</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E9%BB%91%E7%81%B0%E4%BA%A7%E7%9B%91%E6%8E%A7%E4%B8%8E%E9%98%B2%E5%BE%A1"><span
+                      class="nav-text">黑灰产监控与防御</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E9%BB%91%E4%BA%A7%E4%BB%8B%E7%BB%8D"><span
+                          class="nav-text">1.黑产介绍</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%B8%B8%E8%A7%81%E7%9A%84%E9%BB%91%E4%BA%A7%E6%8A%80%E6%9C%AF%E5%88%86%E6%9E%90"><span
+                          class="nav-text">2.常见的黑产技术分析</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4%E4%BD%93%E7%B3%BB%E7%9A%84%E5%BB%BA%E8%AE%BE"><span
+                          class="nav-text">3.安全防护体系的建设</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="ODOMETER" id="RUNTIME_DAYS"></SPAN> 天 <span class="ODOMETER"
+                                                                                      id="runtime_hours"></span> 小时
+            <SPAN class="odometer" ID="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-CONTAINER">
+    <div CLASS="side-tools-container">
+      <ul class="HIDDEN-tools-list">
+        <li class="right-bottom-tools tool-font-ADJUST-plus flex-center"><I
+          class="fa-regular fa-magnifying-glass-plus"></i></Li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-Regular fa-magnifying-glass-minus"></i></li>
+        <li CLASS="right-bottom-tools tool-expand-width flex-center"><i Class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular Fa-moon"></i></li>
+        <Li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div Class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

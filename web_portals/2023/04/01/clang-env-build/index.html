@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">基于clang打造高效的开发环境</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-04-01 11:55:59</span> <span
+                      class="mobile">2023-04-01 11:55</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 21:15:42</span> <span class="mobile">2023-04-01 21:15</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a>&nbsp;</li></ul></span><span class="article-wordcount article-meta-item"><i
+                      class="fa-regular fa-typewriter"></i>&nbsp;<span>1.3k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>5 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>在使用<code>vscode</code>进行C/C++开发过程中，一般就是直接使用<code>gcc</code>编译器（在windows中，它通常被称为<code>MinGW-w64</code>，一个<code>gcc</code>的移植版）、<code>gdb</code>调试器配合<code>C/C++</code>的插件来进行开发，也就是传统的<code>gnu</code>工具链中的组件。
+              </p>
+                <p>
+                  但是<code>vscode</code>的<code>C/C++</code>的插件功能虽然齐全，响应速度却不够理想，于是本文介绍了使用<code>LLVM</code>工具链组件中的<code>clang</code>编译器来进行C/C++开发。<span
+                  id="more"></span></p>
+                <p>本文是在<code>Archlinux</code>的基础上搭建以<code>clang</code>作为编译器、<code>lldb</code>作为调试器的开发环境，<code>windows</code>可以通过额外配置<code>WSL</code>来搭建开发环境。
+                </p>
+                <h2 id="基础环境搭建"><a class="markdownIt-Anchor" href="#基础环境搭建"></a> 基础环境搭建</h2>
+                <p><code>LLVM</code>工具链包括<code>clang</code>编译器、<code>lldb</code>调试器、<code>lld</code>链接器等。
+                </p>
+                <h3 id="1安装vscode"><a class="markdownIt-Anchor" href="#1安装vscode"></a> 1.安装vscode</h3>
+                <p>这里使用的是<a class="link" target="_blank" rel="noopener"
+                                  href="https://aur.archlinux.org/packages/visual-studio-code-bin">visual-studio-code-bin
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><sup>EULA / aur</sup>。</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">yay -S visual-studio-code-bin</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h3 id="2安装基础包"><a class="markdownIt-Anchor" href="#2安装基础包"></a> 2.安装基础包</h3>
+                <p>通过以下命令安装即可</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo pacman -S llvm clang lldb lld</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h3 id="3安装vscode相关插件"><a class="markdownIt-Anchor" href="#3安装vscode相关插件"></a>
+                  3.安装vscode相关插件</h3>
+                <p>打开vscode插件市场，搜索<code>clangd</code>、<code>CodeLLDB</code>下载安装（如果因为网络问题下载失败，请尝试手动下载安装.vsix文件）。
+                </p><img lazyload src="/images/loading.svg"
+                         data-src="/2023/04/01/clang-env-build/image-20230401142306155.png"
+                         title="image-20230401142306155"> <img lazyload src="/images/loading.svg"
+                                                               data-src="/2023/04/01/clang-env-build/image-20230401142340526.png"
+                                                               title="image-20230401142340526">
+                <h2 id="运行-调试配置"><a class="markdownIt-Anchor" href="#运行-调试配置"></a> 运行、调试配置</h2>
+                <h3 id="1创建配置文件"><a class="markdownIt-Anchor" href="#1创建配置文件"></a> 1.创建配置文件</h3>
+                <p>打开侧边框上的运行调试选项，点击<code>create a launch.json
+                  file</code>并选择<code>LLDB</code>，创建好<code>.vscode</code>文件夹下的<code>launch.json</code>配置文件
+                </p><img lazyload src="/images/loading.svg"
+                         data-src="/2023/04/01/clang-env-build/image-20230401142113704.png"
+                         title="image-20230401142113704">
+                <p><code>launch.json</code>的初始内容如下，相关参数变量配置说明可访问<a class="link" target="_blank"
+                                                                                       rel="noopener"
+                                                                                       href="https://code.visualstudio.com/docs/editor/variables-reference">官方文档
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <div class="highlight-container" data-rel="Json">
+                  <figure class="iseeu highlight json">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span
+                            class="comment">// Use IntelliSense to learn about possible attributes.</span></span><br><span
+                            class="line">    <span
+                            class="comment">// Hover to view descriptions of existing attributes.</span></span><br><span
+                            class="line">    <span class="comment">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span
+                            class="line">    <span class="attr">&quot;version&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span></span><br><span
+                            class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span
+                            class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lldb&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;Debug&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;/&lt;executable file&gt;&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span><span
+                            class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span
+                            class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span></span><br><span
+                            class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span
+                            class="punctuation">]</span></span><br><span class="line"><span
+                            class="punctuation">&#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>这里笔者将所有编译好的二进制文件输出到提前手动创建好的<code>build</code>文件夹(与源文件是同级目录)，另外<code>launch.json</code>还需要配置<code>tasks.json</code>才能实现运行调试，<code>tasks.json</code>则是具体定义了编译的命令以及参数等。<code>tasks.json</code>可以手动在<code>.vscode</code>文件夹下创建。
+                </p>
+                <p>最终配置如下</p>
+                <p><code>launch.json</code></p>
+                <div class="highlight-container" data-rel="Json">
+                  <figure class="iseeu highlight json">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br><span class="line">17</span><br><span
+                            class="line">18</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span
+                            class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span
+                            class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span
+                            class="line">    <span class="attr">&quot;configurations&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span></span><br><span
+                            class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span
+                            class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lldb&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;Debug&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="comment">// 编译文件的输出目录</span></span><br><span
+                            class="line">            <span class="attr">&quot;program&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;$&#123;fileDirname&#125;/build/$&#123;fileBasenameNoExtension&#125;.out&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span><span
+                            class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span
+                            class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;preLaunchTask&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;Debug C++&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;internalConsoleOptions&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;neverOpen&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="comment">// 使用内置终端</span></span><br><span
+                            class="line">            <span class="attr">&quot;console&quot;</span><span
+                            class="punctuation">:</span> <span
+                            class="string">&quot;integratedTerminal&quot;</span></span><br><span
+                            class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span
+                            class="punctuation">]</span></span><br><span class="line"><span
+                            class="punctuation">&#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p><code>tasks.json</code></p>
+                <div class="highlight-container" data-rel="Json">
+                  <figure class="iseeu highlight json">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br><span class="line">17</span><br><span
+                            class="line">18</span><br><span class="line">19</span><br><span
+                            class="line">20</span><br><span class="line">21</span><br><span
+                            class="line">22</span><br><span class="line">23</span><br><span
+                            class="line">24</span><br><span class="line">25</span><br><span
+                            class="line">26</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span
+                            class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span
+                            class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span
+                            class="line">    <span class="attr">&quot;tasks&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span></span><br><span
+                            class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span
+                            class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;Debug C++&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;clang++&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">[</span></span><br><span
+                            class="line">                <span class="string">&quot;--std=c++20&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">                <span
+                            class="string">&quot;-Wall&quot;</span><span class="punctuation">,</span></span><br><span
+                            class="line">                <span class="string">&quot;-g&quot;</span><span
+                            class="punctuation">,</span> <span class="comment">// 生成调试信息</span></span><br><span
+                            class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">                <span
+                            class="string">&quot;-o&quot;</span><span class="punctuation">,</span></span><br><span
+                            class="line">                <span class="string">&quot;$&#123;fileDirname&#125;/build/$&#123;fileBasenameNoExtension&#125;.out&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span
+                            class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span
+                            class="attr">&quot;options&quot;</span><span class="punctuation">:</span> <span
+                            class="punctuation">&#123;</span></span><br><span class="line">                <span
+                            class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/usr/bin&quot;</span></span><br><span
+                            class="line">            <span class="punctuation">&#125;</span><span
+                            class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span
+                            class="line">                <span class="attr">&quot;kind&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">                <span
+                            class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span
+                            class="literal"><span class="keyword">true</span></span></span><br><span class="line">            <span
+                            class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span
+                            class="line">            <span class="attr">&quot;detail&quot;</span><span
+                            class="punctuation">:</span> <span
+                            class="string">&quot;Task generated by Debugger.&quot;</span></span><br><span class="line">        <span
+                            class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span
+                            class="line">    <span class="punctuation">]</span></span><br><span class="line"><span
+                            class="punctuation">&#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>使用快捷键<code>Ctrl</code>+<code>F5</code>运行代码，使用快捷键<code>F5</code>调试代码(需要先断点)。
+                </p>
+                <p>
+                  到这里基本的运行、调试已经配置完成，但是这种方式需要提前在当前目录下手动创建好输出目录，否则无法成功执行任务。当然也可以直接选择将当前目录作为输出目录，但那样输出文件与源文件混杂在一起不方便处理。</p>
+                <p>基于这点，笔者这里提供了一种思路：使用<code>Code Runner</code>插件指定其编译命令，提供自动创建输出目录的功能(唯一的不便就是需要先执行<code>Code
+                  Runner</code>创建好目录之后，才能进行调试)。</p>
+                <p>因此下面介绍通过配置<code>Code
+                  Runner</code>插件，更改其默认的<code>g++</code>命令为<code>clang++</code>，并实现自动创建输出目录的功能。
+                </p>
+                <h3 id="2code-runner配置"><a class="markdownIt-Anchor" href="#2code-runner配置"></a> 2.Code Runner配置
+                </h3>
+                <p>首先下载安装好<code>Code Runner</code>的插件，在插件市场搜索<code>Code Runner</code>并安装</p><img
+                  lazyload src="/images/loading.svg" data-src="/2023/04/01/clang-env-build/image-20230401195536276.png"
+                  title="image-20230401195536276">
+                <p>打开<code>Code Runner</code>的扩展配置，在搜索框中搜索<code>code-runner.executorMap</code>，点击<code>Edit
+                  in settings.json</code>打开<code>settings.json</code>配置文件。</p>
+                <p>在<code>settings.json</code>文件中修改对应的配置项中的<code>g++</code>为<code>clang++</code>，配置如下
+                </p>
+                <div class="highlight-container" data-rel="Json">
+                  <figure class="iseeu highlight json">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="attr">&quot;code-runner.executorMap&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span
+                            class="line">    <span class="attr">&quot;c&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;cd $dir &amp;&amp; clang $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cpp&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;cd $dir &amp;&amp; clang++ $fileName -o $fileNameWithoutExt &amp;&amp; $dir$fileNameWithoutExt&quot;</span><span
+                            class="punctuation">,</span> </span><br><span class="line"><span
+                            class="punctuation">&#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>指定输出目录，例如输出到当前目录的<code>build</code>目录下(自动创建)，则修改为以下配置</p>
+                <div class="highlight-container" data-rel="Json">
+                  <figure class="iseeu highlight json">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="attr">&quot;code-runner.executorMap&quot;</span><span
+                            class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span
+                            class="line">    <span class="attr">&quot;c&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;cd $dir &amp;&amp; mkdir -p build &amp;&amp; clang $fileName -o build/$fileNameWithoutExt &amp;&amp; build/$fileNameWithoutExt&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;cpp&quot;</span><span
+                            class="punctuation">:</span> <span class="string">&quot;cd $dir &amp;&amp; mkdir -p build &amp;&amp; clang++ $fileName -o build/$fileNameWithoutExt &amp;&amp; build/$fileNameWithoutExt&quot;</span><span
+                            class="punctuation">,</span></span><br><span class="line"><span
+                            class="punctuation">&#125;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>更多参数配置说明可以参考<a class="link" target="_blank" rel="noopener"
+                                              href="https://github.com/formulahendry/vscode-code-runner">官方仓库 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p>
+                <p>至此一个简单高效的、基于<code>LLVM</code>工具链中的<code>clang</code>编译器、<code>lldb</code>调试器的开发环境已经搭建完成。
+                </p>
+                <p>补充：网上很多相关教程主要是通过<code>CMake</code>配合<code>clang</code>来构建项目，<code>CMake</code>的配置对于单文件编译运行调试来说相对繁琐，不太适合简单的小项目。在早期笔者参考相关教程配置时意识到了这个问题，另外鉴于<code>C/C++</code>插件在响应速度上实在不尽人意，于是有了这篇简易的文章。
+                </p>
+                <h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://code.visualstudio.com/docs/editor/debugging">Debugging | visual studio <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://code.visualstudio.com/docs/editor/variables-reference">variables-reference | visual
+                  studio <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/formulahendry/vscode-code-runner">Code Runner | github <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">基于clang打造高效的开发环境</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%9F%BA%E7%A1%80%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span
+                      class="nav-text">基础环境搭建</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#1%E5%AE%89%E8%A3%85vscode"><span
+                          class="nav-text">1.安装vscode</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%AE%89%E8%A3%85%E5%9F%BA%E7%A1%80%E5%8C%85"><span
+                          class="nav-text">2.安装基础包</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E5%AE%89%E8%A3%85vscode%E7%9B%B8%E5%85%B3%E6%8F%92%E4%BB%B6"><span
+                          class="nav-text">3.安装vscode相关插件</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E8%BF%90%E8%A1%8C-%E8%B0%83%E8%AF%95%E9%85%8D%E7%BD%AE"><span
+                      class="nav-text">运行、调试配置</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E5%88%9B%E5%BB%BA%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span
+                          class="nav-text">1.创建配置文件</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2code-runner%E9%85%8D%E7%BD%AE"><span
+                          class="nav-text">2.Code Runner配置</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                      class="nav-text">参考资料</span></a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

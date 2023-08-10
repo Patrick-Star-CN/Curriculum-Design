@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">规则引擎与设计实现</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-03 21:26:34</span> <span
+                      class="mobile">2023-02-03 21:26</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>1.5k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>5 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对规则引擎的学习<span
+                id="more"></span></p>
+                <h2 id="规则引擎与设计实现"><a class="markdownIt-Anchor" href="#规则引擎与设计实现"></a> 规则引擎与设计实现
+                </h2>
+                <blockquote><p>规则引擎的组成部分及应用场景</p>
+                  <p>规则引擎的核心原理——编译原理的相关概念</p>
+                  <p>设计并实现一个规则引擎——YoungEngine</p>
+                  <p>实现一个Web版规则引擎</p></blockquote>
+                <h3 id="1-认识规则引擎"><a class="markdownIt-Anchor" href="#1-认识规则引擎"></a> 1. 认识规则引擎</h3><h4
+                  id="规则引擎的定义"><a class="markdownIt-Anchor" href="#规则引擎的定义"></a> 规则引擎的定义</h4>
+                <ul>
+                  <li><p>
+                    规则引擎是一种嵌入在应用程序中的组件，实现了将业务决策从应用程序代码中分离出来，并使用预定义的语义模块编写业务决策。接收数据输入，解释业务规则，并根据业务逻辑做出业务决策。</p>
+                  </li>
+                  <li><p>解决开发人员重复编码的问题</p>
+                    <p>业务决策与服务本身解耦，提高服务的可维护性，缩短开发路径，提高效率</p></li>
+                </ul>
+                <h4 id="组成部分"><a class="markdownIt-Anchor" href="#组成部分"></a> 组成部分</h4>
+                <ul>
+                  <li>数据输入
+                    <ul>
+                      <li>支持接受使用预定义的语义编写的规则作为策略集。比如“price &gt; 500”</li>
+                      <li>接受业务的数据作为执行过程中的参数。比如价格、标签等</li>
+                    </ul>
+                  </li>
+                  <li>规则理解
+                    <ul>
+                      <li>能够按照预先定义的词法、语法、优先级、运算符等正确理解业务规则所表达的语义。</li>
+                    </ul>
+                  </li>
+                  <li>规则执行
+                    <ul>
+                      <li>根据执行时输入的参数对策略集中的规则进行正确的解释和执行。</li>
+                      <li>同时对规则执行过程中的数据类型进行检查，确保执行结果的正确。</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="应用场景"><a class="markdownIt-Anchor" href="#应用场景"></a> 应用场景</h4>
+                <ul>
+                  <li>风控对抗。快速识别和对抗，以实现最好的风控识别效果。</li>
+                  <li>活动策略运营。提高运营策略的迭代效率，方便新玩法的探索和效果验证。</li>
+                  <li>数据分析和清洗。方便快捷地产出所需要的数据。</li>
+                </ul>
+                <h3 id="2编译原理基本概念"><a class="markdownIt-Anchor" href="#2编译原理基本概念"></a> 2.编译原理基本概念
+                </h3>
+                <p>规则引擎和编译原理具有一定的关联性。它们都有理解、执行、输入输出的流程。</p>
+                <ul>
+                  <li>理解：词法分析、语法分析</li>
+                  <li>执行：抽象语法树</li>
+                  <li>输入输出：参数注入、类型检查</li>
+                </ul>
+                <h4 id="词法分析-lexicel-analysis"><a class="markdownIt-Anchor" href="#词法分析-lexicel-analysis"></a>
+                  词法分析 Lexicel Analysis</h4>
+                <p>词法分析就是把源代码字符串转换为词法单元（Token）的过程。</p>
+                <ul>
+                  <li><p>识别Token：有限自动机（Finite-State Automaton）</p>
+                    <p>
+                      有限自动机就是一个状态机，它的状态数量是有限的。该状态在任何一个状态，基于输入的字符，都能做一个确定的状态转换。</p>
+                  </li>
+                </ul>
+                <h4 id="语法分析-syntax-analysis"><a class="markdownIt-Anchor" href="#语法分析-syntax-analysis"></a>
+                  语法分析 Syntax Analysis</h4>
+                <p>语法分析就是在词法分析的基础上，识别表达式的语法结构的过程。</p>
+                <ul>
+                  <li>
+                    抽象语法树：表达式的语法结构可以用树来表示，其每个节点（子树）是一个语法单元，这个单元的构成规则就叫语法。每个节点还可以有下级节点。
+                  </li>
+                </ul>
+                <h4 id="抽象语法树-abstract-syntax-tree"><a class="markdownIt-Anchor"
+                                                            href="#抽象语法树-abstract-syntax-tree"></a> 抽象语法树
+                  Abstract Syntax Tree</h4>
+                <ul>
+                  <li><p>上下文无关语法 Context-Free Grammar</p>
+                    <p>语言句子无需考虑上下文，就可以判断正确性。可以使用巴克斯范式（BNF）来表达。</p>
+                    <p>产生式：一个表达式可以由另外已知类型的表达式或者符号推导产生。</p>
+                    <p>内置符号：字面量（string、bool、number）标识符、运算符。</p>
+                    <p>
+                      一个基础表达式可以由常量（string、bool、number）或标识符（identifier），一个乘法表达式可以由基础表达式或者乘法表达式+基础表达式组成。</p>
+                  </li>
+                  <li><p>递归下降算法 Recursive Descent Parsing</p>
+                    <p>
+                      递归下降算法就是自顶向下构造语法树，不断地对Token进行语法展开（下降），展开过程中可能会遇到递归的情况。</p>
+                  </li>
+                </ul>
+                <h4 id="类型检查"><a class="markdownIt-Anchor" href="#类型检查"></a> 类型检查</h4>
+                <ul>
+                  <li><p>类型综合</p>
+                    <p>根据表达式的类型构造出父表达式的类型。例如，表达式A+B的类型是根据A和B的类型定义的。</p></li>
+                  <li><p>编译时检查和运行时检查</p>
+                    <p>类型检查可以发生在表达式的编译阶段，即在构造语法树的阶段，也可以发生在执行时的阶段。</p>
+                    <ul>
+                      <li>编译时：需要提前声明参数的类型，在构建语法树过程中进行类型检查</li>
+                      <li>执行时：可以根据执行时的参数输入的值类型，在执行过程中进行类型检查</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="3设计一个规则引擎"><a class="markdownIt-Anchor" href="#3设计一个规则引擎"></a> 3.设计一个规则引擎
+                </h3><h4 id="设计目标"><a class="markdownIt-Anchor" href="#设计目标"></a> 设计目标</h4>
+                <p>
+                  设计一个规则引擎，支持特定的词法、运算符、数据类型和优先级，并且支持基于以上预定义语法的规则表达式的编译和执行。</p>
+                <ul>
+                  <li>词法（合法Token）：参数、布尔值、字符串、十进制int、十进制float、预定义运算符的规定写法</li>
+                  <li>数据类型：字符串、布尔值、十进制int、十进制float</li>
+                  <li>运算符：一元运算符、二元运算符、逻辑操作符、括号</li>
+                  <li>优先级：各种运算符的优先级定义</li>
+                </ul>
+                <h4 id="词法分析"><a class="markdownIt-Anchor" href="#词法分析"></a> 词法分析</h4>
+                <ul>
+                  <li>设计词法分析的状态机</li>
+                </ul>
+                <h4 id="语法分析"><a class="markdownIt-Anchor" href="#语法分析"></a> 语法分析</h4>
+                <ul>
+                  <li>优先级的表达</li>
+                  <li>语法树结构</li>
+                </ul>
+                <h4 id="语法树的执行与类型检查"><a class="markdownIt-Anchor" href="#语法树的执行与类型检查"></a>
+                  语法树的执行与类型检查</h4>
+                <ul>
+                  <li><p>语法树执行</p>
+                    <p>预先定义好每种操作符的执行逻辑</p>
+                    <p>对抽象语法树进行后缀遍历执行，即</p>
+                    <ul>
+                      <li>先执行左子树，得到左节点的值</li>
+                      <li>再执行右子树，得到右节点的值</li>
+                      <li>最后根据根节点的操作符执行得到根节点的值</li>
+                    </ul>
+                  </li>
+                  <li><p>类型检查</p>
+                    <p>检查时机：执行时检查</p>
+                    <p>
+                      检查方法：在一个节点的左右子节点执行完成后，分别校验左右子节点的类型是否符合对应操作符的类型检查预设规则。</p>
+                    <ul>
+                      <li>‘&gt;’ 符号要求左右子节点的值都存在且为int或float</li>
+                      <li>‘!’ 符号要求左节点为空且右节点的值为bool</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="4规则引擎的实现"><a class="markdownIt-Anchor" href="#4规则引擎的实现"></a> 4.规则引擎的实现</h3>
+                <p>可参考<a class="link" target="_blank" rel="noopener"
+                            href="https://github.com/qimengxingyuan/young_engine">qimengxingyuan/young_engine: 简单的规则引擎
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>实现。</p>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://juejin.cn/post/7193363381804335161/#heading-11">【后端专场 学习资料三】第五届字节跳动青训营
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">规则引擎与设计实现</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E%E4%B8%8E%E8%AE%BE%E8%AE%A1%E5%AE%9E%E7%8E%B0"><span
+                      class="nav-text">规则引擎与设计实现</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1-%E8%AE%A4%E8%AF%86%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E"><span
+                          class="nav-text">1. 认识规则引擎</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span
+                          class="nav-text">2.编译原理基本概念</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E"><span
+                          class="nav-text">3.设计一个规则引擎</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E8%A7%84%E5%88%99%E5%BC%95%E6%93%8E%E7%9A%84%E5%AE%9E%E7%8E%B0"><span
+                          class="nav-text">4.规则引擎的实现</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

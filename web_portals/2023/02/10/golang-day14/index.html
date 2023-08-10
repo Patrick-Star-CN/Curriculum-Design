@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">深入浅出 RPC 框架</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-10 18:37:13</span> <span
+                      class="mobile">2023-02-10 18:37</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>7.2k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>25 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对
+                RPC 框架的学习<span id="more"></span></p>
+                <h2 id="深入浅出-rpc-框架"><a class="markdownIt-Anchor" href="#深入浅出-rpc-框架"></a> 深入浅出 RPC 框架
+                </h2>
+                <h3 id="1基本概念"><a class="markdownIt-Anchor" href="#1基本概念"></a> 1.基本概念</h3><h4
+                  id="11-本地函数调用"><a class="markdownIt-Anchor" href="#11-本地函数调用"></a> 1.1 本地函数调用</h4>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="function"><span class="keyword">func</span> <span
+                            class="title">main</span><span class="params">()</span></span> &#123;</span><br><span
+                            class="line">    <span class="keyword">var</span> a = <span
+                            class="number">2</span></span><br><span class="line">    <span class="keyword">var</span> b = <span
+                            class="number">3</span></span><br><span
+                            class="line">    result := calculate(a, b)</span><br><span class="line">    fmt.Println(result)</span><br><span
+                            class="line">    <span class="keyword">return</span></span><br><span
+                            class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span
+                            class="function"><span class="keyword">func</span> <span class="title">calculate</span><span
+                            class="params">(x, y <span class="type">int</span>)</span></span> <span
+                            class="type">int</span> &#123;</span><br><span class="line">    z := x * y</span><br><span
+                            class="line">    <span class="keyword">return</span> z</span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <ol>
+                  <li>将 a 和 b 压栈</li>
+                  <li>通过函数指针找到 calculate 函数，进入函数取出栈中的值 2 和 3，将其赋予 x 和 y</li>
+                  <li>计算 x * y，并将结果存在 z 中</li>
+                  <li>将 z 的值压栈，然后从 calculate 返回</li>
+                  <li>从栈中取出 z 返回值，并赋值给 result</li>
+                </ol>
+                <p>
+                  以上步骤只是为了说明原理。事实上编译器经常会做优化，对于参数和返回值少的情况会直接将其存放在寄存器，而不需要压栈弹栈的过程，甚至都不需要调用call，而直接做inline操作。</p>
+                <h4 id="12-远程函数调用rpc-remote-procedure-calls"><a class="markdownIt-Anchor"
+                                                                      href="#12-远程函数调用rpc-remote-procedure-calls"></a>
+                  1.2 远程函数调用（RPC — Remote Procedure Calls）</h4>
+                <p>RPC 需要解决的问题</p>
+                <ol>
+                  <li>函数映射</li>
+                  <li>数据转换成字节流</li>
+                  <li>网络传输</li>
+                </ol>
+                <p>
+                  在本地调用中，函数体是直接通过函数指针来指定的，我们调用哪个方法，编译器会自动帮我们调用它相应的函数指针。但是在远程调用中，函数指针是不行的，因为两个进程的地址空间是完全不一样的。所有函数都有自己的一个ID，在做
+                  RPC 时需要附上这个 ID，还需要一个 ID 和函数的对照关系表，通过 ID 找到对应的函数并执行。</p><h4
+                  id="13-rpc-概念模型"><a class="markdownIt-Anchor" href="#13-rpc-概念模型"></a> 1.3 RPC 概念模型</h4>
+                <p>1984 年 Nelson 发表的论文《Implementing Remote Procedure Calls》中提出了 RPC 的过程由 5
+                  个模型组成，User、User-Stub、RPC-Runtime、Server-Stub、Server。</p><h4 id="14-一次rpc-的完整过程"><a
+                  class="markdownIt-Anchor" href="#14-一次rpc-的完整过程"></a> 1.4 一次RPC 的完整过程</h4><h5
+                  id="idlinterface-description-language文件"><a class="markdownIt-Anchor"
+                                                                href="#idlinterface-description-language文件"></a>
+                  IDL（Interface description language）文件</h5>
+                <p>IDL 通过一种中立的方式来描述接口，使得在不同平台上运行的对象和用不同语言编写的程序可以相互通信。</p><h5
+                  id="生成代码"><a class="markdownIt-Anchor" href="#生成代码"></a> 生成代码</h5>
+                <p>通过编译器工具把 IDL 文件转换成语言对应的静态库。</p><h5 id="编解码"><a class="markdownIt-Anchor"
+                                                                                          href="#编解码"></a> 编解码
+                </h5>
+                <p>从内存中表示到字节序列的转换称为编码，反之称为解码，也常叫做序列化和反序列化。</p><h5 id="通信协议"><a
+                  class="markdownIt-Anchor" href="#通信协议"></a> 通信协议</h5>
+                <p>规范了数据在网络中的传输内容和格式。除必须的请求/响应数据外，通常还会包含额外的元数据</p><h5
+                  id="网络传输"><a class="markdownIt-Anchor" href="#网络传输"></a> 网络传输</h5>
+                <p>通常是基于成熟的网络库走 TCP/UDP 传输。</p><h4 id="15-rpc-的优势"><a class="markdownIt-Anchor"
+                                                                                       href="#15-rpc-的优势"></a> 1.5
+                  RPC 的优势</h4>
+                <ol>
+                  <li>单一职责，有利于分工协作和运维开发。开发（采用不同的语言）、部署以及运维（上线独立）都是独立的。</li>
+                  <li>可扩展性强，资源使用率更高。例如压力过大时可以独立扩充资源，底层基础服务可以复用，节省资源。</li>
+                  <li>故障隔离，服务的整体可靠性更高。某个模块发生故障，不会影响整体的可靠性。</li>
+                </ol>
+                <h4 id="16-rpc-带来的问题"><a class="markdownIt-Anchor" href="#16-rpc-带来的问题"></a> 1.6 RPC 带来的问题
+                </h4>
+                <ol>
+                  <li>服务宕机，如何处理</li>
+                  <li>在调用过程中发生网络异常，如何保证消息的可达性</li>
+                  <li>请求量突增导致服务无法及时处理，有哪些应对措施</li>
+                </ol>
+                <h4 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h4>
+                <ol>
+                  <li>本地函数调用和 RPC 调用的区别：函数映射、数据转换成字节流、网络传输</li>
+                  <li>RPC 的概念模型：User、User-Stub、RPC-Runtime、Server-Stub、Server</li>
+                  <li>一次 RPC 的完整过程，RPC 的基本概念定义</li>
+                  <li>RPC 带来好处的同时也带来了不少新的问题，这些问题由 RPC 框架来解决</li>
+                </ol>
+                <h3 id="2分层设计以-apache-thrift-为例"><a class="markdownIt-Anchor"
+                                                           href="#2分层设计以-apache-thrift-为例"></a> 2.分层设计（以
+                  Apache Thrift 为例）</h3><h4 id="21-apache-thrift"><a class="markdownIt-Anchor"
+                                                                       href="#21-apache-thrift"></a> 2.1 Apache Thrift
+                </h4>
+                <p>分为服务端 Server 和 客户端 Client</p>
+                <ul>
+                  <li>Code：开发者自己编写的业务逻辑代码</li>
+                </ul>
+                <h4 id="22-编解码层"><a class="markdownIt-Anchor" href="#22-编解码层"></a> 2.2 编解码层</h4>
+                <ul>
+                  <li>Service.Processor 和 read/write：通过代码生成工具把 IDL 文件 转换成不同语言对应的 lib
+                    代码，里面封装了编解码逻辑
+                  </li>
+                  <li>TProtocal：框架的编码层</li>
+                </ul>
+                <h4 id="23-编解码层-生成代码"><a class="markdownIt-Anchor" href="#23-编解码层-生成代码"></a> 2.3 编解码层
+                  — 生成代码</h4>
+                <p>Client 和 Server 依赖同一份 IDL 文件，生成不同语言的 CodeGen。</p><h4 id="24-编解码层-数据格式"><a
+                  class="markdownIt-Anchor" href="#24-编解码层-数据格式"></a> 2.4 编解码层 — 数据格式</h4>
+                <ul>
+                  <li><p>语言特定的编码格式</p>
+                    <p>许多编程语言都内建了将内存对象编码为字节序列的支持，例如 Java 有 <code>java.io.Serializable</code>。
+                    </p>
+                    <p>
+                      这种编码形式好处是非常方便，可以用很少的额外代码实现内存对象的保存与恢复，这类编码通常与特定的编程语言深度绑定，其他语言很难读取这种数据。如果以这类编码存储或传输数据，那就和这门语言绑定在一起。安全和兼容性也是问题。</p>
+                  </li>
+                  <li><p>文本格式</p>
+                    <p>JSON、XML、CSV 等文本格式，具有人类可读性。</p>
+                    <p>数字的编码多有歧义之处，比如 XML 和 CSV 不能区分数字和字符串。</p>
+                    <p>JSON
+                      虽然区分字符串和数字，但是不区分整数和浮点数，而且不能指定精度，处理大量数据时，这个问题更加严重；没有强制模型约束，实际操作中往往只能采用文档方式来进行约定，这可能会给调试带来一些不便。
+                      由于JSON在一些语言中的序列化和反序列化需要采用反射机制，所以在性能方面比较差。</p></li>
+                  <li><p>二进制编码</p>
+                    <p>具备跨语言和高性能等优点，常见的有 Thrift 的 BinaryProtocol，Protobuf 等，实现可以有很多种，TLV 编码和
+                      Varint 编码等。</p></li>
+                </ul>
+                <h4 id="25-编解码层-二进制编码"><a class="markdownIt-Anchor" href="#25-编解码层-二进制编码"></a> 2.5
+                  编解码层 — 二进制编码</h4>
+                <p>TLV 编码</p>
+                <ul>
+                  <li>Tag：标签，可以理解为类型</li>
+                  <li>Length：长度</li>
+                  <li>Value：值，Value 也可以是个 TLV 嵌套结构</li>
+                </ul>
+                <p>IDL 源代码</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">struct Person &#123;</span><br><span class="line">    1: required string		 userName,</span><br><span
+                            class="line">    2: optional i64	         favoriteNumber,</span><br><span class="line">    3: optional list&lt;string&gt; interests </span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>转换成编码，以 Thrift BinaryProtocol 为例，下面的二进制编码转换为十六进制表示，方便观察</p>
+                <p><strong>第一个字段 userName 对应的编码</strong></p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">type 11(string)</th>
+                    <th style="text-align:center">field tag(1)</th>
+                    <th style="text-align:center">length(6)</th>
+                    <th style="text-align:center">value(Martin)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">0b</td>
+                    <td style="text-align:center">00 01</td>
+                    <td style="text-align:center">00 00 00 06</td>
+                    <td style="text-align:center">4d 61 72 69 6e</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p><strong>第二个字段 favoriteNumber 对应的编码</strong></p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">type 10(i64)</th>
+                    <th style="text-align:center">field tag(2)</th>
+                    <th style="text-align:center">value(1337)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">0a</td>
+                    <td style="text-align:center">00 02</td>
+                    <td style="text-align:center">00 00 00 00 00 00 05 39</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p><strong>第三个字段 interests 对应的编码</strong></p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">type 15(list)</th>
+                    <th style="text-align:center">field tag(3)</th>
+                    <th style="text-align:center">item type11(string)</th>
+                    <th style="text-align:center">list items(2)</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">0f</td>
+                    <td style="text-align:center">00 03</td>
+                    <td style="text-align:center">0b</td>
+                    <td style="text-align:center">00 00 00 02</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>假设其中有两个值 daydreaming 和 hacking，其对应的编码如下</p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">length</th>
+                    <th style="text-align:center">value</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">00 00 00 0b</td>
+                    <td style="text-align:center">64 61 79 64 72 65 61 6d 69 6e 67</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">00 00 00 07</td>
+                    <td style="text-align:center">68 61 63 6b 69 6e 67</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>最后再用 <code>00</code> 编码作为结尾。这里打包后压缩共 59 个字节。</p>
+                <p>TLV 编码结构清晰简单，并且扩展性较好，但是由于增加了 Type 和 Length
+                  两个冗余信息，有额外的内存开销，特别是在大部分字段都是基本类型的情况下有不小的空间浪费。</p><h4
+                  id="26-编解码层-选型"><a class="markdownIt-Anchor" href="#26-编解码层-选型"></a> 2.6 编解码层 — 选型
+                </h4>
+                <ul>
+                  <li><p>兼容性：支持自动增加新的字段，而不会影响老的服务，这将提高系统的灵活度。</p>
+                    <blockquote><p>兼容性：</p>
+                      <p>
+                        移动互联时代，业务系统需求的更新周期变得更快，新的需求不断涌现，而老的系统还是需要继续维护。如果序列化协议具有良好的可扩展性，支持自动增加新的业务字段，而不影响老的服务，这将大大提供系统的灵活度。</p>
+                    </blockquote>
+                  </li>
+                  <li><p>通用性：支持跨平台、跨语言。</p>
+                    <blockquote><p>通用性有两个层面的意义：</p>
+                      <p>第一、技术层面，序列化协议是否支持跨平台、跨语言。如果不支持，在技术层面上的通用性就大大降低了。</p>
+                      <p>
+                        第二、流行程度，序列化和反序列化需要多方参与，很少人使用的协议往往意味着昂贵的学习成本；另一方面，流行度低的协议，往往缺乏稳定而成熟的跨语言、跨平台的公共包。</p>
+                    </blockquote>
+                  </li>
+                  <li><p>性能：从空间和时间两个维度来考虑，即编码后数据大小和编码耗费时长。</p>
+                    <blockquote><p>性能：</p>
+                      <p>第一、空间开销（Verbosity），
+                        序列化需要在原有的数据上加上描述字段，以为反序列化解析之用。如果序列化过程引入的额外开销过高，可能会导致过大的网络，磁盘等各方面的压力。对于海量分布式存储系统，数据量往往以TB为单位，巨大的的额外空间开销意味着高昂的成本。</p>
+                      <p>
+                        第二、时间开销（Complexity），复杂的序列化协议会导致较长的解析时间，这可能会使得序列化和反序列化阶段成为整个系统的瓶颈。</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <h4 id="27-协议层"><a class="markdownIt-Anchor" href="#27-协议层"></a> 2.7 协议层</h4>
+                <ul>
+                  <li>TTransport：框架的协议层</li>
+                </ul>
+                <h4 id="28-协议层-概念"><a class="markdownIt-Anchor" href="#28-协议层-概念"></a> 2.8 协议层 — 概念</h4>
+                <p>协议是双方确定的交流语义。比如，设计一个字符串传输的协议，它允许客户端发送一个字符串，服务端接收到对应的字符串。这个协议很简单，首先发送一个4字节的消息总长度，然后再发送1字节的字符集
+                  charset 长度，接下来就是消息的 payload，字符集名称和字符串正文。</p>
+                <ul>
+                  <li><p>特殊结束符：一个特殊字符作为每个协议单元结束的标识。</p>
+                    <blockquote><p>
+                      对于一个协议单元必须要全部读入才能够进行处理，除此之外必须要防止用户传输的数据不能同结束符相同，否则就会出现紊乱</p>
+                      <p>HTTP 协议头就是以回车(CR)加换行(LF)符号序列结尾</p></blockquote>
+                  </li>
+                  <li><p>变长协议：以定长加不定长的部分组成，其中定长的部分需要描述不定长的内容长度。</p>
+                    <blockquote><p>一般都是自定义协议，有 header 和 payload
+                      组成，由定长加不定长的部分组成，其中定长的部分需要描述不定长的内容长度，使用比较广泛</p></blockquote>
+                  </li>
+                </ul>
+                <h4 id="29-协议层-协议构造"><a class="markdownIt-Anchor" href="#29-协议层-协议构造"></a> 2.9 协议层 —
+                  协议构造</h4>
+                <ul>
+                  <li><p>Length：32bits，包括数据包剩余部分的字节大小，不包含自身长度数据包的大小</p></li>
+                  <li><p>Header Magic：16bits，值为 0x1000，用于标识版本信息，协议解析时快速校验</p></li>
+                  <li><p>Flags：16bits，为预留字段，暂未使用，默认值为 0x0000</p></li>
+                  <li><p>Sequence Number：32bits，表示数据包的 seqID，可用于多路复用，最好确保单个连接内递增</p></li>
+                  <li><p>Header Size：16bits，等于头部长度字节数/4，头部长度计算从第14个字节开始计算，一直到 PAYLOAD
+                    前（备注：header 的最大长度为 64K）</p></li>
+                  <li><p>Protocol ID：uint8 编码，编解码方式有 Binary 和 Compact 两种。</p>
+                    <blockquote><p>uint8 编码，取值有：</p>
+                      <p>Protocol ID Binary = 0</p>
+                      <p>Protocol ID Compact = 2</p></blockquote>
+                  </li>
+                  <li><p>Number Transforms：uint8 编码，表示 Transform 个数。</p></li>
+                  <li><p>Transform ID：uint8 编码，表示压缩方式，如 zlib 和 snappy</p></li>
+                  <li><p>Info ID：uint8 编码，用于传递一些定制的 meta 信息</p></li>
+                  <li><p>Payload：消息体</p></li>
+                </ul>
+                <h4 id="210-协议层-协议解析"><a class="markdownIt-Anchor" href="#210-协议层-协议解析"></a> 2.10 协议层 —
+                  协议解析</h4>
+                <p>— Peek —&gt; Magic Number — Peek —&gt; Playload Codec — Decode —&gt; Payload</p><h4
+                  id="211-网络通信层"><a class="markdownIt-Anchor" href="#211-网络通信层"></a> 2.11 网络通信层</h4>
+                <ul>
+                  <li>Network IO：框架的网络通信层</li>
+                </ul>
+                <h4 id="212-网络通信层-sockets-api"><a class="markdownIt-Anchor" href="#212-网络通信层-sockets-api"></a>
+                  2.12 网络通信层 — Sockets API</h4>
+                <ul>
+                  <li><p>套接字（Socket）编程<strong>是一种编程模式</strong>。在这种模式中，使用和操作套接字来创建软件之间的连接。
+                    套接字用于连接不同计算机之间或同一台计算机内的软件，以便程序可以共享数据。
+                    套接字编程可用于即时消息、Internet浏览器，文件共享程序，以及强制计算机连接到系统的任何程序。</p></li>
+                  <li><p>套接字编程中的客户端必须知道两个信息：服务器的 IP 地址，以及端口号。</p></li>
+                  <li><p>socket 函数创建一个套接字，bind 将一个套接字绑定到一个地址上。listen 监听进来的连接。</p></li>
+                  <li><p>backlog 的含义有点复杂，这里先简单的描述：指定挂起的连接队列的长度，当客户端连接的时候，服务器可能正在处理其他逻辑而未调用accept
+                    接受连接，此时会导致这个连接被挂起，内核维护挂起的连接队列，backlog 则指定这个队列的长度。accept
+                    函数从队列中取出连接请求并接收它，然后这个连接就从挂起队列移除。如果队列未满，客户端调用 connect
+                    马上成功，如果满了可能会阻塞等待队列未满（实际上在Linux中测试并不是这样的结果）。Linux 的 backlog
+                    默认是128，通常情况下，我们也指定为 128 即可。</p></li>
+                  <li><p>connect 客户端向服务器发起连接，accept 接收一个连接请求，如果没有连接则会一直阻塞直到有连接进来。得到客户端的
+                    fd 之后，就可以调用 read，write 函数和客户端通讯，读写方式和其他 I/O 类似。</p></li>
+                  <li><p>read 从 fd 读数据，socket 默认是阻塞模式的，如果对方没有写数据，read 会一直阻塞着。</p></li>
+                  <li><p>write 在 fd 写数据，socket 默认是阻塞模式的，如果对方没有写数据，write 会一直阻塞着。</p></li>
+                  <li><p>socket 关闭套接字，当另一端 socket 关闭后，这一端读写的情况：</p>
+                    <ul>
+                      <li>尝试去读会得到一个 EOF，并返回 0。</li>
+                      <li>尝试去写会触发一个SIGPIPE信号，并返回 -1 和 errno=EPIPE，SIGPIPE
+                        的默认行为是终止程序，所以通常我们应该忽略这个信号，避免程序终止。 如果这一端不去读写，我们可能没有办法知道对端的
+                        socket 是否关闭。
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="213-网络通信层-网络库"><a class="markdownIt-Anchor" href="#213-网络通信层-网络库"></a> 2.13
+                  网络通信层 — 网络库</h4>
+                <ul>
+                  <li>提供易用 API
+                    <ul>
+                      <li>封装底层 Socket API</li>
+                      <li>连接管理和事件分发</li>
+                    </ul>
+                  </li>
+                  <li>功能
+                    <ul>
+                      <li>协议支持：tcp、udp 和 uds 等</li>
+                      <li>优雅退出、异常处理等</li>
+                    </ul>
+                  </li>
+                  <li>性能
+                    <ul>
+                      <li>应用层 buffer 减少 copy</li>
+                      <li>高性能定时器、对象池等</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="小结-2"><a class="markdownIt-Anchor" href="#小结-2"></a> 小结</h4>
+                <ol>
+                  <li>RPC 框架主要核心有三层：编解码层、协议层和网络通信层</li>
+                  <li>二进制编解码的实现原理和选型要点</li>
+                  <li>协议的一般构造，以及框架协议解析的基本流程</li>
+                  <li>Socket API 的调用流程，以及选型网络库时要考虑的核心指标</li>
+                </ol>
+                <h3 id="3关键指标"><a class="markdownIt-Anchor" href="#3关键指标"></a> 3.关键指标</h3><h4
+                  id="31-稳定性-保障策略"><a class="markdownIt-Anchor" href="#31-稳定性-保障策略"></a> 3.1 稳定性 — 保障策略
+                </h4>
+                <ul>
+                  <li><p>熔断：保护调用方，防止被调用的服务出现问题而影响到整个链路</p>
+                    <blockquote><p>一个服务 A 调用服务 B 时，服务 B 的业务逻辑又调用了服务 C，而这时服务 C 响应超时了，由于服务
+                      B 依赖服务 C，C 超时直接导致 B 的业务逻辑一直等待，而这个时候服务 A 继续频繁地调用服务 B，服务 B
+                      就可能会因为堆积大量的请求而导致服务宕机，由此就导致了服务雪崩的问题</p></blockquote>
+                  </li>
+                  <li><p>限流：保护被调用方，防止大流量把服务压垮</p>
+                    <blockquote><p>
+                      当调用端发送请求过来时，服务端在执行业务逻辑之前先执行检查限流逻辑，如果发现访问量过大并且超出了限流条件，就让服务端直接降级处理或者返回给调用方一个限流异常</p>
+                    </blockquote>
+                  </li>
+                  <li><p>超时控制：避免资源浪费在不可用节点上</p>
+                    <blockquote><p>
+                      当下游的服务因为某种原因响应过慢，下游服务主动停掉一些不太重要的业务，释放出服务器资源，避免浪费资源</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <p>从某种程度上讲超时、限流和熔断也是一种服务降级的手段</p><h4 id="32-稳定性-请求成功率"><a
+                  class="markdownIt-Anchor" href="#32-稳定性-请求成功率"></a> 3.2 稳定性 — 请求成功率</h4>
+                <ul>
+                  <li>负载均衡</li>
+                  <li>重试</li>
+                </ul>
+                <blockquote><p>注意，重试有放大故障的风险，重试会直接加大下游的负载。</p>
+                  <p>假设 A 服务调用 B 服务，重试次数设置为 r（包括首次请求），当 B 高负载时很可能调用不成功，这时 A 调用失败重试
+                    B ，B 服务的被调用量快速增大，最坏情况下可能放大到 r 倍，不仅不能请求成功，还可能导致 B
+                    的负载继续升高，甚至直接打挂。</p>
+                  <p>为了防止重试风暴，需要限制单点重试和限制链路重试</p></blockquote>
+                <h4 id="33-稳定性-长尾请求"><a class="markdownIt-Anchor" href="#33-稳定性-长尾请求"></a> 3.3 稳定性 —
+                  长尾请求</h4>
+                <p>长尾请求一般是指明显高于均值的那部分占比较小的请求。</p>
+                <blockquote><p>业界关于延迟有一个常用的P99标准， P99 单个请求响应耗时从小到大排列，顺序处于99%位置的值即为P99
+                  值，那后面这 1%就可以认为是长尾请求。</p></blockquote>
+                <p>在较复杂的系统中，长尾延时总是会存在。造成这个的原因非常多，常见的有网络抖动，GC，系统调度。可以使用 Backup
+                  Request 的机制来减少延时。</p>
+                <blockquote><p>我们预先设定一个阈值 t3（比超时时间小，通常建议是 RPC 请求延时的 pct99 ），当 Req1 发出去后超过
+                  t3 时间都没有返回，那我们直接发起重试请求 Req2 ，这样相当于同时有两个请求运行。然后等待请求返回，只要
+                  Resp1 或者 Resp2 任意一个返回成功的结果，就可以立即结束这次请求，这样整体的耗时就是 t4
+                  ，它表示从第一个请求发出到第一个成功结果返回之间的时间，相比于等待超时后再发出请求，这种机制能大大减少整体延时。</p>
+                </blockquote>
+                <h4 id="34-稳定性-注册中间件"><a class="markdownIt-Anchor" href="#34-稳定性-注册中间件"></a> 3.4 稳定性
+                  — 注册中间件</h4>
+                <p>Kitex 框架中的 Client 和 Server 创建接口均采用 Option
+                  模式，提供了极大的灵活性，很方便就能注入这些稳定性策略。</p><h4 id="35-易用性"><a
+                  class="markdownIt-Anchor" href="#35-易用性"></a> 3.5 易用性</h4>
+                <ul>
+                  <li>开箱即用：合理的默认参数选项、丰富的文档。</li>
+                  <li>周边工具：生成代码工具、脚手架工具</li>
+                  <li>简单易用的命令行工具
+                    <ul>
+                      <li>生成服务代码脚手架</li>
+                      <li>支持 protobuf 和 thrift</li>
+                      <li>内置功能丰富的选项</li>
+                      <li>支持自定义的生成代码插件</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>Kitex 使用 Suite 来打包自定义的功能，提供 ”一键配置基础依赖“ 的优势。</p><h4 id="36-扩展性"><a
+                  class="markdownIt-Anchor" href="#36-扩展性"></a> 3.6 扩展性</h4>
+                <ul>
+                  <li>Middleware</li>
+                  <li>Option</li>
+                  <li>编解码层</li>
+                  <li>协议层</li>
+                  <li>网络传输层</li>
+                  <li>代码生成工具插件扩展</li>
+                </ul>
+                <blockquote><p>一次请求发起首先会经过治理层面，治理相关的逻辑被封装在 middleware 中，这些 middleware
+                  会被构造成一个有序调用链，逐个执行，比如服务发现、路由、负载均衡、超时控制等，mw 执行后就会进入到 remote
+                  模块，完成与远端的通信</p></blockquote>
+                <h4 id="37-观测性"><a class="markdownIt-Anchor" href="#37-观测性"></a> 3.7 观测性</h4>
+                <ul>
+                  <li>Log 日志、Metrics 指标、Trace 链路</li>
+                  <li>内置观测性服务</li>
+                </ul>
+                <blockquote><p>除了传统的 Log、Metric、Trace
+                  三件套之外，对于框架来说可能还不够，还有些框架自身状态需要暴露出来，例如当前的环境变量、配置、Client/Server初始化参数、缓存信息等</p>
+                </blockquote>
+                <h4 id="38-高性能"><a class="markdownIt-Anchor" href="#38-高性能"></a> 3.8 高性能</h4>
+                <p>场景</p>
+                <ul>
+                  <li>单机、集群</li>
+                  <li>单连接、多连接</li>
+                  <li>单/多 client、单/多 server</li>
+                  <li>不同大小的请求包</li>
+                  <li>不同请求类型，例如 pingpong、streaming 等，参考<a class="link" target="_blank" rel="noopener"
+                                                                     href="https://www.cloudwego.io/zh/docs/kitex/tutorials/basic-feature/message_type/">消息类型
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <p>目标</p>
+                <ul>
+                  <li>高吞吐</li>
+                  <li>低延迟</li>
+                </ul>
+                <blockquote><p>这里分两个维度，高性能意味着高吞吐和低延迟，两者都很重要，甚至大部分场景下低延迟更重要。</p>
+                </blockquote>
+                <p>手段</p>
+                <ul>
+                  <li>连接池</li>
+                  <li>多路复用</li>
+                  <li>高性能编解码协议</li>
+                  <li>高性能网络库</li>
+                </ul>
+                <p>多路复用可以大大减少了连接带来的资源消耗，并且提升了服务端性能。</p>
+                <blockquote><p>连接多路复用和非连接多路复用</p>
+                  <p>调用端向服务端的一个节点发送请求，并发场景下，如果是非连接多路复用，每个请求都会持有一个连接，直到请求结束连接才会被关闭或者放入连接池复用，并发量与连接数是对等的关系。
+                    而使用连接多路复用，所有请求都可以在一个连接上完成，可以明显看到连接资源利用上的差异</p></blockquote>
+                <h4 id="小结-3"><a class="markdownIt-Anchor" href="#小结-3"></a> 小结</h4>
+                <ol>
+                  <li>框架通过中间件来注入各种服务治理策略，保障服务的稳定性</li>
+                  <li>通过合理的默认配置和方便的命令行工具可以提升框架的易用性</li>
+                  <li>框架应当提供丰富的扩展点，例如核心的传输层和协议层</li>
+                  <li>观测性除了传统的 Log、Metrics 和 Trace 之外，内置状态暴露服务也很有必要</li>
+                  <li>性能可以从多个层面去优化，例如选择高性能的编解码协议和网络库</li>
+                </ol>
+                <p><font color="red">以下是内部开发者的分享，也整理在了青训营活动学习笔记中，如有侵权请联系笔者删除</font>
+                </p>
+                <h3 id="4企业实践"><a class="markdownIt-Anchor" href="#4企业实践"></a> 4.企业实践</h3><h4
+                  id="41-整体架构-kitex"><a class="markdownIt-Anchor" href="#41-整体架构-kitex"></a> 4.1 整体架构 —
+                  Kitex</h4>
+                <ul>
+                  <li><p>Kitex Core：核心组件</p>
+                    <blockquote><p>core 是 Kitex的的主干逻辑，定义了框架的层次结构、接口，还有接口的默认实现，client 和
+                      server 是对用户暴露的，client/server option 的配置都是在这两个package中提供的。还有client/server
+                      的初始化，在 kitex_gen 生成代码时，用到的 client.go 和 server.go，在初始化 client 时调用的是
+                      kitex_gen 中的方法，其实观察 kitex_gen 下 service package 的代码就知道这是对 client/server
+                      的封装。</p>
+                      <p>client/server 下的是框架治理层面的功能模块和交互元信息，remote
+                        是与对端交互的模块，包括编解码和网络通信。</p></blockquote>
+                  </li>
+                  <li><p>Kitex Byted：与企业内部基础设施基础</p>
+                    <blockquote><p>byted 是对字节内部的扩展，集成了内部的二方库还有与字节相关的非通用的实现，byted
+                      部分是在生成代码中初始化 client 和 server 时通过 suite
+                      集成进来的，这样实现的好处是与字节的内部特性解耦，方便后续开源拆分。</p></blockquote>
+                  </li>
+                  <li><p>Kitex Tool：代码生成工具</p>
+                    <blockquote><p>tool 则是与生成代码相关的实现，生成代码工具就是编译这个包得到的，里面包括 idl
+                      解析、校验、代码生成、插件支持、自更新等，未来生成代码逻辑还会做一些拆分，便于给用户提供更友好的扩展</p>
+                    </blockquote>
+                  </li>
+                  <li><p>Kitex 官方仓库<a class="link" target="_blank" rel="noopener"
+                                          href="https://github.com/cloudwego/kitex">https://github.com/cloudwego/kitex
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                </ul>
+                <h4 id="42-自研网络库-背景"><a class="markdownIt-Anchor" href="#42-自研网络库-背景"></a> 4.2 自研网络库
+                  — 背景</h4>
+                <ul>
+                  <li><p>原生库无法感知连接状态</p>
+                    <p>在使用连接池时，池中存在失效连接，影响连接池的复用。</p></li>
+                  <li><p>原生库存在 goroutine 暴涨的风险</p>
+                    <p>一个连接一个 goroutine 的模式，由于连接利用率低下，存在大量 goroutine 占用调度开销，影响性能。</p>
+                    <blockquote>
+                      <ol>
+                        <li>Go Net 使用 Epoll ET ，Netpoll 使用 LT。</li>
+                        <li>Netpoll 在大包场景下会占用更多的内存。</li>
+                        <li>Go Net 只有一个 Epoll 事件循环（因为 ET 模式被唤醒的少，且事件循环内无需负责读写，所以干的活少），而
+                          Netpoll 允许有多个事件循环（循环内需要负责读写，干的活多，读写越重，越需要开更多 Loops）。
+                        </li>
+                        <li>Go Net 一个连接一个 Goroutine，Netpoll 连接数和 Goroutine 数量没有关系，和请求数有一定关系，但是有
+                          Gopool 重用。
+                        </li>
+                        <li>Go Net 不支持 Zero Copy，甚至于如果用户想要实现 BufferdConnection 这类缓存读取，还会产生二次拷贝。Netpoll
+                          支持管理一个 Buffer 池直接交给用户，且上层用户可以不使用 Read(p []byte) 接口而使用特定零拷贝读取接口对
+                          Buffer 进行管理，实现零拷贝能力的传递。
+                        </li>
+                      </ol>
+                    </blockquote>
+                  </li>
+                </ul>
+                <h4 id="43-自研网络库-netpoll"><a class="markdownIt-Anchor" href="#43-自研网络库-netpoll"></a> 4.3 自研网络库
+                  — Netpoll</h4>
+                <ol>
+                  <li><p>go net 无法检测连接对端关闭（无法感知连接状态）</p>
+                    <ol>
+                      <li>在使用长连接池时，池中存在失效连接，严重影响了连接池的使用和效率。</li>
+                      <li>希望通过引入 epoll 主动监听机制，感知连接状态。</li>
+                    </ol>
+                    <p>解决无法感知连接问题</p></li>
+                  <li><p>go net 缺乏对协程数量的管理</p>
+                    <ol>
+                      <li><p>Kitex 采取一个连接一个 goroutine 模式，由于连接利用率低，服务存在较多无用的
+                        goroutine，占用调度开销，影响性能。</p></li>
+                      <li><p>希望建立协程池，提升性能。</p>
+                        <p>netpoll 基于 epoll，同时采用 Reactor 模型，对于服务端则是主从 Reactor 模型，服务端的 主reactor
+                          用于接受调用端的连接，然后将建立好的连接注册到某个 从Reactor 上， 从Reactor
+                          负责监听连接上的读写事件，然后将读写事件分发到协程池里进行处理。</p></li>
+                    </ol>
+                    <p>解决 goroutine 暴涨的风险</p></li>
+                  <li><p>提升性能</p>
+                    <p>为了提升性能，引入了 Nocopy Buffer，向上层提供 NoCopy 的调用接口，编解码层面零拷贝</p></li>
+                </ol>
+                <h4 id="44-扩展性设计"><a class="markdownIt-Anchor" href="#44-扩展性设计"></a> 4.4 扩展性设计</h4>
+                <p>支持多协议，也支持灵活的自定义协议扩展</p>
+                <blockquote><p>kitex
+                  支持多协议的并且也是可扩展的，交互方式上前面已经说过支持ping-pong、streaming、oneway</p>
+                  <p>编解码支持 thrift、Protobuf 应用层协议支持 TTHeader、Http2、也支持裸的 thrift 协议</p>
+                  <p>传输层目前支持 TCP，未来考虑支持 UDP、kernel-bypass 的 RDMA</p>
+                  <p>框架内部不强依赖任何协议和网络模块，可以基于接口扩展，在传输层上则可以集成其他库进行扩展。</p>
+                  <p>目前集成的有自研的 Netpoll，基于 netpoll 实现的 http2 库，用于 mesh 场景通过共享内存高效通信的
+                    shm-ipc，以后也可以增加对 RDMA 支持的扩展</p></blockquote>
+                <h4 id="45-性能优化-网络库优化"><a class="markdownIt-Anchor" href="#45-性能优化-网络库优化"></a> 4.5
+                  性能优化 — 网络库优化</h4>
+                <ul>
+                  <li>调度优化
+                    <ul>
+                      <li>epoll_wait 在调度上的控制</li>
+                      <li>gopool 重用 gorutine 降低同时运行协程数</li>
+                    </ul>
+                  </li>
+                  <li>LinkBuffer
+                    <ul>
+                      <li>读写并行无锁，支持 nocopy 的流式读写</li>
+                      <li>高效扩缩容</li>
+                      <li>Nocopy Buffer 池化，减少 GC</li>
+                    </ul>
+                  </li>
+                  <li>Pool
+                    <ul>
+                      <li>引入内存池和对象池，减少 GC 开销</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="46-性能优化-编解码优化"><a class="markdownIt-Anchor" href="#46-性能优化-编解码优化"></a> 4.6
+                  性能优化 — 编解码优化</h4>
+                <ul>
+                  <li>Codegen
+                    <ul>
+                      <li>预计算并预分配内存，减少内存操作次数，包括内存分配和拷贝</li>
+                      <li>Inline 内联减少函数调用次数和避免不必要的反射操作等</li>
+                      <li>自研 Go 语言实现的 Thrift IDL 解析和代码生成器，支持完善的 Thrift IDL 语法和语义检查，并支持插件机制
+                        - Thriftgo
+                      </li>
+                      <li>Thriftgo 官方仓库<a class="link" target="_blank" rel="noopener"
+                                              href="https://github.com/cloudwego/thriftgo">https://github.com/cloudwego/thriftgo
+                        <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                    </ul>
+                  </li>
+                  <li>JIT
+                    <ul>
+                      <li>使用 JIT 编译技术改善用户体验的同时带来更强的编解码性能，减轻用户维护生成代码的负担</li>
+                      <li>基于 JIT 编译技术的高性能动态 Thrift 编解码器 - Frugal</li>
+                      <li>Frugal 官方仓库<a class="link" target="_blank" rel="noopener"
+                                            href="https://github.com/cloudwego/frugal">https://github.com/cloudwego/frugal
+                        <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                    </ul>
+                  </li>
+                </ul>
+                <blockquote><p>序列化和反序列的性能优化从大的方面来看可以从时间和空间两个维度进行优化。从兼容已有的
+                  Binary 协议来看，空间上的优化似乎不太可行，只能从时间维度进行优化，包括下面的几点：</p>
+                  <p>代码生成 code-gen 的优点是库开发者实现起来相对简单，缺点是增加业务代码的维护成本和局限性。</p>
+                  <p>JIT编译（just-in-time
+                    compilation）狭义来说是当某段代码即将第一次被执行时进行编译，因而叫“即时编译”。</p>
+                  <p>即时编译 JIT 则将编译过程移到了程序的加载（或首次解析）阶段，可以一次性编译生成对应的 codec
+                    并高效执行，目前内部开发人员正在尝试，压测数据表明性能收益还是挺不错的，目的是不损失性能的前提下，减轻用户的维护负担生成代码的负担。</p>
+                </blockquote>
+                <h4 id="47-合并部署"><a class="markdownIt-Anchor" href="#47-合并部署"></a> 4.7 合并部署</h4>
+                <p>微服务过微，传输和序列化开销越来越大。可以将亲和性强的服务实例尽可能调度到同一个物理机，远程 RPC 调用优化为本地
+                  IPC 调用。</p>
+                <ul>
+                  <li>中心化的部署调度和流量控制</li>
+                  <li>基于共享内存的通信协议</li>
+                  <li>定制化的服务发现和连接池实现</li>
+                  <li>定制化的服务启动和监听逻辑</li>
+                </ul>
+                <h4 id="小结-4"><a class="markdownIt-Anchor" href="#小结-4"></a> 小结</h4>
+                <ol>
+                  <li>介绍了 Kitex 的整体架构</li>
+                  <li>介绍了自研网络库 Netpoll 的背景和优势</li>
+                  <li>从扩展性和性能优化两个方面分享相关实践</li>
+                  <li>介绍了企业内部正在尝试的新的微服务形态：合并部署</li>
+                </ol>
+                <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+                <ol>
+                  <li>从本地函数调用引出 RPC 的基本概念</li>
+                  <li>重点说明了 RPC 框架核心的三层，编解码层、协议层和网络层</li>
+                  <li>围绕 RPC 框架的核心指标，例如稳定性、可扩展性和高性能等，展开说明相关的知识</li>
+                  <li>分享了字节跳动高性能 RPC 框架 Kitex 的相关实践</li>
+                </ol>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/6844903622380093447">Apache
+                  Thrift系列详解(一) - 概述与入门 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/84250836">详解varint编码原理
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/566312289">几款主流的压缩算法对比Zlib,snappy,lz4
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://blog.csdn.net/DataFlux/article/details/125259244">可观测性的三大支柱：Metrics、Trace、Log
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://www.cloudwego.io/zh/docs/kitex/tutorials/basic-feature/message_type/">消息类型 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">深入浅出 RPC 框架</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA-rpc-%E6%A1%86%E6%9E%B6"><span
+                      class="nav-text">深入浅出 RPC 框架</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span
+                          class="nav-text">1.基本概念</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%88%86%E5%B1%82%E8%AE%BE%E8%AE%A1%E4%BB%A5-apache-thrift-%E4%B8%BA%E4%BE%8B"><span
+                          class="nav-text">2.分层设计（以 Apache Thrift 为例）</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E5%85%B3%E9%94%AE%E6%8C%87%E6%A0%87"><span
+                          class="nav-text">3.关键指标</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E4%BC%81%E4%B8%9A%E5%AE%9E%E8%B7%B5"><span
+                          class="nav-text">4.企业实践</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

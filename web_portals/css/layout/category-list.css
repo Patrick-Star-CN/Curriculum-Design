@@ -1,0 +1,54 @@
+.category-list-container .category-list-content .all-category-list {
+  display: flex;
+  flex-wrap: wrap
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  box-shadow: var(--redefine-box-shadow-flat);
+  padding: 10px;
+  border-radius: $ redefine-border-radius-medium;
+  margin: 10px;
+  transition: all .2s ease;
+  cursor: pointer
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item:focus, .category-list-container .category-list-content .all-category-list li.all-category-list-item:hover {
+  box-shadow: var(--redefine-box-shadow-flat-hover) !important;
+  background-color: var(--primary-color);
+  transition: all .2s ease
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item:focus a, .category-list-container .category-list-content .all-category-list li.all-category-list-item:hover a {
+  color: var(--background-color)
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item:active {
+  transform: scale(.95)
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item span.all-category-list-count {
+  color: var(--third-text-color);
+  margin-left: 5px;
+  background-color: var(--third-background-color);
+  padding: 2px 5px;
+  border-radius: $ redefine-border-radius-small
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child {
+  margin-left: 10px;
+  margin-top: 15px
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child li {
+  margin-bottom: 10px
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child li::before {
+  content: '- '
+}
+
+.category-list-container .category-list-content .all-category-list li.all-category-list-item ul.all-category-list-child li:last-child {
+  margin-bottom: 0
+}

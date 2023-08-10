@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+  <script language="JavaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">Go 框架三件套详解</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-01 19:11:20</span> <span
+                      class="mobile">2023-02-01 19:11</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.6k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>19 分钟</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对golang web开发框架三件套的学习<span
+                id="more"></span></p>
+                <h2 id="框架三件套详解webrpcorm"><a class="markdownIt-Anchor" href="#框架三件套详解webrpcorm"></a>
+                  框架三件套详解(Web/RPC/ORM)</h2>
+                <blockquote><p>什么是 ORM 框架</p>
+                  <p>对象关系映射（Object Relational Mapping，简称
+                    ORM）模式是一种为了解决面向对象与关系数据库存在的互不匹配的现象的技术。ORM框架是连接数据库的桥梁，只要提供了持久化类与表的映射关系，ORM框架在运行时就能参照映射文件的信息，把对象持久化到数据库中</p>
+                  <p>什么是 RPC 框架</p>
+                  <p>RPC 是远程过程调用（Remote Procedure Call）。RPC
+                    的主要功能目标是让构建分布式计算（应用）更容易，在提供强大的远程调用能力时不损失本地调用的语义简洁性。为实现该目标，RPC
+                    框架需提供一种透明调用机制，让使用者不必显式的区分本地调用和远程调用。</p>
+                  <p>什么是 Web 框架（这里的 Web 框架在后面用 HTTP 框架来称呼）</p>
+                  <p>Web 框架是用于进行 Web
+                    开发的一套软件架构。主要是为开发者封装好了一系列与业务逻辑无关的代码实现，方便开发者专注于业务逻辑代码的编写。</p>
+                </blockquote>
+                <h3 id="1三件套介绍"><a class="markdownIt-Anchor" href="#1三件套介绍"></a> 1.三件套介绍</h3>
+                <ul>
+                  <li><p>ORM 框架：<a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/gorm">GORM
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                    <p>GORM 是一个已经迭代了十多年的功能强大的 ORM 框架，拥有非常丰富的开源扩展。</p></li>
+                  <li><p>RPC 框架：<a class="link" target="_blank" rel="noopener"
+                                     href="https://github.com/cloudwego/kitex">Kitex <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                    <p>Kitex 由字节跳动开发，是 Golang 微服务 RPC
+                      框架，具有高性能、强可扩展的主要特点，支持多协议并且拥有丰富的开源扩展。</p></li>
+                  <li><p>HTTP 框架：<a class="link" target="_blank" rel="noopener"
+                                      href="https://github.com/cloudwego/hertz">Hertz <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                    <p>Hertz 由字节跳动开发，是 HTTP 框架，参考了其他开源框架的优势，具有高易用性、高性能、高扩展性特点。</p>
+                  </li>
+                </ul>
+                <h3 id="2-三件套的使用"><a class="markdownIt-Anchor" href="#2-三件套的使用"></a> 2. 三件套的使用</h3><h4
+                  id="gorm-的基本使用"><a class="markdownIt-Anchor" href="#gorm-的基本使用"></a> GORM 的基本使用</h4><h5
+                  id="gorm-的约定默认"><a class="markdownIt-Anchor" href="#gorm-的约定默认"></a> GORM 的约定（默认）</h5>
+                <ul>
+                  <li>GORM 使用名为 ID 的字段作为主键</li>
+                  <li>使用结构体的蛇形负数作为表名</li>
+                  <li>字段名的蛇形作为列名</li>
+                  <li>使用 CreatedAt、UpdatedAt 字段作为创建、更新时间</li>
+                </ul>
+                <p>示例</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br><span class="line">17</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="comment">// 定义 model</span></span><br><span
+                            class="line"><span class="keyword">type</span> Product <span class="keyword">struct</span> &#123;</span><br><span
+                            class="line">    Code  <span class="type">string</span></span><br><span class="line">    Price <span
+                            class="type">uint</span></span><br><span class="line">&#125;</span><br><span
+                            class="line"><span class="comment">// 为 model 定义表名</span></span><br><span class="line"><span
+                            class="function"><span class="keyword">func</span> <span
+                            class="params">(p Product)</span></span> TableName() <span class="type">string</span> &#123;</span><br><span
+                            class="line">    <span class="keyword">return</span> <span class="string">&quot;product&quot;</span></span><br><span
+                            class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span
+                            class="function"><span class="keyword">func</span> <span class="title">main</span><span
+                            class="params">()</span></span> &#123;</span><br><span class="line">    <span
+                            class="comment">// 连接数据库</span></span><br><span class="line">    <span class="comment">// 创建数据</span></span><br><span
+                            class="line">    <span class="comment">// 查询数据</span></span><br><span
+                            class="line">    <span class="comment">// 更新数据</span></span><br><span
+                            class="line">    <span class="comment">// 删除数据</span></span><br><span class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/models.html">模型定义
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5
+                  id="gorm-支持的数据库"><a class="markdownIt-Anchor" href="#gorm-支持的数据库"></a> GORM 支持的数据库
+                </h5>
+                <p>GORM 目前支持 MySQL、SQLServer、PostgreSQL、SQLite。</p>
+                <p>GORM连接数据库需要提供 DSN 参数。DSN（DataSource Name）数据源名称，用来描述数据库连接信息。参考<a
+                  class="link" target="_blank" rel="noopener"
+                  href="https://github.com/go-sql-driver/mysql#dsn-data-source-name">https://github.com/go-sql-driver/mysql#dsn-data-source-name
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>GORM 通过驱动来连接数据库，如果需要连接其它类型的数据库，可以复用/自行开发驱动。</p>
+                <p>示例</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">dsn := <span class="string">&quot;user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;</span></span><br><span
+                            class="line">db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;&#125;)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://gorm.cn/zh_CN/docs/connecting_to_the_database.html">连接到数据库 | GORM <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-创建数据"><a
+                  class="markdownIt-Anchor" href="#gorm-创建数据"></a> GORM 创建数据</h5>
+                <p>通过 Create 方法创建数据</p>
+                <ul>
+                  <li><p>创建一条数据</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line">p := &amp;Product&#123;Code: <span
+                                class="string">&quot;D42&quot;</span>&#125;</span><br><span class="line">res := db.Create(p)</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>创建多条数据</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line">products := []*Product&#123;&#123;Code: <span class="string">&quot;D41&quot;</span>&#125;, &#123;Code: <span
+                                class="string">&quot;D42&quot;</span>&#125;, &#123;Code: <span class="string">&quot;D43&quot;</span>&#125;&#125;</span><br><span
+                                class="line">res, err := db.Create(products)</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                </ul>
+                <p>特殊的操作 Upsert
+                  ，用于创建一条唯一的数据，若该数据已存在则执行更新操作，若该数据不存在则执行插入操作。（这里的Upsert不是一个方法，而是一种思路逻辑）</p>
+                <p>Upsert 数据冲突问题</p>
+                <ul>
+                  <li><p>使用 OnConflict 方法应对</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span
+                                class="comment">// 发生冲突时, 不对冲突做处理, 数据也不会改变</span></span><br><span
+                                class="line">p := &amp;Product&#123;Code: <span class="string">&quot;D42&quot;</span>, ID: <span
+                                class="number">1</span>&#125;</span><br><span class="line">db.Clauses(clause.OnConflict&#123;DoNothing: <span
+                                class="literal">true</span>&#125;).Create(&amp;p)</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>使用默认值，在结构体中使用 default 标签为字段定义默认值</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="keyword">type</span> User <span class="keyword">struct</span> &#123;</span><br><span
+                                class="line">    ID   <span class="type">int64</span></span><br><span class="line">    Code <span
+                                class="type">string</span> <span
+                                class="string">`gorm:&quot;default:404&quot;`</span></span><br><span
+                                class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                </ul>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/create.html">创建
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-查询数据"><a
+                  class="markdownIt-Anchor" href="#gorm-查询数据"></a> GORM 查询数据</h5>
+                <p>使用 First 方法查询第一条数据（默认主键升序），查询不到数据则返回 ErrRecordNotFound 错误</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">u := &amp;User&#123;&#125;</span><br><span
+                            class="line">db.First(u) <span
+                            class="comment">// SELECT * FROM users ORDER BY id LIMIT 1;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>其它类似的有 Take 方法获取一条数据（没有指定排序字段）和 Last 方法获取最后一条数据（默认主键降序）。</p>
+                <p>使用 Where 方法和 Find 方法查询多条数据，需要注意使用 Find 查询多条数据时，查询不到数据也不会报错。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span
+                            class="line">9</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">users := <span class="built_in">make</span>([]*User, <span
+                            class="number">0</span>)</span><br><span class="line">result := db.Where(<span
+                            class="string">&quot;age &gt; 10&quot;</span>).Find(&amp;users) <span class="comment">// SELECT * FROM users where age &gt; 10;</span></span><br><span
+                            class="line">fmt.Println(result.RowsAffected) <span
+                            class="comment">// 返回查询到的记录数</span></span><br><span class="line"><span
+                            class="comment">// IN: SELECT * FROM users WHERE name IN (&#x27;abcd&#x27;, &#x27;defg&#x27;);</span></span><br><span
+                            class="line">db.Where(<span class="string">&quot;name IN ?&quot;</span>, []<span
+                            class="type">string</span>&#123;<span class="string">&quot;abcd&quot;</span>, <span
+                            class="string">&quot;defg&quot;</span>&#125;).Find(&amp;users)</span><br><span class="line"><span
+                            class="comment">// LIKE: SELECT * FROM users WHERE name LIKE &#x27;%d%&#x27;;</span></span><br><span
+                            class="line">db.Where(<span class="string">&quot;name LIKE ?&quot;</span>, <span
+                            class="string">&quot;%d%&quot;</span>).Find(&amp;users)</span><br><span class="line"><span
+                            class="comment">// AND: SELECT * FROM users WHERE name = &#x27;abcd&#x27; AND age &gt;= 22;</span></span><br><span
+                            class="line">db.Where(<span
+                            class="string">&quot;name = ? AND age &gt;= ?&quot;</span>, <span class="string">&quot;abcd&quot;</span>, <span
+                            class="string">&quot;22&quot;</span>).Find(&amp;users)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>使用结构体作为查询条件</p>
+                <p>当使用结构体作为条件查询时，GORM 只会查询非零值字段。这意味着字段值为 0、‘’、false或其他零值的字段无法用于构建查询条件，可以使用
+                  Map 来构建查询条件。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="comment">// SELECT * FROM users WHERE name = &quot;abc&quot;;</span></span><br><span
+                            class="line">db.Where(&amp;User&#123;Name: <span class="string">&quot;abc&quot;</span>, Age: <span
+                            class="number">0</span>&#125;).Find(&amp;users) <span
+                            class="comment">//Age为零值,不会被构建</span></span><br><span class="line"><span
+                            class="comment">// SELECT * FROM users WHERE name = &quot;abc&quot; AND age = 0;</span></span><br><span
+                            class="line">db.Where(<span class="keyword">map</span>[<span
+                            class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span
+                            class="string">&quot;Name&quot;</span>: <span class="string">&quot;abc&quot;</span>, <span
+                            class="string">&quot;Age&quot;</span>: <span class="number">0</span>&#125;).Find(&amp;users)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/query.html">查询
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-更新数据"><a
+                  class="markdownIt-Anchor" href="#gorm-更新数据"></a> GORM 更新数据</h5>
+                <p>使用 Model 方法和 Update 以及 Updates 方法更新数据</p>
+                <ul>
+                  <li><p>条件更新单个列</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="comment">// UPDATE users SET name=&#x27;hello&#x27; WHERE age &gt; 18;</span></span><br><span
+                                class="line">db.Model(&amp;User&#123;&#125;).Where(<span class="string">&quot;age &gt; ?&quot;</span>, <span
+                                class="number">18</span>).Update(<span class="string">&quot;name&quot;</span>, <span
+                                class="string">&quot;hello&quot;</span>)</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>条件更新多个列</p>
+                    <ul>
+                      <li><p>根据 struct 更新属性，使用 Struct 更新时，只会更新非零值字段，如果需要更新零值字段可以使用 Map
+                        更新或使用 Select 选择字段。</p>
+                        <div class="highlight-container" data-rel="Go">
+                          <figure class="iseeu highlight go">
+                            <table>
+                              <tr>
+                                <td class="gutter">
+                                  <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                </td>
+                                <td class="code">
+                                  <pre><span class="line"><span class="comment">// UPDATE users SET name=&#x27;hello&#x27;, age=18 WHERE id = 111;</span></span><br><span
+                                    class="line">db.Model(&amp;User&#123;ID: <span class="number">111</span>&#125;).Updates(User&#123;Name: <span
+                                    class="string">&quot;hello&quot;</span>, Age: <span class="number">18</span>&#125;)</span><br></pre>
+                                </td>
+                              </tr>
+                            </table>
+                          </figure>
+                        </div>
+                      </li>
+                      <li><p>根据 map 更新属性</p>
+                        <div class="highlight-container" data-rel="Go">
+                          <figure class="iseeu highlight go">
+                            <table>
+                              <tr>
+                                <td class="gutter">
+                                  <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                </td>
+                                <td class="code">
+                                  <pre><span class="line"><span class="comment">// UPDATE users SET name=&#x27;hello&#x27;, age=18, actived=false WHERE id = 111;</span></span><br><span
+                                    class="line">db.Model(&amp;User&#123;ID: <span class="number">111</span>&#125;).Updates(<span
+                                    class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span
+                                    class="string">&quot;name&quot;</span>: <span
+                                    class="string">&quot;hello&quot;</span>, <span class="string">&quot;age&quot;</span>: <span
+                                    class="number">18</span>, <span class="string">&quot;actived&quot;</span>: <span
+                                    class="literal">false</span>&#125;)</span><br></pre>
+                                </td>
+                              </tr>
+                            </table>
+                          </figure>
+                        </div>
+                      </li>
+                      <li><p>更新选定字段</p>
+                        <div class="highlight-container" data-rel="Go">
+                          <figure class="iseeu highlight go">
+                            <table>
+                              <tr>
+                                <td class="gutter">
+                                  <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                                </td>
+                                <td class="code">
+                                  <pre><span class="line"><span class="comment">// UPDATE users SET name=&#x27;hello&#x27; WHERE id = 111;</span></span><br><span
+                                    class="line">db.Model(&amp;User&#123;ID: <span class="number">111</span>&#125;).Select(<span
+                                    class="string">&quot;name&quot;</span>).Updates(<span
+                                    class="keyword">map</span>[<span class="type">string</span>]<span class="keyword">interface</span>&#123;&#125;&#123;<span
+                                    class="string">&quot;name&quot;</span>: <span
+                                    class="string">&quot;hello&quot;</span>, <span class="string">&quot;age&quot;</span>: <span
+                                    class="number">18</span>, <span class="string">&quot;actived&quot;</span>: <span
+                                    class="literal">false</span>&#125;)</span><br></pre>
+                                </td>
+                              </tr>
+                            </table>
+                          </figure>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><p>SQL 表达式更新</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="comment">// UPDATE &quot;products&quot; SET &quot;price&quot; = price * 2 + 100 WHERE &quot;id&quot; = 3;</span></span><br><span
+                                class="line">db.Model(&amp;Product&#123;ID: <span class="number">3</span>&#125;).Update(<span
+                                class="string">&quot;price&quot;</span>, gorm.Expr(<span class="string">&quot;price * ? + ?&quot;</span>, <span
+                                class="number">2</span>, <span class="number">100</span>))</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                </ul>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/update.html">更新
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-删除数据"><a
+                  class="markdownIt-Anchor" href="#gorm-删除数据"></a> GORM 删除数据</h5>
+                <p>物理删除，硬删除，数据会被直接删除，执行的是删除操作。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="comment">// 根据主键删除</span></span><br><span
+                            class="line">db.Delete(&amp;User&#123;&#125;, <span class="number">10</span>) <span
+                            class="comment">// DELETE FROM users WHERE id = 10;</span></span><br><span class="line">db.Delete(&amp;User&#123;&#125;, <span
+                            class="string">&quot;10&quot;</span>) <span class="comment">// DELETE FROM users WHERE id = 10;</span></span><br><span
+                            class="line">db.Delete(&amp;User&#123;&#125;, []<span class="type">int</span>&#123;<span
+                            class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;) <span
+                            class="comment">// DELETE FROM users WHERE id IN (1,2,3);</span></span><br><span
+                            class="line"></span><br><span class="line"><span
+                            class="comment">// 批量删除</span></span><br><span class="line">db.Where(<span
+                            class="string">&quot;name LIKE ?&quot;</span>, <span class="string">&quot;%d%&quot;</span>).Delete(User&#123;&#125;) <span
+                            class="comment">// DELETE FROM users WHERE name LIKE &quot;%d%&quot;;</span></span><br><span
+                            class="line">db.Delete(User&#123;&#125;, <span class="string">&quot;name LIKE ?&quot;</span>, <span
+                            class="string">&quot;%d%&quot;</span>) <span class="comment">// DELETE FROM users WHERE name LIKE &quot;%d%&quot;;</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>逻辑删除，软删除，数据实际上没有被删除，执行的实际上是更新操作。</p>
+                <p>GORM 提供了 gorm.DeletedAt 字段用于实现软删除，只需在 Model 结构体中添加这个字段即可。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span
+                            class="line">6</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">type</span> User <span
+                            class="keyword">struct</span> &#123;</span><br><span class="line">    ID      <span
+                            class="type">int64</span></span><br><span class="line">    Name    <span
+                            class="type">string</span> <span class="string">`gorm:&quot;default:404&quot;`</span></span><br><span
+                            class="line">    Age     <span class="type">int64</span>  <span class="string">`gorm:&quot;default:18&quot;`</span></span><br><span
+                            class="line">    Deleted gorm.DeletedAt</span><br><span class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>拥有该字段的 Model 调用 Delete 方法时能够进行软删除，记录不会从数据库中真正删除。但 GORM 会将 DeletedAt
+                  置为当前时间，并且无法通过正常的查询方法找到该记录。可以使用 Unscoped 方法查询被软删除的数据，也可以通过
+                  Unscoped 方法来实现永久删除。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">db.Unscoped().Where(<span class="string">&quot;age = 20&quot;</span>).Find(&amp;users)</span><br><span
+                            class="line"></span><br><span class="line">db.Unscoped().Where(<span class="string">&quot;age = 20&quot;</span>).Delete(&amp;users) <span
+                            class="comment">// 数据被永久删除</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/delete.html">删除
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-事务"><a
+                  class="markdownIt-Anchor" href="#gorm-事务"></a> GORM 事务</h5>
+                <p>GORM 提供了 Begin、Commit、Rollback 方法用于使用事务</p>
+                <p>开始事务</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tx := db.Begin()</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>事务操作，注意这里应使用 tx 而不是 db</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">err := tx.Create(&amp;User&#123;Name: <span class="string">&quot;name&quot;</span>&#125;).Error</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>事务回滚，遇到错误时放弃本次事务操作</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">if</span> err != <span
+                            class="literal">nil</span> &#123;</span><br><span
+                            class="line">    tx.Rollback()</span><br><span class="line">    <span
+                            class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>提交事务，应用本次事务操作带来的修改</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tx.Commit()</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>GORM 提供了 Transaction 方法用于自动提交事务，可以不用写Commit 和 Rollback
+                  方法就能实现事务的自动管理。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">db.Transaction(<span class="function"><span
+                            class="keyword">func</span><span class="params">(tx *gorm.DB)</span></span> <span
+                            class="type">error</span> &#123;</span><br><span class="line">  <span
+                            class="keyword">if</span> err := tx.Create(&amp;User&#123;Name: <span class="string">&quot;404&quot;</span>&#125;).Error; err != <span
+                            class="literal">nil</span> &#123;</span><br><span class="line">    <span class="comment">// 返回任何错误都会回滚事务</span></span><br><span
+                            class="line">    <span class="keyword">return</span> err</span><br><span class="line">  &#125;</span><br><span
+                            class="line"></span><br><span class="line">  <span class="keyword">if</span> err := tx.Create(&amp;User&#123;Name: <span
+                            class="string">&quot;504&quot;</span>&#125;).Error; err != <span class="literal">nil</span> &#123;</span><br><span
+                            class="line">    <span class="keyword">return</span> err</span><br><span class="line">  &#125;</span><br><span
+                            class="line"></span><br><span class="line">  <span
+                            class="comment">// 返回 nil 提交事务</span></span><br><span class="line">  <span
+                            class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://gorm.cn/zh_CN/docs/transactions.html">事务 | GORM <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-hook"><a
+                  class="markdownIt-Anchor" href="#gorm-hook"></a> GORM Hook</h5>
+                <p>GORM 提供了 CURD 的 Hook 能力。</p>
+                <p>Hook 是在创建、查询、更新、删除等操作执行之前、之后自动调用的函数。如果 Hook 返回错误，GORM
+                  将停止后续的操作并回滚事务。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="function"><span class="keyword">func</span> <span
+                            class="params">(u *User)</span></span> BeforeCreate(tx *gorm.DB) (err <span class="type">error</span>) &#123;</span><br><span
+                            class="line">  <span class="keyword">if</span> u.Age &lt; <span class="number">0</span> &#123;</span><br><span
+                            class="line">    <span class="keyword">return</span> errors.New(<span class="string">&quot;can&#x27;t save invalid data&quot;</span>)</span><br><span
+                            class="line">  &#125;</span><br><span class="line">  <span
+                            class="keyword">return</span></span><br><span class="line">&#125;</span><br><span
+                            class="line"></span><br><span class="line"><span class="function"><span
+                            class="keyword">func</span> <span class="params">(u *User)</span></span> AfterCreate(tx *gorm.DB) (err <span
+                            class="type">error</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> tx.Create(&amp;User&#123;Name: <span
+                            class="string">&#x27;admin&#x27;</span>&#125;).Error</span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/hooks.html">Hook
+                  | GORM <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-性能提高"><a
+                  class="markdownIt-Anchor" href="#gorm-性能提高"></a> GORM 性能提高</h5>
+                <p>对于写操作（创建、更新、删除），为了确保数据的完整性，GORM 会将它们封装在事务内运行，但这会降低性能。可以使用
+                  SkipDefaultTransaction 关闭默认事务。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span
+                            class="line">db, err := gorm.Open(mysql.Open(dsn), &amp;gorm.Config&#123;</span><br><span
+                            class="line">  SkipDefaultTransaction: <span class="literal">true</span>,</span><br><span
+                            class="line">&#125;)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>使用 PrepareStmt 缓存预编译语句可以提高后续调用的速度</p>
+                <p>PrepareStmt 可以在连接数据库进行全局配置，也可以在事务操作中临时配置，详细可查阅 GORM 的文档</p>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://gorm.cn/zh_CN/docs/performance.html">性能 | GORM <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-生态"><a
+                  class="markdownIt-Anchor" href="#gorm-生态"></a> GORM 生态</h5>
+                <p>GORM 拥有非常丰富的生态，以下是一些常用的扩展</p>
+                <ul>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/gen">GORM 代码生成工具
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/sharding">GORM
+                    分片库方案 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/hints">GORM 手动索引
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/optimisticlock">GORM
+                    乐观锁 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/dbresolver">GORM
+                    读写分离 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/go-gorm/opentelemetry">GORM
+                    OpenTelemetry 扩展 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <h4 id="kitex-的基本使用"><a class="markdownIt-Anchor" href="#kitex-的基本使用"></a> Kitex 的基本使用
+                </h4><h5 id="安装-kitex-代码生成工具"><a class="markdownIt-Anchor" href="#安装-kitex-代码生成工具"></a>
+                  安装 Kitex 代码生成工具</h5>
+                <p>Kitex 目前对 Windows 的支持不完善，建议使用 linux 系统或者<a class="link" target="_blank"
+                                                                               rel="noopener"
+                                                                               href="https://learn.microsoft.com/zh-cn/windows/wsl/install">安装
+                  WSL | Microsoft Learn <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>安装代码生成工具</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span
+                            class="line">$ go install github.com/cloudwego/kitex/tool/cmd/kitex@latest</span><br><span
+                            class="line">$ go install github.com/cloudwego/thriftgo@latest</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.cloudwego.io/zh/docs/kitex/getting-started/">快速开始 | CloudWeGo <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="定义-idl"><a
+                  class="markdownIt-Anchor" href="#定义-idl"></a> 定义 IDL</h5>
+                <p>IDL（Interface description language），即接口描述语言。是跨平台开发的基础。</p>
+                <blockquote><p>对于RPC框架而言，IDL又不仅仅是一个接口描述语言。对于市面上绝大多数的RPC框架而言，IDL还是一个工具和一种使用过程，专指根据
+                  IDL
+                  描述文件，用指定的开发语言，生成对应的服务端接口模块，和客户端程序。这样的好处是，便于开发者快速开发。</p>
+                </blockquote>
+                <p>使用 IDL 定义服务与接口</p>
+                <p>要进行 RPC 远程过程调用，就需要知道对方的接口是什么，需要什么参数，需要知道返回值是什么样的。这就需要通过
+                  IDL 来约定双方的协议，类似于函数签名，然后通过函数名调用函数。</p>
+                <p>关于 IDL 的具体编写有多种语法，可以参考以下资料</p>
+                <p>使用 Thrift 语法<a class="link" target="_blank" rel="noopener"
+                                      href="https://thrift.apache.org/docs/idl">Apache Thrift - Interface Description
+                  Language (IDL) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>使用 proto3 语法<a class="link" target="_blank" rel="noopener"
+                                      href="https://developers.google.com/protocol-buffers/docs/proto3?hl=zh-cn">语言指南
+                  (proto3) | Protocol Buffers | Google Developers <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>或者<a class="link" target="_blank"
+                                                                                          rel="noopener"
+                                                                                          href="https://protobuf.dev/programming-guides/proto3/">Language
+                  Guide (proto 3) | Protocol Buffers Documentation (protobuf.dev) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>这里以 thrift 语法为例，创建一个 echo.thrift</p>
+                <div class="highlight-container" data-rel="Thrift">
+                  <figure class="iseeu highlight thrift">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">namespace</span> go api</span><br><span
+                            class="line"></span><br><span class="line"><span class="class"><span
+                            class="keyword">struct</span> <span
+                            class="title">Request</span> </span>&#123;</span><br><span class="line">    <span
+                            class="number">1</span>: <span class="type">string</span> message</span><br><span
+                            class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span
+                            class="class"><span class="keyword">struct</span> <span
+                            class="title">Response</span> </span>&#123;</span><br><span class="line">	<span
+                            class="number">1</span>: <span class="type">string</span> message</span><br><span
+                            class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span
+                            class="class"><span class="keyword">service</span> <span class="title">Echo</span> </span>&#123;</span><br><span
+                            class="line">	Response echo(<span class="number">1</span>: Request req)</span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="kitex-生成代码"><a class="markdownIt-Anchor" href="#kitex-生成代码"></a> Kitex 生成代码</h5>
+                <p>在 IDL 的基础上通过运行以下命令生成代码</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">$ kitex -module example -service example echo.thrift</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>上述命令中，<code>-module</code> 表示生成的该项目的 go module 名，<code>-service</code>
+                  表明我们要生成一个服务端项目，后面紧跟的 <code>example</code> 为该服务的名字。最后一个参数则为该服务的
+                  IDL 文件。</p>
+                <p>生成后的项目结构如下：</p>
+                <div class="highlight-container" data-rel="Plaintext">
+                  <figure class="iseeu highlight plaintext">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br><span class="line">17</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">.</span><br><span class="line">|-- build.sh</span><br><span
+                            class="line">|-- echo.thrift</span><br><span class="line">|-- handler.go</span><br><span
+                            class="line">|-- kitex_gen</span><br><span class="line">|   `-- api</span><br><span
+                            class="line">|       |-- echo</span><br><span
+                            class="line">|       |   |-- client.go</span><br><span
+                            class="line">|       |   |-- echo.go</span><br><span
+                            class="line">|       |   |-- invoker.go</span><br><span class="line">|       |   `-- server.go</span><br><span
+                            class="line">|       |-- echo.go</span><br><span
+                            class="line">|       `-- k-echo.go</span><br><span class="line">|-- main.go</span><br><span
+                            class="line">`-- script</span><br><span class="line">    |-- bootstrap.sh</span><br><span
+                            class="line">    `-- settings.py</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p><a class="link" target="_blank" rel="noopener" href="http://build.sh">build.sh <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>：构建脚本。</p>
+                <p>kitex_gen：IDL 内容相关的生成代码，主要是基础的 Server/Client 代码。</p>
+                <p>main.go：程序入口。</p>
+                <p>handler.go：开发者在该文件里实现 IDL service 定义的方法。</p><h5 id="kitex-基本使用"><a
+                  class="markdownIt-Anchor" href="#kitex-基本使用"></a> Kitex 基本使用</h5>
+                <p>服务默认监听 8888 端口。</p>
+                <p>在 handler.go 中实现方法</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span
+                            class="line">6</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">type</span> EchoImpl <span class="keyword">struct</span>&#123;&#125;</span><br><span
+                            class="line"></span><br><span class="line"><span class="function"><span
+                            class="keyword">func</span> <span class="params">(s *EchoImpl)</span></span> Echo(ctx context.Context, req *api.Request) (resp *api.Response. err <span
+                            class="type">error</span>) &#123;</span><br><span class="line">    <span class="comment">// <span
+                            class="doctag">TODO:</span> ...</span></span><br><span class="line">    <span
+                            class="keyword">return</span></span><br><span class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="kitex-client-发起请求"><a class="markdownIt-Anchor" href="#kitex-client-发起请求"></a> Kitex
+                  Client 发起请求</h5>
+                <p>新建一个 client 目录，创建 main.go，在 main.go 中实现方法</p>
+                <ul>
+                  <li><p>创建 Client</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line">c, err := echo.NewClient(<span
+                                class="string">&quot;example&quot;</span>, client.WithHostPorts(<span class="string">&quot;0.0.0.0:8888&quot;</span>))</span><br><span
+                                class="line"><span class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span
+                                class="line">    log.Fatal(err)</span><br><span class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>发起请求</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br><span
+                                class="line">5</span><br><span class="line">6</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line">req := &amp;api.Request&#123;Message: <span class="string">&quot;my request&quot;</span>&#125;</span><br><span
+                                class="line">resp, err := c.Echo(context.Background(), req, callopt.WithRPCTimeout(<span
+                                class="number">3</span>*time.Second))</span><br><span class="line"><span
+                                class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span
+                                class="line">    log.Fatal(err)</span><br><span class="line">&#125;</span><br><span
+                                class="line">log.Println(resp)</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                </ul>
+                <h5 id="kitex-服务注册与发现"><a class="markdownIt-Anchor" href="#kitex-服务注册与发现"></a> Kitex
+                  服务注册与发现</h5>
+                <p>目前 Kitex 的服务注册与发现已经对接了主流的服务注册与发现中心，如 ETCD，Nacos 等。详细信息参考<a
+                  class="link" target="_blank" rel="noopener"
+                  href="https://www.cloudwego.io/zh/docs/kitex/tutorials/service-governance/discovery/">服务发现 |
+                  CloudWeGo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p><h5 id="kitex-生态">
+                  <a class="markdownIt-Anchor" href="#kitex-生态"></a> Kitex 生态</h5>
+                <p>Kitex 拥有非常丰富的扩展生态，以下是一些常用的扩展</p>
+                <ul>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/kitex-contrib/xds">XDS 扩展
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/kitex-contrib/obs-opentelemetry">opentelemetry 扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/kitex-contrib/registry-etcd">ETCD 服务注册与发现扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/kitex-contrib/registry-nacos">Nacos 服务注册与发现扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/kitex-contrib/registry-zookeeper">Zookeeper 服务注册与发现扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/kitex-contrib/polaris">polaris
+                    扩展 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/cloudwego/kitex-examples/">丰富的示例代码与业务 Demo <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <p>更多信息参考<a class="link" target="_blank" rel="noopener"
+                                  href="https://www.cloudwego.io/zh/docs/kitex">https://www.cloudwego.io/zh/docs/kitex
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="hertz-的基本使用"><a
+                  class="markdownIt-Anchor" href="#hertz-的基本使用"></a> Hertz 的基本使用</h4><h5 id="hertz-基本使用">
+                  <a class="markdownIt-Anchor" href="#hertz-基本使用"></a> Hertz 基本使用</h5>
+                <p>使用 Hertz 实现，服务监听 8080 端口并注册了一个 GET 方法的路由函数。</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="function"><span class="keyword">func</span> <span
+                            class="title">main</span><span class="params">()</span></span> &#123;</span><br><span
+                            class="line">    h := server.Default(server.WithHostPorts(<span class="string">&quot;127.0.0.1:8080&quot;</span>))</span><br><span
+                            class="line">    h.GET(<span class="string">&quot;/ping&quot;</span>, <span
+                            class="function"><span class="keyword">func</span><span class="params">(c context.Context, ctx *app.RequestContext)</span></span> &#123;</span><br><span
+                            class="line">        ctx.JSON(consts.StatusOK, utils.H&#123;<span class="string">&quot;ping&quot;</span>: <span
+                            class="string">&quot;pong&quot;</span>&#125;)</span><br><span
+                            class="line">    &#125;)</span><br><span class="line">    h.Spin</span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.cloudwego.io/zh/docs/hertz/getting-started/">快速开始 | CloudWeGo <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="hertz-路由"><a
+                  class="markdownIt-Anchor" href="#hertz-路由"></a> Hertz 路由</h4>
+                <ul>
+                  <li><p>Hertz 提供了 GET、POST、PUT、DELETE、ANY 等方法用于注册路由。</p></li>
+                  <li><p>Hertz 提供了路由组（Group）的能力，用于支持路由分组的功能。</p></li>
+                  <li><p>Hertz 提供了参数路由和通配路由，路由的优先级为：静态路由 &gt; 命名路由 &gt; 通配路由</p></li>
+                </ul>
+                <p>更多信息以及使用方法参考<a class="link" target="_blank" rel="noopener"
+                                              href="https://www.cloudwego.io/zh/docs/hertz/tutorials/basic-feature/route/">路由
+                  | CloudWeGo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>。</p><h5
+                  id="hertz-参数绑定"><a class="markdownIt-Anchor" href="#hertz-参数绑定"></a> Hertz 参数绑定</h5>
+                <p>Hertz 提供了 Bind、Validate、BindAndValidate 函数用于进行参数绑定和校验</p>
+                <p>更多信息以及使用方法参考<a class="link" target="_blank" rel="noopener"
+                                              href="https://www.cloudwego.io/zh/docs/hertz/tutorials/basic-feature/binding-and-validate/">绑定与校验
+                  | CloudWeGo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5
+                  id="hertz-中间件"><a class="markdownIt-Anchor" href="#hertz-中间件"></a> Hertz 中间件</h5>
+                <p>Hertz 的中间件主要分为客户端中间件与服务端中间件，如下是一个服务端中间件示例</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br><span class="line">13</span><br><span
+                            class="line">14</span><br><span class="line">15</span><br><span
+                            class="line">16</span><br><span class="line">17</span><br><span
+                            class="line">18</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="function"><span class="keyword">func</span> <span
+                            class="title">MyMiddleware</span><span class="params">()</span></span> app.HandlerFunc &#123;</span><br><span
+                            class="line">    <span class="keyword">return</span> <span class="function"><span
+                            class="keyword">func</span><span
+                            class="params">(ctx conext.Context, c *app.RequestContext)</span></span> &#123;</span><br><span
+                            class="line">        <span class="comment">// pre-handle</span></span><br><span
+                            class="line">        fmt.Println(<span
+                            class="string">&quot;pre-handle&quot;</span>)</span><br><span class="line">        c.Next(ctx)</span><br><span
+                            class="line">        <span class="comment">// post-handle</span></span><br><span
+                            class="line">        fmt.Println(<span class="string">&quot;post-handle&quot;</span>)</span><br><span
+                            class="line">    &#125;</span><br><span class="line">&#125;</span><br><span
+                            class="line"></span><br><span class="line"><span class="function"><span
+                            class="keyword">func</span> <span class="title">main</span><span
+                            class="params">()</span></span> &#123;</span><br><span class="line">    h := server.Default(server.WithHostPorts(<span
+                            class="string">&quot;127.0.0.1:8080&quot;</span>))</span><br><span class="line">    h.Use(MyMiddleware())</span><br><span
+                            class="line">    h.GET(<span class="string">&quot;/middleware&quot;</span>, <span
+                            class="function"><span class="keyword">func</span><span class="params">(ctx context.Context, c *app.RequestContext)</span></span> &#123;</span><br><span
+                            class="line">        c.String(consts.StatusOK, <span
+                            class="string">&quot;Hello hertz!&quot;</span>)</span><br><span
+                            class="line">    &#125;)</span><br><span class="line">    h.Spin()</span><br><span
+                            class="line">&#125;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>终止中间件调用链的执行，可以使用 c.Abort、c.AbortWithMsg、c.AbortWithStatus 方法。</p>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.cloudwego.io/zh/docs/hertz/tutorials/basic-feature/middleware/">中间件概览 |
+                  CloudWeGo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="hertz-client">
+                  <a class="markdownIt-Anchor" href="#hertz-client"></a> Hertz Client</h5>
+                <p>Hertz 提供了 HTTP Client 用于发送 HTTP 请求。</p>
+                <p>示例</p>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br><span class="line">11</span><br><span
+                            class="line">12</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">c, err := client.NewClient()</span><br><span class="line"><span
+                            class="keyword">if</span> err != <span class="literal">nil</span> &#123;</span><br><span
+                            class="line">    <span class="keyword">return</span></span><br><span
+                            class="line">&#125;</span><br><span class="line"><span
+                            class="comment">// get请求</span></span><br><span class="line">status, body, _ := c.Get(context.Background(), <span
+                            class="literal">nil</span>, <span
+                            class="string">&quot;http://example.com&quot;</span>)</span><br><span class="line">fmt.Printf(<span
+                            class="string">&quot;status=%v body=%v\n&quot;</span>, status, <span
+                            class="type">string</span>(body))</span><br><span class="line"><span class="comment">// post请求</span></span><br><span
+                            class="line"><span class="keyword">var</span> postArgs protocol.Args</span><br><span
+                            class="line">postArgs.Set(<span class="string">&quot;arg&quot;</span>, <span class="string">&quot;a&quot;</span>)</span><br><span
+                            class="line">status, body, _ = c.Post(context.Background(), <span class="literal">nil</span>, <span
+                            class="string">&quot;http://example.com&quot;</span>, &amp;postArgs)</span><br><span
+                            class="line">fmt.Printf(<span class="string">&quot;status=%v body=%v\n&quot;</span>, status, <span
+                            class="type">string</span>(body))</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://github.com/cloudwego/hertz-examples#client">cloudwego/hertz-examples: Examples
+                  for Hertz. <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5
+                  id="hertz-代码生成工具"><a class="markdownIt-Anchor" href="#hertz-代码生成工具"></a> Hertz 代码生成工具
+                </h5>
+                <p>Hertz 提供了代码生成工具 Hz ，通过定义 IDL 文件即可生成对应的基础服务代码。</p>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.cloudwego.io/zh/docs/hertz/tutorials/toolkit/toolkit/">hz 命令行工具使用 |
+                  CloudWeGo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="hertz-性能"><a
+                  class="markdownIt-Anchor" href="#hertz-性能"></a> Hertz 性能</h5>
+                <ul>
+                  <li>网络库</li>
+                  <li>Json 编解码 Sonic</li>
+                  <li>使用 sync.Pool 复用对象协议层数据解析优化</li>
+                </ul>
+                <h5 id="hertz-生态"><a class="markdownIt-Anchor" href="#hertz-生态"></a> Hertz 生态</h5>
+                <p>Hertz 拥有非常丰富的扩展生态，以下是一些常用的扩展</p>
+                <ul>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/hertz-contrib/http2">HTTP2
+                    扩展 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/hertz-contrib/obs-opentelemetry">opentelemetry 扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/hertz-contrib/i18n">国际化扩展
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener"
+                         href="https://github.com/hertz-contrib/reverseproxy">反向代理扩展 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/hertz-contrib/jwt">JWT
+                    鉴权扩展 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/hertz-contrib/websocket">Websocket
+                    扩展 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/cloudwego/hertz-examples">丰富的示例代码与业务
+                    Demo <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <p>更多信息参考<a class="link" target="_blank" rel="noopener"
+                                  href="https://github.com/cloudwego/hertz#extensions">https://github.com/cloudwego/hertz#extensions
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h3 id="3实战案例介绍"><a class="markdownIt-Anchor" href="#3实战案例介绍"></a> 3.实战案例介绍</h3><h4
+                  id="项目介绍"><a class="markdownIt-Anchor" href="#项目介绍"></a> 项目介绍</h4>
+                <p>项目地址<a class="link" target="_blank" rel="noopener"
+                              href="https://github.com/cloudwego/kitex-examples/tree/main/bizdemo/easy_note">cloudwego/kitex-examples
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>上面的笔记项目是一个使用 Hertz、Kitex、Gorm 搭建出来的具备一定业务逻辑的后端 API 项目。</p>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">服务名称</th>
+                    <th style="text-align:center">服务介绍</th>
+                    <th style="text-align:center">传输协议</th>
+                    <th style="text-align:center">主要技术栈</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">demoapi</td>
+                    <td style="text-align:center">API 服务</td>
+                    <td style="text-align:center">HTTP</td>
+                    <td style="text-align:center">Gorm/Kitex/Hertz</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">demouser</td>
+                    <td style="text-align:center">用户数据管理</td>
+                    <td style="text-align:center">Protobuf</td>
+                    <td style="text-align:center">Gorm/Kitex</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">demonote</td>
+                    <td style="text-align:center">笔记数据管理</td>
+                    <td style="text-align:center">Thrift</td>
+                    <td style="text-align:center">Gorm/Kitex</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h4 id="功能介绍"><a class="markdownIt-Anchor" href="#功能介绍"></a> 功能介绍</h4>
+                <p>项目模块</p>
+                <ul>
+                  <li>demoapi
+                    <ul>
+                      <li>用户登录</li>
+                      <li>用户注册</li>
+                      <li>用户创建笔记</li>
+                      <li>用户更新笔记</li>
+                      <li>用户删除笔记</li>
+                      <li>用户查询笔记</li>
+                    </ul>
+                  </li>
+                  <li>demouser
+                    <ul>
+                      <li>创建用户</li>
+                      <li>查询用户</li>
+                      <li>校验用户</li>
+                    </ul>
+                  </li>
+                  <li>demonote
+                    <ul>
+                      <li>创建笔记</li>
+                      <li>更新笔记</li>
+                      <li>删除笔记</li>
+                      <li>查询笔记</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="项目调用关系"><a class="markdownIt-Anchor" href="#项目调用关系"></a> 项目调用关系</h4>
+                <ul>
+                  <li>demouser 和 demonote 的数据都存储在 MySQL 数据库中，从 MySQL 中获取数据。</li>
+                  <li>demouser 和 demonote 使用 ETCD 服务注册。</li>
+                  <li>demoapi 使用 proto 协议调用 demouser 操作用户数据，使用 thrift 协议调用 demonote 操作笔记数据。</li>
+                  <li>demoapi 使用 ETCD 服务发现。</li>
+                  <li>调用方通过 HTTP 请求调用demoapi。</li>
+                </ul>
+                <h4 id="idl-介绍"><a class="markdownIt-Anchor" href="#idl-介绍"></a> IDL 介绍</h4>
+                <p>参考项目文件<a class="link" target="_blank" rel="noopener"
+                                  href="https://github.com/cloudwego/kitex-examples/tree/main/bizdemo/easy_note/idl">kitex-examples/bizdemo/easy_note/idl
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="技术栈介绍"><a
+                  class="markdownIt-Anchor" href="#技术栈介绍"></a> 技术栈介绍</h4>
+                <p>技术框架</p>
+                <ul>
+                  <li>语言：GO</li>
+                  <li>底层存储：MySQL</li>
+                  <li>服务注册：ETCD</li>
+                  <li>RPC 框架
+                    <ul>
+                      <li>Kitex：registry-etcd 和 tracer-opentracing</li>
+                      <li>Kitex 扩展</li>
+                    </ul>
+                  </li>
+                  <li>ORM 框架
+                    <ul>
+                      <li>GORM</li>
+                      <li>GORM 扩展：gorm-mysql 和 gorm-opentracing</li>
+                    </ul>
+                  </li>
+                  <li>HTTP 框架
+                    <ul>
+                      <li>Hertz</li>
+                      <li>Hertz 扩展：Hertz-Jwt</li>
+                    </ul>
+                  </li>
+                  <li>链路追踪
+                    <ul>
+                      <li>Jeager</li>
+                      <li>opentracing</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="创建笔记功能实现关键代码"><a class="markdownIt-Anchor" href="#创建笔记功能实现关键代码"></a>
+                  创建笔记功能实现关键代码</h4><h5 id="hertz-关键代码"><a class="markdownIt-Anchor"
+                                                                          href="#hertz-关键代码"></a> Hertz 关键代码
+                </h5>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/cloudwego/kitex-examples/blob/main/bizdemo/easy_note/cmd/api/handlers/create_note.go">kitex-examples/create_note.go
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="kitex-client-关键代码">
+                  <a class="markdownIt-Anchor" href="#kitex-client-关键代码"></a> Kitex Client 关键代码</h5>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/cloudwego/kitex-examples/blob/main/bizdemo/easy_note/cmd/api/rpc/note.go">kitex-examples/note.go
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="kitex-server-关键代码">
+                  <a class="markdownIt-Anchor" href="#kitex-server-关键代码"></a> Kitex Server 关键代码</h5>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/cloudwego/kitex-examples/blob/main/bizdemo/easy_note/cmd/note/service/create_note.go">kitex-examples/create_note.go
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="gorm-关键代码"><a
+                  class="markdownIt-Anchor" href="#gorm-关键代码"></a> Gorm 关键代码</h5>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://github.com/cloudwego/kitex-examples/blob/main/bizdemo/easy_note/cmd/note/dal/db/note.go">kitex-examples/note.go
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h3 id="4总结与展望"><a class="markdownIt-Anchor" href="#4总结与展望"></a> 4.总结与展望</h3><h4
+                  id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h4>
+                <ul>
+                  <li>了解 Gorm/Kitex/Hertz 的基本概念</li>
+                  <li>熟悉 Gorm/Kitex/Hertz 的基础用法</li>
+                  <li>通过实战案例分析将三件套的使用联系起来</li>
+                </ul>
+                <h4 id="展望"><a class="markdownIt-Anchor" href="#展望"></a> 展望</h4>
+                <ul>
+                  <li>进一步熟悉 Gorm/Kitex/Hertz 的使用，通过阅读<a class="link" target="_blank" rel="noopener"
+                                                                    href="https://www.cloudwego.io/">官方文档 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>熟悉框架更多的用法。
+                  </li>
+                  <li>阅读笔记项目源码并在本地环境运行，使用 Gorm/Kitex/Hertz 进行项目开发。</li>
+                  <li>参与 Gorm/Kitex/Hertz 的开源贡献，例如 Hertz 的 Windows 平台支持。</li>
+                  <li><a class="link" target="_blank" rel="noopener" href="https://github.com/cloudwego/hertz/issues">官方
+                    issues | 问题 ·Cloudwego/Hertz <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>
+                  </li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/374901408">什么是RPC？原理是什么？如何实现一个
+                  RPC 框架？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/397060740">RPC框架的IDL与IDL-less
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://gorm.cn/zh_CN/docs/">GORM 指南 | GORM <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://blog.mazhuang.vip/database/mysql/upsert-f2f8bfbaba7a/">Mysql 的 upsert 操作 | Seeker
+                  (mazhuang.vip) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://www.cloudwego.io/zh/docs/kitex/getting-started/">Kitex 快速开始 | CloudWeGo <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7174311695592980510">一文带你快速入门GolangHTTP框架Hertz
+                  - 掘金 (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">Go 框架三件套详解</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E6%A1%86%E6%9E%B6%E4%B8%89%E4%BB%B6%E5%A5%97%E8%AF%A6%E8%A7%A3webrpcorm"><span
+                      class="nav-text">框架三件套详解(Web&#x2F;RPC&#x2F;ORM)</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E4%B8%89%E4%BB%B6%E5%A5%97%E4%BB%8B%E7%BB%8D"><span
+                          class="nav-text">1.三件套介绍</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2-%E4%B8%89%E4%BB%B6%E5%A5%97%E7%9A%84%E4%BD%BF%E7%94%A8"><span
+                          class="nav-text">2. 三件套的使用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E5%AE%9E%E6%88%98%E6%A1%88%E4%BE%8B%E4%BB%8B%E7%BB%8D"><span
+                          class="nav-text">3.实战案例介绍</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E6%80%BB%E7%BB%93%E4%B8%8E%E5%B1%95%E6%9C%9B"><span
+                          class="nav-text">4.总结与展望</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

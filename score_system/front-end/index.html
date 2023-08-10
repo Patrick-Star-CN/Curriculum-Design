@@ -1,0 +1,79 @@
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <title>登录页</title>
+  <link rel="stylesheet" type="text/css" href="static/style.css">
+  <link rel="stylesheet" type="text/css" href="static/form_style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div>
+  <div class="back">
+    <h1>欢迎来到朴素的高校学生管理系统</h1>
+  </div>
+  <section class="w3l-simple-contact-form1">
+    <div class="contact-form section-gap">
+      <div class="wrapper">
+        <div class="contact-form" style="max-width: 450px; margin: 0 auto;">
+          <div class="form-mid">
+            <form >
+              <div class="field">
+                <label for="w3lName">用户名：</label><input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="学号/工号" required="">
+              </div>
+              <div class="field">
+                <label for="w3lSubject">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label><input type="password" class="form-control" name="w3lSubject" id="w3lSubject" placeholder="默认密码为 zjut + 学号/工号"
+                                                       required="">
+              </div>
+              <div>
+                <label>用户类型</label>
+                <input type="radio" name="type" value="student" id="student">学生
+                <input type="radio" name="type" value="teacher" id="teacher">教师
+                <input type="radio" name="type" value="admin" id="admin">管理员
+                <br>
+              </div>
+              <div class="back">
+                <button type="button" class="btn btn-contact" id="submit">登陆</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $('#submit').on('click', function () {
+      let url;
+      let type;
+      if ($('#student').is(':checked')) {
+        url = 'https://dev.patrickstar.net.cn/api/student/login'
+        type = 'student'
+      } else if ($('#teacher').is(':checked')) {
+        url = 'https://dev.patrickstar.net.cn/api/teacher/login'
+        type = 'teacher'
+      } else if ($('#admin').is(':checked')) {
+        url = 'https://dev.patrickstar.net.cn/api/admin/login'
+        type = 'admin'
+      }
+      const data = {};
+      data.id = Number($('#w3lName').val())
+      data.password = $('#w3lSubject').val()
+      $.ajax({
+        url: url + "?id=" + data.id + '&password=' + data.password,
+        type: 'POST',
+        success: function (response) {
+          if (response.code === 200) {
+            window.location.href = '/fe/' + type
+          } else {
+            alert('用户名或密码错误')
+          }
+        },
+        error: function (xhr, status, error) {
+          console.error(error);
+        }
+      });
+    })
+  </script>
+</div>
+</body>
+</html>

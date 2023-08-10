@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>教师页</title>
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../static/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../static/form_style.css">
+  <link rel="stylesheet" type="text/css" href="../../static/style.css">
+</head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">高校成绩管理系统</div>
+    <div class="list-group list-group-flush">
+      <a href="../change_password" class="list-group-item list-group-item-action bg-light">修改密码</a>
+      <a href="#" class="list-group-item bg-light">录入成绩</a>
+      <a href="../class_table" class="list-group-item list-group-item-action bg-light">查询课表</a>
+      <a href="../avg_score" class="list-group-item list-group-item-action bg-light">查询授课平均成绩</a>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link button" href="/fe/index.html">回到登陆页 <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="item">
+      <label for="firstSelect">学期：</label>
+      <select id="firstSelect">
+        <option>2021-2022(1)</option>
+        <option>2021-2022(2)</option>
+        <option>2022-2023(1)</option>
+        <option>2022-2023(2)</option>
+        <option>2023-2024(1)</option>
+        <option>2023-2024(2)</option>
+        <option>2024-2025(1)</option>
+        <option>2024-2025(2)</option>
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label for="secondSelect">课程：</label>
+      <select id="secondSelect">
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="button" id="query">查询</a>
+    </div>
+
+    <table id="classTable" class="table">
+      <thead>
+      <th>学生学号</th>
+      <th>学生姓名</th>
+      <th>成&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;绩</th>
+      <th>录入成绩</th>
+      </thead>
+      <tbody id="tBody">
+      <tr>
+      </tr>
+      </tbody>
+    </table>
+
+        <div id="overlay" class="overlay"></div>
+
+        <div id="popup" class="popup">
+          <div class="item">
+            <h2>录入成绩</h2>
+          </div>
+          <form action="${pageContext.request.contextPath}/class/update" method="post" class="add_main">
+            <input type="hidden" id="studentId" >
+            <input type="hidden" id="courseId" >
+            <input type="hidden" id="term" >
+            <div class="item">
+              <label for="score">成绩：</label>
+              <input type="text" id="score"/>
+            </div>
+            <div class="item">
+              <div class="button-container">
+                <button class="button" type="button" id="input_score">保存</button>
+                <button class="button" type="button" onclick="closePopup()">取消</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+  </div>
+</div>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(query)
+  $('#firstSelect').on('change', query)
+
+  function query() {
+    const term = $('#firstSelect option:selected').val()
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/teacher/class_table?page=1&size=100&term=' + term,
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#secondSelect').empty();
+          response.data.data.forEach((v, i) => {
+            $('#secondSelect').append(
+              "<option>" + v.course_id + ' ' + v.class_name + "</option>"
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  }
+
+  $('#query').on('click', queryScore)
+
+  function queryScore() {
+    const data = $('#secondSelect option:selected').val();
+    const course_id = data.split(' ')[0];
+    const class_name = data.split(' ')[1];
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/teacher/score?page=1&size=100&course_id=' + course_id + '&class_name=' + class_name,
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#tBody').empty();
+          response.data.data.forEach((v, i) => {
+            $('#tBody').append(
+              "<tr><td>" + v.student_id + "</td>" +
+              "<td>" + v.student_name + "</td>" +
+              "<td>" + v.score + "</td>" +
+              "<td><a class='button' onclick='submitScore("+ v.student_id +", " +
+              course_id + ", $(\"#firstSelect option:selected\").val())'>录入</a></td></tr>"
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  }
+
+  $('#input_score').on('click', function () {
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/teacher/score?student_id=' + Number($('#studentId').val()) +
+        '&course_id=' + $('#courseId').val() + '&term=' + $('#term').val() + '&score=' + $('#score').val(),
+      type: 'POST',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          queryScore();
+          closePopup();
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  })
+
+  function submitScore(studentId, courseId, term) {
+    fillForm({
+      studentId: studentId,
+      courseId: courseId,
+      term: term
+    });
+
+    // 显示遮罩和弹出窗口
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    overlay.style.display = "block";
+    popup.style.display = "block";
+  }
+
+  function closePopup() {
+    // 隐藏遮罩和弹出窗口
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    overlay.style.display = "none";
+    popup.style.display = "none";
+  }
+
+  function fillForm(clazz) {
+    // 填充表单中的输入框
+    document.getElementById("studentId").value = clazz.studentId;
+    document.getElementById("courseId").value = clazz.courseId;
+    document.getElementById("term").value = clazz.term;
+  }
+
+</script>
+</body>
+
+</html>

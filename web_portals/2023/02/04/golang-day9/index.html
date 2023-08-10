@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">微服务架构</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-04 23:56:51</span> <span
+                      class="mobile">2023-02-04 23:56</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><<span
+                      class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a
+                      href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.4k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>8 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对微服务架构原理与治理实践的学习<span
+                id="more"></span></p>
+                <h2 id="微服务架构原理与治理实践"><a class="markdownIt-Anchor" href="#微服务架构原理与治理实践"></a>
+                  微服务架构原理与治理实践</h2>
+                <h3 id="背景"><a class="markdownIt-Anchor" href="#背景"></a> 背景</h3>
+                <p>微服务架构是当前大多数互联网公司的标准架构。</p>
+                <p>主要学习微服务架构的由来及原理、服务治理功能工作机制。</p>
+                <h3 id="1微服务架构介绍"><a class="markdownIt-Anchor" href="#1微服务架构介绍"></a> 1.微服务架构介绍</h3>
+                <h4 id="11-系统架构演变历史"><a class="markdownIt-Anchor" href="#11-系统架构演变历史"></a> 1.1 系统架构演变历史
+                </h4>
+                <p>架构演变的原因</p>
+                <ul>
+                  <li>互联网的爆炸性发展</li>
+                  <li>硬件设施的快速发展</li>
+                  <li>需求复杂性的多样化</li>
+                  <li>开发人员的急剧增加</li>
+                  <li>计算机理论及技术的发展</li>
+                </ul>
+                <p>单体架构 —&gt; 垂直应用架构 —&gt; 分布式架构 —&gt; SOA 架构 —&gt; 微服务架构</p><h5 id="单体架构"><a
+                  class="markdownIt-Anchor" href="#单体架构"></a> 单体架构</h5>
+                <ul>
+                  <li><p>优势</p>
+                    <ol>
+                      <li><p>性能最高</p></li>
+                      <li><p>冗余小</p></li>
+                    </ol>
+                  </li>
+                  <li><p>劣势</p>
+                    <ol>
+                      <li><p>debug 困难</p></li>
+                      <li><p>模块相互影响（非核心功能可能导致程序崩溃）</p></li>
+                      <li><p>模块分工、依赖管理困难，开发流程几乎无法分工</p></li>
+                    </ol>
+                  </li>
+                </ul>
+                <h5 id="垂直应用架构"><a class="markdownIt-Anchor" href="#垂直应用架构"></a> 垂直应用架构</h5>
+                <p>安装业务线垂直划分</p>
+                <ul>
+                  <li>优势：业务独立开发维护</li>
+                  <li>劣势
+                    <ol>
+                      <li>不同业务存在冗余，无法复用</li>
+                      <li>每个业务还是单体</li>
+                    </ol>
+                  </li>
+                </ul>
+                <h5 id="分布式架构"><a class="markdownIt-Anchor" href="#分布式架构"></a> 分布式架构</h5>
+                <p>抽取出业务无关的公共模块</p>
+                <ul>
+                  <li>优势：业务无关的独立服务</li>
+                  <li>劣势
+                    <ol>
+                      <li>服务模块 bug 可能导致全站瘫痪</li>
+                      <li>调用关系复杂</li>
+                      <li>不同服务冗余</li>
+                    </ol>
+                  </li>
+                </ul>
+                <h5 id="soa-架构service-oriented-architecture"><a class="markdownIt-Anchor"
+                                                                  href="#soa-架构service-oriented-architecture"></a> SOA
+                  架构（Service Oriented Architecture）</h5>
+                <p>面向服务的架构</p>
+                <ul>
+                  <li>优势：服务注册</li>
+                  <li>劣势
+                    <ol>
+                      <li>整个系统设计是中心化的</li>
+                      <li>需要从上至下设计</li>
+                      <li>重构困难</li>
+                    </ol>
+                  </li>
+                </ul>
+                <h5 id="微服务架构"><a class="markdownIt-Anchor" href="#微服务架构"></a> 微服务架构</h5>
+                <p>彻底服务化的架构</p>
+                <ul>
+                  <li>优势
+                    <ol>
+                      <li>高效的开发迭代效率</li>
+                      <li>业务独立设计</li>
+                      <li>自下而上设计</li>
+                      <li>故障隔离可控</li>
+                    </ol>
+                  </li>
+                  <li>劣势
+                    <ol>
+                      <li>治理、运维难度急剧增加</li>
+                      <li>观测挑战</li>
+                      <li>安全性问题</li>
+                      <li>分布式系统本身的复杂性</li>
+                    </ol>
+                  </li>
+                </ul>
+                <h4 id="12-微服务架构概览"><a class="markdownIt-Anchor" href="#12-微服务架构概览"></a> 1.2 微服务架构概览
+                </h4>
+                <p>从组件的维度去分析微服务架构的整体视角</p>
+                <ul>
+                  <li>服务配置和治理：服务配置、服务治理</li>
+                  <li>消息队列 MQ
+                    <ul>
+                      <li>用户服务：用户数据库</li>
+                      <li>商品服务：商品数据库</li>
+                      <li>订单服务：订单数据库</li>
+                      <li>广告服务：数据仓库、Redis</li>
+                    </ul>
+                  </li>
+                  <li>链路追踪和监控：链路追踪、服务监控</li>
+                  <li>网关</li>
+                </ul>
+                <h4 id="13-微服务架构核心要素"><a class="markdownIt-Anchor" href="#13-微服务架构核心要素"></a> 1.3
+                  微服务架构核心要素</h4>
+                <ul>
+                  <li>服务治理：服务注册、服务发现、负载均衡、扩缩容、流量治理、稳定性治理、…</li>
+                  <li>可观测性：日志采集、日志分析、监控打点、监控大盘、异常报警、链路追踪、…</li>
+                  <li>安全：身份验证、认证授权、访问令牌、审计、传输加密、黑产攻击、…</li>
+                </ul>
+                <h4 id="14-总结"><a class="markdownIt-Anchor" href="#14-总结"></a> 1.4 总结</h4>
+                <ul>
+                  <li>系统架构的演变历史</li>
+                  <li>微服务架构的整体概览</li>
+                  <li>微服务架构的核心要素</li>
+                </ul>
+                <h3 id="2微服务架构原理及特征"><a class="markdownIt-Anchor" href="#2微服务架构原理及特征"></a>
+                  2.微服务架构原理及特征</h3><h4 id="21-基本概念"><a class="markdownIt-Anchor" href="#21-基本概念"></a>
+                  2.1 基本概念</h4>
+                <ul>
+                  <li><p>服务（service）</p>
+                    <p>一组具有相同逻辑的运行实体。</p></li>
+                  <li><p>实例（instance）</p>
+                    <p>一个服务中，每个运行实体即为一个实例。</p></li>
+                  <li><p>实例与进程的关系</p>
+                    <p>实例与进程之间没有必然对应关系，一个实例可以对应一个或多个进程（反过来不常见）。</p></li>
+                  <li><p>集群（cluster）</p>
+                    <p>通常指服务内部的逻辑划分，包含多个实例。</p></li>
+                  <li><p>常见的实例承载形式</p>
+                    <p>进程、VM、k8s pod、…</p></li>
+                  <li><p>有状态/无状态服务</p>
+                    <p>服务的实例是否存储了可持久化的数据，例如磁盘文件。</p></li>
+                  <li><p>服务间通信</p>
+                    <p>对于单体服务，不同模块通信只是简单的函数调用。</p>
+                    <p>对于微服务，服务间通信意味着网络传输。</p></li>
+                </ul>
+                <h4 id="22-服务注册与发现"><a class="markdownIt-Anchor" href="#22-服务注册与发现"></a> 2.2 服务注册与发现
+                </h4>
+                <p>问题：在代码层面，如何指定调用一个目标服务的地址（ip:port）？</p><h5 id="硬编码-hardcode"><a
+                  class="markdownIt-Anchor" href="#硬编码-hardcode"></a> 硬编码 hardcode</h5>
+                <div class="highlight-container" data-rel="Go">
+                  <figure class="iseeu highlight go">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span
+                            class="comment">// Service A want to call Service B.</span></span><br><span class="line">client := grpc.NewClient(<span
+                            class="string">&quot;10.23.45.67:8080&quot;</span>)</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>硬编码 hardcode 的问题：当服务存在多个实例时，hardcode 无法调用动态变化的服务地址。</p><h5 id="dns"><a
+                  class="markdownIt-Anchor" href="#dns"></a> DNS</h5>
+                <p>DNS 的思想就是中间层。</p>
+                <p>DNS 的问题</p>
+                <ul>
+                  <li>本地 DNS 存在缓存，导致延时。</li>
+                  <li>负载均衡问题。</li>
+                  <li>不支持服务实例的探活检查。</li>
+                  <li>域名无法配置端口。</li>
+                </ul>
+                <h5 id="服务注册中心-service-registry"><a class="markdownIt-Anchor"
+                                                          href="#服务注册中心-service-registry"></a> 服务注册中心
+                  Service Registry</h5>
+                <p>解决思路：新增一个统一的服务注册中心，用于存储服务名到服务实例的映射。与 DNS 类似，也是一个中间层。</p><h5
+                  id="服务实例上线及下线过程"><a class="markdownIt-Anchor" href="#服务实例上线及下线过程"></a>
+                  服务实例上线及下线过程</h5>
+                <ul>
+                  <li><p>当一个实例还有流量时，不能直接下线，当它没有流量时，可以下线。</p></li>
+                  <li><p>当一个服务下线几个实例后访问压力过大，可以添加新的实例到服务中。</p></li>
+                  <li><p>新启用的实例会先进行健康检查，检查无误后再注册到服务中心。</p></li>
+                  <li><p>健康检查是在服务运作期间一直持续进行的。</p></li>
+                </ul>
+                <h4 id="23-流量特征"><a class="markdownIt-Anchor" href="#23-流量特征"></a> 2.3 流量特征</h4>
+                <ul>
+                  <li>统一网关路口</li>
+                  <li>内网通信多数采用 RPC</li>
+                  <li>网状调用链路</li>
+                </ul>
+                <p>弱化连接的概念，强调“请求”，即同一个客户端长连接发出的请求，理论上可以到达服务中所有实例。网关 gateway
+                  可以用于身份认证，进而将 token 附在请求上。</p><h4 id="24-总结"><a class="markdownIt-Anchor"
+                                                                                   href="#24-总结"></a> 2.4 总结</h4>
+                <ul>
+                  <li>微服务架构中的基本组件及术语</li>
+                  <li>服务注册及发现中间层</li>
+                  <li>平滑无损的服务实例上下线流程</li>
+                  <li>微服务架构中的基本流量特征</li>
+                </ul>
+                <h3 id="3核心服务治理功能"><a class="markdownIt-Anchor" href="#3核心服务治理功能"></a> 3.核心服务治理功能
+                </h3><h4 id="31-服务发布"><a class="markdownIt-Anchor" href="#31-服务发布"></a> 3.1 服务发布</h4>
+                <p>服务发布（deployment），即让一个服务升级运行新的代码的过程。</p>
+                <p>服务发布的难点</p>
+                <ul>
+                  <li><p>服务不可用</p></li>
+                  <li><p>服务抖动</p></li>
+                  <li><p>服务回滚</p></li>
+                  <li><p>蓝绿部署问题</p></li>
+                  <li><p>灰度发布（金丝雀发布）问题</p></li>
+                </ul>
+                <h4 id="32-流量治理"><a class="markdownIt-Anchor" href="#32-流量治理"></a> 3.2 流量治理</h4>
+                <p>
+                  在微服务架构下，可以基于地区、集群、实例、请求等维度，对端到端流量的路由路径进行精确控制（这里就是狭义的对流量进行控制）。</p>
+                <h4 id="33-负载均衡"><a class="markdownIt-Anchor" href="#33-负载均衡"></a> 3.3 负载均衡</h4>
+                <p>负载均衡（Load Balance）负责分配请求在每个下游实例上以控制分布情况。</p>
+                <p>常见的 LB 策略</p>
+                <ul>
+                  <li>Round Robin</li>
+                  <li>Random</li>
+                  <li>Ring Hash</li>
+                  <li>Least Request</li>
+                  <li>…</li>
+                </ul>
+                <h4 id="34-稳定性治理"><a class="markdownIt-Anchor" href="#34-稳定性治理"></a> 3.4 稳定性治理</h4>
+                <p>线上服务难免会出现问题，这和程序本身正确性无关。</p>
+                <ul>
+                  <li>网络攻击</li>
+                  <li>流量突增</li>
+                  <li>机房断电</li>
+                  <li>光纤断开</li>
+                  <li>机器故障</li>
+                  <li>网络故障</li>
+                  <li>机房空调故障</li>
+                  <li>…</li>
+                </ul>
+                <p>微服务架构中典型的稳定性治理功能</p>
+                <ul>
+                  <li>限流</li>
+                  <li>熔断</li>
+                  <li>过载保护</li>
+                  <li>降级</li>
+                </ul>
+                <h4 id="35-总结"><a class="markdownIt-Anchor" href="#35-总结"></a> 3.5 总结</h4>
+                <ul>
+                  <li>服务发布：蓝绿部署、灰度发布</li>
+                  <li>基于地区、集群、实例、请求等维度的流量治理功能</li>
+                  <li>几种常见的负载均衡策略</li>
+                  <li>微服务架构中的稳定性治理功能</li>
+                </ul>
+                <h3 id="4服务治理实践"><a class="markdownIt-Anchor" href="#4服务治理实践"></a> 4.服务治理实践</h3><h4
+                  id="41-重试的意义"><a class="markdownIt-Anchor" href="#41-重试的意义"></a> 4.1 重试的意义</h4><h5
+                  id="本地函数调用可能引发的异常"><a class="markdownIt-Anchor" href="#本地函数调用可能引发的异常"></a>
+                  本地函数调用可能引发的异常</h5>
+                <ul>
+                  <li>参数非法</li>
+                  <li>OOM（Out Of Memory）</li>
+                  <li>NPE（Null Pointer Exception）</li>
+                  <li>边界 case</li>
+                  <li>系统崩溃</li>
+                  <li>死循环</li>
+                  <li>程序异常退出</li>
+                </ul>
+                <p>本地函数没有重试的意义</p><h5 id="远程函数调用可能引发的异常"><a class="markdownIt-Anchor"
+                                                                                    href="#远程函数调用可能引发的异常"></a>
+                  远程函数调用可能引发的异常</h5>
+                <ul>
+                  <li>网络抖动</li>
+                  <li>下游负载高导致超时</li>
+                  <li>下游机器宕机</li>
+                  <li>本地机器负载高，调度超时</li>
+                  <li>下游熔断、限流</li>
+                  <li>…</li>
+                </ul>
+                <p>远程函数需要进行重试</p>
+                <p><strong>重试可以避免掉偶然发生的错误，提高 SLA（Service-Level Agreement）</strong></p>
+                <ul>
+                  <li><p>降低错误率</p>
+                    <p>假设单次请求的错误率为 0.01，那么连续两次的错误的概率为 0.0001。</p></li>
+                  <li><p>降低长尾延时</p>
+                    <p>对于偶尔耗时较长的请求，重试请求有机会提前返回。</p></li>
+                  <li><p>容忍暂时性错误</p>
+                    <p>某些时候系统会有暂时性异常，例如网络抖动，重试可以尽量规避。</p></li>
+                  <li><p>避开下游故障实例</p>
+                    <p>一个服务中可能会有少量实例故障，例如机器故障，重试其他实例可以成功。</p></li>
+                </ul>
+                <h4 id="42-重试的难点"><a class="markdownIt-Anchor" href="#42-重试的难点"></a> 4.2 重试的难点</h4>
+                <ul>
+                  <li>幂等性：多次请求可能会造成数据不一致。</li>
+                  <li>重试风暴：随着调用深度的增加，重试次数会指数级上涨。</li>
+                  <li>超时设置：间隔多少时间后发起重试请求。例如，服务 A 向服务 B 重试 3 次，但服务 B 需要向服务 C 重试 9
+                    次，服务 C 需要向服务 D 重试 27 次，以此类推。
+                  </li>
+                </ul>
+                <h4 id="43-重试策略"><a class="markdownIt-Anchor" href="#43-重试策略"></a> 4.3 重试策略</h4>
+                <p>
+                  重试只有在大部分请求都成功，只有少部分请求失败时，才有必要。如果大部分请求都失败，重试只会加剧问题严重性。</p>
+                <h5 id="限制重试比例"><a class="markdownIt-Anchor" href="#限制重试比例"></a> 限制重试比例</h5>
+                <p>设定一个重试比例阈值，例如 1%，重试次数占所有请求次数比例不能超过该阈值。</p><h5 id="防止链路重试"><a
+                  class="markdownIt-Anchor" href="#防止链路重试"></a> 防止链路重试</h5>
+                <p>链路层面的防重试风暴的核心是限制每层都发生重试，理想情况下是只有最下一层发生重试。可以返回特殊的 status
+                  表明“请求失败，但不进行重试”。</p>
+                <p>缺点是需要侵入性修改业务代码。</p><h5 id="hedged-requests"><a class="markdownIt-Anchor"
+                                                                                href="#hedged-requests"></a> Hedged
+                  requests</h5>
+                <p>对于可能超时或延时高的请求，重新向另一个下游实例发送一个相同的请求，并等待先到达的响应。</p><h4
+                  id="44-重试效果验证"><a class="markdownIt-Anchor" href="#44-重试效果验证"></a> 4.4 重试效果验证</h4>
+                <p>实际验证经过上述重试策略后，在链路上发生的重试放大效应。</p><h4 id="45-总结"><a
+                  class="markdownIt-Anchor" href="#45-总结"></a> 4.5 总结</h4>
+                <ul>
+                  <li>重试的意义及难点</li>
+                  <li>应对重试风暴的策略</li>
+                </ul>
+                <h3 id="归纳总结"><a class="markdownIt-Anchor" href="#归纳总结"></a> 归纳总结</h3>
+                <ul>
+                  <li>微服务架构介绍</li>
+                  <li>微服务架构原理及特征</li>
+                  <li>核心服务治理功能</li>
+                  <li>服务治理实践</li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42671353">什么是蓝绿部署、滚动发布和灰度发布？
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/141398230">Motan系列6：负载均衡（LoadBalance）
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://juejin.cn/post/7194381054797905981/#heading-0">【后端专场 学习资料四】第五届字节跳动青训营
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">微服务架构</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E4%B8%8E%E6%B2%BB%E7%90%86%E5%AE%9E%E8%B7%B5"><span
+                      class="nav-text">微服务架构原理与治理实践</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span
+                          class="nav-text">背景</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E4%BB%8B%E7%BB%8D"><span
+                          class="nav-text">1.微服务架构介绍</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E5%8E%9F%E7%90%86%E5%8F%8A%E7%89%B9%E5%BE%81"><span
+                          class="nav-text">2.微服务架构原理及特征</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E6%A0%B8%E5%BF%83%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%E5%8A%9F%E8%83%BD"><span
+                          class="nav-text">3.核心服务治理功能</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E6%9C%8D%E5%8A%A1%E6%B2%BB%E7%90%86%E5%AE%9E%E8%B7%B5"><span
+                          class="nav-text">4.服务治理实践</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%BD%92%E7%BA%B3%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">归纳总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

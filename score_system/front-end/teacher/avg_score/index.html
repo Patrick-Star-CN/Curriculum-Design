@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>教师页</title>
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../static/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../static/form_style.css">
+  <link rel="stylesheet" type="text/css" href="../../static/style.css">
+</head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">高校成绩管理系统</div>
+    <div class="list-group list-group-flush">
+      <a href="../change_password" class="list-group-item list-group-item-action bg-light">修改密码</a>
+      <a href="../course" class="list-group-item list-group-item-action bg-light">录入成绩</a>
+      <a href="../class_table" class="list-group-item list-group-item-action bg-light">查询课表</a>
+      <a href="#" class="list-group-item bg-light">查询授课平均成绩</a>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link button" href="/fe/index.html">回到登陆页 <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="item">
+      <a class="button" id="query">查询</a>
+    </div>
+
+    <table id="classTable" class="table">
+      <thead>
+      <th>课程编号</th>
+      <th>课程名称</th>
+      <th>开设学期</th>
+      <th>平均成绩</th>
+      </thead>
+      <tbody id="tBody">
+      </tbody>
+    </table>
+
+  </div>
+</div>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  $('#query').on('click', function () {
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/teacher/ave_score?page=1&size=100',
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#tBody').empty();
+          response.data.data.forEach((v,i)=>{
+            $('#tBody').append(
+              "<tr><td>" + v.course_id + "</td>" +
+              "<td>" + v.course_name + "</td>" +
+              "<td>" + v.term + "</td>" +
+              "<td>" + v.score + "</td></tr>"
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>管理员页</title>
+  <link href="../../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../../static/simple-sidebar.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../../static/form_style.css">
+  <link rel="stylesheet" type="text/css" href="../../static/style.css">
+</head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+  <div class="bg-light border-right" id="sidebar-wrapper">
+    <div class="sidebar-heading">高校成绩管理系统</div>
+    <div class="list-group list-group-flush">
+      <a href="../change_password" class="list-group-item list-group-item-action bg-light">修改密码</a>
+      <a href="../student" class="list-group-item list-group-item-action bg-light">管理学生</a>
+      <a href="../teacher" class="list-group-item list-group-item-action bg-light">管理教师</a>
+      <a href="../college" class="list-group-item list-group-item-action bg-light">管理学院</a>
+      <a href="../major" class="list-group-item list-group-item-action bg-light">管理专业</a>
+      <a href="#" class="list-group-item  bg-light">管理班级</a>
+      <a href="../score" class="list-group-item list-group-item-action bg-light">查询成绩</a>
+      <a href="../course" class="list-group-item list-group-item-action bg-light">管理课程</a>
+      <a href="../class_table" class="list-group-item list-group-item-action bg-light">管理课表</a>
+      <a href="../hometown" class="list-group-item list-group-item-action bg-light">查看生源所在地</a>
+      <a href="../rank" class="list-group-item list-group-item-action bg-light">查看学年成绩排名</a>
+      <a href="../avg_score" class="list-group-item list-group-item-action bg-light">查看平均成绩</a>
+    </div>
+  </div>
+
+  <div id="page-content-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="button" onclick="showUploadPopup()">添加班级</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link button" href="/fe/index.html">回到登陆页 <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="item">
+      <label for="firstSelect">学院：</label>
+      <select id="firstSelect">
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;
+      <label for="secondSelect">专业：</label>
+      <select id="secondSelect">
+      </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="button" id="query">查询</a>
+    </div>
+
+    <table id="classTable" class="table">
+      <thead>
+      <th>编号</th>
+      <th>名称</th>
+      <th>专业</th>
+      <th>操作</th>
+      </thead>
+      <tbody id="tBody">
+      </tbody>
+    </table>
+
+    <div id="overlay" class="overlay"></div>
+
+    <div id="popup" class="popup">
+      <div class="item">
+        <h2>修改班级信息</h2>
+      </div>
+      <form>
+        <input type="hidden" id="stu_id">
+        <div class="item">
+          <label for="stu_name">名称:</label>
+          <input type="text" id="stu_name"/>
+        </div>
+        <div class="item">
+          <label for="majorName">所属专业:</label>
+          <select id="majorName"></select>
+        </div>
+        <div class="item">
+          <label for="teacher">班主任:</label>
+          <select id="teacher"></select>
+        </div>
+        <div class="item">
+          <div class="button-container">
+            <button class="button" type="button" id="edit">保存</button>
+            <button class="button" type="button" onclick="closePopup()">取消</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div id="popup_add" class="popup">
+      <div class="item">
+        <h2>添加班级</h2>
+      </div>
+      <form>
+        <div class="item">
+          <label for="addId">班级编号:</label>
+          <input type="text" id="addId" />
+        </div>
+        <div class="item">
+          <label for="addName">班级名称:</label>
+          <input type="text" id="addName" />
+        </div>
+        <div class="item">
+          <label for="addCollegeName">所属专业:</label>
+          <select id="addCollegeName"></select>
+        </div>
+        <div class="item">
+          <label for="addTeacher">班主任:</label>
+          <select id="addTeacher"></select>
+        </div>
+        <div class="item">
+          <button type="button" id="addBtn">提交</button>
+          <button type="button" onclick="closeUploadPopup()">取消</button>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</div>
+<script src="../../vendor/jquery/jquery.min.js"></script>
+<script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/college?page=1&size=100',
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#firstSelect').html("<option>全部</option>");
+          response.data.data.forEach((v, i) => {
+            $('#firstSelect').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    })
+  })
+
+  function queryTeacher() {
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/teacher?page=1&size=100&type=all&condition= ',
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#addTeacher').empty();
+          response.data.data.forEach((v, i) => {
+            $('#addTeacher').append(
+              '<option>' + v.name + ' ' + v.id + '</option>'
+            );
+          });
+          $('#teacher').empty();
+          response.data.data.forEach((v, i) => {
+            $('#teacher').append(
+              '<option>' + v.name + ' ' + v.id + '</option>'
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    })
+  }
+
+  $('#firstSelect').on('change', function () {
+    const college = $('#firstSelect option:selected').val()
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/major?page=1&size=100&type=college&condition=' + college,
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#secondSelect').html("<option>全部</option>");
+          response.data.data.forEach((v, i) => {
+            $('#secondSelect').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+          $('#addCollegeName').html("<option>全部</option>");
+          response.data.data.forEach((v, i) => {
+            $('#addCollegeName').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+          $('#majorName').html("<option>全部</option>");
+          response.data.data.forEach((v, i) => {
+            $('#majorName').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    })
+  })
+
+  function queryMajor() {
+    const college = $('#firstSelect option:selected').val()
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/major?page=1&size=100&type=all&condition= ',
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#secondSelect').html("<option>全部</option>");
+          response.data.data.forEach((v, i) => {
+            $('#secondSelect').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+          $('#addCollegeName').html(" ");
+          response.data.data.forEach((v, i) => {
+            $('#addCollegeName').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+          $('#majorName').html(" ");
+          response.data.data.forEach((v, i) => {
+            $('#majorName').append(
+              '<option>' + v.name + '</option>'
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    })
+  }
+
+  $('#query').on('click', query)
+
+  function query() {
+    var type
+    var condition
+    if ($('#firstSelect option:selected').val() === '全部') {
+      type = 'all';
+      condition = 'all';
+    } else if ($('#secondSelect option:selected').val() === '全部') {
+      type = 'college';
+      condition = $('#firstSelect option:selected').val();
+    } else {
+      type = 'major';
+      condition = $('#secondSelect option:selected').val();
+    }
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/class?page=1&size=100&type=' + type + '&condition=' + condition,
+      type: 'GET',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          $('#tBody').empty();
+          response.data.data.forEach((v, i) => {
+            $('#tBody').append(
+              "<tr><td>" + v.id + "</td>" +
+              "<td>" + v.name + "</td>" +
+              "<td>" + v.majorName + "</td>" +
+              "<td> <button class=\"button\" onclick=\"edit(" + v.id + ", '" + v.name + "', '" + v.majorName + "')\">修改</button>" +
+              "     <button class=\"button\" onclick=\"Delete(" + v.id + ")\">删除</button></td></tr>"
+            );
+          });
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    })
+  }
+
+  function edit(id, name, majorName) {
+    fillForm({
+      id: id,
+      name: name,
+      majorName: majorName
+    });
+    queryMajor()
+    queryTeacher()
+    // 显示遮罩和弹出窗口
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    overlay.style.display = "block";
+    popup.style.display = "block";
+  }
+
+  function closePopup() {
+    // 隐藏遮罩和弹出窗口
+    var overlay = document.getElementById("overlay");
+    var popup = document.getElementById("popup");
+    overlay.style.display = "none";
+    popup.style.display = "none";
+  }
+
+  function fillForm(clazz) {
+    // 填充表单中的输入框
+    document.getElementById("stu_id").value = clazz.id;
+    document.getElementById("stu_name").value = clazz.name;
+  }
+
+  $('#edit').on('click', function () {
+    var data = {}
+    data.id = Number($('#stu_id').val())
+    data.name = $('#stu_name').val()
+    data.major = $('#majorName option:selected').val()
+    data.teacher_id = $('#teacher option:selected').val().split(' ')[1]
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/class',
+      type: 'PUT',
+      dataType: 'json',
+      contentType: 'application/json;charset=UTF-8',
+      data: JSON.stringify(data),
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          query()
+          closePopup()
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  })
+
+  function showUploadPopup() {
+    queryMajor()
+    queryTeacher()
+    var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup_add');
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+  }
+
+  function closeUploadPopup() {
+    var overlay = document.getElementById('overlay');
+    var popup = document.getElementById('popup_add');
+    overlay.style.display = 'none';
+    popup.style.display = 'none';
+  }
+
+  function Delete(id) {
+    var msg = "您真的确定要删除吗？";
+    if (confirm(msg) !== true) {
+      return;
+    }
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/class?id=' + id,
+      type: 'DELETE',
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          query()
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  }
+
+  $('#addBtn').on('click', function () {
+    var data = {}
+    data.id = Number($('#addId').val())
+    data.name = $('#addName').val()
+    data.teacher_id = $('#addTeacher option:selected').val().split(' ')[1]
+    data.major = $('#addCollegeName option:selected').val()
+    $.ajax({
+      url: 'https://dev.patrickstar.net.cn/api/admin/class',
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json;charset=UTF-8',
+      data: JSON.stringify(data),
+      xhrFields: {
+        withCredentials: true
+      },
+      success: function (response) {
+        if (response.code === 200) {
+          query()
+          closeUploadPopup()
+        } else {
+          alert('系统异常')
+        }
+      },
+      error: function (xhr, status, error) {
+        console.error(error);
+      }
+    });
+  })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">使用docker运行openGauss</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-03-05 23:52:06</span> <span
+                      class="mobile">2023-03-05 23:52</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/linux/">linux</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>2.7k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>10 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>在linux上通过docker的方式运行开源数据库openGauss<span
+                id="more"></span></p>
+                <h3 id="基本环境"><a class="markdownIt-Anchor" href="#基本环境"></a> 基本环境</h3>
+                <p>
+                  笔者使用的是<code>Archlinux</code>发行版，通过<code>Docker</code>容器技术运行基于<code>PostgreSQL</code>的开源数据库<code>openGauss</code>
+                </p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://opengauss.org/zh/">openGauss 中文社区官网
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://docker.p2hp.com/">docker 中文网 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://hub.docker.com/">dockerHub 远程仓库 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h3 id="docker-环境搭建"><a class="markdownIt-Anchor" href="#docker-环境搭建"></a> Docker 环境搭建</h3>
+                <h4 id="1安装-docker"><a class="markdownIt-Anchor" href="#1安装-docker"></a> 1.安装 docker</h4>
+                <p>linux发行版可以很方便地通过命令行安装（在此之前请先确保网络状态良好）</p>
+                <p>以下是<code>Archlinux</code>的安装方式</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo pacman -S docker <span class="comment"># 安装docker</span></span><br><span
+                            class="line">sudo docker version   <span
+                            class="comment"># 查看docker版本</span></span><br><span
+                            class="line">sudo docker info      <span class="comment"># 查看docker信息</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>其他的安装方式可参考<a class="link" target="_blank" rel="noopener"
+                                          href="https://www.modb.pro/db/611595">使用虚拟机VMwarepro1623镜像文件导入部署openGauss3.1.1指导手册
+                  | 墨天轮(modb.pro) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4
+                  id="2启动-docker"><a class="markdownIt-Anchor" href="#2启动-docker"></a> 2.启动 docker</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo systemctl start docker   <span
+                            class="comment"># 启动docker</span></span><br><span class="line">sudo systemctl <span
+                            class="built_in">enable</span> docker  <span
+                            class="comment"># 允许docker开机自启</span></span><br><span class="line">sudo systemctl status docker  <span
+                            class="comment"># 查看docker运行状态</span></span><br><span class="line">sudo systemctl restart docker <span
+                            class="comment"># 重启docker</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="3docker-常用命令"><a class="markdownIt-Anchor" href="#3docker-常用命令"></a> 3.docker 常用命令
+                </h4>
+                <p>主要参考自<a class="link" target="_blank" rel="noopener"
+                                href="https://www.runoob.com/docker/docker-container-usage.html">菜鸟教程 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，关于部分命令的具体示例可参考下面
+                  openGauss 环境的搭建</p><h5 id="容器使用相关命令"><a class="markdownIt-Anchor"
+                                                                       href="#容器使用相关命令"></a> 容器使用相关命令
+                </h5>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">命令</th>
+                    <th style="text-align:center">作用</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">docker run</td>
+                    <td style="text-align:center">
+                      创建并运行新的容器，使用<code>-it</code>参数指定命令行模式运行，使用<code>--name</code>参数指定容器名称，使用<code>-d</code>参数指定在后台运行容器，使用<code>-P</code>参数随机映射到主机端口或<code>-p</code>参数指定主机端口映射
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker ps -a</td>
+                    <td style="text-align:center">查找所有已存在的容器</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker start</td>
+                    <td style="text-align:center">启动一个已存在的容器，需要提供容器的ID</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker stop</td>
+                    <td style="text-align:center">停止一个已存在的容器，需要提供容器的ID</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker restart</td>
+                    <td style="text-align:center">重启一个已存在的容器，需要提供容器的ID</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker attach</td>
+                    <td style="text-align:center">进入一个已存在的容器，需要提供容器的ID。注意：该命令在退出容器之后会自动停止容器。退出容器使用<code>exit</code>命令
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker exec</td>
+                    <td style="text-align:center">进入一个已存在的容器，需要提供容器的ID，配合<code>-it</code>参数并指定终端<code>/bin/bash</code>进入容器命令行。该命令在退出容器之后，容器不会停止。退出容器使用<code>exit</code>命令。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker export</td>
+                    <td style="text-align:center">导出一个已存在的容器，需要提供容器的ID，配合<code>&gt; xxx.tar</code>命令导出容器快照到本地文件<code>xxx.tar</code>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker import</td>
+                    <td style="text-align:center">导入容器快照文件，使用`cat ./xxx.tar</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker rm</td>
+                    <td style="text-align:center">删除一个已存在的容器，需要提供容器的ID，使用<code>-f</code>参数强制删除
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker container</td>
+                    <td style="text-align:center">批量处理容器，例如删除所有处于终止状态的容器<code>docker container
+                      prune</code></td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker port</td>
+                    <td style="text-align:center">查看容器的端口映射，需要提供容器的ID</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h5 id="镜像使用相关命令"><a class="markdownIt-Anchor" href="#镜像使用相关命令"></a> 镜像使用相关命令
+                </h5>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">命令</th>
+                    <th style="text-align:center">作用</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">docker images</td>
+                    <td style="text-align:center">列出本地主机上已存在的镜像</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker search</td>
+                    <td style="text-align:center">搜索指定的docker镜像</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker pull</td>
+                    <td style="text-align:center">拉取指定的docker镜像</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker rmi</td>
+                    <td style="text-align:center">删除指定的docker镜像</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker commit</td>
+                    <td style="text-align:center">从已有镜像的基础上创建新镜像，<code>-m=&quot;xxx&quot;</code>参数表示提交的描述信息，<code>-a=&quot;xxx&quot;</code>参数指定镜像的作者，<code>test/xxx:v2</code>参数指定镜像的名称和标签
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker build</td>
+                    <td style="text-align:center">从零开始创建一个新的镜像，需要先创建一个包含特定指令组的<code>Dockerfile</code>文件
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">docker tag</td>
+                    <td style="text-align:center">为docker镜像添加标签</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h4 id="4配置-docker-组"><a class="markdownIt-Anchor" href="#4配置-docker-组"></a> 4.配置 docker 组</h4>
+                <p>在linux中使用docker必须以root权限<code>sudo</code>执行命令或者切换到root用户身份运行（不推荐），否则所有的docker命令前都需要添加<code>sudo</code>，表示以root权限执行命令。这里新创建了一个用户组，专门用于操作docker
+                </p>
+                <p>由于通过<code>pacman</code>方式安装<code>docker</code>时自动创建好了docker组，这里直接将当前普通用户添加至docker组中即可。
+                </p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo gpasswd -a <span class="variable">$USER</span> docker <span
+                            class="comment"># 添加当前用户至docker组</span></span><br><span class="line">newgrp docker                <span
+                            class="comment"># 切换到docker用户组（注意该命令需要在每次新开终端时执行）</span></span><br><span
+                            class="line">docker ps                    <span class="comment"># 测试docker命令，这时就不需要在命令前添加sudo</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="5配置-docker-国内加速"><a class="markdownIt-Anchor" href="#5配置-docker-国内加速"></a> 5.配置
+                  docker 国内加速</h4>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors">阿里云官网 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>获取用户专属的镜像加速地址</p>
+                <p>可以通过修改daemon配置文件/etc/docker/daemon.json来使用加速器</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo <span
+                            class="built_in">mkdir</span> -p /etc/docker</span><br><span class="line">sudo <span
+                            class="built_in">tee</span> /etc/docker/daemon.json &lt;&lt;-<span class="string">&#x27;EOF&#x27;</span></span><br><span
+                            class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span
+                            class="string">&quot;这里填写专属加速器地址&quot;</span>]</span><br><span class="line">&#125;</span><br><span
+                            class="line">EOF</span><br><span class="line">sudo systemctl daemon-reload</span><br><span
+                            class="line">sudo systemctl restart docker</span><br><span class="line"></span><br><span
+                            class="line">sudo docker info | grep <span class="string">&quot;专属加速器地址&quot;</span> <span
+                            class="comment"># 查看镜像是否配置成功，若有输出地址信息则表示配置成功</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.runoob.com/docker/docker-mirror-acceleration.html">Docker 镜像加速 |
+                  菜鸟教程(runoob.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4
+                  id="6docker-容器外部访问连接"><a class="markdownIt-Anchor" href="#6docker-容器外部访问连接"></a>
+                  6.docker 容器外部访问连接</h4>
+                <p>默认启动的docker容器只能在容器内部访问，但有时需要在容器外部访问，比如后面使用数据库图形化管理工具远程连接
+                  openGauss 数据库。</p>
+                <p>使用<code>docker run</code>配合<code>-p</code>或<code>-P</code>参数指定端口映射，这里指定端口映射方便后续查找
+                </p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker run --name opengauss --privileged=<span
+                            class="literal">true</span> -d -e GS_PASSWORD=openGauss@123 -p 15432:5432 enmotech/opengauss:latest</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>
+                  通过<code>-p</code>命令指定docker容器内的<code>5432端口</code>（openGauss的默认监听端口）映射到主机的<code>15432端口</code>上。之后就可以通过主机的<code>15432端口</code>访问容器数据库。
+                </p>
+                <h3 id="opengauss-环境搭建"><a class="markdownIt-Anchor" href="#opengauss-环境搭建"></a> openGauss 环境搭建
+                </h3>
+                <p>这里使用<code>openGauss</code>的docker镜像，可直接参考镜像作者提供的<a class="link" target="_blank"
+                                                                                         rel="noopener"
+                                                                                         href="https://hub.docker.com/r/enmotech/opengauss">文档
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="1拉取-docker-镜像"><a
+                  class="markdownIt-Anchor" href="#1拉取-docker-镜像"></a> 1.拉取 docker 镜像</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker search openGauss <span
+                            class="comment"># 搜索openGauss的docker镜像</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>搜索结果如下，这里选择 stars 收藏量最高的镜像</p><img lazyload src="/images/loading.svg"
+                                                                        data-src="/2023/03/05/opengauss-env-build/image-20230305160339079.png"
+                                                                        title="image-20230305160339079">
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker pull enmotech/opengauss <span class="comment"># 拉取镜像</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="2启动-opengauss-容器"><a class="markdownIt-Anchor" href="#2启动-opengauss-容器"></a> 2.启动
+                  openGauss 容器</h4>
+                <p>只在容器内访问</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker run --name opengauss --privileged=<span
+                            class="literal">true</span> -d -e GS_PASSWORD=openGauss@123 enmotech/opengauss:latest</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>允许外部访问</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker run --name opengauss --privileged=<span
+                            class="literal">true</span> -d -e GS_PASSWORD=openGauss@123 -p 15432:5432 enmotech/opengauss:latest</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p><strong>注意<code>GS_PASSWORD</code>设置为你的密码，密码长度8个字符及以上，必须同时包含英文字母大小写，数字，以及特殊符号，用于后续图形化数据库管理工具连接</strong>
+                </p><h4 id="3进入-opengauss-容器"><a class="markdownIt-Anchor" href="#3进入-opengauss-容器"></a> 3.进入
+                  openGauss 容器</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">docker ps    <span
+                            class="comment"># 查看正在运行中的容器</span></span><br><span
+                            class="line">docker ps -a <span
+                            class="comment"># 查看所有已创建的容器</span></span><br><span class="line">docker <span
+                            class="built_in">exec</span> -it opengauss bash <span class="comment"># 进入容器，opengauss是前面创建容器时指定的名称</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="4使用-gsql-配置-opengauss"><a class="markdownIt-Anchor" href="#4使用-gsql-配置-opengauss"></a>
+                  4.使用 gsql 配置 openGauss</h4>
+                <p>注意：openGauss的docker镜像版本是没有<code>gs_om</code>和<code>gs_guc</code>。另外，初次操作数据库时需要在omm用户下进行
+                </p><h5 id="使用-gsql-连接到数据库"><a class="markdownIt-Anchor" href="#使用-gsql-连接到数据库"></a> 使用
+                  gsql 连接到数据库</h5>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">su - omm <span class="comment"># 切换到omm用户</span></span><br><span
+                            class="line">gsql -d postgres -U gaussdb -W<span
+                            class="string">&#x27;openGauss@123&#x27;</span> -h 127.0.0.1 -p 5432 <span class="comment"># 在容器内部可以直接连接</span></span><br><span
+                            class="line"><span class="comment"># 注意用户名是gaussdb是默认存在的用户，密码是之前创建容器时自定义的，5432端口是默认的(根据实际情况调整)</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <blockquote><p>在内部访问数据库时也可以只写<code>gsql</code>不带任何参数的命令来连接数据库</p>
+                  <p>
+                    这是因为该openGauss镜像配置了本地信任机制，因此在容器内连接数据库无需密码，但是如果要从容器外部（其它主机或者其它容器）连接则必须要输入密码</p>
+                  <p>对于通过其他方式安装openGauss的，请另行参考其他教程</p></blockquote>
+                <h5 id="创建新的数据库用户"><a class="markdownIt-Anchor" href="#创建新的数据库用户"></a> 创建新的数据库用户
+                </h5>
+                <p>
+                  omm用户的权限过大，主要用于访问初始数据库进行初始配置，为避免omm用户误操作对数据库造成重大损失，这里新创建一个普通用户并授予基本权限。</p>
+                <p>注意：sql语句结尾带分号。</p>
+                <div class="highlight-container" data-rel="Sql">
+                  <figure class="iseeu highlight sql">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> stu <span
+                            class="keyword">with</span> password &quot;Bigdata@123&quot;; # 创建一个用户名为stu，密码为Bigdata<span
+                            class="variable">@123</span>的用户</span><br><span class="line"></span><br><span
+                            class="line"><span class="keyword">alter</span> <span class="keyword">user</span> stu sysadmin; # 授予系统管理员权限</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="创建新的数据库"><a class="markdownIt-Anchor" href="#创建新的数据库"></a> 创建新的数据库</h5>
+                <p>openGauss数据库，虽然被称为数据库，但实际上它是一个RDBMS（Relational Database Management
+                  System，关系型数据库管理系统）。因此它并不是一个具体的数据库，而是一个管理多个数据库的系统。</p>
+                <div class="highlight-container" data-rel="Sql">
+                  <figure class="iseeu highlight sql">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">create</span> database stu_test owner stu; # 创建一个名为stu_test的数据库并指定所有者为stu</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="使用新用户连接"><a class="markdownIt-Anchor" href="#使用新用户连接"></a> 使用新用户连接</h5>
+                <p>先使用<code>\q</code>命令退出数据库，再使用新用户连接数据库</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">gsql -d stu_test -U stu -W<span
+                            class="string">&#x27;Bigdata@123&#x27;</span> -h 127.0.0.1 -p 5432</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="5opengauss-数据库的使用"><a class="markdownIt-Anchor" href="#5opengauss-数据库的使用"></a>
+                  5.openGauss 数据库的使用</h4><h5 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作
+                </h5>
+                <ul>
+                  <li><p>使用<code>\c dbname</code>切换数据库（dbname为数据库名称）</p></li>
+                  <li><p>使用<code>\l</code>查看数据库系统的数据库列表</p>
+                    <p>也可以通过<code>SELECT datname FROM pg_database;</code>的方式通过系统表查询数据库列表</p></li>
+                  <li><p>使用<code>\dt</code>列举数据表，如果当前数据库内还没有数据表，则输出<code>No relations
+                    found.</code></p>
+                    <p>使用<code>\d+</code>列举所有数据表、视图和索引</p>
+                    <p>使用<code>\d+ tablename</code>查看指定数据表的属性</p>
+                    <p>使用<code>\dn</code>列举架构（schema）</p>
+                    <p>使用<code>\di</code>查看索引</p></li>
+                  <li><p>使用<code>\db</code>查询表空间，也可通过<code>SELECT spcname FROM pg_tablespace;</code>实现</p>
+                  </li>
+                  <li><p>查看数据库用户列表<code>SELECT * FROM pg_user;</code></p></li>
+                  <li><p>查看用户属性<code>SELECT * FROM pg_authid;</code></p></li>
+                  <li><p>查看所有角色<code>SELECT * FROM PG_ROLES;</code></p></li>
+                  <li><p>使用<code>\c - username</code>切换到其他数据库用户</p></li>
+                  <li><p>使用<code>\q</code>命令退出数据库</p></li>
+                </ul>
+                <h5 id="创建-schema"><a class="markdownIt-Anchor" href="#创建-schema"></a> 创建 schema</h5>
+                <div class="highlight-container" data-rel="Sql">
+                  <figure class="iseeu highlight sql">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">create</span> schema stu <span class="keyword">authorization</span> stu;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="创建数据表"><a class="markdownIt-Anchor" href="#创建数据表"></a> 创建数据表</h5>
+                <div class="highlight-container" data-rel="Sql">
+                  <figure class="iseeu highlight sql">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> stu_table (id <span
+                            class="type">int</span>);</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h5 id="向表中添加数据"><a class="markdownIt-Anchor" href="#向表中添加数据"></a> 向表中添加数据</h5>
+                <div class="highlight-container" data-rel="Sql">
+                  <figure class="iseeu highlight sql">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> stu_table <span
+                            class="keyword">values</span> (<span class="number">100</span>);</span><br><span
+                            class="line"><span class="keyword">select</span> <span class="operator">*</span> <span
+                            class="keyword">from</span> stu_table; # 查看数据表内容</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>sql语法在大部分数据库管理系统（RDBMS）之间是通用的，更多sql语法可参考笔者的另一篇文章<a class="link"
+                                                                                                        target="_blank"
+                                                                                                        rel="noopener"
+                                                                                                        href="https://www.patrick_star-tree.top/2022/08/21/MySQL-Base/">MySQL基础
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>注意：<code>Postgresql</code>对大小写不敏感，使用sql语句创建出来的数据库、数据表的名称以及数据内容等默认全转换为小写字母，如果需要严格匹配字母大小写，请在编写sql语句时用英文双引号<code>&quot;&quot;</code>包围需要指定大小写的数据库、数据表的名称以及数据内容等。
+                </p><h4 id="6图形化数据库连接工具"><a class="markdownIt-Anchor" href="#6图形化数据库连接工具"></a>
+                  6.图形化数据库连接工具</h4>
+                <p>这里笔者参考了<a class="link" target="_blank" rel="noopener"
+                                    href="https://zhuanlan.zhihu.com/p/366765114">三款linux上可用的数据库客户端软件 |
+                  知乎(zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，找到了几款linux平台上开源的数据库连接工具。这里以
+                  <a class="link" target="_blank" rel="noopener" href="https://github.com/dbgate/dbgate">DbGate <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> 为例，其他连接工具也是类似的配置流程。
+                </p>
+                <p>更多数据库连接工具推荐</p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/160835224">开源 5
+                  款超好用的数据库 GUI 带你玩转 MongoDB、Redis、SQL 数据库 | 知乎(zhihu.com) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/532594566">8个适用于
+                  Linux 管理员的最佳MySQL/MariaDB GUI 工具 <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="安装工具"><a
+                  class="markdownIt-Anchor" href="#安装工具"></a> 安装工具</h5>
+                <p>在<code>Archlinux</code>下可通过以下命令直接安装</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">yay -S dbgate-bin</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>大致界面如下</p><img lazyload src="/images/loading.svg"
+                                        data-src="/2023/03/05/opengauss-env-build/image-20230305214325422.png"
+                                        title="image-20230305214325422"><h5 id="连接配置"><a class="markdownIt-Anchor"
+                                                                                             href="#连接配置"></a> 连接配置
+                </h5>
+                <p>File —&gt; Add connection 添加一个新的连接</p><img lazyload src="/images/loading.svg"
+                                                                      data-src="/2023/03/05/opengauss-env-build/image-20230305215251057.png"
+                                                                      title="image-20230305215251057">
+                <p>填写配置，其中<code>Connection type</code>设置为<code>PostgreSQL</code>，<code>Port</code>为docker映射的主机端口号，<code>User</code>和<code>Password</code>是前面新创建的数据库用户的名称和密码。最后用<code>Test</code>测试连接是否成功，用<code>Save</code>保存连接配置，用<code>Connect</code>连接数据库
+                </p><img lazyload src="/images/loading.svg"
+                         data-src="/2023/03/05/opengauss-env-build/image-20230305215817927.png"
+                         title="image-20230305215817927">
+                <p>最终连接结果如下</p><img lazyload src="/images/loading.svg"
+                                            data-src="/2023/03/05/opengauss-env-build/image-20230305220707871.png"
+                                            title="image-20230305220707871"><h5 id="编写-sql"><a
+                  class="markdownIt-Anchor" href="#编写-sql"></a> 编写 SQL</h5>
+                <p>File —&gt; New query 新建查询（.sql文件），在该文件中编写具体的sql语句。</p><img lazyload
+                                                                                                src="/images/loading.svg"
+                                                                                                data-src="/2023/03/05/opengauss-env-build/image-20230305221246267.png"
+                                                                                                title="image-20230305221246267">
+                <p>或者选中对应的数据库新建查询，确保新建查询和具体的数据库对应</p><img lazyload
+                                                                                       src="/images/loading.svg"
+                                                                                       data-src="/2023/03/05/opengauss-env-build/image-20230305225943364.png"
+                                                                                       title="image-20230305225943364">
+                <p>编写并执行SQL语句</p><img lazyload src="/images/loading.svg"
+                                             data-src="/2023/03/05/opengauss-env-build/image-20230305232407586.png"
+                                             title="image-20230305232407586"><h4 id="参考资料"><a
+                  class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h4>
+                <p><a class="link" target="_blank" rel="noopener" href="https://www.modb.pro/db/27152">opengauss
+                  docker安装 | 墨天轮(modb.pro) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://hub.docker.com/r/enmotech/opengauss">enmotech/opengauss
+                  | dockerhub(hub.docker.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://www.modb.pro/doc/4656">opengauss
+                  docker从环境搭建到运行 | 墨天轮(modb.pro) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://blog.csdn.net/zhuyue_shenfeng/article/details/116056437">openGauss数据库基本操作 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">使用docker运行openGauss</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-3"><a class="nav-link"
+                                                        href="#%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83"><span
+                      class="nav-text">基本环境</span></a></li>
+                    <li class="nav-item nav-level-3"><a class="nav-link"
+                                                        href="#docker-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span
+                      class="nav-text">Docker 环境搭建</span></a></li>
+                    <li class="nav-item nav-level-3"><a class="nav-link"
+                                                        href="#opengauss-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span
+                      class="nav-text">openGauss 环境搭建</span></a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

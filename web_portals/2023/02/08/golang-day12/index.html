@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">分布式定时任务</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-08 12:23:22</span> <span
+                      class="mobile">2023-02-08 12:23</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>4.1k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>14 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对分布式定时任务的学习<span
+                id="more"></span></p>
+                <h2 id="分布式定时任务"><a class="markdownIt-Anchor" href="#分布式定时任务"></a> 分布式定时任务</h2>
+                <h3 id="目标"><a class="markdownIt-Anchor" href="#目标"></a> 目标</h3>
+                <ul>
+                  <li>知识面扩充
+                    <ul>
+                      <li>对分布式定时任务建立起宏观的认知，并深入了解其实现原理</li>
+                      <li>了解关联的单机定时任务、大数据处理引擎，通过了解不同实现方案的优劣来拓展知识面</li>
+                    </ul>
+                  </li>
+                  <li>项目实践能力加强
+                    <ul>
+                      <li>了解在哪些实际业务场景中使用分布式定时任务</li>
+                      <li>对于实际业务场景中的中间件选型、技术方案做到胸有成竹</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="1前言"><a class="markdownIt-Anchor" href="#1前言"></a> 1.前言</h3>
+                <p>作为后端开发者，面对亿级用户规模、亿级资金规模、百万级读写 QPS，如何设计一个最终开奖环节技术方案？</p>
+                <p>分布式定时任务 = 自动化 + 定时执行 + 海量数据 + 高效稳定</p>
+                <h3 id="2发展历程"><a class="markdownIt-Anchor" href="#2发展历程"></a> 2.发展历程</h3><h4
+                  id="21-windows-批处理"><a class="markdownIt-Anchor" href="#21-windows-批处理"></a> 2.1 Windows 批处理
+                </h4>
+                <ul>
+                  <li>Case 1：10 分钟后 Windows 电脑自动关机
+                    <ol>
+                      <li>桌面空白处右键单击-新建-文本文档</li>
+                      <li>更改文件名和后缀名为“自动关机.bat”</li>
+                      <li>修改文件内容为“shutdown -s -t 600”，表示 10 发展后自动关机</li>
+                      <li>双击运行该批处理文件，电脑将在会在 10 分钟之后自动关机</li>
+                    </ol>
+                  </li>
+                </ul>
+                <h4 id="22-windows-任务计划程序"><a class="markdownIt-Anchor" href="#22-windows-任务计划程序"></a> 2.2
+                  Windows 任务计划程序</h4>
+                <ul>
+                  <li>Case 2：每天 12:00 自动疫情打卡</li>
+                  <li>具体设置方法参考相关资料</li>
+                </ul>
+                <h4 id="23-linux-任务计划-cronjob"><a class="markdownIt-Anchor" href="#23-linux-任务计划-cronjob"></a>
+                  2.3 Linux 任务计划-CronJob</h4>
+                <ul>
+                  <li>Case 3：每天 02:30 定时清理机器日志</li>
+                  <li>Linux 系统命令，使用简单，稳定可靠</li>
+                  <li>但只能控制单机，且不适用于其他操作系统</li>
+                  <li>参考<a class="link" target="_blank" rel="noopener"
+                             href="https://www.cnblogs.com/love-snow/articles/7364888.html">linux CronJob 教程 定时任务
+                    <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <h4 id="24-单机定时任务"><a class="markdownIt-Anchor" href="#24-单机定时任务"></a> 2.4 单机定时任务</h4>
+                <h5 id="timer-ticker"><a class="markdownIt-Anchor" href="#timer-ticker"></a> Timer、Ticker</h5>
+                <ul>
+                  <li><p>Case 4：每隔 5 分钟定时刷新本地缓存数据</p></li>
+                  <li><p>通过代码实现</p>
+                    <p>Java</p>
+                    <div class="highlight-container" data-rel="Java">
+                      <figure class="iseeu highlight java">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br><span
+                                class="line">5</span><br><span class="line">6</span><br><span
+                                class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="keyword">public</span> <span
+                                class="keyword">static</span> <span class="keyword">void</span> <span
+                                class="title function_">main</span><span class="params">(String[] args)</span> <span
+                                class="keyword">throws</span> ParseException &#123;</span><br><span
+                                class="line">    <span class="type">Timer</span> <span
+                                class="variable">timer</span> <span class="operator">=</span> <span
+                                class="keyword">new</span> <span class="title class_">Timer</span>();</span><br><span
+                                class="line">    timer.schedule(<span class="keyword">new</span> <span
+                                class="title class_">TimerTask</span>() &#123;</span><br><span
+                                class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span
+                                class="keyword">public</span> <span class="keyword">void</span> <span
+                                class="title function_">run</span><span class="params">()</span> &#123;</span><br><span
+                                class="line">            SyncLocalCache();</span><br><span
+                                class="line">        &#125;</span><br><span class="line">    &#125;, <span
+                                class="number">5000</span>, <span class="number">5</span> * <span
+                                class="number">60</span> * <span class="number">1000</span>);</span><br><span
+                                class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                    <p>Go</p>
+                    <div class="highlight-container" data-rel="Go">
+                      <figure class="iseeu highlight go">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br><span
+                                class="line">5</span><br><span class="line">6</span><br><span
+                                class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="function"><span class="keyword">func</span> <span
+                                class="title">main</span><span class="params">()</span></span> &#123;</span><br><span
+                                class="line">    ticker := time.NewTicker(<span
+                                class="number">5</span> * time.Minute)</span><br><span class="line">    <span
+                                class="keyword">for</span> &#123;</span><br><span class="line">        <span
+                                class="keyword">select</span> &#123;</span><br><span class="line">            <span
+                                class="keyword">case</span> &lt;- ticker.C:</span><br><span class="line">            SyncLocalCache()</span><br><span
+                                class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span
+                                class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>跨平台可用</p></li>
+                  <li><p>仅单机可用</p></li>
+                </ul>
+                <h5 id="scheduledexecutorservice"><a class="markdownIt-Anchor" href="#scheduledexecutorservice"></a>
+                  ScheduledExecutorService</h5>
+                <ul>
+                  <li><p>Case 5：每隔 5 分钟定时执行多个任务</p>
+                    <p>Java</p>
+                    <div class="highlight-container" data-rel="Java">
+                      <figure class="iseeu highlight java">
+                        <table>
+                          <tr>
+                            <td class="gutter">
+                              <pre><span class="line">1</span><br><span class="line">2</span><br><span
+                                class="line">3</span><br><span class="line">4</span><br><span
+                                class="line">5</span><br><span class="line">6</span><br><span
+                                class="line">7</span><br><span class="line">8</span><br><span
+                                class="line">9</span><br><span class="line">10</span><br><span
+                                class="line">11</span><br></pre>
+                            </td>
+                            <td class="code">
+                              <pre><span class="line"><span class="keyword">private</span> <span
+                                class="keyword">static</span> ScheduledExecutorService scheduler;</span><br><span
+                                class="line"><span class="keyword">public</span> <span
+                                class="keyword">static</span> <span class="keyword">void</span> <span
+                                class="title function_">main</span><span class="params">(String[] args)</span> <span
+                                class="keyword">throws</span> ParseException &#123;</span><br><span class="line">    scheduler = Executors.newScheduledThreadPool(<span
+                                class="number">5</span>);</span><br><span class="line">    scheduler.scheduleAtFixedRate(</span><br><span
+                                class="line">        <span class="keyword">new</span> <span class="title class_">Runnable</span>() &#123;</span><br><span
+                                class="line">            <span class="meta">@Override</span></span><br><span
+                                class="line">            <span class="keyword">public</span> <span
+                                class="keyword">void</span> <span class="title function_">run</span><span
+                                class="params">()</span> &#123;</span><br><span class="line">                DoSomething();</span><br><span
+                                class="line">            &#125;</span><br><span class="line">        &#125;, <span
+                                class="number">0</span>, <span
+                                class="number">300</span>, TimeUnit.SECONDS);</span><br><span class="line">&#125;</span><br></pre>
+                            </td>
+                          </tr>
+                        </table>
+                      </figure>
+                    </div>
+                  </li>
+                  <li><p>拥有线程池功能</p></li>
+                  <li><p>仅单机可用</p></li>
+                </ul>
+                <h4 id="25-任务调度-quartz"><a class="markdownIt-Anchor" href="#25-任务调度-quartz"></a> 2.5 任务调度-Quartz
+                </h4>
+                <ul>
+                  <li>单任务极致控制</li>
+                  <li>没有负载均衡机制</li>
+                  <li>参考<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/306591082">Quartz
+                    是什么？一文带你入坑 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+                </ul>
+                <h4 id="26-分布式定时任务"><a class="markdownIt-Anchor" href="#26-分布式定时任务"></a> 2.6 分布式定时任务
+                </h4>
+                <ul>
+                  <li>平台化部署</li>
+                  <li>分布式部署</li>
+                  <li>支持海量数据</li>
+                </ul>
+                <h5 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h5>
+                <p>
+                  定时任务是指系统为了自动完成特定任务，实时、延时、周期性完成任务调度的过程。解决了自动化和准时化这两个问题。</p>
+                <p>
+                  分布式定时任务是把分散的、可靠性差的定时任务纳入统一的平台，并实现集群管理调度和分布式部署的一种定时任务的管理方式。解决了高性能、可靠性、分布式部署等问题。</p>
+                <p>按触发时机分类</p>
+                <ul>
+                  <li>定时任务：特定时间触发，例如今天 16:00 执行</li>
+                  <li>延时任务：延时触发，例如 10 分钟后执行</li>
+                  <li>周期任务：固定周期时间或固定频率周期调度触发，例如每隔 5秒 或者每天 12:00 执行</li>
+                </ul>
+                <h5 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h5>
+                <ul>
+                  <li>自动化：全自动完成定时任务的调度和执行</li>
+                  <li>平台化：基于平台化的思维管控一系列的分布式定时任务</li>
+                  <li>分布式：在分布式系统环境下运行任务调度，突破单机定时任务的性能瓶颈</li>
+                  <li>伸缩性：采用集群方式部署，可以随时按需扩缩容</li>
+                  <li>高可用：单点故障不影响最终任务结果，可以实现故障转移</li>
+                </ul>
+                <h5 id="执行方式"><a class="markdownIt-Anchor" href="#执行方式"></a> 执行方式</h5>
+                <ul>
+                  <li>单机任务：随机触发一台机器执行任务，适用于计算量小、并发度低的任务</li>
+                  <li>广播任务：广播到所有机器上执行同一个任务，例如所有机器一起清理日志</li>
+                  <li>Map
+                    任务：一个任务可以分出多个子任务，每个子任务负责一部分的计算。适用于计算量大，单机无法满足要求的任务
+                  </li>
+                  <li>MapReduce 任务：在 Map
+                    任务的基础上，对所有子任务的结果做汇总计算，适用于计算量大，并且需要对子任务结果做汇总的任务
+                  </li>
+                </ul>
+                <h4 id="27-业内定时任务框架"><a class="markdownIt-Anchor" href="#27-业内定时任务框架"></a> 2.7 业内定时任务框架
+                </h4>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">框架</th>
+                    <th style="text-align:center">来源</th>
+                    <th style="text-align:center">是否开源</th>
+                    <th style="text-align:center">任务编排</th>
+                    <th style="text-align:center">任务分片</th>
+                    <th style="text-align:center">高可用</th>
+                    <th style="text-align:center">故障转移</th>
+                    <th style="text-align:center">可视化运维</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">Xxl-job</td>
+                    <td style="text-align:center">美团点评</td>
+                    <td style="text-align:center">是</td>
+                    <td style="text-align:center">子任务依赖</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">SchedulerX</td>
+                    <td style="text-align:center">阿里巴巴</td>
+                    <td style="text-align:center">否</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">TCT</td>
+                    <td style="text-align:center">腾讯</td>
+                    <td style="text-align:center">否</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Elastic-job</td>
+                    <td style="text-align:center">当当网</td>
+                    <td style="text-align:center">是</td>
+                    <td style="text-align:center">不支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">Saturn</td>
+                    <td style="text-align:center">唯品会</td>
+                    <td style="text-align:center">是</td>
+                    <td style="text-align:center">不支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                    <td style="text-align:center">支持</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h5 id="xxl-job"><a class="markdownIt-Anchor" href="#xxl-job"></a> Xxl-job</h5>
+                <p>Xxl-job 是一个轻量级分布式任务调度框架，其核心设计目标是开发迅速、学习简单、轻量级、易扩展。Xxl-job
+                  支持分片，简单支持任务依赖，支持子任务依赖，不是跨平台的。</p>
+                <p>Xxl-job
+                  很大的一个优势在于开源且免费，并且轻量级，开箱即用，操作简单，上手快，企业维护成本不高，因而在中小型公司使用非常广泛。</p>
+                <h5 id="schedulerx"><a class="markdownIt-Anchor" href="#schedulerx"></a> SchedulerX</h5>
+                <p>分布式任务调度 ScheduleX 2.0 是阿里巴巴基于 Akka
+                  架构自研的新一代分布式任务调度平台，提供定时调度、调度任务编排和分布式批量处理等功能。</p>
+                <p>SchedulerX 可在阿里云付费使用。它的功能非常强大，在阿里巴巴内部广泛使用并久经考验。</p><h5 id="tct"><a
+                  class="markdownIt-Anchor" href="#tct"></a> TCT</h5>
+                <p>分布式任务调度服务 Tencent Cloud Task
+                  是腾讯自主研发的一款高性能、高可靠通用的分布式任务调度中间件，通过指定时间规则严格触发调度任务，保障任务的可靠有序执行。该服务支持国际通用的时间表达式、调度任务执行生命周期管理，解决传统定时调度任务单点及并发性能问题。同时，支持任务分片、流程编排复杂调度任务处理能力，覆盖广泛的任务调度应用场景。</p>
+                <p>TCT 仅在腾讯内部使用，未开源、未商用。</p><h4 id="28-知识面扩充"><a class="markdownIt-Anchor"
+                                                                                    href="#28-知识面扩充"></a> 2.8 知识面扩充
+                </h4><h5 id="分布式定时任务和单机定时任务"><a class="markdownIt-Anchor"
+                                                              href="#分布式定时任务和单机定时任务"></a> 分布式定时任务和单机定时任务
+                </h5>
+                <p>共同点</p>
+                <ul>
+                  <li>都可以实现自动化的定时、延时、周期任务调度</li>
+                </ul>
+                <p>差异</p>
+                <ul>
+                  <li>分布式定时任务可支撑更大的业务体量</li>
+                  <li>分布式定时任务的性能、伸缩性、稳定性更高</li>
+                </ul>
+                <h5 id="分布式定时任务和大数据处理引擎"><a class="markdownIt-Anchor"
+                                                           href="#分布式定时任务和大数据处理引擎"></a> 分布式定时任务和大数据处理引擎
+                </h5>
+                <p>共同点</p>
+                <ul>
+                  <li>都可以对海量数据做处理</li>
+                  <li>性能、伸缩性、稳定性都很高</li>
+                </ul>
+                <p>差异</p>
+                <ul>
+                  <li>定时并不是大数据处理引擎要解决的核心问题</li>
+                  <li>大数据引擎往往致力于将源数据处理成结果数据，分布式定时任务除了做这个之外，还能调用 HTTP 和 RPC
+                    服务
+                  </li>
+                </ul>
+                <h4 id="29-小结"><a class="markdownIt-Anchor" href="#29-小结"></a> 2.9 小结</h4>
+                <ul>
+                  <li>生活用途
+                    <ul>
+                      <li>Windows 批处理</li>
+                      <li>Windows 任务计划程序</li>
+                    </ul>
+                  </li>
+                  <li>工作用途
+                    <ul>
+                      <li>Linux 任务计划 — cronjob</li>
+                      <li>单机定时任务 — Timer、Ticker</li>
+                      <li>单机定时任务 — ScheduledExecutorService</li>
+                      <li>任务调度 — Quartz</li>
+                      <li>分布式定时任务</li>
+                    </ul>
+                  </li>
+                  <li>分布式定时任务
+                    <ul>
+                      <li>触发时机：定时、延时、周期</li>
+                      <li>执行方式：单机、广播、Map、MapReduce</li>
+                      <li>业内流行框架：Xxl-job、SchedulerX、TCT</li>
+                      <li>关联技术：单机定时任务、大数据处理引擎</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="3实现原理"><a class="markdownIt-Anchor" href="#3实现原理"></a> 3.实现原理</h3><h4
+                  id="31-核心架构"><a class="markdownIt-Anchor" href="#31-核心架构"></a> 3.1 核心架构</h4>
+                <p>分布式定时任务核心要解决触发、调度、执行三个关键问题</p>
+                <ul>
+                  <li><p>触发器：Trigger,解析任务，生成触发事件</p></li>
+                  <li><p>调度器：Scheduler，获取执行任务单元，管理任务生命周期</p></li>
+                  <li><p>执行器：Executor，获取执行任务单元，执行任务逻辑</p></li>
+                </ul>
+                <p>除此之外，还需要提供一个控制台（Admin），提供任务管理和干预的功能。</p><h5 id="数据流"><a
+                  class="markdownIt-Anchor" href="#数据流"></a> 数据流</h5>
+                <p>任务创建：用户 —&gt; 任务基础信息、触发规则、任务代码 —&gt; 控制台（Admin）—&gt; 任务 DB</p>
+                <p>任务执行：控制台（Admin）—&gt; 触发器 Trigger —&gt; 调度器 Scheduler —&gt; 执行器 Executor</p><h5
+                  id="功能架构"><a class="markdownIt-Anchor" href="#功能架构"></a> 功能架构</h5>
+                <p>
+                  Admin：元数据存储、元数据状态流转、任务分片、任务依赖、规则引擎、任务暂停/恢复、日志管理、监控报警、指标统计、…</p>
+                <p>Trigger：解析引擎、Scanner、可靠投递、状态流转、补偿策略</p>
+                <p>Scheduler：调度、负载均衡、幂等控制、容错、故障转移、限流、计费、平滑启停、状态管控、…</p>
+                <p>Executor：注册、任务获取、任务执行、状态上报、日志处理、本地幂等、任务回调、…</p><h4 id="32-控制台"><a
+                  class="markdownIt-Anchor" href="#32-控制台"></a> 3.2 控制台</h4><h5 id="基本概念"><a
+                  class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h5>
+                <ul>
+                  <li>任务：Job，任务元数据</li>
+                  <li>任务实例：JobInstance，周期任务会生成多个任务实例</li>
+                  <li>任务结果：JobResult，任务实例运行的结果</li>
+                  <li>任务历史：JobHistory，用户可以修改任务信息，任务实例对应的任务元数据可以不同，因而使用任务历史存储
+                  </li>
+                </ul>
+                <h5 id="任务元数据"><a class="markdownIt-Anchor" href="#任务元数据"></a> 任务元数据</h5>
+                <p>任务元数据（Job）是用户对任务属性的定义，包括任务类型调度时机、执行行为等。</p><h5 id="任务实例"><a
+                  class="markdownIt-Anchor" href="#任务实例"></a> 任务实例</h5>
+                <p>任务实例（JobInstance）是一个确定的 Job 的一次运行实例。</p><h4 id="33-触发器"><a
+                  class="markdownIt-Anchor" href="#33-触发器"></a> 3.3 触发器</h4><h5 id="核心职责"><a
+                  class="markdownIt-Anchor" href="#核心职责"></a> 核心职责</h5>
+                <p>给定一系列任务，解析它们的触发规则，在规定的时间点触发任务的调度</p><h5 id="设计约束"><a
+                  class="markdownIt-Anchor" href="#设计约束"></a> 设计约束</h5>
+                <ul>
+                  <li>需支持大量任务</li>
+                  <li>需支持秒级的调度</li>
+                  <li>周期任务需要多次执行</li>
+                  <li>需保证秒级扫描的高性能，并避免资源浪费</li>
+                </ul>
+                <h5 id="方案-1"><a class="markdownIt-Anchor" href="#方案-1"></a> 方案 1</h5>
+                <p>定期扫描 + 延时消息</p>
+                <p>定时扫描的机器集群部署，通过分布式锁保证只有一台机器在调度。</p><h5 id="方案-2"><a
+                  class="markdownIt-Anchor" href="#方案-2"></a> 方案 2</h5>
+                <p>时间轮（Quartz 方案）</p>
+                <p>
+                  时间轮是一种高效利用线程资源进行批量化调度的一种调度模型。时间轮是一个存储环形队列，底层采用数组实现，数组中的每个元素可以存放一个定时任务列表。</p>
+                <p>目标：遍历任务列表，从中找出当前时间点需触发的任务列表</p>
+                <p>几种存储方式的比较</p>
+                <ol>
+                  <li><p>使用链表存储任务，每个元素代表一个任务。查询复杂度 O(n)，修改复杂度 O(1)</p></li>
+                  <li><p>使用最小堆存储任务，按执行时间排序，每个节点存储同执行时间任务列表。查询复杂度 O(1)，修改复杂度
+                    O(log n)</p></li>
+                  <li><p>使用时间轮存储任务，每个节点存储同执行时间任务列表。查询复杂度 O(1)，修改复杂度 O(1)</p>
+                    <p>存在刻度容量问题。</p></li>
+                  <li><p>使用多时间轮存储任务，上一级时间轮转过对应刻度后把任务塞入下级时间轮中。</p></li>
+                </ol>
+                <h5 id="高可用"><a class="markdownIt-Anchor" href="#高可用"></a> 高可用</h5>
+                <p>核心问题</p>
+                <ul>
+                  <li>不同业务之间，任务的调度会相互影响</li>
+                  <li>负责扫描和触发的机器出现故障</li>
+                </ul>
+                <p>解法思路</p>
+                <ul>
+                  <li>存储上，不同级别、业务做资源隔离</li>
+                  <li>运行时，不同级别、业务分开执行</li>
+                  <li>部署时，采用多机房集群化部署，避免单点故障，通过数据库锁或分布式锁保证任务只能被触发一次</li>
+                </ul>
+                <p>问题</p>
+                <ul>
+                  <li>单 Trigger 模式：会有单点故障，机器故障时平台崩溃。</li>
+                  <li>Trigger 集群模式：可避免单点故障，但需要避免同一任务被多次触发，导致业务紊乱。</li>
+                </ul>
+                <h5 id="数据库行锁模式"><a class="markdownIt-Anchor" href="#数据库行锁模式"></a> 数据库行锁模式</h5>
+                <p>在触发调度之前，更新数据库中 JobInstance
+                  的状态，成功抢锁的才会触发调度。但是多台机器频繁竞争数据库锁，节点越多性能越差。</p><h5 id="分布式锁模式">
+                  <a class="markdownIt-Anchor" href="#分布式锁模式"></a> 分布式锁模式</h5>
+                <p>在触发调度之前，尝试抢占分布式锁，可使用 Redis 锁或 Zookeeper 锁。性能较高，是比较广泛使用的方案。</p><h4
+                  id="34-调度器"><a class="markdownIt-Anchor" href="#34-调度器"></a> 3.4 调度器</h4><h5 id="资源来源"><a
+                  class="markdownIt-Anchor" href="#资源来源"></a> 资源来源</h5>
+                <p>业务系统提供机器资源</p>
+                <p>优点</p>
+                <ul>
+                  <li>任务执行逻辑与业务系统共用同一份资源，利用率更高</li>
+                </ul>
+                <p>缺点</p>
+                <ul>
+                  <li>更容易发生定时任务脚本影响在线服务的事故</li>
+                  <li>不能由定时任务平台控制扩缩容</li>
+                </ul>
+                <p>定时任务平台提供机器资源</p>
+                <p>优点</p>
+                <ul>
+                  <li>任务执行逻辑与业务系统提供的在线服务隔离，避免相互影响</li>
+                  <li>可以支持优雅地扩缩容</li>
+                </ul>
+                <p>缺点</p>
+                <ul>
+                  <li>消耗更多的机器资源</li>
+                  <li>需要额外为定时任务平台申请接口调用权限，而不能直接继承业务系统的权限</li>
+                </ul>
+                <h5 id="节点选择"><a class="markdownIt-Anchor" href="#节点选择"></a> 节点选择</h5>
+                <ul>
+                  <li><p>随机节点执行：选择集群中一个可用的节点执行调度任务。</p>
+                    <p>适用场景：定时对账。</p></li>
+                  <li><p>广播执行：在集群中所有的执行节点分发调度任务并执行。</p>
+                    <p>适用场景：批量运维。</p></li>
+                  <li><p>分片执行：按照用户自定义分片逻辑进行拆分，分发到集群中不同节点并行执行，提升资源利用效率。</p>
+                    <p>适用场景：海量日志统计。</p></li>
+                </ul>
+                <h5 id="任务分片"><a class="markdownIt-Anchor" href="#任务分片"></a> 任务分片</h5>
+                <p>通过任务分片来提高任务执行的效率和资源的利用率。N 个执行器 Executor，M 个业务数据区域段，最好 M &gt;=
+                  N，且 M 是 N 的整数倍。</p><h5 id="任务编排"><a class="markdownIt-Anchor" href="#任务编排"></a> 任务编排
+                </h5>
+                <p>使用有向无环图 DAG（Directed Acyclic Graph）进行可视化任务编排。</p><h5 id="高级特性-故障转移"><a
+                  class="markdownIt-Anchor" href="#高级特性-故障转移"></a> 高级特性 - 故障转移</h5>
+                <p>故障转移：确保部分执行单元任务失败时，任务最终成功。</p>
+                <p>分片任务基于一致性 hash 策略分发任务，当某 Executor 异常时，调度器会将任务分发到其他 Executor。</p><h5
+                  id="高可用-2"><a class="markdownIt-Anchor" href="#高可用-2"></a> 高可用</h5>
+                <p>调度器可以集群部署，做到完全的无状态，靠消息队列的重试机制保障任务一定会被调度。</p><h4 id="35-执行器">
+                  <a class="markdownIt-Anchor" href="#35-执行器"></a> 3.5 执行器</h4>
+                <p>基于注册中心，可以做到执行器的弹性扩缩容。</p><h4 id="36-小结"><a class="markdownIt-Anchor"
+                                                                                   href="#36-小结"></a> 3.6 小结</h4>
+                <ul>
+                  <li>核心架构
+                    <ul>
+                      <li>控制台 Admin、触发器 Trigger、调度器 Scheduler、执行器 Executor</li>
+                    </ul>
+                  </li>
+                  <li>业务模型
+                    <ul>
+                      <li>任务元数据 Job、任务实例 JobInstance、任务结果 JobResult、任务历史 JobHistory</li>
+                    </ul>
+                  </li>
+                  <li>触发器
+                    <ul>
+                      <li>定时扫描 + 延时消息</li>
+                      <li>时间轮
+                        <ul>
+                          <li>链表、最小堆、时间轮、多级时间轮</li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>调度器
+                    <ul>
+                      <li>资源来源</li>
+                      <li>资源调度：节点选择、任务分片、任务编排、故障转移</li>
+                    </ul>
+                  </li>
+                  <li>执行器
+                    <ul>
+                      <li>注册、调度、回调、心跳检测</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="4业务应用"><a class="markdownIt-Anchor" href="#4业务应用"></a> 4.业务应用</h3>
+                <p>所有需要定时、延时、周期性执行任务的业务场景，都可以考虑使用分布式定时任务。</p>
+                <p>电商</p>
+                <ul>
+                  <li>订单 30 分钟未付款自动关闭订单</li>
+                  <li>定时给商家、达人发送消息，给用户发放优惠券等</li>
+                </ul>
+                <p>互动</p>
+                <ul>
+                  <li>支付宝集五福</li>
+                  <li>集卡瓜分红包</li>
+                </ul>
+                <p>游戏</p>
+                <ul>
+                  <li>活动结束后批量补发用户未领取的奖励</li>
+                  <li>定期更新游戏内榜单</li>
+                </ul>
+                <h5 id="其他解决方案"><a class="markdownIt-Anchor" href="#其他解决方案"></a> 其他解决方案</h5>
+                <p>发货后超过 10 天未收货时系统自动确认收货</p>
+                <ul>
+                  <li>使用分布式定时任务的延时任务</li>
+                  <li>使用消息队列的延时消息或者定时消息</li>
+                </ul>
+                <p>春节集卡活动统计完成集卡的用户个数和总翻倍数</p>
+                <ul>
+                  <li>使用分布式定时任务的 MapReduce 任务</li>
+                  <li>使用大数据离线处理引擎 Hive 离线做统计</li>
+                  <li>使用大数据实时处理引擎 Flink 实时做统计</li>
+                </ul>
+                <h5 id="对比"><a class="markdownIt-Anchor" href="#对比"></a> 对比</h5>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">解决方案</th>
+                    <th style="text-align:center">时效性</th>
+                    <th style="text-align:center">可控性</th>
+                    <th style="text-align:center">简洁性</th>
+                    <th style="text-align:center">主要缺点</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">分布式定时任务</td>
+                    <td style="text-align:center">秒级</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">-</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">单机定时任务</td>
+                    <td style="text-align:center">秒级</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">无法支撑很大业务体量</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">延时消息</td>
+                    <td style="text-align:center">实时</td>
+                    <td style="text-align:center">低</td>
+                    <td style="text-align:center">中</td>
+                    <td style="text-align:center">在任务有变化时，已发送的延时消息不便于做变动</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">离线计算</td>
+                    <td style="text-align:center">小时级</td>
+                    <td style="text-align:center">中</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">时延至少小时级</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">实时计算</td>
+                    <td style="text-align:center">秒级</td>
+                    <td style="text-align:center">高</td>
+                    <td style="text-align:center">中</td>
+                    <td style="text-align:center">只能做数据处理，无法调用 HTTP/RPC 请求完成业务逻辑处理</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://blog.51cto.com/xiaoyuanzheng/5662986">Windows
+                  任务计划程序（task scheduler）介绍 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>
+                </p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://www.cnblogs.com/love-snow/articles/7364888.html">linux CronJob 教程 定时任务 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/306591082">Quartz
+                  是什么？一文带你入坑 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/36627346">美团点评许雪里：分布式任务调度平台
+                  XXL-JOB <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://xie.infoq.cn/article/5dfcab3b430d549f006882635">时间轮原理及其在框架中的应用 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">分布式定时任务</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1"><span
+                      class="nav-text">分布式定时任务</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87"><span
+                          class="nav-text">目标</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#1%E5%89%8D%E8%A8%80"><span
+                          class="nav-text">1.前言</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span
+                          class="nav-text">2.发展历程</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span
+                          class="nav-text">3.实现原理</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E4%B8%9A%E5%8A%A1%E5%BA%94%E7%94%A8"><span
+                          class="nav-text">4.业务应用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

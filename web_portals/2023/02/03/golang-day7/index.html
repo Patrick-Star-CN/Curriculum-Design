@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+  <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">架构初探</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-03 21:34:37</span> <span
+                      class="mobile">2023-02-03 21:34</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-tags article-meta-item"><i class="fa-regular fa-tags"></i>&nbsp;<ul><li><a
+                      href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>3.1k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>10 分钟</span> </span><span
+                      class="article-pv article-meta-item"><i class="fa-regular fa-eye"></i>&nbsp;<span
+                      id="busuanzi_value_page_pv"></span></span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，已收录到<a class="link"
+                                                                                                          target="_blank"
+                                                                                                          rel="noopener"
+                                                                                                          href="https://juejin.cn/post/7195891149012795452">架构初探
+                | 青训营笔记 - 掘金 (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，主要记录了对架构分析设计的学习<span
+                id="more"></span></p>
+                <h2 id="架构初探"><a class="markdownIt-Anchor" href="#架构初探"></a> 架构初探</h2>
+                <h3 id="1-什么是架构"><a class="markdownIt-Anchor" href="#1-什么是架构"></a> 1. 什么是架构</h3>
+                <p><strong>定义</strong></p>
+                <p>架构，又称软件架构，是有关软件整体结构与组件的抽象描述，用于指导软件系统各个方面的设计。</p>
+                <p>实现一个软件有很多种方法，架构在方法选择上起着至关重要的指导作用。</p>
+                <p>架构的重要性</p>
+                <ul>
+                  <li>地基没打好，大厦容易倒</li>
+                  <li>地基坚实了，大厦才能盖得高</li>
+                  <li>站在巨人肩膀上，才能看得远</li>
+                </ul>
+                <h4 id="11-问题"><a class="markdownIt-Anchor" href="#11-问题"></a> 1.1 问题</h4>
+                <ul>
+                  <li>如何设计</li>
+                  <li>如何开发</li>
+                  <li>如何运营</li>
+                  <li>…</li>
+                </ul>
+                <h4 id="12-单机"><a class="markdownIt-Anchor" href="#12-单机"></a> 1.2 单机</h4>
+                <p>软件系统需要对外提供服务。单机，就是把所有功能都实现在一个进程里，并部署在一台机器上</p>
+                <p>优点：简单，是最基本的架构</p>
+                <p>缺点</p>
+                <ul>
+                  <li>单体服务存在架构瓶颈（高并发连接问题，是单体架构本身的设计缺陷）</li>
+                  <li>运维的时候需要停服，届时用户无法使用服务</li>
+                </ul>
+                <p>
+                  单机服务的模式除了简单之外没有任何优点。当今互联网时代，单机服务的形态一般只适合出现在预研或初创阶段，但凡业务有发展和迭代的需求，就应该优先快速做架构迭代。</p>
+                <h4 id="13-单体-垂直应用-垂直切分"><a class="markdownIt-Anchor" href="#13-单体-垂直应用-垂直切分"></a>
+                  1.3 单体、垂直应用 | 垂直切分</h4>
+                <p>
+                  把进程部署在多个机器上，并引入负载均衡层，经过这样的垂直切分，就来到了单体架构。负载均衡层用于引导用户去正常工作的机器。</p>
+                <p>在单体架构的基础上进一步地再把不同应用的代码从之前的一个大的进程中拆分出来，就来到了垂直应用架构。</p>
+                <ul>
+                  <li>单体架构通过分布式部署逐步演化为分布式架构，垂直应用架构就是一种分布式架构。</li>
+                  <li>垂直应用架构：按应用垂直切分单体并进行分布式部署的架构。</li>
+                  <li>优点
+                    <ul>
+                      <li>水平扩容</li>
+                      <li>运维不需要停服</li>
+                    </ul>
+                  </li>
+                  <li>缺点
+                    <ul>
+                      <li>职责太多，开发效率不高</li>
+                      <li>爆炸半径大（即影响范围大），小变动可能会引起大范围的问题</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>根据应用把架构做垂直拆分仍存在缺陷，于是演化出了根据模块/职责对架构进行水平拆分。</p><h4
+                  id="14-soa-微服务-水平切分"><a class="markdownIt-Anchor" href="#14-soa-微服务-水平切分"></a> 1.4
+                  SOA、微服务 | 水平切分</h4>
+                <p>
+                  把原本包含了众多复杂逻辑的进程按照功能单元抽象成多个服务，并为它们之间的通信定义标准，便得到了SOA架构。</p>
+                <p>SOA(Service-Oriented Architecture)</p>
+                <ul>
+                  <li>将应用的不同功能单元抽象为服务</li>
+                  <li>定义服务之间的通信标准</li>
+                </ul>
+                <p>两个重要概念</p>
+                <ul>
+                  <li>服务：根据功能抽象出来的概念。比如，处理用户登录信息的 Passport
+                    服务，负责持久化存储的数据库服务，以及为了加快查询速度的缓存服务等。
+                  </li>
+                  <li>通信标准：服务之间通信的基石。</li>
+                </ul>
+                <p>
+                  为了服务之间更好的通信，有两个大的发展方向：中心化和去中心化。由于中心化的方案较重，拓展性差，普及性不高。这里就考虑去中心化方向。去中心化方向的最终形态就是微服务架构。</p>
+                <ul>
+                  <li><p>微服务架构：SOA 的去中心化演进方向</p></li>
+                  <li><p>优点</p>
+                    <ul>
+                      <li>不同模块的开发者可以各司其职，开发迭代效率得到显著提高</li>
+                      <li>各个服务独立运维，变更操作的影响面可控，应用整体的稳定性得到了提高</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p><strong>垂直切分和水平切分带来的一系列问题</strong></p>
+                <ul>
+                  <li>单机部署演进而来的分布式架构，存在数据一致性问题</li>
+                  <li>服务的不断拓展，依赖关系的复杂化，如何实现高可用</li>
+                  <li>多个微服务的管理运维问题</li>
+                  <li>微服务的目标是强化单一职责，控制爆炸半径，在解耦和过微之间取舍</li>
+                </ul>
+                <h4 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h4>
+                <p>架构的演进初衷</p>
+                <ul>
+                  <li>需求量越来越大，需要增加人手</li>
+                  <li>整体逻辑越做越复杂，需要分工合作</li>
+                </ul>
+                <p>架构的演进思路</p>
+                <ul>
+                  <li>垂直切分：按照应用切分</li>
+                  <li>水平切分：按照服务切分</li>
+                </ul>
+                <h3 id="2企业级后端架构剖析"><a class="markdownIt-Anchor" href="#2企业级后端架构剖析"></a> 2.企业级后端架构剖析
+                </h3><h4 id="21-云计算"><a class="markdownIt-Anchor" href="#21-云计算"></a> 2.1 云计算</h4>
+                <p>云计算是指通过软件自动化管理，提供计算资源的服务网络，是现代互联网大规模熟悉分析和存储的基石。</p>
+                <p>基础</p>
+                <ul>
+                  <li>虚拟化技术：硬件（虚拟机）、操作系统（容器）、网络</li>
+                  <li>编排方案：虚拟机编排方案（OpenStack）、容器编排方案（Kubernetes）</li>
+                </ul>
+                <p>架构</p>
+                <ul>
+                  <li>Iaas（Infrastructure as a Service）</li>
+                  <li>Paas（Platform as a Service）</li>
+                  <li>SaaS（Software as a Service）</li>
+                  <li>Faas（Function as a Service）</li>
+                </ul>
+                <h4 id="22-云原生"><a class="markdownIt-Anchor" href="#22-云原生"></a> 2.2 云原生</h4>
+                <p>云原生，实际是云原生计算的简称，它是云计算发展到现在的一种形态。</p>
+                <p>
+                  云原生技术为在公有云、私有云、混合云等新型的动态环境中构建和运行可弹性拓展的应用提供了可能性。它的代表技术有</p>
+                <ul>
+                  <li>容器化</li>
+                  <li>服务网格</li>
+                  <li>微服务</li>
+                  <li>不可变基础架构</li>
+                  <li>声明式 API</li>
+                </ul>
+                <p>
+                  基于这些技术，开发者可以构建出容错性好、易于管理、具备较好观测性的云服务。结合可靠的自动化机制，服务可以轻松应对频繁和可预测的重大变更。</p>
+                <p>云原生主要涉及四个大方面</p>
+                <ul>
+                  <li>弹性资源：基于虚拟化容器以及灵活的编排调度机制，可以为云服务提供快速扩缩容能力，而且极大程度地提高了物理资源的利用率。在这方面，kubernetes
+                    技术已经称为了业界的标准
+                  </li>
+                  <li>
+                    微服务架构：微服务架构也是云原生的重要基石之一。依托于功能单元解构，使得云服务具备了快速迭代的可能，业务得以迅速发展；统一的通信标准能够帮助越来越多的组件加入到云原生的大家庭，同时也使得各组件之间的交互变的更容易
+                  </li>
+                  <li>DevOps：设计-&gt;开发-&gt;测试-&gt;交付-&gt;开发-&gt;测试-&gt;交付，自动化的流程使得软件的工作流程更高效，将微服务架构的优势发挥的淋漓尽致</li>
+                  <li>服务网格：如果说微服务架构的重要进步，是将庞大的单体服务按照业务功能解耦开来，那么，服务网格的重要进步就是将业务逻辑与网络通信和治理解耦开来。业务不再需要关心异构系统中
+                    RPC 中间件治理能力的不统一，也使得复杂的治理能力的落地成为可能
+                  </li>
+                </ul>
+                <h5 id="221-弹性计算资源"><a class="markdownIt-Anchor" href="#221-弹性计算资源"></a> 2.2.1 弹性计算资源
+                </h5>
+                <p>弹性计算资源类型</p>
+                <ul>
+                  <li>服务资源调度：微服务和大服务</li>
+                  <li>计算资源调度：在线和离线</li>
+                  <li>消息队列：在线和离线</li>
+                </ul>
+                <h5 id="222-弹性存储资源"><a class="markdownIt-Anchor" href="#222-弹性存储资源"></a> 2.2.2 弹性存储资源
+                </h5>
+                <p>弹性存储资源类型</p>
+                <ul>
+                  <li>典型：对象和数据</li>
+                  <li>关系型数据库</li>
+                  <li>元数据：服务发现</li>
+                  <li>NoSQL</li>
+                </ul>
+                <p>将存储资源视为服务</p><h5 id="223-devops"><a class="markdownIt-Anchor" href="#223-devops"></a> 2.2.3
+                  DevOps</h5>
+                <p>DevOps 是云原生时代软件交付的利器，贯穿整个软件开发周期。</p>
+                <p>结合自动化流程，提高软件开发、交付效率</p><h5 id="224-微服务架构"><a class="markdownIt-Anchor"
+                                                                                      href="#224-微服务架构"></a> 2.2.4
+                  微服务架构</h5>
+                <p>通信标准</p>
+                <ul>
+                  <li>HTTP（RESTful、API）</li>
+                  <li>RPC（Thrift、gRPC）</li>
+                </ul>
+                <p>微服务中间件 RPC vs HTTP</p>
+                <ul>
+                  <li>性能</li>
+                  <li>服务治理</li>
+                  <li>协议可解释性</li>
+                </ul>
+                <p>云原生场景下，微服务大可不必在业务逻辑中实现符合通信标准的交互逻辑，而是交给框架来做。</p><h5
+                  id="225-服务网格"><a class="markdownIt-Anchor" href="#225-服务网格"></a> 2.2.5 服务网格</h5>
+                <p>服务网络（Service Mesh）</p>
+                <ul>
+                  <li>微服务之间通讯的中间层</li>
+                  <li>高性能网络代理</li>
+                  <li>业务代码与治理解耦</li>
+                </ul>
+                <p>相比较于 RPC/HTTP 框架</p>
+                <ul>
+                  <li>异构系统治理统一化</li>
+                  <li>与业务进程解耦，生命周期易管理</li>
+                </ul>
+                <h3 id="企业级后端架构的挑战"><a class="markdownIt-Anchor" href="#企业级后端架构的挑战"></a> 企业级后端架构的挑战
+                </h3>
+                <p><strong>问题</strong></p>
+                <ul>
+                  <li>基础设施层面：
+                    <ul>
+                      <li>物理资源是运有限的，机器和带宽</li>
+                      <li>资源利用率受制于部署服务</li>
+                    </ul>
+                  </li>
+                  <li>用户层面
+                    <ul>
+                      <li>网络通信开销较大</li>
+                      <li>网络抖动导致运维成本提高</li>
+                      <li>异构环境下，不同实例资源水位不均</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="31-离在线资源并池"><a class="markdownIt-Anchor" href="#31-离在线资源并池"></a> 3.1 离在线资源并池
+                </h4>
+                <p>核心收益</p>
+                <ul>
+                  <li>降低物理资源成本</li>
+                  <li>提供更多的弹性资源，增加收入</li>
+                </ul>
+                <p>解决思路：离在线并池</p>
+                <ul>
+                  <li>在线业务的特点
+                    <ul>
+                      <li>IO 密集型为主</li>
+                      <li>潮汐性、实时性</li>
+                    </ul>
+                  </li>
+                  <li>离线业务的特点
+                    <ul>
+                      <li>计算密集型占多数</li>
+                      <li>非实时性</li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>在同一个机器做离在线隔离，使用自动扩缩容</p><h4 id="32-自动扩缩容"><a class="markdownIt-Anchor"
+                                                                                        href="#32-自动扩缩容"></a> 3.2
+                  自动扩缩容</h4>
+                <p>核心收益：降低业务成本</p>
+                <p>解决思路：自动扩缩容，利用在线业务潮汐性自动扩缩容</p>
+                <p>扩缩容依据的指标，微服务亲和性部署</p><h4 id="33-微服务亲和性部署"><a class="markdownIt-Anchor"
+                                                                                        href="#33-微服务亲和性部署"></a>
+                  3.3 微服务亲和性部署</h4>
+                <p>核心收益</p>
+                <ul>
+                  <li>降低业务成本</li>
+                  <li>提高服务可用性</li>
+                </ul>
+                <p>解决思路：微服务亲和性部署</p>
+                <ul>
+                  <li>将满足亲和性条件的容器调度到一台宿主机</li>
+                  <li>微服务中间件与服务网格通过共享内存通信</li>
+                  <li>服务网格控制面实施灵活、动态的流量调度</li>
+                </ul>
+                <h4 id="34-流量治理"><a class="markdownIt-Anchor" href="#34-流量治理"></a> 3.4 流量治理</h4>
+                <p>核心收益</p>
+                <ul>
+                  <li>提高微服务调用容错性</li>
+                  <li>容灾</li>
+                  <li>进一步提高开发效率，DevOps 发挥到极致</li>
+                </ul>
+                <p>解决思路：基于微服务中间件和服务网格的流量治理</p>
+                <ul>
+                  <li>熔断、重试</li>
+                  <li>单元化</li>
+                  <li>复杂环境（功能、预览）的流量调度</li>
+                </ul>
+                <h4 id="cpu-水位负载均衡"><a class="markdownIt-Anchor" href="#cpu-水位负载均衡"></a> CPU 水位负载均衡
+                </h4>
+                <p>核心收益</p>
+                <ul>
+                  <li>打平异构环境算力差异</li>
+                  <li>为自动扩缩容提供正向输入</li>
+                </ul>
+                <p>解决思路：CPU 水位负载均衡</p>
+                <ul>
+                  <li>Iaas：提供资源探针</li>
+                  <li>服务网格：动态负载均衡</li>
+                </ul>
+                <h3 id="4-后端架构实战"><a class="markdownIt-Anchor" href="#4-后端架构实战"></a> 4. 后端架构实战</h3>
+                <p><strong>问题提炼</strong></p>
+                <p>输入</p>
+                <ul>
+                  <li>服务网格数据面：支持带权重的负载均衡策略</li>
+                  <li>注册中心存储了所有容器的权重信息</li>
+                  <li>宿主机能够提供容器的资源使用情况和物理资源信息（如 CPU 型号）</li>
+                </ul>
+                <p>关键点</p>
+                <ul>
+                  <li>紧急回滚能力</li>
+                  <li>大规模</li>
+                  <li>极端场景</li>
+                </ul>
+                <h4 id="41-自适应静态权重"><a class="markdownIt-Anchor" href="#41-自适应静态权重"></a> 4.1 自适应静态权重
+                </h4>
+                <p>方案</p>
+                <ul>
+                  <li>采集宿主机物理资源信息</li>
+                  <li>调整容器注册的权重</li>
+                </ul>
+                <p>优点</p>
+                <ul>
+                  <li>复杂度低</li>
+                  <li>完全分布式，可用性高</li>
+                  <li>微服务中间件无适配成本</li>
+                </ul>
+                <p>缺点</p>
+                <ul>
+                  <li>无紧急回滚能力</li>
+                  <li>缺乏运行时自适应能力</li>
+                </ul>
+                <h4 id="42-自适应动态权重-alpha"><a class="markdownIt-Anchor" href="#42-自适应动态权重-alpha"></a> 4.2
+                  自适应动态权重 Alpha</h4>
+                <p>方案</p>
+                <ul>
+                  <li>容器动态权重的自适应调整</li>
+                  <li>服务网格的服务发现和流量调度能力</li>
+                </ul>
+                <p>优点</p>
+                <ul>
+                  <li>解决无法紧急回滚的问题</li>
+                  <li>运行时权重自适应</li>
+                </ul>
+                <p>缺点：过度流量倾斜可能会有异常情况</p><h4 id="43-自适应动态权重-beta"><a class="markdownIt-Anchor"
+                                                                                           href="#43-自适应动态权重-beta"></a>
+                  4.3 自适应动态权重 Beta</h4>
+                <p>方案：服务网格上报 RPC 指标</p>
+                <p>优点：极端场景的处理成为可能</p>
+                <p>缺点</p>
+                <ul>
+                  <li>时序数据库压力较大</li>
+                  <li>动态权重决策中心职责越来越多，迭代 -&gt; 变更 -&gt; 风险</li>
+                </ul>
+                <h4 id="44-自适应动态权重-release"><a class="markdownIt-Anchor" href="#44-自适应动态权重-release"></a>
+                  4.4 自适应动态权重 Release</h4>
+                <p>演进方向</p>
+                <ul>
+                  <li>微服务化</li>
+                  <li>引入消息队列削峰、解耦</li>
+                  <li>离在线链路切分</li>
+                  <li>梳理强弱依赖</li>
+                  <li>解决在线分析引擎的数据一致性问题：一致性哈希</li>
+                  <li>解决时序数据库压力：将其作为旁路工具，采用纯内存的在线分析引擎进行实时策略计算</li>
+                  <li>离线分析：使用消息队列解耦、削峰</li>
+                  <li>离线回馈在线</li>
+                </ul>
+                <h4 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h4>
+                <p>没有最好的架构，只有最合适的架构</p>
+                <p>架构设计的流程</p>
+                <ul>
+                  <li>需求先行。弄清楚要解决什么问题</li>
+                  <li>业界调研。业界都有哪些解决方案可供参考</li>
+                  <li>技术选型。内部/社区都有哪些基础组件</li>
+                  <li>异常情况。考虑清除应对各种异常问题的方案</li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/136587858">软件架构的演变-单体架构，垂直架构，分布式架构，SOA架构和微服务架构的演变历程
+                  - 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26302012">水平拆分
+                  &amp; 垂直拆分 - 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">架构初探</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E6%9E%B6%E6%9E%84%E5%88%9D%E6%8E%A2"><span
+                      class="nav-text">架构初探</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1-%E4%BB%80%E4%B9%88%E6%98%AF%E6%9E%B6%E6%9E%84"><span
+                          class="nav-text">1. 什么是架构</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%89%96%E6%9E%90"><span
+                          class="nav-text">2.企业级后端架构剖析</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E4%BC%81%E4%B8%9A%E7%BA%A7%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E7%9A%84%E6%8C%91%E6%88%98"><span
+                          class="nav-text">企业级后端架构的挑战</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4-%E5%90%8E%E7%AB%AF%E6%9E%B6%E6%9E%84%E5%AE%9E%E6%88%98"><span
+                          class="nav-text">4. 后端架构实战</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

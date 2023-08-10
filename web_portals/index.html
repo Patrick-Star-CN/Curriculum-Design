@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+  <style>
+
+
+    #image-container img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    #button-container {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+    }
+
+    .circle-button {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid black;
+      background-color: white;
+      display: inline-block;
+      margin: 2px;
+      cursor: pointer;
+    }
+
+    .circle-button.active {
+      background-color: gray;
+    }
+
+    .arrow-button {
+      width: 20px;
+      height: 20px;
+      border: 1px solid black;
+      background-color: white;
+      display: inline-block;
+      margin: 2px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 20px;
+    }
+
+    .arrow-button.active {
+      background-color: gray;
+    }
+
+    #canvas {
+      border: 1px solid gray;
+    }
+
+    #clearButton {
+      background-color: #D3D3D3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 80%;
+    }
+
+    #clearButton:hover {
+      background-color: #8F8F8F;
+    }
+  </style>
+  <script>
+    function getUrlParameter(name) {
+      const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+      const results = regex.exec(location.search);
+      return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const username = getUrlParameter('username');
+
+      if (username !== '') {
+        const login = document.getElementById('login');
+        login.textContent = username;
+        login.removeAttribute("href");
+      }
+    });
+  </script>
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="home-banner-container flex-center">
+    <div class="content flex-center">
+      <div class="description fade-in-down-animation">比奇堡资讯站<p><i id="subtitle"></i></p></div>
+      <div class="social-contacts fade-in-down-animation"><span class="social-contact-item github"><a target="_blank"
+                                                                                                      href="https://github.com/Patrick-Star-CN"><i
+        class="fa-brands fa-github"></i> </a></span><span class="social-contact-item email"><a
+        href="mailto:mailto:glorypig0307@gmail.com"><i class="fa-solid fa-envelope"></i> </a></span></div>
+    </div>
+  </div>
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content has-home-banner">
+          <div class="left"><a class="logo-title" href="/"><h1>比奇堡资讯站</h1></a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a class="active" href="/index.html"><i class="fa-regular fa-house"></i>
+                  首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/Patrick-Star-CN">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://blog.cnpatrickstar.com">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a id='login' href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a>
+                </li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a class="active" href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.com/Patrick-Star-CN">GITHUB</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://blog.cnpatrickstar.com">BLOG</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="home-sidebar-container fade-in-down-animation">
+        <div class="sticky-container">
+          <div class="sidebar-links">
+            <div class="site-info">
+              <div class="site-name">比奇堡资讯站</div>
+            </div>
+            <a class="links" href="/categories" target="_blank"><i
+              class="fa-regular fa-folder icon-space"></i> <span class="link-name">分类展示</span> </a></div>
+          <div class="sidebar-content" margintop>
+            <div class="avatar"><img src="/images/pig.jpg"></div>
+            <div class="author">
+              <div class="name">Patrick_Star</div>
+              <div class="label"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="home-content-container fade-in-down-animation">
+          <ul class="home-article-list">
+            <li class="home-article-item">
+              <div id="image-container">
+                <img id="image" src="/images/img1.png" alt="Image">
+                <div class="arrow-button left-arrow" onclick="previousImage()">&lt;</div>
+                <div class="arrow-button right-arrow" onclick="nextImage()">&gt;</div>
+              </div>
+              <div id="button-container">
+                <div class="circle-button active" onclick="changeImage(0)"></div>
+                <div class="circle-button" onclick="changeImage(1)"></div>
+                <div class="circle-button" onclick="changeImage(2)"></div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              </div>
+            </li>
+            <li class="home-article-item">
+              <h3 class="home-article-title"><a>留下你的画作吧！</a></h3>
+              <canvas id="canvas" height="500" width="180"></canvas>
+              <label for="color-picker">颜色选择：</label><input type="color" id="color-picker"
+                                                                onchange="updateColor(event)"/>
+              <button id="clearButton">清屏</button>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a
+              href="/2023/04/20/managing-background-processes-in-linux/">linux下的后台进程管理</a></h3>
+              <div class="home-article-content markdown-body"><p>
+                后台进程管理对于任何一个操作系统来说都是非常重要的，它们在维持操作系统的基本功能运作时，还能运行更多用户自定义的进程服务。</p>
+              </div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Thu Apr 20 2023 20:41:30 GMT+0800">2023-04-20 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/linux/">linux</a>&nbsp;</li></ul></span><span class="home-article-tag"><i
+                  class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86/">后台管理</a>&nbsp;</li><li>| <a
+                  href="/tags/screen/">screen</a>&nbsp;</li><li>| <a href="/tags/tmux/">tmux</a>&nbsp;</li></ul></span>
+                </div>
+                <a href="/2023/04/20/managing-background-processes-in-linux/">阅读全文<span class="seo-reader-text">linux下的后台进程管理</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a href="/2023/04/01/clang-env-build/">基于clang打造高效的开发环境</a>
+            </h3>
+              <div class="home-article-content markdown-body"><p>在使用<code>vscode</code>进行C/C++开发过程中，一般就是直接使用<code>gcc</code>编译器（在windows中，它通常被称为<code>MinGW-w64</code>，一个<code>gcc</code>的移植版）、<code>gdb</code>调试器配合<code>C/C++</code>的插件来进行开发，也就是传统的<code>gnu</code>工具链中的组件。
+              </p>
+                <p>
+                  但是<code>vscode</code>的<code>C/C++</code>的插件功能虽然齐全，响应速度却不够理想，于是本文介绍了使用<code>LLVM</code>工具链组件中的<code>clang</code>编译器来进行C/C++开发。
+                </p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Sat Apr 01 2023 11:55:59 GMT+0800">2023-04-01 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/%E5%B7%A5%E5%85%B7%E9%93%BE/">工具链</a>&nbsp;</li></ul></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/vscode/">vscode</a>&nbsp;</li><li>| <a href="/tags/clang/">clang</a>&nbsp;</li><li>| <a
+                  href="/tags/lldb/">lldb</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/04/01/clang-env-build/">阅读全文<span
+                  class="seo-reader-text">基于clang打造高效的开发环境</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a
+              href="/2023/03/21/partition-calculate-bigdata/">分治法与大数乘法</a></h3>
+              <div class="home-article-content markdown-body"><p>使用分治法解决大数乘法问题</p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Tue Mar 21 2023 19:55:10 GMT+0800">2023-03-21 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/%E7%AE%97%E6%B3%95/">算法</a>&nbsp;</li></ul></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%88%86%E6%B2%BB/">分治</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/03/21/partition-calculate-bigdata/">阅读全文<span
+                  class="seo-reader-text">分治法与大数乘法</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a
+              href="/2023/03/12/more-env-control/">多版本环境控制</a></h3>
+              <div class="home-article-content markdown-body"><p>在搭建开发环境时，通常是选择一个<code>LTS(Long Term
+                Support)</code>版本，但是有时候需要在新发布的版本或者是在某个历史版本上搭建环境进行测试，需要重新搭建新环境，带来诸多不便。
+              </p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Sun Mar 12 2023 16:05:02 GMT+0800">2023-03-12 </span></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%A4%9A%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/">多版本控制</a>&nbsp;</li></ul></span>
+                </div>
+                <a href="/2023/03/12/more-env-control/">阅读全文<span class="seo-reader-text">多版本环境控制</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a href="/2023/03/05/opengauss-env-build/">使用docker运行openGauss</a>
+            </h3>
+              <div class="home-article-content markdown-body"><p>在linux上通过docker的方式运行开源数据库openGauss</p>
+              </div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Sun Mar 05 2023 23:52:06 GMT+0800">2023-03-05 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/linux/">linux</a>&nbsp;</li></ul></span><span class="home-article-tag"><i
+                  class="fa-solid fa-tags"></i>&nbsp;<ul><li><a href="/tags/openGauss/">openGauss</a>&nbsp;</li><li>| <a
+                  href="/tags/docker/">docker</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/03/05/opengauss-env-build/">阅读全文<span
+                  class="seo-reader-text">使用docker运行openGauss</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a href="/2023/02/22/golang-day17/">Redis</a>
+            </h3>
+              <div class="home-article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，已收录到<a
+                class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7202945024749092923">Redis |
+                青训营笔记 - 掘金 (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，主要记录了对
+                Redis 的学习</p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Wed Feb 22 2023 23:50:54 GMT+0800">2023-02-22 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;</li><li>| <a
+                  href="/tags/redis/">redis</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/02/22/golang-day17/">阅读全文<span class="seo-reader-text">Redis</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a href="/2023/02/22/golang-day16/">深入理解
+              RDBMS</a></h3>
+              <div class="home-article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，已收录到<a
+                class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7202607329400291385">深入理解
+                RDBMS | 青训营笔记 - 掘金 (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，主要记录了对
+                RDBMS 的学习</p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Wed Feb 22 2023 23:50:50 GMT+0800">2023-02-22 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;</li><li>| <a
+                  href="/tags/RDBMS/">RDBMS</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/02/22/golang-day16/">阅读全文<span class="seo-reader-text">深入理解 RDBMS</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+            <li class="home-article-item"><h3 class="home-article-title"><a href="/2023/02/22/golang-day15/">存储的本质
+              - 状态</a></h3>
+              <div class="home-article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，已收录到<a
+                class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7199279293755146297">存储的本质
+                - 状态 | 青训营笔记 - 掘金 (juejin.cn) <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，主要记录了对存储的学习</p></div>
+              <div class="home-article-meta-info-container">
+                <div class="home-article-meta-info"><span><i class="fa-solid fa-calendars"></i>&nbsp; <span
+                  class="home-article-date" data-date="Wed Feb 22 2023 22:19:04 GMT+0800">2023-02-22 </span></span><span
+                  class="home-article-category"><i class="fa-solid fa-folders"></i>&nbsp;<ul><li><a
+                  href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                  class="home-article-tag"><i class="fa-solid fa-tags"></i>&nbsp;<ul><li><a
+                  href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;</li></ul></span></div>
+                <a href="/2023/02/22/golang-day15/">阅读全文<span class="seo-reader-text">存储的本质 - 状态</span>&nbsp;<i
+                  class="fa-solid fa-angle-right"></i></a></div>
+            </li>
+          </ul>
+          <div class="home-paginator">
+            <div class="paginator"><span class="page-number current">1</span><a class="page-number"
+                                                                                href="/page/2/">2</a><a
+              class="extend next" rel="next" href="/page/2/"><i class="fa-regular fa-angle-right"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax"></div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+<script>
+  const images = ["/images/img1.png", "/images/img2.jpg", "/images/img3.jpg"]; // 图片列表
+  let currentIndex = 0; // 当前索引
+
+  function previousImage() {
+    if (currentIndex === 0) {
+      currentIndex = images.length - 1;
+    } else {
+      currentIndex--;
+    }
+    updateImage();
+    updateButtons();
+  }
+
+  function nextImage() {
+    if (currentIndex === images.length - 1) {
+      currentIndex = 0;
+    } else {
+      currentIndex++;
+    }
+    updateImage();
+    updateButtons();
+  }
+
+  function changeImage(index) {
+    currentIndex = index;
+    updateImage();
+    updateButtons();
+  }
+
+  function updateImage() {
+    var imageElement = document.getElementById("image");
+    imageElement.src = images[currentIndex];
+  }
+
+  function updateButtons() {
+    const buttons = document.getElementsByClassName("circle-button");
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove("active");
+    }
+    buttons[currentIndex].classList.add("active");
+  }
+
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var clearButton = document.getElementById("clearButton");
+
+  canvas.addEventListener("mousemove", draw);
+  canvas.addEventListener("mousedown", startDrawing);
+  canvas.addEventListener("mouseup", stopDrawing);
+  canvas.addEventListener("mouseout", stopDrawing);
+  clearButton.addEventListener("click", clearCanvas);
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth / 1.41;
+    canvas.height = 500;
+  }
+
+  // 初始化时调整画布大小
+  resizeCanvas();
+
+  // 监听窗口大小变化事件
+  window.addEventListener("resize", resizeCanvas);
+
+  var isDrawing = false;
+  var currentColor = "#000000"; // 默认颜色为黑色
+  var lastX = 0;
+  var lastY = 0;
+
+  function startDrawing(e) {
+    isDrawing = true;
+    var rect = canvas.getBoundingClientRect();
+    lastX = e.clientX - rect.left;
+    lastY = e.clientY - rect.top;
+    draw(e);
+  }
+
+  function stopDrawing() {
+    isDrawing = false;
+  }
+
+  function draw(e) {
+    if (!isDrawing) {
+      return;
+    }
+
+    var rect = canvas.getBoundingClientRect();
+    var currentX = e.clientX - rect.left;
+    var currentY = e.clientY - rect.top;
+
+    ctx.strokeStyle = currentColor;
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(lastX, lastY);
+    ctx.lineTo(currentX, currentY);
+    ctx.stroke();
+
+    lastX = currentX;
+    lastY = currentY;
+  }
+
+  function updateColor(e) {
+    currentColor = e.target.value;
+  }
+
+  function clearCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
+</script>
+</body>
+</html>

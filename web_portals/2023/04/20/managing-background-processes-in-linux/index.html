@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+  <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">linux下的后台进程管理</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-04-20 20:41:30</span> <span
+                      class="mobile">2023-04-20 20:41</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-21 15:10:07</span> <span class="mobile">2023-04-21 15:10</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a href="/categories/linux/">linux</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>3k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>11 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>
+                后台进程管理对于任何一个操作系统来说都是非常重要的，它们在维持操作系统的基本功能运作时，还能运行更多用户自定义的进程服务。<span
+                id="more"></span></p>
+                <p>通过对后台进程管理的学习可以进一步了解操作系统的运作机制以及系统资源的分配调度。</p>
+                <p>本文主要介绍几种在<code>linux</code>系统下长时间运行后台进程的方法。即使断开<code>ssh</code>连接或者是关闭终端后，依然能够保持在后台运行。
+                </p>
+                <h2 id="nohup"><a class="markdownIt-Anchor" href="#nohup"></a> nohup</h2>
+                <h3 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h3>
+                <p><code>nohup</code>命令是一个最简单的长时间运行后台进程的命令，通常它和</p>
+                <p><code>&amp;</code>符号一起使用。</p>
+                <p><code>nohup</code>命令能够忽略<code>SIGHUP</code>信号的影响，在退出终端之后也能保持进程运行。(但是可以用<code>Ctrl+C</code>终止，即不忽略<code>SIGINT</code>信号)
+                </p>
+                <p><code>&amp;</code>符号能够忽略<code>SIGINT</code>信号，并让命令和进程在后台运行，不在终端显示进程的输出信息，输出被重定向到指定的文件里，默认是<code>nohup.out</code>文件。(但是需要保持终端打开，退出终端后会终止)
+                </p>
+                <p>将<code>nohup</code>和<code>&amp;</code>结合使用就能可靠实现长时间在后台运行。</p>
+                <h3 id="基本使用"><a class="markdownIt-Anchor" href="#基本使用"></a> 基本使用</h3><h4 id="运行"><a
+                  class="markdownIt-Anchor" href="#运行"></a> 运行</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="built_in">nohup</span> <span
+                            class="built_in">command</span> &gt; ./out.file 2&gt;&amp;1 &amp;</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p><code>command</code>是具体要在后台运行的命令。</p>
+                <p><code>out.file</code>是指定的输出文件路径和文件名，如果缺省则默认输出到<code>nohup.out</code>文件中。
+                </p>
+                <p>
+                  <code>2&gt;&amp;1</code>表示将标准错误<code>2</code>重定向到标准输出<code>&amp;1</code>，标准输出<code>&amp;1</code>再被重定向输入到输出文件中。
+                </p>
+                <p><code>&amp;</code>表示在后台运行。</p><h4 id="终止"><a class="markdownIt-Anchor" href="#终止"></a> 终止
+                </h4>
+                <p>
+                  <code>nohup</code>+<code>&amp;</code>的进程可以通过<code>ps</code>命令搜索关键词得到进程号<code>pid</code>，再用<code>kill</code>命令终止。(一般来说，成功执行<code>nohup</code>后会输出<code>pid</code>的信息)
+                </p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">ps -aux | grep [...]</span><br><span class="line"><span
+                            class="built_in">kill</span> -9 [pid]</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h3 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h3>
+                <p><code>nohup</code>命令是<code>linux</code>自带的命令，它提供了最简单的长时间运行后台进程的方案，但是功能也相对较少，不足以应付一些复杂的<strong>交互性</strong>的任务，一般用于临时性地长时间运行某个命令。后面介绍的命令则提供了更多的功能。
+                </p>
+                <h2 id="screen"><a class="markdownIt-Anchor" href="#screen"></a> screen</h2>
+                <h3 id="概述-2"><a class="markdownIt-Anchor" href="#概述-2"></a> 概述</h3>
+                <p><code>screen</code>命令(全称<code>GNU Screen</code>)用于多重视窗管理程序，可以在不同的终端连接到同一个<strong>会话</strong>，是一种<strong>终端多路复用器</strong>。<code>screen</code>的使用可以很方便地保留会话，并解决了<code>nohup</code>在交互性任务上的不足。
+                </p>
+                <h3 id="基本使用-2"><a class="markdownIt-Anchor" href="#基本使用-2"></a> 基本使用</h3><h4 id="安装"><a
+                  class="markdownIt-Anchor" href="#安装"></a> 安装</h4>
+                <p><code>screen</code>命令可能需要先手动安装</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="comment"># Debian/Ubuntu</span></span><br><span
+                            class="line">sudo apt install screen</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="创建"><a class="markdownIt-Anchor" href="#创建"></a> 创建</h4>
+                <p>创建一个名为<code>test</code>的虚拟终端(默认用<code>hostname</code>命名，推荐自定义名称)</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">screen -S <span class="built_in">test</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>或者使用</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">screen -R <span class="built_in">test</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p><code>-R</code>参数会先试图恢复已经存在的名为<code>test</code>的虚拟终端，如果找不到则创建新的虚拟终端。
+                </p>
+                <p>使用<code>-S</code>参数可能会有重名的问题(<code>pid</code>不会重复)，如下</p><img lazyload
+                                                                                                    src="/images/loading.svg"
+                                                                                                    data-src="/2023/04/20/managing-background-processes-in-linux/image-20230421000557507.png"
+                                                                                                    title="image-20230421000557507">
+                <h4 id="水平分割"><a class="markdownIt-Anchor" href="#水平分割"></a> 水平分割</h4>
+                <p>在<code>screen</code>窗口中，先输入<code>Ctrl+a</code>，再输入<code>|</code>，将当前窗口左右划分。</p><h4
+                  id="垂直分割"><a class="markdownIt-Anchor" href="#垂直分割"></a> 垂直分割</h4>
+                <p>在<code>screen</code>窗口中，先输入<code>Ctrl+a</code>，再输入<code>S</code>，将当前窗口上下划分。</p>
+                <blockquote><p>这里的<code>S</code>必须大写</p></blockquote>
+                <h4 id="窗口切换"><a class="markdownIt-Anchor" href="#窗口切换"></a> 窗口切换</h4>
+                <p>在<code>screen</code>窗口中，先输入<code>Ctrl+a</code>，再输入<code>Tab</code>，切换不同的窗口。</p><h4
+                  id="重连会话"><a class="markdownIt-Anchor" href="#重连会话"></a> 重连会话</h4>
+                <p>重新进入虚拟终端，可以使用以下命令</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">screen -r [name/pid]</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="退出"><a class="markdownIt-Anchor" href="#退出"></a> 退出</h4>
+                <p>
+                  在<code>screen</code>中，先输入<code>Ctrl+a</code>，再输入<code>d</code>会保留并退出该<code>screen</code>。
+                </p>
+                <blockquote><p>注意输入的顺序，否则会误删screen</p></blockquote>
+                <h4 id="查询"><a class="markdownIt-Anchor" href="#查询"></a> 查询</h4>
+                <p>列出所有<code>screen</code>创建的虚拟终端以及其状态</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">screen -<span class="built_in">ls</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>或者在<code>screen</code>虚拟终端中，先输入<code>Ctrl+a</code>，再输入<code>&quot;</code>即可查询。</p>
+                <p>虚拟终端具有两种状态</p>
+                <ul>
+                  <li>Attached：激活状态，表示该<code>screen</code>正在作为当前终端使用。</li>
+                  <li>Detached：非激活状态，表示该<code>screen</code>正在作为后台进程运行。</li>
+                </ul>
+                <h4 id="终止-2"><a class="markdownIt-Anchor" href="#终止-2"></a> 终止</h4>
+                <p>在进程处理完毕后，已经不需要虚拟终端了，就可以释放资源。</p>
+                <p>在对应的虚拟终端下时，可以用<code>exit</code>命令退出并释放资源。(推荐使用这种方式，因为能够直接确认当前终端是否处理完进程)
+                </p>
+                <blockquote><p>tips：在<code>screen</code>中，输入<code>Ctrl+d</code>也可以释放该<code>screen</code>。</p>
+                </blockquote>
+                <p>在主终端下，如果确定某个虚拟终端可以终止，也可以使用以下命令释放</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">screen -R/-r/-S [name/pid] -X quit</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>更多信息参考<a target="_blank" rel="noopener"
+                                  href="https://www.mintimate.cn/2021/09/02/howToUseScreen/">
+                  <strong>雨月空间站</strong></a></p>
+                <h3 id="小结-2"><a class="markdownIt-Anchor" href="#小结-2"></a> 小结</h3>
+                <p><code>screen</code>虽然解决了<code>nohup</code>存在的局限性，但是功能相对后面的<code>tmux</code>还是稍微欠缺，不过基本能够满足大部分日常使用。用户可以根据自身的需求和习惯来选择<code>GNU</code>的<code>screen</code>或者是更加现代化的<code>tmux</code>。
+                </p>
+                <h2 id="tmux"><a class="markdownIt-Anchor" href="#tmux"></a> tmux</h2>
+                <h3 id="概述-3"><a class="markdownIt-Anchor" href="#概述-3"></a> 概述</h3>
+                <p><code>tmux</code>是一个类似于<code>screen</code>的终端复用器，总体功能上比<code>screen</code>更加丰富，且风格更加现代化。
+                </p>
+                <p><code>tmux</code>具有会话(session)、窗口(window)、窗格(pane)的三层结构。会话是所有虚拟终端的集合，窗口是整个屏幕，窗格是各个虚拟终端。一个会话可以创建多个窗口，一个窗口可以创建多个窗格。
+                </p>
+                <h3 id="基本使用-3"><a class="markdownIt-Anchor" href="#基本使用-3"></a> 基本使用</h3><h4 id="安装-2"><a
+                  class="markdownIt-Anchor" href="#安装-2"></a> 安装</h4>
+                <p><code>tmux</code>的安装</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo apt install tmux</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="创建会话"><a class="markdownIt-Anchor" href="#创建会话"></a> 创建会话</h4>
+                <p>创建会话session</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>在tmux创建的会话底部会有一条状态栏，表示了当前的<code>session name</code>，<code>session number</code>，shell的类型以及<code>hostname</code>等。
+                </p>
+                <p>创建一个名为<code>test</code>的会话session</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux new-session -s <span class="built_in">test</span></span><br><span
+                            class="line">tmux new -s <span class="built_in">test</span> <span
+                            class="comment"># 简写格式</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>会话管理：在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>s</code>，可以查看并管理所有会话。
+                </p><h4 id="窗口分割"><a class="markdownIt-Anchor" href="#窗口分割"></a> 窗口分割</h4>
+                <p>在一个<code>tmux</code>的会话中可以分割出多个窗口</p>
+                <p><strong>水平分割</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>%</code>，将窗口左右划分。</p>
+                <p><strong>垂直分割</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>&quot;</code>，将窗口上下划分。</p><h4
+                  id="多窗格管理"><a class="markdownIt-Anchor" href="#多窗格管理"></a> 多窗格管理</h4>
+                <p><strong>编号展示</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>q</code>，可以知道窗格创建的先后顺序。
+                </p>
+                <p><strong>窗格切换</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>;</code>，切换到上一个窗格；</p>
+                <p>先输入<code>Ctrl+b</code>，再输入<code>o</code>，切换到下一个窗格。</p>
+                <p><strong>窗格关闭</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>x</code>，可以关闭当前选中的窗格。也可以使用<code>Ctrl+d</code>或者<code>exit</code>命令，直接退出窗格。
+                </p><h4 id="多窗口管理"><a class="markdownIt-Anchor" href="#多窗口管理"></a> 多窗口管理</h4>
+                <p><strong>创建窗口</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>c</code>，可以创建新的窗口，新窗口会覆盖当前窗口，同时底部状态栏会多出一个shell的信息。
+                </p>
+                <p><strong>切换窗口</strong></p>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>p</code>，切换到上一个窗口；</p>
+                <p>先输入<code>Ctrl+b</code>，再输入<code>n</code>，切换到下一个窗口；</p>
+                <p>先输入<code>Ctrl+b</code>，再输入<code>w</code>，可以在列表中选择窗口。</p>
+                <p>更多快捷键参考<a class="link" target="_blank" rel="noopener"
+                                    href="https://zhuanlan.zhihu.com/p/137715607">Tmux的常用快捷键 | 知乎 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="查询会话"><a
+                  class="markdownIt-Anchor" href="#查询会话"></a> 查询会话</h4>
+                <p>列出所有已创建的<code>tmux</code></p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux <span class="built_in">ls</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <blockquote><p>
+                  tips：也可以用前面提到的方法，在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>s</code>，也可以查询已创建的<code>tmux</code>
+                </p></blockquote>
+                <h4 id="脱离会话"><a class="markdownIt-Anchor" href="#脱离会话"></a> 脱离会话</h4>
+                <p>在<code>tmux</code>窗口中，先输入<code>Ctrl+b</code>，再输入<code>d</code>，或者使用以下命令</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux detach</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>就能保存会话并脱离。</p>
+                <blockquote><p>注意：如果输入的是<code>Ctrl+d</code>，则会直接删除会话。</p></blockquote>
+                <h4 id="重连会话-2"><a class="markdownIt-Anchor" href="#重连会话-2"></a> 重连会话</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux attach -t [session-name]</span><br><span class="line">tmux a -t [session-name] <span
+                            class="comment"># 简写格式</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="删除会话"><a class="markdownIt-Anchor" href="#删除会话"></a> 删除会话</h4>
+                <p>在主终端下，执行以下命令</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">tmux kill-session -t [session-name]</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <p>或者在tmux窗口中，输入<code>Ctrl+d</code>，即可将会话删除。</p>
+                <h3 id="小结-3"><a class="markdownIt-Anchor" href="#小结-3"></a> 小结</h3>
+                <p><code>tmux</code>拥有比<code>screen</code>更加友好的信息提示，交互体验更加好。<code>tmux</code>也基本满足了日常使用需求，是适合广大用户的选择。
+                </p>
+                <blockquote><p>不过，如果习惯了<code>screen</code>的快捷键操作等，也可以使用<code>screen</code>，同样可以很好地满足需求，而不必在多个工具间切换。
+                </p>
+                  <p>另外，不建议同时使用<code>screen</code>和<code>tmux</code>管理后台进程，一方面，它们的操作方式不同，另一方面，它们在管理后台进程时可能会冲突。
+                  </p></blockquote>
+                <p>关于<code>tmux</code>更多的技巧操作可以参考<a class="link" target="_blank" rel="noopener"
+                                                                 href="https://zhuanlan.zhihu.com/p/414295937">你需要知道的tmux使用技巧
+                  | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p>以及对<code>tmux</code>的美化配置可以参考<a class="link" target="_blank" rel="noopener"
+                                                               href="https://zhuanlan.zhihu.com/p/122277982">推荐神器Tmux和巨好看的配置文件
+                  | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h2 id="byobu"><a class="markdownIt-Anchor" href="#byobu"></a> byobu</h2>
+                <h3 id="概述-4"><a class="markdownIt-Anchor" href="#概述-4"></a> 概述</h3>
+                <p><code>byobu</code>是基于<code>screen</code>和<code>tmux</code>的终端多路复用器包装器，它通常和<code>screen</code>或<code>tmux</code>组合使用，在<code>screen</code>或<code>tmux</code>的基础上提供更多的功能支持。它本身无法独立实现<code>screen</code>和<code>tmux</code>的功能。
+                </p>
+                <blockquote><p><code>byobu</code>早期是为<code>screen</code>开发的前端包装器，默认使用<code>screen</code>作为后端，目的是降低配置和操作成本。
+                </p>
+                  <p>现在的<code>byobu</code>默认使用<code>tmux</code>后端，相当于<code>tmux</code>的增强版，习惯<code>screen</code>的用户也可以手动配置<code>byobu</code>使用<code>screen</code>后端。
+                  </p></blockquote>
+                <h3 id="基本使用-4"><a class="markdownIt-Anchor" href="#基本使用-4"></a> 基本使用</h3>
+                <p>
+                  <code>byobu</code>可以直接套用其后端的命令格式，如果使用的是<code>tmux</code>后端，只需要在<code>tmux</code>命令的基础上把<code>tmux</code>换成<code>byobu</code>即可，<code>screen</code>同理。
+                </p>
+                <blockquote><p>实际上，使用<code>byobu</code>的功能主要是通过各种快捷键。</p></blockquote>
+                <h4 id="安装-3"><a class="markdownIt-Anchor" href="#安装-3"></a> 安装</h4>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line">sudo apt install byobu</span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <h4 id="操作"><a class="markdownIt-Anchor" href="#操作"></a> 操作</h4>
+                <p><code>byobu</code>的命令可以直接套用其后端的命令，也可以直接使用其后端的快捷键操作。</p>
+                <p>以下是基于<code>tmux</code>后端的几个命令示例，直接套用<code>tmux</code>的命令格式即可</p>
+                <div class="highlight-container" data-rel="Bash">
+                  <figure class="iseeu highlight bash">
+                    <table>
+                      <tr>
+                        <td class="gutter">
+                          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span
+                            class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span
+                            class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span
+                            class="line">10</span><br></pre>
+                        </td>
+                        <td class="code">
+                          <pre><span class="line"><span class="comment"># 创建会话</span></span><br><span class="line">byobu new -s <span
+                            class="built_in">test</span></span><br><span class="line"><span
+                            class="comment"># 查询会话</span></span><br><span class="line">byobu <span class="built_in">ls</span></span><br><span
+                            class="line"><span class="comment"># 脱离会话</span></span><br><span class="line">byobu detach</span><br><span
+                            class="line"><span class="comment"># 重连会话</span></span><br><span class="line">byobu a -t <span
+                            class="built_in">test</span></span><br><span class="line"><span
+                            class="comment"># 删除会话</span></span><br><span class="line">byobu kill-session -t <span
+                            class="built_in">test</span></span><br></pre>
+                        </td>
+                      </tr>
+                    </table>
+                  </figure>
+                </div>
+                <blockquote><p>快捷键操作可参考<a class="link" target="_blank" rel="noopener"
+                                                  href="https://zhuanlan.zhihu.com/p/113680062">byobu常用快捷键 | 知乎
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，里面是以<code>screen</code>为后端的例子
+                </p>
+                  <p>注意：<code>screen</code>的前置快捷键是<code>Ctrl+a</code>，<code>tmux</code>的前置快捷键是<code>Ctrl+b</code>
+                  </p></blockquote>
+                <h3 id="补充"><a class="markdownIt-Anchor" href="#补充"></a> 补充</h3>
+                <p>
+                  <code>byobu</code>的默认配置和<code>tmux</code>很相似，一开始看不出明显的区别，需要手动配置<code>byobu</code>。
+                </p>
+                <h2 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h2>
+                <p>
+                  这部分方案适用于有特定需求的开发者。网站开发者，游戏服务器开发者或者是深度学习开发者等大型项目开发者，<code>screen</code>和<code>tmux</code>不适合管理这些大项目，因为它们不具有因程序崩溃或意外终止而<strong>自动重启</strong>的功能及其他的一些高级功能。
+                </p>
+                <h3 id="systemd"><a class="markdownIt-Anchor" href="#systemd"></a> systemd</h3>
+                <p><code>systemd</code>是大部分主流<code>linux</code>系统的默认初始化系统，它通过<code>systemctl</code>这个命令来控制，具有<code>screen</code>和<code>tmux</code>所不具备的高级功能。
+                </p>
+                <p>但是<code>systemd</code>与系统耦合度较高，而且其自定义配置<strong>需要具备一定的专业知识</strong>，通常一般的用户很少使用<code>systemd</code>来作为首选方案。
+                </p>
+                <blockquote><p>
+                  这里指的是配置<code>systemd</code>管理用户自定义的程序，不是指使用<code>systemd</code>，<code>systemd</code>在日常生活就已经很频繁地在使用了。
+                </p></blockquote>
+                <p>
+                  不过，有很多专业软件程序都有对<code>systemd</code>的支持，例如<code>mysql</code>、<code>nginx</code>、<code>NetworkManager</code>等，对于特定的<code>linux</code>系统开发者来说。
+                </p>
+                <h3 id="supervisor"><a class="markdownIt-Anchor" href="#supervisor"></a> supervisor</h3>
+                <p><code>supervisor</code>是一个专注后台进程管理的程序，它使用<code>supervisorctl</code>命令来控制，可以让开发人员方便地管理和监控进程，它基于<code>python</code>开发，是开发者快速管理项目的一套简单易用的方案，不需要考虑过高的系统耦合性问题。
+                </p>
+                <blockquote><p>有一部分<code>linux</code>发行版并不是使用<code>systemd</code>作为初始化系统(尽管大多数发行版都在支持<code>systemd</code>)，这部分的系统就无法使用<code>systemd</code>的方案。因此，<code>supervisor</code>可能会是一种方案。
+                </p></blockquote>
+                <p>相关使用和配置可以参考<a class="link" target="_blank" rel="noopener"
+                                            href="https://zhuanlan.zhihu.com/p/147305277">Linux进程管理工具 Supervisor详解
+                  | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://cloud.tencent.com/developer/article/1763384">Linux：Nohup命令详解 ｜ 腾讯云开发者社区
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://www.runoob.com/linux/linux-comm-nohup.html">linux nohup命令 | 菜鸟教程 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a target="_blank" rel="noopener" href="https://www.mintimate.cn/2021/09/02/howToUseScreen/">Linux终端命令神器–Screen命令详解
+                  | <strong>雨月空间站</strong></a></p>
+                <p><a target="_blank" rel="noopener" href="https://qianxu.run/2021/03/28/tmux-vs-screen/">tmux vs screen
+                  | <strong>qxdn 的乐园</strong></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/122277982">推荐神器Tmux和巨好看的配置文件
+                  | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/414295937">你需要知道的tmux使用技巧
+                  | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://cloud.tencent.com/developer/article/1526675">可能是东半球最全面易懂的 Tmux 使用教程！(
+                  强烈建议收藏 ) | 腾讯云开发者社区 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>
+                </p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147305277">Linux进程管理工具
+                  Supervisor详解 | 知乎 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">linux下的后台进程管理</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#nohup"><span
+                      class="nav-text">nohup</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span
+                          class="nav-text">概述</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span
+                          class="nav-text">基本使用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93"><span
+                          class="nav-text">小结</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#screen"><span
+                      class="nav-text">screen</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-2"><span
+                          class="nav-text">概述</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-2"><span
+                          class="nav-text">基本使用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-2"><span
+                          class="nav-text">小结</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#tmux"><span class="nav-text">tmux</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-3"><span
+                          class="nav-text">概述</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-3"><span
+                          class="nav-text">基本使用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E7%BB%93-3"><span
+                          class="nav-text">小结</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#byobu"><span
+                      class="nav-text">byobu</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0-4"><span
+                          class="nav-text">概述</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8-4"><span
+                          class="nav-text">基本使用</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span
+                          class="nav-text">补充</span></a></li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span
+                      class="nav-text">其他</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#systemd"><span class="nav-text">systemd</span></a>
+                        </li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#supervisor"><span class="nav-text">supervisor</span></a>
+                        </li>
+                      </ol>
+                    </li>
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                      class="nav-text">参考资料</span></a></li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

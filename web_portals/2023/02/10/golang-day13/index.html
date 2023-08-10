@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">消息队列原理与实战</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-10 18:17:22</span> <span
+                      class="mobile">2023-02-10 18:17</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>6.3k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>22 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了消息队列的学习<span
+                id="more"></span></p>
+                <h2 id="消息队列原理与实战"><a class="markdownIt-Anchor" href="#消息队列原理与实战"></a> 消息队列原理与实战
+                </h2>
+                <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+                <p>场景</p>
+                <ul>
+                  <li><p>系统崩溃</p></li>
+                  <li><p>服务能力有限</p></li>
+                  <li><p>链路耗时长尾</p></li>
+                  <li><p>日志存储</p></li>
+                </ul>
+                <p>解决方案</p>
+                <ul>
+                  <li>针对存储行为服务崩溃时，使用消息队列进行解耦</li>
+                  <li>针对高并发服务时，使用消息队列进行削峰</li>
+                  <li>针对链路耗时，使用消息队列进行异步</li>
+                  <li>针对日志存储，使用消息队列进行日志处理</li>
+                </ul>
+                <p>什么是消息队列</p>
+                <p>消息队列（MQ） ，指保存消息的一个容器，本质是个队列。但这个队列需要支持高吞吐，高并发，高可用。</p>
+                <h3 id="1前世今生"><a class="markdownIt-Anchor" href="#1前世今生"></a> 1.前世今生</h3>
+                <blockquote><p>消息中间件其实诞生的很早，早在1983年互联网应用还是一片荒芜的年代，有个在美国的印度小哥Vivek就设想了一种通用软件总线，世界上第一个现代消息队列软件The
+                  Information Bus(TIB)， TIB受到了企业的欢迎，这家公司的业务发展引起了当时最牛气的IT公司IBM的注意，于是他们一开始研发了自己消息队列软件，于是才有了后来的wesphere
+                  mq，再后来微软也加入了战团。接近2000年的时候，互联网时代已经初见曙光，全球的应用程序得到了极大地丰富，对于程序之间互联互通的需求越来越强烈，但是各大IT公司之间还是牢牢建立着各种技术壁垒，以此来保证自己的商业利益，所以消息中间件在那个时候是大型企业才能够用的起的高级玩意。
+                  但是时代的洪流不可逆转，有壁垒就有打破壁垒的后来者，2001年sun发布了jms技术，试图在各大厂商的层面上再包装一层统一的java规范。java程序只需要针对jms
+                  api编程就可以了，不需要再关注使用了什么样的消息中间件，但是jms仅仅适用于java。2004年AMQP（高级消息队列协议）诞生了，才是真正促进了消息队列的繁荣发展，任何人都可以针对AMQP的标准进行编码。有好的协议指导，再加上互联网分布式应用的迅猛发展成为了消息中间件一飞冲天的最大动力，程序应用的互联互通，发布订阅，最大契合了消息中间件的最初的设计初衷。除了刚才介绍过的收费中间件，后来开源消息中间件开始层出不穷，常见比较流行的有ActiveMQ、RabbitMQ
+                  、Kafak、阿里的RocketMQ，以及目前存算分离的Pulsar，在目前互联网应用中消息队列中间件基本上成为标配。</p>
+                </blockquote>
+                <h4 id="业界内消息队列对比"><a class="markdownIt-Anchor" href="#业界内消息队列对比"></a> 业界内消息队列对比
+                </h4>
+                <p>目前比较流行的MQ</p>
+                <ul>
+                  <li>Kafka：分布式的、分区的、多副本的日志提交服务，在高吞吐场景下发挥较为出色。</li>
+                  <li>RocketMQ：低延迟、强一致、高性能、高可靠、万亿级容量和灵活的可扩展性，在一些实时场景中运用较广泛。</li>
+                  <li>Pulsar：是下一代云原生分布式消息流平台，集消息、存储、轻量化函数式计算为一体、采用存算分离的架构设计。
+                  </li>
+                  <li>BMQ：和 Pulsar 架构类似，存算分离，初期定位是承接高吞吐的离线业务场景，逐步替换掉对应的 Kafka 集群。
+                  </li>
+                </ul>
+                <h3 id="2消息队列-kafka"><a class="markdownIt-Anchor" href="#2消息队列-kafka"></a> 2.消息队列 - Kafka
+                </h3><h4 id="21-使用场景"><a class="markdownIt-Anchor" href="#21-使用场景"></a> 2.1 使用场景</h4>
+                <ul>
+                  <li><p>日志信息</p></li>
+                  <li><p>Metrics 数据：搜索服务、直播服务、订单服务、支付服务</p></li>
+                  <li><p>用户行为：搜索、点赞、评论、收藏</p></li>
+                </ul>
+                <h4 id="22-如何使用-kafka"><a class="markdownIt-Anchor" href="#22-如何使用-kafka"></a> 2.2 如何使用
+                  Kafka</h4>
+                <ul>
+                  <li>第一步：创建一个 Kafka 集群</li>
+                  <li>第二步：在这个集群中创建一个 Topic，并且设置好分片数量</li>
+                  <li>第三步：引入对应语言的 SDK 编写生产者逻辑，配置好集群和 Topic 等参数，初始化一个生产者，调用 Send
+                    方法，将信息发送出去
+                  </li>
+                  <li>第四步：引入对应语言的 SDK 编写消费者逻辑，配置好集群和 Topic 等参数，初始化一个消费者，调用 Poll
+                    方法，接受发送的信息
+                  </li>
+                </ul>
+                <h4 id="23-基本概念"><a class="markdownIt-Anchor" href="#23-基本概念"></a> 2.3 基本概念</h4>
+                <ul>
+                  <li>Topic：Kafka 中的逻辑队列，可以理解为每一个不同的业务场景就是一个不同的 Topic，对于这个业务来说，所有的数据都存储在这个
+                    Topic 中。
+                  </li>
+                  <li>Cluster：Kafka 的物理集群，每个集群中可以新建多个不同的 Topic。</li>
+                  <li>Producer：消息的生产者，负责将业务消息发送到 Topic 当中。</li>
+                  <li>Consumer：消息的消费者，负责消费已经发送到 Topic 中的消息。</li>
+                  <li>Consumer Group：消费者组，不同组 Consumer 消费进度互不干涉。</li>
+                  <li>Partition：分区，通常 Topic 会有多个分片，不同分片直接消息是可以并发处理的，能够提高单个 Topic
+                    的吞吐。
+                  </li>
+                </ul>
+                <p>Offset：对每一个 partition 来说，每一条消息都有一个唯一的 Offset，消息在 partition 内的相对位置信息，可以理解为唯一
+                  ID，在 partition 内部严格递增。</p>
+                <p>Replica：分片的副本，分布在不同的机器上，可用来容灾，Leader 对外服务，Follower 异步去拉取 Leader
+                  的数据进行同步，如果 Leader 挂掉了，可以将 Follower 提升成 Leader 再对外进行服务。</p>
+                <p>ISR：In-Sync Replicas。意思是同步中的副本，对于 Follower 来说，始终和 Leader 是有一定差距的，但是当这个
+                  差距比较小的时候，就可以将这个 Follower 副本加入到 ISR 中，不在 ISR 中的副本是不允许提升成 Leader
+                  的。</p>
+                <p>每个分片有多个 Replica、Leader，Replica 将会从 ISR 中选出。</p><h4 id="24-数据复制"><a
+                  class="markdownIt-Anchor" href="#24-数据复制"></a> 2.4 数据复制</h4>
+                <p>Broker 代表每一个 Kafka 的节点，所有的 Broker 节点最终组成了一个集群。多个 Broker 中有一个 Broker 同时扮演了
+                  Controller 的角色，Controller 是整个集群的大脑，负责对副本和 Broker 进行分配。</p><h4 id="25-kafka-架构">
+                  <a class="markdownIt-Anchor" href="#25-kafka-架构"></a> 2.5 Kafka 架构</h4>
+                <p>在集群的基础上，还有一个模块是 ZooKeeper。这个模块存储了集群的元数据信息，比如副本或分区的分配信息等，Controller
+                  计算好的方案都会存放到这个地方。</p><h4 id="26-一条消息的自述"><a class="markdownIt-Anchor"
+                                                                                   href="#26-一条消息的自述"></a> 2.6
+                  一条消息的自述</h4>
+                <p>从一条消息的视角来看完整的处理流程，了解 Kafka 为什么能够支持如此高的吞吐。</p>
+                <p>思考：如果发送一条消息，等到其成功后再发一条会有什么问题？</p><h4 id="27-producer"><a
+                  class="markdownIt-Anchor" href="#27-producer"></a> 2.7 Producer</h4><h5 id="批量发送"><a
+                  class="markdownIt-Anchor" href="#批量发送"></a> 批量发送</h5>
+                <p>批量发送可以减少 IO 次数，从而加强发送能力。</p>
+                <p>思考：如果消息量很大，网络带宽不够用，如何解决？</p><h5 id="数据压缩"><a class="markdownIt-Anchor"
+                                                                                        href="#数据压缩"></a> 数据压缩
+                </h5>
+                <p>通过压缩减小消息大小，目前支持 Snappy、Gzip、LZ4、ZSTD 压缩算法。</p><h4 id="28-broker"><a
+                  class="markdownIt-Anchor" href="#28-broker"></a> 2.8 Broker</h4>
+                <ul>
+                  <li><p>数据的存储</p>
+                    <p>了解数据的存储，可以先从消息文件结构入手，再了解磁盘结构的工作原理。</p></li>
+                  <li><p>消息文件结构</p>
+                    <p>在每一个 Broker 中都分布这不同 Topic 的不同分片。</p></li>
+                  <li><p>磁盘结构</p>
+                    <p>
+                      移动磁头找到对应磁道，磁盘转动，找到对应扇区，最后写入。寻道成本比较高，因此顺序写可以减少寻道所带来的时间成本。</p>
+                    <p>在一个盘面里寻道，磁头 —&gt; 磁道 —&gt; 扇区。</p></li>
+                  <li><p>顺序写</p>
+                    <p>采用顺序写的方式进入写入，可以提高写入效率。</p></li>
+                  <li><p>如何找到消息？</p>
+                    <p>Consumer 通过发送 Fetch Request 请求消息数据，Broker 会指定 Offset 处的消息，按照时间窗口和消息大小窗口发送给
+                      Consumer</p>
+                    <p>思考：寻找数据这个细节是如何实现的？</p></li>
+                  <li><p>偏移量索引文件，文件名是文件中第一条消息的 Offset</p>
+                    <p>通过二分找到小于目标文件 Offset 的最大索引位置，再遍历找到目标 Offset。</p></li>
+                  <li><p>时间戳索引文件</p>
+                    <p>通过二分找到小于目标时间戳最大的索引位置，在通过寻找 Offset 的方式找到最终数据。和 Offset
+                      相比只是多加了时间戳以及，即通过二分找到时间戳对应的 Offset，再找到相应的文件数据。</p></li>
+                  <li><p>传统数据拷贝</p>
+                    <p>从磁盘空间到内核空间，内核空间到应用空间，再从应用空间到内核空间，进入消费者进程。</p></li>
+                  <li><p>零拷贝</p>
+                    <p>从磁盘空间到内核空间，然后进入消费者进程。</p>
+                    <blockquote><p>Consumer从Broker中读取数据，通过sendfile的方式，将磁盘读到os内核缓冲区后，直接转到socket
+                      buffer进行网络发送 Producer生产的数据持久化到broker，采用mmap文件映射，实现顺序的快速写入</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <h4 id="29-consumer"><a class="markdownIt-Anchor" href="#29-consumer"></a> 2.9 Consumer</h4><h5
+                  id="消息的接收端"><a class="markdownIt-Anchor" href="#消息的接收端"></a> 消息的接收端</h5>
+                <p>如何解决 Partition 在 Consumer Group 中的分配问题？</p>
+                <blockquote><p>对于一个Consumer Group来说，多个分片可以并发消费，这样可以大大提高消费的效率，但需要解决
+                  Consumer 和 Partition 的分配问题，也就是对于每一个 Partition 来讲，该由哪一个 Consumer
+                  来消费的问题。对于这个问题，我们一般有两种解决方法，手动分配和自动分配</p></blockquote>
+                <h5 id="low-level"><a class="markdownIt-Anchor" href="#low-level"></a> Low Level</h5>
+                <p>通过手动分配，哪一个 Consumer 消费哪一个 Partition 完全由业务来决定</p>
+                <blockquote><p>第一，手动分配，也就是Kafka中所说的 Low Level 消费方式进行消费，这种分配方式的一个好处就是启动比较快，因为对于每一个
+                  Consumer 来说，启动的时候就已经知道了自己应该去消费哪个消费方式。这些 Consumer
+                  再启动的时候就已经知道分配方案了</p>
+                  <p>但这样这种方式存在缺点，想象一下，如果某一个 Consumer
+                    挂掉了可能会停止一部分分片的消费，或者新增了一台Consumer，那又需要停掉整个集群，重新修改配置再上线，保证新增的
+                    Consumer 也可以消费数据，其实上面两个问题，有时候对于线上业务来说是致命的。</p>
+                  <p>因此 Kafka 也提供了另外一种方式。</p></blockquote>
+                <h5 id="high-level"><a class="markdownIt-Anchor" href="#high-level"></a> High Level</h5>
+                <blockquote><p>Kafka 提供了自动分配的方式，这里也叫做 High Level 的消费方式，简单的来说，就是在 Broker
+                  集群中，对于不同的 Consumer Group 来讲，都会选取一台 Broker 当做 Coordinator，而 Coordinator 的作用就是帮助
+                  Consumer Group 进行分片的分配，也叫做分片的 Rebalance</p>
+                  <p>使用这种方式，如果 Consumer Group 中有发生宕机，或者有新的 Consumer 加入，整个 partition 和 Consumer
+                    都会重新进行分配来达到一个稳定的消费状态</p></blockquote>
+                <h4 id="210-consumer-rebalance"><a class="markdownIt-Anchor" href="#210-consumer-rebalance"></a> 2.10
+                  Consumer Rebalance</h4>
+                <p>相关参考<a class="link" target="_blank" rel="noopener"
+                              href="https://www.cnblogs.com/listenfwind/p/12662968.html">https://www.cnblogs.com/listenfwind/p/12662968.html
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4
+                  id="小结-提高-kafka-吞吐或者稳定性的功能"><a class="markdownIt-Anchor"
+                                                               href="#小结-提高-kafka-吞吐或者稳定性的功能"></a> 小结 -
+                  提高 Kafka 吞吐或者稳定性的功能</h4>
+                <ul>
+                  <li>Producer：批量发送、数据压缩</li>
+                  <li>Broker：顺序写，消息索引，零拷贝</li>
+                  <li>Consumer：Rebalance</li>
+                </ul>
+                <h4 id="211-kafka-数据复制问题"><a class="markdownIt-Anchor" href="#211-kafka-数据复制问题"></a> 2.11
+                  Kafka - 数据复制问题</h4>
+                <p>对于 Kafka 来说，每一个 Broker 上都有不同 Topic 分区的不同副本，而每一个副本，会将其数据存储到该 Kafka
+                  节点上面，对于不同的节点之间，通过副本直接的数据复制，来保证数据的最终一致性与集群的高可用。</p><h4
+                  id="212-kafka-重启操作"><a class="markdownIt-Anchor" href="#212-kafka-重启操作"></a> 2.12 Kafka - 重启操作
+                </h4>
+                <p>对一个机器进行重启</p>
+                <ul>
+                  <li><p>首先会关闭一个 Broker，此时如果该 Broker 上存在副本的 Leader，那么该副本将发生 Leader
+                    切换，切换到其他节点上并且在 ISR 中的 Follower 副本</p></li>
+                  <li><p>而此时，因为数据在不断的写入，对于刚刚关闭重启的 Broker 来说，和新 Leader 之间一定会存在数据的滞后，此时这个
+                    Broker 会追赶数据，重新加入到 ISR 当中</p></li>
+                  <li><p>当数据追赶完成之后，需要回切 Leader，这一步叫做 prefer leader，目的是为了避免在一个集群长期运行后，所有的
+                    Leader 都分布在少数节点上导致数据的不均衡</p></li>
+                  <li><p>通过上面的一个流程分析，可以发现对于一个 Broker
+                    的重启来说，需要进行数据复制，所以时间成本会比较大</p>
+                    <blockquote><p>比如一个节点重启需要10分钟，一个集群有1000个节点，如果该集群需要重启升级，则需要10000分钟，那差不多就是一个星期，这样的时间成本是非常大的。
+                      可能会问，能不能并发多台重启，答案是不能。因为在一个两副本的集群中，重启了两台机器，对某一分片来讲，可能两个分片都在这台机器上面，则会导致该集群处于不可用的状态。这是更不能接受的。</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <h4 id="213-kafka-替换-扩容-缩容"><a class="markdownIt-Anchor" href="#213-kafka-替换-扩容-缩容"></a>
+                  2.13 Kafka - 替换、扩容、缩容</h4>
+                <ul>
+                  <li>
+                    替换，本质上来讲就是一个需要追更多数据的重启操作，因为正常重启只需要追一小部分，而替换，则是需要复制整个leader的数据，时间会更长
+                  </li>
+                  <li>扩容，当分片分配到新的机器上以后，也是相当于要从0开始复制一些新的副本</li>
+                  <li>缩容，缩容节点上面的分片也会分片到集群中剩余节点上面，分配过去的副本也会从0开始去复制数据</li>
+                </ul>
+                <p>以上三个操作均有数据复制所带来的时间成本问题，所以对于 Kafka
+                  来说，运维操作所带来的时间成本是不容忽视的</p><h4 id="214-kafka-负载不均衡"><a
+                  class="markdownIt-Anchor" href="#214-kafka-负载不均衡"></a> 2.14 Kafka - 负载不均衡</h4>
+                <p>场景：同一个 Topic 有4个分片，两副本，对于分片1来说，数据量明显比其他分片要大，当机器 IO 达到瓶颈的时候，可能就需要把第一台
+                  Broker上面的其他的 Partition 迁移到其他负载小的 Broker上面</p>
+                <p>但数据复制又会引起 Broker 的 IO 升高，所以问题就变成了为了去解决 IO 升高，但解决问题的过程又会带来更高的IO。所以就需要权衡
+                  IO 设计出一个极其复杂的负载均衡策略。</p><h4 id="kafka-问题总结"><a class="markdownIt-Anchor"
+                                                                                     href="#kafka-问题总结"></a> Kafka -
+                  问题总结</h4>
+                <ol>
+                  <li>运维成本高</li>
+                  <li>对于负载不均衡的场景，解决方案复杂</li>
+                  <li>没有自己的缓存，完全依赖 Page Cache</li>
+                  <li>Controller 和 Coordinator 和 Broker 在同一进程中，大量 IO 会造成其性能下降</li>
+                </ol>
+                <h3 id="3消息队列-bmq"><a class="markdownIt-Anchor" href="#3消息队列-bmq"></a> 3.消息队列 - BMQ</h3>
+                <p>ByteMQ，简称 BMQ，由字节跳动团队自主研发。</p><h4 id="31-bmq-简介"><a class="markdownIt-Anchor"
+                                                                                      href="#31-bmq-简介"></a> 3.1 BMQ
+                  简介</h4>
+                <p>BMQ 兼容 Kafka 协议，存算分离，云原生消息队列，初期定位是承接高吞吐的离线业务场景，逐步替换掉对应的 Kafka
+                  集群。</p>
+                <p>Producer —&gt; Consumer —&gt; Proxy —&gt; Broker —&gt; HDFS —&gt; Controller —&gt; Coordinator —&gt;
+                  Meta</p>
+                <p>这里着重强调 Proxy 和 Broker 无状态，为与下面的运维进行比较，简单说明存算分离，适配 Kafka 协议以及不选择
+                  Pulsar 的原因</p><h4 id="32-运维操作对比"><a class="markdownIt-Anchor" href="#32-运维操作对比"></a>
+                  3.2 运维操作对比</h4>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">具体操作</th>
+                    <th style="text-align:center">Kafka</th>
+                    <th style="text-align:center">BMQ</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">重启</td>
+                    <td style="text-align:center">需要数据复制，分钟级重启</td>
+                    <td style="text-align:center">重启后可直接对外服务，秒级完成</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">替换</td>
+                    <td style="text-align:center">需要数据复制，分钟级替换，甚至天级别</td>
+                    <td style="text-align:center">替换后可直接对外服务，秒级完成</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">扩容</td>
+                    <td style="text-align:center">需要数据复制，分钟级扩容，甚至天级别</td>
+                    <td style="text-align:center">扩容后可直接对外服务，秒级完成</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">缩容</td>
+                    <td style="text-align:center">需要数据复制，分钟级缩容，甚至天级别</td>
+                    <td style="text-align:center">缩容后可直接对外服务，秒级完成</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>
+                  实际上对于所有节点变更的操作，都仅仅只是集群元数据的变化，通常情况下都能秒级完成，而真正的数据已经移到下层分布式文件存储去了，所以运维操作不需要额外关心数据复制所带来的时间成本</p>
+                <h4 id="33-hdfs-写文件流程"><a class="markdownIt-Anchor" href="#33-hdfs-写文件流程"></a> 3.3 HDFS 写文件流程
+                </h4>
+                <p>同一个副本是由多个 segment 组成，BMQ 对于单个文件写入的机制，首先客户端写入前会选择一定数量的
+                  DataNode，这个数量是副本数，然后将一个文件写入到三个节点上，切换到下一个 segment
+                  之后，又会重新选择三个节点进行写入。这样一来，对于单个副本的所有 segment
+                  来讲，会随机地分配到分布式文件系统的整个集群中。</p><h4 id="34-bmq-文件结构"><a
+                  class="markdownIt-Anchor" href="#34-bmq-文件结构"></a> 3.4 BMQ 文件结构</h4>
+                <p>对于 Kafka 分片数据的写入，是先在 Leader 上面写好文件，然后同步到 Follower 上，所以同一个副本的所有
+                  Segment 都在同一台机器上面。会存在之前说到的单分片过大导致负载不均衡的问题，但在 BMQ
+                  集群中，因为对于单个副本来讲，是随机分配到不同的节点上面的，因此不会存在 Kafka 的负载不均问题。</p><h4
+                  id="35-broker"><a class="markdownIt-Anchor" href="#35-broker"></a> 3.5 Broker</h4><h5
+                  id="partition-状态机"><a class="markdownIt-Anchor" href="#partition-状态机"></a> Partition 状态机</h5>
+                <p>其实对于写入的逻辑来说，还有一个状态机的机制，用来保证不会出现同一个分片在两个 Broker
+                  上同时启动的情况，另外也能够保证一个分片的正常运行。</p>
+                <p>首先 Controller 做好分片的分配之后，如果在该 Broker 分配到了 Broker，首先会 start 这个分片，然后进入
+                  Recover 状态，这个状态主要有两个目的</p>
+                <ul>
+                  <li><p>第一个目的是获取分片写入权利，即对于 hdfs
+                    来讲，只会允许一个分片进行写入，只有拿到这个权利的分片才能写入。</p></li>
+                  <li><p>第二个目的是如果上次分片是异常中断的，没有进行 save checkpoint，这里会重新进行一次 save
+                    checkpoint，然后就进入了正常的写流程状态，创建文件，写入数据，到一定大小之后又开始建立新的文件进行写入。</p>
+                  </li>
+                </ul>
+                <h5 id="写文件流程"><a class="markdownIt-Anchor" href="#写文件流程"></a> 写文件流程</h5>
+                <ul>
+                  <li><p>数据校验：CRC , 参数是否合法</p></li>
+                  <li><p>校验完成后，会把数据放入Buffer中，通过一个异步的Write
+                    Thread线程将数据最终写入到底层的存储系统当中</p>
+                    <blockquote><p>
+                      这里有一个地方需要注意一下，就是对于业务的写入来说，可以配置返回方式，可以在写完缓存之后直接返回，另外也可以数据真正写入存储系统后再返回，对于这两个来说前者损失了数据的可靠性，带来了吞吐性能的优势，因为只写入内存是比较快的，但如果在下一次
+                      flush
+                      前发生宕机了，这个时候数据就有可能丢失，后者的话，因为数据已经写入了存储系统，这个时候也不需要担心数据丢失，相应的来说吞吐就会小一些</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <p>Thread 的具体逻辑</p>
+                <ul>
+                  <li><p>首先会将 Buffer 中的数据取出来，调用底层写入逻辑，在一定的时间周期上去 flush， flush 完成后开始建立
+                    Index，也就是 offset 和 timestamp 对应消息具体位置的映射关系</p></li>
+                  <li><p>Index建立好以后，会 save 一次 checkpoint，即表示 checkpoint 后的数据是可以被消费的，试想一下，如果没有
+                    checkpoint 的情况下会发生什么问题，如果 flush 完成之后宕机，index
+                    还没有建立，这个数据是不应该被消费的</p></li>
+                  <li><p>最后当文件到达一定大小之后，需要建立一个新的 segment 文件来写入</p></li>
+                </ul>
+                <h5 id="写文件-failover"><a class="markdownIt-Anchor" href="#写文件-failover"></a> 写文件 Failover</h5>
+                <p>
+                  建立一个新的文件，会随机挑选与副本数量相当的数据节点进行写入，但如果此时挑选节点中有一个出现了问题，导致不能正常写入了，应该怎么处理？</p>
+                <p>可以重新找正常的节点创建新的文件进行写入，这样也就保证了写入的可用性。</p><h4 id="36-proxy"><a
+                  class="markdownIt-Anchor" href="#36-proxy"></a> 3.6 Proxy</h4>
+                <ul>
+                  <li><p>首先 Consumer 发送一个 Fetch Request，然后会有一个 Wait 流程，那么他的作用是什么？</p>
+                    <p>想象一个 Topic，如果一直没有数据写入，那么此时 consumer 就会一直发送 Fetch Request，如果 Consumer
+                      数量过多，BMQ 的 server端 是扛不住这个请求的。</p>
+                    <p>因此设置了一个等待机制，如果没有 fetch 到指定大小的数据，那么 proxy 会等待一定的时间，再返回给用户侧，这样也就降低了
+                      fetch 请求的 IO 次数，经过 wait 流程后，会到 Cache 里面去寻找是否有存在想要的数据，如果有直接返回，如果没有，再开始去存储系统当中寻找，首先会
+                      Open 这个文件，然后通过 Index 找到数据所在的具体位置，从这个位置开始读取数据</p></li>
+                </ul>
+                <h4 id="37-多机房部署"><a class="markdownIt-Anchor" href="#37-多机房部署"></a> 3.7 多机房部署</h4>
+                <p>为什么需要多机房部署？</p>
+                <p>
+                  其实对于一个高可用的服务，除了要防止单机故障所带来的的影响意外，也要防止机房级故障所带来的影响，比如机房断点，机房之间网络故障等等。</p>
+                <p>BMQ 的多机房部署：Proxy —&gt; Broker —&gt; Meta —&gt; HDFS</p><h4 id="38-bmq-高级特性"><a
+                  class="markdownIt-Anchor" href="#38-bmq-高级特性"></a> 3.8 BMQ - 高级特性</h4>
+                <p>泳道 —&gt; Databus —&gt; Mirror —&gt; Index —&gt; Parquet</p><h4 id="39-泳道消息"><a
+                  class="markdownIt-Anchor" href="#39-泳道消息"></a> 3.9 泳道消息</h4>
+                <p>开发流程：开发 —&gt; BOE —&gt; PPE —&gt; Prod</p>
+                <p>BOE：Bytedance Offline Environment，是一套完全独立的线下机房环境</p>
+                <p>PPE：Product Preview Environment，即产品预览环境</p>
+                <p>BOE 测试：多个人同时测试，需要等待上一个人测试完成。每多一个测试人员，都需要重新搭建一个相同配置的
+                  Topic，造成人力和资源的浪费。</p>
+                <p>PPE 验证：对于 PPE
+                  的消费者来说，资源没有生产环境多，所以无法承受生产环境的流量。解决主干泳道流量隔离问题以及泳道资源重复创建问题。</p>
+                <h4 id="310-databus"><a class="markdownIt-Anchor" href="#310-databus"></a> 3.10 Databus</h4>
+                <p>直接使用原生 SDK 的问题</p>
+                <ol>
+                  <li>客户端配置较为复杂</li>
+                  <li>不支持动态配置，更改配置需要停掉服务</li>
+                  <li>对于 latency 不是很敏感的业务，batch 效果不佳</li>
+                </ol>
+                <p>使用Databus 的优点</p>
+                <ol>
+                  <li>简化消息队列客户端复杂度</li>
+                  <li>解耦业务与 Topic</li>
+                  <li>缓解集群压力，提高吞吐</li>
+                </ol>
+                <h4 id="311-mirror"><a class="markdownIt-Anchor" href="#311-mirror"></a> 3.11 Mirror</h4>
+                <p>思考：是否可以通过多机房部署的方式，解决跨 Region 读写的问题？</p>
+                <p>使用 Mirror 通过最终一致的方式，解决跨 Region 读写问题。</p><h4 id="312-index"><a
+                  class="markdownIt-Anchor" href="#312-index"></a> 3.12 Index</h4>
+                <p>思考：如何通过写入的 LogId、UserId 或者其他的业务字段进行消息的查询？</p>
+                <p>直接在 BMQ 中将数据结构化，配置索引 DDL，异步构建索引后，通过 Index Query 服务读出数据。</p><h4
+                  id="313-parquet"><a class="markdownIt-Anchor" href="#313-parquet"></a> 3.13 Parquet</h4>
+                <p>Apache Parquet 是 Hadoop 生态圈中一种新型列式存储格式，它可以兼容 Hadoop
+                  生态圈中大多数计算框架（Hadoop、Spark等），被多种查询引擎支持（Hive、Impala、Drill 等）。</p>
+                <ul>
+                  <li><p>有行式存储和列式存储</p></li>
+                  <li><p>直接在 BMQ 中将数据结构化，通过 Parquet Engine，可以使用不同的方式构建 Parquet 格式文件</p></li>
+                </ul>
+                <h4 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h4>
+                <ol>
+                  <li>BMQ 的框架模型（解决Kafka 存在的问题）</li>
+                  <li>BMQ 的读写流程（Failover 机制，写入状态机）</li>
+                  <li>BMQ 高级特性（泳道、Databus、Mirror、Index、Parquet）</li>
+                </ol>
+                <h3 id="4消息队列-rocketmq"><a class="markdownIt-Anchor" href="#4消息队列-rocketmq"></a> 4.消息队列 -
+                  RocketMQ</h3>
+                <p>
+                  使用场景：针对电商业务线，其业务涉及广泛，如注册、订单、库存、物流等；同时，也会涉及许多业务峰值时刻，如秒杀活动、周年庆、定期优惠等。</p>
+                <h4 id="41-rocketmq-基本概念"><a class="markdownIt-Anchor" href="#41-rocketmq-基本概念"></a> 4.1
+                  RocketMQ 基本概念</h4>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">名称</th>
+                    <th style="text-align:center">Kafka</th>
+                    <th style="text-align:center">RocketMQ</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">逻辑队列</td>
+                    <td style="text-align:center">Topic</td>
+                    <td style="text-align:center">Topic</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">消息体</td>
+                    <td style="text-align:center">Message</td>
+                    <td style="text-align:center">Message</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">标签</td>
+                    <td style="text-align:center">无</td>
+                    <td style="text-align:center">Tag</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">分区</td>
+                    <td style="text-align:center">Partition</td>
+                    <td style="text-align:center">Consumer Queue</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">生产者</td>
+                    <td style="text-align:center">Producer</td>
+                    <td style="text-align:center">Producer</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">生产者集群</td>
+                    <td style="text-align:center">无</td>
+                    <td style="text-align:center">Producer Group</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">消费者</td>
+                    <td style="text-align:center">Consumer</td>
+                    <td style="text-align:center">Consumer</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">消费者集群</td>
+                    <td style="text-align:center">Consumer Group</td>
+                    <td style="text-align:center">Consumer Group</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">集群控制器</td>
+                    <td style="text-align:center">Controller</td>
+                    <td style="text-align:center">Nameserver</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>Producer，Consumer，Broker这三个部分，Kafka 和 RocketMQ 是一样的，而 Kafka 中的 Partition 概念在这里叫做
+                  Consumer Queue。</p><h4 id="42-rocketmq-架构"><a class="markdownIt-Anchor"
+                                                                  href="#42-rocketmq-架构"></a> 4.2 RocketMQ 架构</h4>
+                <ul>
+                  <li><p>数据流也是通过 Producer 发送给 Broker 集群，再由 Consumer 进行消费</p></li>
+                  <li><p>Broker 节点有 Master 和 Slave 的概念</p></li>
+                  <li><p>NameServer 为集群提供轻量级服务发现和路由</p></li>
+                </ul>
+                <h4 id="43-存储模型"><a class="markdownIt-Anchor" href="#43-存储模型"></a> 4.3 存储模型</h4>
+                <p>对于一个 Broker 来说所有的消息的会 append 到一个 CommitLog 上面，然后按照不同的 Queue，重新 Dispatch
+                  到不同的 Consumer 中，这样 Consumer 就可以按照 Queue 进行拉取消费</p>
+                <p>但需要注意的是，这里的 Consumer Queue 所存储的并不是真实的数据，真实的数据其实只存在 CommitLog
+                  中，这里存的仅仅是这个 Queue 所有消息在 CommitLog 上面的位置，相当于是这个 Queue 的一个密集索引</p><h4
+                  id="44-rocketmq-高级特性"><a class="markdownIt-Anchor" href="#44-rocketmq-高级特性"></a> 4.4 RocketMQ
+                  - 高级特性</h4>
+                <p>事务场景：事务消息</p>
+                <p>延迟发送：延迟消息</p>
+                <p>处理失败：消费重试和死信队列</p>
+                <p>具体参考<a class="link" target="_blank" rel="noopener" href="https://rocketmq.apache.org/zh/">RocketMQ
+                  中文官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="小结-2"><a
+                  class="markdownIt-Anchor" href="#小结-2"></a> 小结</h4>
+                <ol>
+                  <li>RocketMQ 的基本概念（Queue、Tag）</li>
+                  <li>RocketMQ 的底层原理（架构模型、存储模型）</li>
+                  <li>RocketMQ 的高级特性（事务消息、重试和死信队列，延迟队列）</li>
+                </ol>
+                <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+                <ul>
+                  <li>前世今生：消息队列的发展历程</li>
+                  <li>Kafka：基本概念、架构设计、底层原理、架构缺点</li>
+                  <li>BMQ：架构设计、底层原理、与 Kafka 比较、高级特性</li>
+                  <li>RocketMQ：架构设计、底层原理、高级特性</li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68052232">再过半小时，你就能明白kafka的工作原理了
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://www.cnblogs.com/listenfwind/p/12662968.html">详细解析kafka之 kafka消费者组与重平衡机制
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://rocketmq.apache.org/zh/">RocketMQ 中文官网
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">消息队列原理与实战</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E6%88%98"><span
+                      class="nav-text">消息队列原理与实战</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span
+                          class="nav-text">前言</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F"><span
+                          class="nav-text">1.前世今生</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-kafka"><span
+                          class="nav-text">2.消息队列 - Kafka</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-bmq"><span
+                          class="nav-text">3.消息队列 - BMQ</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97-rocketmq"><span
+                          class="nav-text">4.消息队列 - RocketMQ</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

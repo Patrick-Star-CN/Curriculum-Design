@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">分布式理论</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-03 21:59:12</span> <span
+                      class="mobile">2023-02-03 21:59</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.9k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>21 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对分布式理论的学习<span
+                id="more"></span></p>
+                <h2 id="分布式理论"><a class="markdownIt-Anchor" href="#分布式理论"></a> 分布式理论</h2>
+                <h3 id="1分布式概述"><a class="markdownIt-Anchor" href="#1分布式概述"></a> 1.分布式概述</h3><h4
+                  id="11-什么是分布式"><a class="markdownIt-Anchor" href="#11-什么是分布式"></a> 1.1 什么是分布式</h4>
+                <p>
+                  分布式系统是计算机程序的集合，这些程序利用跨多个独立计算节点的计算资源来实现共同的目标。可以分为分布式计算、分布式存储、分布式数据库等。</p>
+                <p>优势</p>
+                <ol>
+                  <li>去中心化</li>
+                  <li>低成本</li>
+                  <li>弹性</li>
+                  <li>资源共享</li>
+                  <li>可靠性高</li>
+                </ol>
+                <p>挑战</p>
+                <ol>
+                  <li>普通的节点故障</li>
+                  <li>不可靠的网络</li>
+                  <li>异构的机器与硬件环境</li>
+                  <li>安全</li>
+                </ol>
+                <h4 id="12-分布式的必要性"><a class="markdownIt-Anchor" href="#12-分布式的必要性"></a> 1.2 分布式的必要性
+                </h4>
+                <p>使用者角度</p>
+                <ul>
+                  <li>原因：1.数据爆炸，对存储和计算有大规模运用的需求；2.成本低，构建在廉价服务器之上。</li>
+                  <li>如何实现：1.分布式框架；2.成熟的分布式系统。</li>
+                  <li>目标规划：1.理清规模，负载，一致性要求等；2.明确稳定性要求，制定技术方案。</li>
+                </ul>
+                <p>学习者角度</p>
+                <ul>
+                  <li>原因：1.后端开发必备技能；2.帮助理解后台服务器之间协作的机理。</li>
+                  <li>如何学习：1.掌握分布式理论；2.了解一致性协议。</li>
+                  <li>学习规划：1.把要点深入展开，针对难点搜索互联网资料进行学习；2.将所学知识运用于实践。</li>
+                </ul>
+                <h4 id="13-常见的分布式系统"><a class="markdownIt-Anchor" href="#13-常见的分布式系统"></a> 1.3 常见的分布式系统
+                </h4>
+                <p>分布式存储</p>
+                <ol>
+                  <li><p>Google File System（GFS）：google 分布式文件存储系统</p></li>
+                  <li><p>Ceph：统一的分布式存储系统</p></li>
+                  <li><p>Hadoop HDFS：基于 GFS 架构的开源分布式文件系统</p></li>
+                  <li><p>Zookeeper：高可用的分布式数据管理与系统协调框架</p></li>
+                </ol>
+                <p>分布式数据库</p>
+                <ol>
+                  <li>Google Spanner：google 可扩展的、全球分布式的数据库</li>
+                  <li>TiDB：开源分布式关系型数据库</li>
+                  <li>HBase：开源 Nosql 数据库</li>
+                  <li>MongoDB：文档数据库</li>
+                </ol>
+                <p>分布式计算</p>
+                <ol>
+                  <li>Hadoop：基于 MapReduce 分布式计算框架</li>
+                  <li>Spark：在 Hadoop 基础之上，使用内存来存储数据</li>
+                  <li>YARN：分布式资源调度</li>
+                </ol>
+                <h3 id="2系统模型"><a class="markdownIt-Anchor" href="#2系统模型"></a> 2.系统模型</h3><h4
+                  id="21-故障模型"><a class="markdownIt-Anchor" href="#21-故障模型"></a> 2.1 故障模型</h4>
+                <ul>
+                  <li>Byzantine failure：节点可以任意篡改发送给其他节点的数据</li>
+                  <li>Authentication detectable byzantine failure（ADB）：Byzantine failure
+                    的特例，节点可以篡改数据，但不能伪造其他节点的数据
+                  </li>
+                  <li>Performance failure：节点未在特定时间段内收到数据，即时间太早或太晚</li>
+                  <li>Omission failure：节点收到数据的时间无限晚，即收不到数据</li>
+                  <li>Crash failure：在 omission failure 的基础上，增加了节点停止响应的假设，即持续性地 omission failure
+                  </li>
+                  <li>Fail-stop failure：在 Crash failure 的基础上增加了错误可检测的假设</li>
+                </ul>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">故障</th>
+                    <th style="text-align:center">描述</th>
+                    <th style="text-align:center">可能的类型</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">磁盘故障</td>
+                    <td style="text-align:center">如：磁头不寻道、盘片不转、磁介质损伤等。年发生率 1-2%</td>
+                    <td style="text-align:center">Fail-stop</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">磁盘坏道、坏块</td>
+                    <td style="text-align:center">磁头划伤引起坏道，或受宇宙射线影响晶体管产生位反转</td>
+                    <td style="text-align:center">Fail-stop，ADB</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">服务器主板、板卡故障</td>
+                    <td style="text-align:center">可能是风扇故障，或灰尘引起的短路，或 SCSI/RAID 卡造成的死机</td>
+                    <td style="text-align:center">Crash</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">网络故障</td>
+                    <td style="text-align:center">电源故障、背板故障等，网卡位反转、网络流量大造成大量丢包等</td>
+                    <td style="text-align:center">Byzantine，Omission</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">网络分区</td>
+                    <td style="text-align:center">网络分区异常引起节点形成不同的子集，子集中网络相遇，子集间网络不通</td>
+                    <td style="text-align:center">Performance</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">内存故障</td>
+                    <td style="text-align:center">内存出错造成的数据被篡改，分为 UE、CE 两种</td>
+                    <td style="text-align:center">ADB</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">线缆故障</td>
+                    <td style="text-align:center">服务器光模块频繁 up 或 down</td>
+                    <td style="text-align:center">Performance，Omission</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">内核崩溃</td>
+                    <td style="text-align:center">内核内部的致命错误，产生的 kernel panic</td>
+                    <td style="text-align:center">Crash</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">CPU 故障</td>
+                    <td style="text-align:center">年故障率接近 1%</td>
+                    <td style="text-align:center">Omission、Crash</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">电源故障</td>
+                    <td style="text-align:center">服务器失去电力支撑</td>
+                    <td style="text-align:center">Omission</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">软件故障</td>
+                    <td style="text-align:center">如：进程 crash、内存踩坏、状态不一致、配置错误、软件 bug 等</td>
+                    <td style="text-align:center">Byzantine、Crash 等</td>
+                  </tr>
+                  </tbody>
+                </table>
+                <h4 id="22-拜占庭将军问题"><a class="markdownIt-Anchor" href="#22-拜占庭将军问题"></a> 2.2 拜占庭将军问题
+                </h4>
+                <blockquote><p>两将军问题（Two Generals’
+                  Problem）：两支军队的将军只能派信使穿越敌方领土相互通信，以此约定进攻时间。该问题希望求解如何在两名将军派出的任何信使都可能被俘虏的情况下，就经过时间达成共识。</p>
+                  <p>结论是，两将军问题被证实是无解的电脑通信问题，两支军队理论上永远无法达成共识。</p>
+                  <p>方案一：同时发送 N 个信使，任何一个达到对方军队，都算成功。</p>
+                  <p>方案二：设置超时时间，发送后未在一定时间返回，则加派信使。</p>
+                  <p>共识与消息传递不是一个概念：即使保证了消息传递成功，也不能保证达成共识。</p>
+                  <p>TCP 三次握手是在两个方向确认包的序列号，增加了超时重试，是两将军问题的一个工程解。</p>
+                  <p>思考</p>
+                  <ol>
+                    <li><p>为何 TCP 需要三次握手？而不是两次或四次？</p>
+                      <p>可以参考一下笔者个人整理的笔记<a class="link" target="_blank" rel="noopener"
+                                                          href="https://github.com/s-chance/packet-tracer#25tcp%E8%BF%90%E8%BE%93%E8%BF%9E%E6%8E%A5%E7%AE%A1%E7%90%86">s-chance/packet-tracer:
+                        计算机网络 | Packet Tracer的使用 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>
+                      </p></li>
+                    <li><p>挥手过程中，如果 FIN 报文丢失，会发生什么结果？</p>
+                      <p>参考<a class="link" target="_blank" rel="noopener"
+                                href="https://zhuanlan.zhihu.com/p/557759425">TCP 三次握手和四次挥手，中间失败了会发生什么？
+                        - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                  </ol>
+                  <p>拜占庭将军考虑更加普适的场景，例如 3 个将军 ABC
+                    互相传递消息，消息可能丢失，也可能被篡改，当有一个将军是“叛徒”（即出现拜占庭故障）时，整个系统无法达成一致。</p>
+                  <p>如果没有“叛徒”，无论各自观察到怎样的敌情，总能达成一致的行动。</p>
+                  <p>假设由于“叛徒” C 的存在，将军 A 和将军 B 获得不同的信息。这样将军 A 获得 2 票进攻 1 票撤退的信息，将军
+                    B 获得 1 票进攻 2 票撤退的信息，产生了不一致。</p>
+                  <p>考虑当 4 个将军，只有 1 个叛徒的场景。将军 D 作为消息分发中枢，约定如果没收到消息则执行撤退。</p>
+                  <ul>
+                    <li>如果 D 为 “叛徒”，ABC 无论收到任何消息，总能达成一致</li>
+                    <li>D 为 “忠将”，ABC 中有 2 人将 D 的消息进行正确的传递，同样能保证最终决策符合大多数。</li>
+                  </ul>
+                  <p>进而能够证明，当有 3m+1 个将军，其中有 m 个“叛徒”时，可以增加 m 轮协商，最终达成一致。</p></blockquote>
+                <h4 id="23-共识和一致性"><a class="markdownIt-Anchor" href="#23-共识和一致性"></a> 2.3 共识和一致性</h4>
+                <p><strong>读请求和写请求并发时可能读到旧值</strong></p>
+                <p>客户端 A 读到 x=0，当客户端 C 正在写入时，客户端 A 和 B 可能读到 0 或者 1。但是当 C 写入完成后，A 和 B
+                  最终能读到一致的数据。这样的一致性被称为 Eventually consistent（最终一致性）。</p>
+                <p><strong>一旦某个读获取到新值，所有的客户端都必须返回新值</strong></p>
+                <p>当客户端 A 读到更新的版本 x=1 后，及时将消息同步给其他客户端，这样其他客户端立即能获取到 x=1。这样的一致性被称为
+                  Linearizability（线性一致性）</p>
+                <p>如果要保证“线性”一致性，多个节点间势必需要进行协商，以寻求一致。这样会增加延迟，系统可用性便会受损。</p>
+                <h4 id="24-时间和事件顺序"><a class="markdownIt-Anchor" href="#24-时间和事件顺序"></a> 2.4 时间和事件顺序
+                </h4>
+                <blockquote><p>1978 年 Leslie Lamport 发表在 Communications of the ACM 上的论文 <em>Time, Clocks, and
+                  the Ordering of Events in a Distributed System</em></p>
+                  <p>我们定义“happened before”关系，记为“→”。其满足如下三个条件</p>
+                  <ul>
+                    <li>如果 a 和 b 是在相同节点上的两个事件，a 在 b 之前发生，则定义 a → b</li>
+                    <li>如果事件 a 表示某个节点发送某条消息，b 是另一个节点接受这条消息，则有 a → b</li>
+                    <li>如果有 a → b 且 b → c，则有 a → c</li>
+                  </ul>
+                  <p>当且仅当 a <span class="katex"><span class="katex-mathml"><math
+                    xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>↛</mo></mrow><annotation
+                    encoding="application/x-tex">\nrightarrow</annotation></semantics></math></span><span
+                    class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
+                                                                                   style="height:.36687em;vertical-align:0"></span><span
+                    class="mrel amsrm">↛</span></span></span></span> b 且 b <span class="katex"><span
+                    class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>↛</mo></mrow><annotation
+                    encoding="application/x-tex">\nrightarrow</annotation></semantics></math></span><span
+                    class="katex-html" aria-hidden="true"><span class="base"><span class="strut"
+                                                                                   style="height:.36687em;vertical-align:0"></span><span
+                    class="mrel amsrm">↛</span></span></span></span> a 时，则称两个事件为并发的（concurrent）。
+                  </p>
+                  <p>Lamport 逻辑时钟</p>
+                  <p>对于每一个节点 Pi 定义时钟 Ci 为一个函数，它为任意的事件 a 赋值编号为 Ci（a）</p>
+                  <ol>
+                    <li>如果 a 和 b 是在相同节点 Pi 上的两个事件，a 在 b 之前发生，则有 Ci（a）&lt; Ci（b）</li>
+                    <li>如果事件 a 表示节点 Pi 发送某条消息， b 表示节点 Pj 接受这条消息，则有 Ci（a）&lt; Cj（b）</li>
+                  </ol>
+                  <p>利用逻辑时钟，可以对整个系统中的事件进行全序排序。</p></blockquote>
+                <h3 id="3理论基础"><a class="markdownIt-Anchor" href="#3理论基础"></a> 3.理论基础</h3><h4
+                  id="31-cap-理论"><a class="markdownIt-Anchor" href="#31-cap-理论"></a> 3.1 CAP 理论</h4>
+                <table>
+                  <thead>
+                  <tr>
+                    <th style="text-align:center">选项</th>
+                    <th style="text-align:center">描述</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td style="text-align:center">C（Consistence）</td>
+                    <td style="text-align:center">一致性，指数据在多个副本之间能够保持一致的特性（严格的一致性）。</td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">A（Availability）</td>
+                    <td style="text-align:center">
+                      可用性，指系统提供的服务必须一直处于可用的状态，每次请求都能获取到非错的响应，但是不保证获取的数据为最新数据。
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="text-align:center">P（Network partitioning）</td>
+                    <td style="text-align:center">
+                      分区容错性，分布式系统在遇到任何网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务，除非整个网络环境都发生了故障。
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+                <p>CAP 理论往往运用于数据库领域，同样适用于分布式存储方向</p>
+                <p>一个分布式系统最多只能同时满足 CAP 理论三项中的两项，因此有以下几种设计</p>
+                <ul>
+                  <li><p>CA：放弃分区容错性，加强一致性和可用性，即传统的单机数据库的选择。</p></li>
+                  <li><p>AP：放弃一致性（这里的一致性是指强一致性），追求分区容错性和可用性，例如一些注重用户体验的系统。</p>
+                  </li>
+                  <li><p>CP：放弃可用性，追求一致性和分区容错性，例如与资金安全相关的系统。</p></li>
+                </ul>
+                <p>
+                  目前大多数都是分布式系统，因此网络分区是必备的。在网络发生分区的情况下，必须在可用性和一致性之间做出选择。</p>
+                <p>近似解决方法：把故障节点的负载转移给备用节点负责。</p><h4 id="32-acid-理论"><a
+                  class="markdownIt-Anchor" href="#32-acid-理论"></a> 3.2 ACID 理论</h4>
+                <p>
+                  事务是数据库系统中非常重要的概念，它是数据库管理系统执行过程中的一个逻辑单元，它能够保证一个事务中的所有操作要么全部执行，要么全都不执行。</p>
+                <p>数据库事务拥有四个特性
+                  ACID，分别是原子性（Atomicity）、一致性（Consistency）、隔离性（Isolation）和持久性（Durability）</p>
+                <ul>
+                  <li><p>原子性（A）</p>
+                    <p>原子性是指事务包含的操作要么全部成功，要么全部失败回滚。</p></li>
+                  <li><p>一致性（C）</p>
+                    <p>
+                      一致性是指事务必须使数据库从一个一致性状态变换到另一个一致性状态，即一个事务执行之前和执行之后都必须处于一致性状态。</p>
+                  </li>
+                  <li><p>隔离性（I）</p>
+                    <p>
+                      隔离性是指当多个用户并发访问数据库时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离</p>
+                  </li>
+                  <li><p>持久性（D）</p>
+                    <p>
+                      持久性是指一个事务一旦被提交了，那么对于数据库中的数据的改变就是永久性的，即使是在数据库系统遇到故障的情况下，也不会丢失提交事务的操作</p>
+                  </li>
+                </ul>
+                <h4 id="33-base-理论"><a class="markdownIt-Anchor" href="#33-base-理论"></a> 3.3 BASE 理论</h4>
+                <p>Base 理论是对 CAP 理论中一致性和可用性权衡的结果，其来源于对大型互联网分布式实践的总结，是基于 CAP
+                  定理逐步演化而来的。其核心思想是</p>
+                <ul>
+                  <li>Basically
+                    Available（基本可用）：假设系统出现了不可预知的故障，但是还能使用，只是相比较正常的系统而言，会有响应时间上的损失或功能上的损失。
+                  </li>
+                  <li>Soft
+                    State（软状态）：允许系统中的数据存在中间状态，并认为该状态不影响系统的整体可用性，即允许系统在多个不同节点的数据副本存在数据信息延时。
+                  </li>
+                  <li>Eventually
+                    Consistent（最终一致性）：系统能够保证在没有其他新的更新操作的情况下，数据最终一定能够达到一致的状态，因此所有客户端对系统的数据访问最终都能够获取到最新的值。
+                  </li>
+                </ul>
+                <h3 id="4分布式事务"><a class="markdownIt-Anchor" href="#4分布式事务"></a> 4.分布式事务</h3><h4
+                  id="41-二阶段提交"><a class="markdownIt-Anchor" href="#41-二阶段提交"></a> 4.1 二阶段提交</h4>
+                <p>二阶段提交（Two-phase
+                  Commit）：为了使基于分布式系统架构下的所有节点在进行事务提交时保持一致性而设计的一种演算法。</p>
+                <p>三个假设</p>
+                <ol>
+                  <li>引入协调者（Coordinator）和参与者（Participants），互相进行网络通信</li>
+                  <li>所有节点都采用预写式日志，且日志被写入后即被保持在可靠的存储设备上</li>
+                  <li>所有节点不会永久性损坏，即使损坏后仍然可以恢复</li>
+                </ol>
+                <p>可能出现的情况</p>
+                <ol>
+                  <li><p>Coordinator 不宕机，Participants 宕机，需要进行回滚操作。</p>
+                    <p>回滚：在 Prepare 阶段，如果某个事务参与者反馈失败消息，说明该节点的本地事务执行不成功，必须回滚。</p>
+                  </li>
+                  <li><p>Coordinator 宕机，Participants 不宕机，可以引入新的协调者，待查询状态后，重复二阶段提交。</p></li>
+                  <li><p>Coordinator 宕机，Participants
+                    宕机。无法确认状态，需要数据库管理员的介入，防止数据库进入一个不一致的状态。</p></li>
+                </ol>
+                <p>二阶段提交需要注意的问题</p>
+                <ol>
+                  <li><p>性能问题</p>
+                    <p>两阶段提交需要多次节点间的网络通信，耗时过大，资源需要进行锁定，徒增资源等待时间。</p></li>
+                  <li><p>协调者单点故障问题</p>
+                    <p>如果事务协调者节点宕机，需要另起新的协调者，否则参与者处于中间状态无法完成事务。</p></li>
+                  <li><p>网络分区带来的数据不一致</p>
+                    <p>一部分参与者收到了 Commit 消息，另一部分参与者没收到 Commit 消息，会导致节点之间数据不一致。</p>
+                  </li>
+                </ol>
+                <p>思考</p>
+                <ol>
+                  <li><p>日志被保存在 [可靠] 的存储设备上。如何保证这一点？</p>
+                    <p>参考<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/509856830">分布式日志存储架构设计方案
+                      - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                  <li><p>参与者 Commit 了，但 Ack 信息协调者没收到怎么办？</p>
+                    <p>参考<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/243324226">12.4
+                      故障恢复（Crash Recovery） - 知乎 (zhihu.com) <i
+                        class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></li>
+                </ol>
+                <h4 id="42-三阶段提交"><a class="markdownIt-Anchor" href="#42-三阶段提交"></a> 4.2 三阶段提交</h4>
+                <p>三阶段提交 vs 二阶段提交</p>
+                <p>三阶段提交将二阶段提交中的 Prepare 阶段拆成两部分：CanCommit 和 PreCommit 机制。</p>
+                <ul>
+                  <li>Coordinator 在 CanCommit 阶段向 Participants 询问是否可以执行</li>
+                  <li>Participants 回复可以则进入 PreCommit 阶段，失败或超时则退出</li>
+                  <li>在 PreCommit 阶段 Coordinator 再次向 Participants 询问是否可以执行</li>
+                  <li>Participants 回复可以则进入 DoCommit 阶段，失败或超时则 Rollback</li>
+                  <li>在 DoCommit 阶段 Coordinator 向所有人提交事务请求</li>
+                  <li>Participants 在收到 Coordinator 的事务请求并执行之后提交反馈结果 Ack 给 Coordinator</li>
+                </ul>
+                <p>这解决了两个问题</p>
+                <ol>
+                  <li>单点故障问题</li>
+                  <li>阻塞问题</li>
+                </ol>
+                <p>另外引入超时机制，在等待超时之后，会继续进行事务的提交。</p>
+                <p>思考</p>
+                <p>三阶段缓和了二阶段面临的单点故障问题，但依然未解决以下问题</p>
+                <ol>
+                  <li>性能问题</li>
+                  <li>网络分区场景带来的数据一致性问题</li>
+                </ol>
+                <h4 id="43-mvcc"><a class="markdownIt-Anchor" href="#43-mvcc"></a> 4.3 MVCC</h4>
+                <blockquote><p>
+                  在数据库的实际使用过程中，可能会出现资源竞争导致数据不一致等问题。需要有一种机制来保证数据的正确访问和修改，这种机制就是数据库的并发控制。其中乐观并发控制、悲观并发控制和多版本并发控制是数据库并发控制主要采用的技术手段。</p>
+                </blockquote>
+                <p>
+                  悲观并发控制，也称为“悲观锁”。操作数据时直接把数据锁住，直到操作完成之后才会释放锁；上锁期间其他人不能修改数据。</p>
+                <p>乐观并发控制，也称为“乐观锁”。不会上锁，只是在执行更新时判断别人是否修改数据，只有冲突时才放弃操作。</p>
+                <p>多版本并发控制 MVCC，维持一个数据的多个版本使读写操作没有冲突。所以既不会阻塞写，也不会阻塞读。MVCC
+                  为每个修改保存一个版本，并和事务的时间戳相关联。可以提高并发性能，解决脏读的问题。</p>
+                <blockquote><p>Spanner 论文里通过 TrueTime API 提供一个物理时钟的方式。服务器时钟偏差在 1 到 7ms
+                  之间。</p>
+                  <p>另外一种时间戳的实现：时间戳预言机（TSO），采用中心化的授时方式，所有协调者向中心化节点获取时钟。优点是算法简单，实现方便，但需要每个节点都与它进行交互，会产生一些网络通信的成本。TSO
+                    的授时中就需要考虑低延迟，高性能以及更好的容错性。</p></blockquote>
+                <h3 id="5共识协议"><a class="markdownIt-Anchor" href="#5共识协议"></a> 5.共识协议</h3><h4
+                  id="51-quorum-nwr-模型"><a class="markdownIt-Anchor" href="#51-quorum-nwr-模型"></a> 5.1 Quorum NWR 模型
+                </h4>
+                <p>Quorum NWR 三要素</p>
+                <ul>
+                  <li><p>N：在分布式存储系统中，有多少份备份数据</p></li>
+                  <li><p>W：代表一次成功的更新数据操作要求至少有 w 份数据成功写入</p></li>
+                  <li><p>R：代表一次成功的读取数据操作要求至少有 R 份数据成功读取</p></li>
+                </ul>
+                <p>为了保证强一致性，需要保证 W+R &gt; N</p>
+                <p>Quorum NWR 模型将 CAP 的选择交给用户，是一种简化版的一致性模型。</p>
+                <p>思考</p>
+                <ul>
+                  <li><p>引起的并发更新问题</p>
+                    <table>
+                      <thead>
+                      <tr>
+                        <th style="text-align:center"></th>
+                        <th style="text-align:center">副本1</th>
+                        <th style="text-align:center">副本2</th>
+                        <th style="text-align:center">副本3</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td style="text-align:center">初始值(v)</td>
+                        <td style="text-align:center">v1=1</td>
+                        <td style="text-align:center">v1=1</td>
+                        <td style="text-align:center">v1=1</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center">第一次写</td>
+                        <td style="text-align:center">v2=2</td>
+                        <td style="text-align:center">v2=2</td>
+                        <td style="text-align:center">v1=1</td>
+                      </tr>
+                      <tr>
+                        <td style="text-align:center">第二次写</td>
+                        <td style="text-align:center">v3=3</td>
+                        <td style="text-align:center">v2=2</td>
+                        <td style="text-align:center">v2=2</td>
+                      </tr>
+                      </tbody>
+                    </table>
+                    <p>如果读取副本 1 和副本 2，得出 v=3 的结论</p>
+                    <p>如果读取副本 2 和副本 3，得吃 v=2 的结论</p></li>
+                  <li><p>问题的根源：允许数据被覆盖</p></li>
+                </ul>
+                <h4 id="52-raft-协议"><a class="markdownIt-Anchor" href="#52-raft-协议"></a> 5.2 RAFT 协议</h4>
+                <p>Raft 协议是一种分布式一致性算法（共识算法），即使出现部分节点故障，网络延时等情况，也不影响各节点，进而提高系统的整体可用性。Raft
+                  是使用较为广泛的分布式协议。从某种角度来看，RAFT 也使用了 Quorum 机制。</p>
+                <ul>
+                  <li>Leader - 领导者，通常一个系统中是一主（Leader）多从（Follower）。Leader 负责处理所有的客户端请求，并向
+                    Follower 同步请求日志，当日志同步到大多数节点上后，通知 Follower 提交日志。
+                  </li>
+                  <li>Follower - 跟随者，不会发生任何请求。接受并持久化 Leader 同步的日志，在 Leader 告知日志可以提交后，再提交日志。当
+                    Leader 出现故障时，主动推荐自己为 Candidate。
+                  </li>
+                  <li>Candidate - 备选者，Leader 选举过程中的临时角色。向其他节点发送请求投票信息。如果获得大多数选票，则晋升为
+                    Leader。
+                  </li>
+                  <li>Log（日志）：节点之间同步的信息，以只追加写的方式进行同步，解决了数据被覆盖的问题。</li>
+                  <li>Term（任期号）：单调递增，每个 Term 内最多只有一个 Leader。</li>
+                  <li>Committed：日志被复制到多数派节点，即可认为已经被提交。</li>
+                  <li>Applied：日志被应用到本地状态机，执行了 log 中的命令，修改了内存状态</li>
+                </ul>
+                <p>Leader 选举过程</p>
+                <ol>
+                  <li>初始全部为 Follower</li>
+                  <li>Current Term + 1</li>
+                  <li>选举自己</li>
+                  <li>向其它参与者发起 RequestVote 请求，retry 直到遇到以下几种情况
+                    <ul>
+                      <li>收到多数派请求，成为 Leader，并发送心跳</li>
+                      <li>收到其它 Leader 的请求，转为 Follower，更新自己的 Term</li>
+                      <li>收到部分请求，但未达到多数派，选举超时，随机 timeout 开始下一轮</li>
+                    </ul>
+                  </li>
+                </ol>
+                <p>两个规则</p>
+                <ul>
+                  <li>在一个任期内每个参与者最多投一票（持久化）</li>
+                  <li>要成为 Leader，必须拿到多数投票</li>
+                </ul>
+                <p>Log Replication 过程：新 Leader 产生，Leader 和 Follower 不同步，Leader 强制覆盖 Follower
+                  的不同步的日志</p>
+                <ol>
+                  <li>Leader 收到写请求 w</li>
+                  <li>将 w 写入本地 log</li>
+                  <li>向其它 Follower 发起 AppendEntries RPC</li>
+                  <li>等待多数派回复
+                    <ul>
+                      <li>更新本地状态机，返回给客户端</li>
+                      <li>发送下一个心跳通知 Follower 上一个 Log 已经被 Committed</li>
+                      <li>Follower 也根据命令应用本地状态机</li>
+                    </ul>
+                  </li>
+                  <li>若 Follwer 有问题，则 Leader 会一直 retry</li>
+                  <li>若 Leader 有问题，则切主</li>
+                </ol>
+                <p>切主：当 Leader 出现问题时，就需要重新选举。</p>
+                <ol>
+                  <li>Leader 发现失去 Follower 的响应，失去 Leader 身份</li>
+                  <li>两个 Follower 之间一段时间未收到心跳，重新进行选举，选出新的 Leader，此时发生了切主</li>
+                  <li>Leader 重启，以 Follower 的身份加入进来</li>
+                </ol>
+                <p>问题：旧 Leader 未失去身份，新 Leader 已经选出，产生了“双主”，如何解决？“双主”的存在带来的主要问题就是
+                  Stale Read，一种读取历史数据版本的机制。</p>
+                <p>Stale Read</p>
+                <p>发生 Leader 切换，old leader 收到了读请求。如果直接响应，可能会有 Stale
+                  Read。解决方案就是保证读的强一致性。</p>
+                <p>读操作在 lease timeout 内，默认自己是 leader；不是则发起一次 heartbeat。等待 Commit Index
+                  应用到状态机。</p>
+                <p>Election timeout &gt; lease timeout：新 leader 上任，自从上次心跳之后一定超过了 Election timeout 的时间，旧
+                  leader 大概率能够发现自己的 Lease 已经过期。</p><h4 id="53-paxos-协议"><a class="markdownIt-Anchor"
+                                                                                           href="#53-paxos-协议"></a>
+                  5.3 Paxos 协议</h4>
+                <p>Paxos 算法与 RAFT 算法区别</p>
+                <ol>
+                  <li>Multi-Paxos 可以并发修改日志，而 Raft 写日志操作必须是连续的</li>
+                  <li>Multi-Paxos 可以随机选主，不必要求最新最全的节点当选 Leader</li>
+                </ol>
+                <p>Paxos 的优势：写入并发性能高，所有节点都能写入</p>
+                <p>Paxos 的劣势：没有一个节点有完整的最新的数据，恢复流程复杂，需要同步历史记录</p>
+                <p>Paxos 中有三种角色：Proposer（提出者）、Acceptor（决策者）、Learner（决策学习者）</p>
+                <p>Proposer 与 Acceptor 之间的协作</p>
+                <ol>
+                  <li>Proposer 获取 Proposal ID n，并向所有 Acceptor 广播</li>
+                  <li>Acceptor 接收到信息后进行判断，如果 n &gt; min_proposal 则使 min_proposal := n，并返回
+                    accepted_value 和 Proposal
+                  </li>
+                  <li>Proposer 接收过半数回复，选择 Proposal 最大的 accepted_value 作为共识</li>
+                  <li>第二阶段，广播 Accept(n, value) 到所有节点</li>
+                  <li>Acceptor 接收到信息后再次判断，如果 n &gt; min_proposal 则使 min_proposal := n， accepted_value :=
+                    value，本地持久化后返回
+                  </li>
+                  <li>Proposer 接收过半请求，若有结果 &gt; n，更新新的提议，跳转回第 1 步</li>
+                </ol>
+                <h3 id="6分布式实践"><a class="markdownIt-Anchor" href="#6分布式实践"></a> 6.分布式实践</h3><h4
+                  id="61-mapreduce"><a class="markdownIt-Anchor" href="#61-mapreduce"></a> 6.1 MapReduce</h4>
+                <ul>
+                  <li>Mapper：将输入分解为多个 Job 来并行处理。彼此之间几乎没有依赖关系。</li>
+                  <li>Shuffler：将 mapper 结果打乱，防止数据倾斜。</li>
+                  <li>Reducer：对 map 阶段的结果进行全局汇总。</li>
+                </ul>
+                <p>相关资料<a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/408392107">为什么
+                  MapReduce 再次流行起来了？ - 知乎 (zhihu.com) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="62-分布式-kv"><a
+                  class="markdownIt-Anchor" href="#62-分布式-kv"></a> 6.2 分布式 KV</h4>
+                <p>相关资料<a class="link" target="_blank" rel="noopener"
+                              href="https://juejin.cn/post/6844903504964747278">小米开源分布式KV存储系统Pegasus - 掘金
+                  (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3>
+                <p>分布式概述</p>
+                <ul>
+                  <li>什么是分布式</li>
+                  <li>分布式的必要性</li>
+                  <li>常见的分布式系统</li>
+                </ul>
+                <p>系统模型</p>
+                <ul>
+                  <li>故障模型</li>
+                  <li>拜占庭将军问题</li>
+                  <li>共识与一致性</li>
+                  <li>时间和事件顺序</li>
+                </ul>
+                <p>基础理论</p>
+                <ul>
+                  <li>CAP 理论</li>
+                  <li>ACID 理论</li>
+                  <li>BASE 理论</li>
+                </ul>
+                <p>分布式事务</p>
+                <ul>
+                  <li>二阶段提交</li>
+                  <li>三阶段提交</li>
+                  <li>MVCC</li>
+                </ul>
+                <p>共识协议</p>
+                <ul>
+                  <li>Quorum NWR 算法</li>
+                  <li>Raft 协议</li>
+                  <li>Paxos 协议</li>
+                </ul>
+                <p>分布式实践</p>
+                <ul>
+                  <li>MapReduce</li>
+                  <li>分布式 KV</li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/107439021">拜占庭将军问题
+                  (The Byzantine Generals Problem) - 知乎 (zhihu.com) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/338835258">CAP理论该怎么理解？为什么是三选二？为什么是CP或者AP？面试题有哪些？
+                  - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://juejin.cn/post/7016165148020703246">看一遍就理解：MVCC原理详解
+                  - 掘金 (juejin.cn) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/266850866">乐观锁、悲观锁和MVCC，今天让你一次搞懂
+                  - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/404786050">Raft
+                  一致性协议完整解析 - 知乎 (zhihu.com) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/361108372">理解
+                  Paxos 协议——浅谈分布式一致性协议 - 知乎 (zhihu.com) <i
+                    class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">分布式理论</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%88%86%E5%B8%83%E5%BC%8F%E7%90%86%E8%AE%BA"><span
+                      class="nav-text">分布式理论</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E5%88%86%E5%B8%83%E5%BC%8F%E6%A6%82%E8%BF%B0"><span
+                          class="nav-text">1.分布式概述</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B"><span
+                          class="nav-text">2.系统模型</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#3%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span
+                          class="nav-text">3.理论基础</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1"><span
+                          class="nav-text">4.分布式事务</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#5%E5%85%B1%E8%AF%86%E5%8D%8F%E8%AE%AE"><span
+                          class="nav-text">5.共识协议</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#6%E5%88%86%E5%B8%83%E5%BC%8F%E5%AE%9E%E8%B7%B5"><span
+                          class="nav-text">6.分布式实践</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: zjutuser
+    password: patrick@1121
+    url: jdbc:postgresql://localhost:5432/caixMIS02
+
+server:
+  port: 8087
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

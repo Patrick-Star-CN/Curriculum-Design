@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">存储的本质 - 状态</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-22 22:19:04</span> <span
+                      class="mobile">2023-02-22 22:19</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span class="article-categories article-meta-item"><i
+                      class="fa-regular fa-folders"></i>&nbsp;<ul><li><a
+                      href="/categories/%E9%9D%92%E8%AE%AD%E8%90%A5%E8%AE%B0%E5%BD%95/">青训营记录</a>&nbsp;</li></ul></span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>3k 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>10 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对存储的学习<span
+                id="more"></span></p>
+                <h2 id="存储的本质-状态"><a class="markdownIt-Anchor" href="#存储的本质-状态"></a> 存储的本质 - 状态
+                </h2>
+                <h3 id="1经典案例"><a class="markdownIt-Anchor" href="#1经典案例"></a> 1.经典案例</h3>
+                <ul>
+                  <li>数据的产生：注册账号等</li>
+                  <li>数据的流动：从客户端到后端服务器，后端服务器到数据库，再到其他系统</li>
+                  <li>数据的持久化：校验数据的合法性，修改内存，写入存储介质</li>
+                  <li>潜在的问题
+                    <ul>
+                      <li>数据库如何保证数据不丢失</li>
+                      <li>数据库如何支持多人同时修改</li>
+                      <li>其他的存储系统</li>
+                      <li>如何处理除结构化数据以外的数据</li>
+                      <li>操作数据库的方式，使用什么编程语言</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h3 id="2存储和数据库简介"><a class="markdownIt-Anchor" href="#2存储和数据库简介"></a> 2.存储和数据库简介
+                </h3><h4 id="21-存储系统"><a class="markdownIt-Anchor" href="#21-存储系统"></a> 2.1 存储系统</h4><h5
+                  id="系统概览"><a class="markdownIt-Anchor" href="#系统概览"></a> 系统概览</h5>
+                <p>什么是存储系统？</p>
+                <p>一个提供了读写、控制类接口，能够安全有效地把数据持久化的软件，就可以称为存储系统。</p>
+                <p>存储系统的特征</p>
+                <ul>
+                  <li>作为后端软件的底座，性能敏感</li>
+                  <li>存储系统软件架构，容易受硬件影响</li>
+                  <li>存储系统代码，既“简单”又“复杂”</li>
+                </ul>
+                <h5 id="存储器层级结构"><a class="markdownIt-Anchor" href="#存储器层级结构"></a> 存储器层级结构</h5>
+                <p>参考<a class="link" target="_blank" rel="noopener"
+                          href="https://www.cnblogs.com/RadiumGalaxy/p/17122372.html">https://www.cnblogs.com/RadiumGalaxy/p/17122372.html
+                  <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="数据从应用到存储介质"><a
+                  class="markdownIt-Anchor" href="#数据从应用到存储介质"></a> 数据从应用到存储介质</h5>
+                <ul>
+                  <li>缓存：很重要，贯穿整个存储体系</li>
+                  <li>拷贝：很昂贵，应该尽量减少</li>
+                  <li>硬件设备多种多样，需要有抽象统一的接入层</li>
+                </ul>
+                <h5 id="raid-技术"><a class="markdownIt-Anchor" href="#raid-技术"></a> RAID 技术</h5>
+                <p>单机存储系统如何做到高性能、高性价比、高可靠性？</p>
+                <p><strong>R</strong>edundant <strong>A</strong>rray of <strong>I</strong>nexpensive <strong>D</strong>isks
+                </p>
+                <p>RAID 出现的背景</p>
+                <ul>
+                  <li>单块大容量磁盘的价格 &gt; 多块小容量磁盘</li>
+                  <li>单块磁盘的写入性能 &lt; 多块磁盘的并发写入性能</li>
+                  <li>单块磁盘的容错能力有限，不够安全</li>
+                </ul>
+                <p>RAID 0</p>
+                <ul>
+                  <li>多块磁盘简单组合</li>
+                  <li>数据条带化存储，提高磁盘带宽</li>
+                  <li>没有额外的容错设计</li>
+                </ul>
+                <p>RAID 1</p>
+                <ul>
+                  <li>一块磁盘对应一块额外镜像盘</li>
+                  <li>真实空间利用率仅 50%</li>
+                  <li>容错能力强</li>
+                </ul>
+                <p>RAID 0 + 1</p>
+                <ul>
+                  <li>结合了 RAID 0 和 RAID 1</li>
+                  <li>真实空间利用率仅 50%</li>
+                  <li>容错能力强，写入带宽好</li>
+                </ul>
+                <h4 id="22-数据库"><a class="markdownIt-Anchor" href="#22-数据库"></a> 2.2 数据库</h4>
+                <p>关系型数据库和非关系型数据库</p><h5 id="概览"><a class="markdownIt-Anchor" href="#概览"></a> 概览
+                </h5>
+                <p>关系（Relation）</p>
+                <ul>
+                  <li>Edgar.F.Codd 于1970 年提出“关系模型”</li>
+                  <li>关系 = 集合 = 任意元素组成的若干有序偶对，反映了事物之间的关系</li>
+                  <li>关系代数 = 对关系作运算的抽象查询语言，如交、并、笛卡儿积等</li>
+                  <li>SQL = 一种 DSL = 方便人类阅读的关系代数表达形式</li>
+                </ul>
+                <h5 id="关系型数据库特点"><a class="markdownIt-Anchor" href="#关系型数据库特点"></a> 关系型数据库特点
+                </h5>
+                <p>关系型数据库是存储系统，但是在存储系统之外，又发展出其他功能</p>
+                <ul>
+                  <li>结构化数据友好</li>
+                  <li>支持事务（ACID）</li>
+                  <li>支持复杂查询语句</li>
+                </ul>
+                <h5 id="非关系型数据库特点"><a class="markdownIt-Anchor" href="#非关系型数据库特点"></a> 非关系型数据库特点
+                </h5>
+                <p>非关系型数据库也是存储系统，但是一般不要求严格的结构化</p>
+                <ul>
+                  <li>半结构化数据友好</li>
+                  <li>可能支持事务（ACID）</li>
+                  <li>可能支持复杂查询语句</li>
+                </ul>
+                <h4 id="23-数据库-vs-经典存储"><a class="markdownIt-Anchor" href="#23-数据库-vs-经典存储"></a> 2.3 数据库
+                  vs 经典存储</h4><h5 id="结构化数据管理"><a class="markdownIt-Anchor" href="#结构化数据管理"></a>
+                  结构化数据管理</h5>
+                <ul>
+                  <li>写入关系型数据库，以表形式管理</li>
+                  <li>写入文件，自行定义管理结构</li>
+                </ul>
+                <h5 id="事务能力"><a class="markdownIt-Anchor" href="#事务能力"></a> 事务能力</h5>
+                <p>数据库具有支持事务的优越性，事务具有</p>
+                <ul>
+                  <li>Atomicity： 事务内的操作要么全部执行，要么全部不执行</li>
+                  <li>Consistency：事务执行前后，数据状态是一致的</li>
+                  <li>Isolation：可以隔离多个并发事务，避免影响</li>
+                  <li>Durability：事务一旦提交成功，数据保证持久性</li>
+                </ul>
+                <h5 id="复杂查询能力"><a class="markdownIt-Anchor" href="#复杂查询能力"></a> 复杂查询能力</h5>
+                <p>写入数据后进行很复杂的查询</p>
+                <ul>
+                  <li>数据库查询灵活、简洁</li>
+                  <li>文件查询僵化、复杂</li>
+                </ul>
+                <h4 id="24-数据库使用方式"><a class="markdownIt-Anchor" href="#24-数据库使用方式"></a> 2.4 数据库使用方式
+                </h4>
+                <p>Everything is Domain Specific Language，maybe SQL</p>
+                <p>SQL 操作数据：Insert、Update、Select、Delete、Where子句、Group by、Order by</p>
+                <p>SQL 定义数据：Create、Alter …</p>
+                <h3 id="主流产品剖析"><a class="markdownIt-Anchor" href="#主流产品剖析"></a> 主流产品剖析</h3><h4
+                  id="31-单机存储"><a class="markdownIt-Anchor" href="#31-单机存储"></a> 3.1 单机存储</h4><h5
+                  id="概览-2"><a class="markdownIt-Anchor" href="#概览-2"></a> 概览</h5>
+                <p>单机存储 = 单个计算机节点上的存储软件系统，一般不涉及网络交互</p>
+                <p>有本地文件系统和 key-value 存储</p><h5 id="本地文件系统"><a class="markdownIt-Anchor"
+                                                                               href="#本地文件系统"></a> 本地文件系统
+                </h5>
+                <p>Linux 经典哲学：一切皆文件</p>
+                <p>文件系统的管理单元：文件</p>
+                <p>文件系统接口：文件系统繁多，如 ext2/3/4，sysfs，rootfs 等，但都遵循 VFS 的统一抽象接口</p>
+                <p>Linux 文件系统的两大数据结构：Index Node 和 Directory Entry</p>
+                <ul>
+                  <li><p>Index Node</p>
+                    <p>记录文件元数据，如 id、大小、权限、硬盘位置等。</p>
+                    <p>inode 是文件的唯一标识，会被存储到磁盘上。</p>
+                    <p>inode 的总数在格式化文件系统时就固定了。</p></li>
+                  <li><p>Directory Entry</p>
+                    <p>记录文件名、inode 指针、层级关系（parent）等。</p>
+                    <p>dentry 是内存结构，与 inode 的关系是 N：1（hardlink 的实现）</p></li>
+                </ul>
+                <h5 id="key-value-存储"><a class="markdownIt-Anchor" href="#key-value-存储"></a> key-value 存储</h5>
+                <p>常见使用方式：put(k, v) 和 get(k)</p>
+                <p>常见数据结构：LSM-Tree，某种程度上牺牲读写性能，追求写入性能</p>
+                <p>典型产品：RocksDB ，更多信息参考<a class="link" target="_blank" rel="noopener"
+                                                    href="http://rocksdb.org.cn/">RocksDB 中文官网 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h4 id="32-分布式存储"><a
+                  class="markdownIt-Anchor" href="#32-分布式存储"></a> 3.2 分布式存储</h4><h5 id="概览-3"><a
+                  class="markdownIt-Anchor" href="#概览-3"></a> 概览</h5>
+                <p>分布式存储 = 在单机存储基础上实现了分布式协议，涉及大量网络交互</p>
+                <p>有分布式文件系统和分布式对象存储</p><h5 id="hdfs"><a class="markdownIt-Anchor" href="#hdfs"></a> HDFS
+                </h5>
+                <p>HDFS：大数据时代的基石</p>
+                <p>时代背景：专用的高级硬件很贵，同时数据存储量很大，要求超高吞吐</p>
+                <p>HDFS 核心特点</p>
+                <ul>
+                  <li>支持海量数据存储</li>
+                  <li>高容错性</li>
+                  <li>弱 POSIX 语义</li>
+                  <li>使用普通 x86 服务器，性价比高</li>
+                </ul>
+                <h5 id="ceph"><a class="markdownIt-Anchor" href="#ceph"></a> Ceph</h5>
+                <p>Ceph 核心特点</p>
+                <ul>
+                  <li>一套系统支持对象接口、块接口、文件接口，但是一切皆对象</li>
+                  <li>数据写入采用主备复制模型</li>
+                  <li>数据分布模型采用 CRUSH 算法（HASH + 权重 + 随机抽签）</li>
+                </ul>
+                <h4 id="33-单机数据库"><a class="markdownIt-Anchor" href="#33-单机数据库"></a> 3.3 单机数据库</h4><h5
+                  id="概览-4"><a class="markdownIt-Anchor" href="#概览-4"></a> 概览</h5>
+                <p>单机数据库 = 单个计算机节点上的数据库系统</p>
+                <p>事务在单机内执行，也可能通过网络交互实现分布式事务</p>
+                <p>有关系型数据库和非关系型数据库</p><h5 id="关系型数据库"><a class="markdownIt-Anchor"
+                                                                              href="#关系型数据库"></a> 关系型数据库
+                </h5>
+                <p>商业产品 Oracle 最为广泛使用，开源产品 MySQL 和 PostgreSQL 最受欢迎。</p>
+                <p>关系型数据库的通用组件</p>
+                <ul>
+                  <li>Query Engine：负责解析 query，生成查询计划</li>
+                  <li>Txn Manager：负责事务并发管理</li>
+                  <li>Lock Manager：负责锁相关的策略</li>
+                  <li>Storage Engine：负责组织内存/磁盘数据结构</li>
+                  <li>Replication：负责主备同步</li>
+                </ul>
+                <p>关键内存数据结构：B-Tree、B±Tree、LRUList 等</p>
+                <p>关键磁盘数据结构：WriteAheadLog（RedoLog）、Page</p><h5 id="非关系型数据库"><a class="markdownIt-Anchor"
+                                                                                              href="#非关系型数据库"></a>
+                  非关系型数据库</h5>
+                <p>最主流的是 MongoDB、Redis、Elasticsearch 这三个。</p>
+                <ul>
+                  <li>关系型数据库一般直接使用 SQL 交互，而非关系型数据库交互方式各不相同。</li>
+                  <li>非关系型数据库的数据结构多种多样，没有关系约束，schema 相对灵活。</li>
+                  <li>无论是关系型数据库还是非关系型数据库，目前都在尝试支持 SQL(子集)和“事务”。</li>
+                </ul>
+                <h5 id="elasticsearch"><a class="markdownIt-Anchor" href="#elasticsearch"></a> Elasticsearch</h5>
+                <ul>
+                  <li>面向文档存储</li>
+                  <li>文档可序列化成 JSON，支持嵌套</li>
+                  <li>存在 index，index = 文档的集合</li>
+                  <li>存储和构建索引能力依赖 Lucene 引擎</li>
+                  <li>实现了大量搜索数据结构和算法</li>
+                  <li>支持 RESTFUL API，也支持弱 SQL 交互</li>
+                </ul>
+                <p>更多信息参考<a class="link" target="_blank" rel="noopener"
+                                  href="https://elasticsearch.bookhub.tech/getting_started/">Elasticsearch 中文文档 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="mongodb"><a
+                  class="markdownIt-Anchor" href="#mongodb"></a> MongoDB</h5>
+                <ul>
+                  <li>面向文档存储</li>
+                  <li>文档可序列化成 JSON/BSON，支持嵌套</li>
+                  <li>存在 collection，collection = 文档的集合</li>
+                  <li>存储和构建索引能力依赖 wiredTiger 引擎</li>
+                  <li>4.0 后开始支持事务（多文档、跨分片多文档等）</li>
+                  <li>常用 client/SDK 交互，可通过插件转译支持弱 SQL</li>
+                </ul>
+                <p>更多信息参考<a class="link" target="_blank" rel="noopener" href="https://docs.mongoing.com/">MongoDB
+                  中文文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h5 id="redis"><a
+                  class="markdownIt-Anchor" href="#redis"></a> Redis</h5>
+                <ul>
+                  <li>数据结构丰富（hash 表、set、zset、list）</li>
+                  <li>C 语言实现，超高性能</li>
+                  <li>主要基于内存，但支持 AOF/RDB 持久化</li>
+                  <li>常用 redies-cli/多语言 SDK 交互</li>
+                </ul>
+                <p>特别的，Elasticsearch 相比 RDBMS，ES 天然支持模糊搜索，还能自动算出关联程度。</p><h4
+                  id="34-分布式数据库"><a class="markdownIt-Anchor" href="#34-分布式数据库"></a> 3.4 分布式数据库</h4>
+                <p>从单机数据库到分布式数据库，单机数据库所面对的问题和挑战，以及分布式架构的解决方案。</p><h5
+                  id="解决容量问题"><a class="markdownIt-Anchor" href="#解决容量问题"></a> 解决容量问题</h5>
+                <ul>
+                  <li>单点容量有限，受硬件条件限制</li>
+                  <li>存储节点池化，动态扩缩容</li>
+                </ul>
+                <h5 id="解决弹性问题"><a class="markdownIt-Anchor" href="#解决弹性问题"></a> 解决弹性问题</h5>
+                <ul>
+                  <li><p>单机扩容搬迁全量数据，耗时大，缩容 Disk 问题难以解决</p></li>
+                  <li><p>通过分布式灵活扩缩容解决 CPU 资源紧张问题</p></li>
+                </ul>
+                <h5 id="解决性价比问题"><a class="markdownIt-Anchor" href="#解决性价比问题"></a> 解决性价比问题</h5>
+                <ul>
+                  <li>单机写数据，容量不够，但 CPU 利用率低下</li>
+                  <li>扩容到高规格单机，满足了容量需求，但 CPU 浪费更严重</li>
+                  <li>通过分布式使用共享存储池，不需要扩容 CPU</li>
+                </ul>
+                <h5 id="more-to-do"><a class="markdownIt-Anchor" href="#more-to-do"></a> More to Do</h5>
+                <ul>
+                  <li>单写 vs 多写</li>
+                  <li>从磁盘弹性到内存弹性</li>
+                  <li>分布式事务化</li>
+                </ul>
+                <h3 id="4新技术演进"><a class="markdownIt-Anchor" href="#4新技术演进"></a> 4.新技术演进</h3><h4
+                  id="41-概览"><a class="markdownIt-Anchor" href="#41-概览"></a> 4.1 概览</h4>
+                <ul>
+                  <li><p>软件架构变更</p>
+                    <p>Bypass OS kernel</p></li>
+                  <li><p>AI 增强</p>
+                    <p>智能存储格式转换</p></li>
+                  <li><p>新硬件革命</p>
+                    <ul>
+                      <li>存储介质变更</li>
+                      <li>计算单元变更</li>
+                      <li>网络硬件变更</li>
+                    </ul>
+                  </li>
+                </ul>
+                <h4 id="42-spdk"><a class="markdownIt-Anchor" href="#42-spdk"></a> 4.2 SPDK</h4>
+                <p>Bypass OS kernel 已经成为一种趋势</p>
+                <p>SPDK：Storage Performance Development Kit</p>
+                <p>Kernel Space —&gt; User Space</p>
+                <ul>
+                  <li>避免 syscall 带来的性能损耗，直接从用户态访问磁盘</li>
+                </ul>
+                <p>中断 —&gt; 轮询</p>
+                <ul>
+                  <li>磁盘性能提高后，中断次数随之上升，不利于 IO 性能</li>
+                  <li>SPDK poller 可以绑定特定的 CPU 核不断轮询，减少 CS，提高性能</li>
+                </ul>
+                <p>无锁数据结构</p>
+                <ul>
+                  <li>使用 Lock-free queue，降低并发时的同步开销</li>
+                </ul>
+                <h4 id="43-ai-和-storage"><a class="markdownIt-Anchor" href="#43-ai-和-storage"></a> 4.3 AI 和 Storage
+                </h4>
+                <p>AI 领域相关技术，如 Machine Learning 在很多领域，如推荐、风控、视觉领域证明了有效性。</p><h4
+                  id="44-高性能硬件"><a class="markdownIt-Anchor" href="#44-高性能硬件"></a> 4.4 高性能硬件</h4><h5
+                  id="rdma-网络"><a class="markdownIt-Anchor" href="#rdma-网络"></a> RDMA 网络</h5>
+                <ul>
+                  <li>传统的网络协议栈，需要基于多层网络协议处理数据包，存在用户态和内核态的切换，足够通用但性能不是最佳
+                  </li>
+                  <li>RDMA 是 kernel bypass 的流派，不经过传统的网络协议栈，可以把用户态虚拟内存映射给网卡，减少拷贝开销，减少
+                    CPU 开销
+                  </li>
+                </ul>
+                <h5 id="persistent-memory"><a class="markdownIt-Anchor" href="#persistent-memory"></a> Persistent Memory
+                </h5>
+                <p>在 NVMe SSD 和 Main Memory 间有一种全新的存储产品：Persistent Memory</p>
+                <ul>
+                  <li>IO 时延介于 SSD 和 Memory 之间，约百纳秒量级</li>
+                  <li>可以用作易失性内存（memory mode），也可以用作持久化介质（app-direct）</li>
+                </ul>
+                <h5 id="可编程交换机"><a class="markdownIt-Anchor" href="#可编程交换机"></a> 可编程交换机</h5>
+                <p>P4
+                  Switch，配有编译器、计算单元、DRAM，可以在交换机层对网络包做计算逻辑。在数据库场景下，可以实现缓存一致性协议等</p>
+                <h5 id="cpugpudpu"><a class="markdownIt-Anchor" href="#cpugpudpu"></a> CPU/GPU/DPU</h5>
+                <ul>
+                  <li>CPU：从 multi-core 走向 many-core</li>
+                  <li>GPU：强大的算力和越来越大的显存空间</li>
+                  <li>DPU：异构计算，减轻 CPU 的workload</li>
+                </ul>
+                <h3 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h3><h4 id="存储系统"><a
+                  class="markdownIt-Anchor" href="#存储系统"></a> 存储系统</h4>
+                <ul>
+                  <li>块存储：存储软件栈里的底层系统，接口过于朴素</li>
+                  <li>文件存储：日常使用最广泛的存储系统，接口十分友好，实现形式多种多样</li>
+                  <li>对象存储：公有云上的主流产品，immutable 语义加持</li>
+                  <li>key-value 存储：形式最灵活，存在大量的开源/黑盒产品</li>
+                </ul>
+                <h4 id="数据库系统"><a class="markdownIt-Anchor" href="#数据库系统"></a> 数据库系统</h4>
+                <ul>
+                  <li>关系型数据库：基于关系和关系代数构建的，一般支持事务和 SQL 访问，使用体验友好的存储产品</li>
+                  <li>非关系型数据库：结构灵活，访问方式灵活，针对不同场景有不同的针对性产品</li>
+                </ul>
+                <h4 id="分布式架构"><a class="markdownIt-Anchor" href="#分布式架构"></a> 分布式架构</h4>
+                <ul>
+                  <li>数据分布策略：决定了数据如何分布到集群里的多个物理节点，是否均匀，是否能实现高性能</li>
+                  <li>数据复制协议：影响 IO 路径的性能、机器故障场景的处理方式</li>
+                  <li>分布式事务算法：多个数据库节点协同保障一个事务的 ACID 特性的算法，通常基于 2pc 的思想设计</li>
+                </ul>
+                <p>在存储和数据库领域，硬件反推软件变革十分常见</p>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://blog.51cto.com/quantfabric/2594168">Kernel
+                  Bypass <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="http://rocksdb.org.cn/">RocksDB 中文官网 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener"
+                      href="https://elasticsearch.bookhub.tech/getting_started/">Elasticsearch 中文文档 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://docs.mongoing.com/">MongoDB 中文文档 <i
+                  class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">存储的本质 - 状态</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E5%AD%98%E5%82%A8%E7%9A%84%E6%9C%AC%E8%B4%A8-%E7%8A%B6%E6%80%81"><span
+                      class="nav-text">存储的本质 - 状态</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E7%BB%8F%E5%85%B8%E6%A1%88%E4%BE%8B"><span
+                          class="nav-text">1.经典案例</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E5%AD%98%E5%82%A8%E5%92%8C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AE%80%E4%BB%8B"><span
+                          class="nav-text">2.存储和数据库简介</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E4%B8%BB%E6%B5%81%E4%BA%A7%E5%93%81%E5%89%96%E6%9E%90"><span
+                          class="nav-text">主流产品剖析</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#4%E6%96%B0%E6%8A%80%E6%9C%AF%E6%BC%94%E8%BF%9B"><span
+                          class="nav-text">4.新技术演进</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>

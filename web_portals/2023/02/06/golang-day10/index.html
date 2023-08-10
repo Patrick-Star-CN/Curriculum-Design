@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="keywords" content="mysql redis hexo go java git linux">
+  <meta name="author" content="Patrick_Star">
+  <link rel="stylesheet" href="/css/katex.min.css" crossorigin="anonymous">
+  <script defer src="/css/auto-render.min.js" crossorigin="anonymous"
+          onload="renderMathInElement(document.body)"></script>
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="1 days">
+  <meta name="description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="比奇堡资讯站">
+  <meta property="og:site_name" content="比奇堡资讯站">
+  <meta property="og:description" content="A student from ZJUT, who wants to be a fullstack developer.">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="article:author" content="Patrick_Star">
+  <meta property="article:tag" content="mysql redis hexo go java git linux">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/png" href="/images/favicon.ico" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <meta name="theme-color" content="#A31F34">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <title>比奇堡资讯站</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/assets/fonts.css">
+    <script language="javaScript" type="text/javascript" src="/js/config.js"></script>
+  <link rel="stylesheet" href="/css/fontawesome/fontawesome.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/brands.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/solid.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/regular.min.css">
+  <link rel="stylesheet" href="/css/fontawesome/sharp-solid.min.css">
+  <meta name="generator" content="Hexo 6.3.0">
+  <link rel="alternate" href="/atom.xml" title="比奇堡资讯站" type="application/atom+xml">
+</head>
+<body>
+<div class="progress-bar-container"><span class="scroll-progress-bar"></span> <span class="pjax-progress-bar"></span>
+  <span class="pjax-progress-icon"><i class="fa-solid fa-circle-notch fa-spin"></i></span></div>
+<main class="page-container">
+  <div class="main-content-container">
+    <div class="main-content-header">
+      <header class="navbar-container">
+        <div class="navbar-content">
+          <div class="left"><a class="logo-title" href="/">比奇堡资讯站</a></div>
+          <div class="right">
+            <div class="desktop">
+              <ul class="navbar-list">
+                <li class="navbar-item"><a href="/"><i class="fa-regular fa-house"></i> 首页</a></li>
+                <li class="navbar-item"><a class="has-dropdown" href="#" onclick="return!1"><i
+                  class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a>
+                  <ul class="sub-menu">
+                    <li><a href="/about">联系我</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://github.com/s-chance">GITHUB</a></li>
+                    <li><a target="_blank" rel="noopener" href="https://www.patrick_star-tree.top">BLOG</a></li>
+                  </ul>
+                </li>
+                <li class="navbar-item"><a href="/login"><i class="fa-solid fa-golf-flag-hole"></i> 登陆</a></li>
+                <li class="navbar-item"><a href="/links"><i class="fa-solid fa-link"></i> 友情链接</a></li>
+              </ul>
+            </div>
+            <div class="mobile">
+              <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div class="icon-item navbar-bar">
+                <div class="navbar-bar-middle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navbar-drawer">
+          <ul class="drawer-navbar-list">
+            <li class="drawer-navbar-item flex-center"><a href="/"><i class="fa-regular fa-house"></i> 首页</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a class="has-dropdown" href="#" onclick="return!1"><i
+              class="fa-regular fa-user"></i> 关于&nbsp;<i class="fa-solid fa-chevron-down"></i></a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" href="/about">联系我</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://github.COM/patrick-star-cn">github</a></li>
+            <li class="dropdown-item flex-center"><a class="dropdown-item" target="_blank" rel="noopener"
+                                                     href="https://BLOG.cnpatrickstar.com">blog</a></li>
+            <li class="drawer-navbar-item flex-center"><a href="/login"><i class="fa-regular fa-house"></i> 登陆</a>
+            </li>
+            <li class="drawer-navbar-item flex-center"><a href="/links"><i class="fa-SOLID fa-link"></i> 友情链接</a>
+            </li>
+          </ul>
+        </div>
+        <div class="window-mask"></div>
+      </header>
+    </div>
+    <div class="main-content-body">
+      <div class="main-content">
+        <div class="fade-in-down-animation">
+          <div class="post-page-container">
+            <div class="article-content-container">
+              <div class="article-title"><h1 class="article-title-regular">系统设计</h1></div>
+              <div class="article-header">
+                <div class="avatar"><img src="/images/pig.jpg"></div>
+                <div class="info">
+                  <div class="author"><span class="name">Patrick_Star</span> <span class="author-label"></span></div>
+                  <div class="meta-info">
+                    <div class="article-meta-info"><span class="article-date article-meta-item"><i
+                      class="fa-regular fa-pen-fancy"></i>&nbsp; <span class="desktop">2023-02-06 20:37:26</span> <span
+                      class="mobile">2023-02-06 20:37</span> <span class="hover-info">创建</span> </span><span
+                      class="article-date article-meta-item"><i class="fa-regular fa-wrench"></i>&nbsp; <span
+                      class="desktop">2023-04-01 07:55:52</span> <span class="mobile">2023-04-01 07:55</span> <span
+                      class="hover-info">更新</span> </span><span
+                      class="article-wordcount article-meta-item"><i class="fa-regular fa-typewriter"></i>&nbsp;<span>969 字</span> </span><span
+                      class="article-min2read article-meta-item"><i
+                      class="fa-regular fa-clock"></i>&nbsp;<span>3 分钟</span> </span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content markdown-body"><p>本文来源于第五届字节跳动青训营活动，主要记录了对秒杀系统设计的学习<span
+                id="more"></span></p>
+                <h2 id="系统设计之秒杀系统"><a class="markdownIt-Anchor" href="#系统设计之秒杀系统"></a> 系统设计之秒杀系统
+                </h2>
+                <h3 id="1系统设计方法论"><a class="markdownIt-Anchor" href="#1系统设计方法论"></a> 1.系统设计方法论</h3>
+                <h4 id="系统设计的思考问题"><a class="markdownIt-Anchor" href="#系统设计的思考问题"></a> 系统设计的思考问题
+                </h4>
+                <ul>
+                  <li>为什么要做系统设计</li>
+                  <li>系统设计的定义是什么</li>
+                  <li>怎么做系统设计，如何落地一个系统</li>
+                  <li>系统功能实现之后，如何分析瓶颈并优化</li>
+                  <li>如何验证系统的可用性和稳定性</li>
+                </ul>
+                <h4 id="系统设计的目的"><a class="markdownIt-Anchor" href="#系统设计的目的"></a> 系统设计的目的</h4>
+                <p>对个人</p>
+                <ul>
+                  <li>面试</li>
+                  <li>个人能力提升</li>
+                  <li>拓展技术视野</li>
+                </ul>
+                <p>对工作</p>
+                <ul>
+                  <li>业务驱动</li>
+                  <li>系统重构</li>
+                  <li>突破和创新</li>
+                </ul>
+                <h4 id="系统评估角度"><a class="markdownIt-Anchor" href="#系统评估角度"></a> 系统评估角度</h4>
+                <p>可用性、易用性、可维护性、安全性、性能、扩展性、耦合性、伸缩性</p><h4 id="系统设计的定义"><a
+                  class="markdownIt-Anchor" href="#系统设计的定义"></a> 系统设计的定义</h4>
+                <p>系统</p>
+                <ul>
+                  <li>关联的个体</li>
+                  <li>规则运作</li>
+                  <li>组成工作的整体</li>
+                </ul>
+                <p>设计</p>
+                <ul>
+                  <li>设想和计划</li>
+                  <li>目的</li>
+                  <li>过程安排</li>
+                </ul>
+                <p>系统设计是为了达成某种目的，通过个体组成整体的过程</p><h4 id="系统设计的流程"><a
+                  class="markdownIt-Anchor" href="#系统设计的流程"></a> 系统设计的流程</h4>
+                <ul>
+                  <li>场景：用什么系统，需要哪些功能，多大的并发量</li>
+                  <li>存储：数据如何组织，SQL 存储，NoSQL 存储</li>
+                  <li>服务：业务功能实现和逻辑整合</li>
+                  <li>扩展：解决设计缺陷，提高鲁棒性、扩展性</li>
+                </ul>
+                <h4 id="系统瓶颈的发现"><a class="markdownIt-Anchor" href="#系统瓶颈的发现"></a> 系统瓶颈的发现</h4>
+                <p>方法角度</p>
+                <ul>
+                  <li>火焰图分析</li>
+                  <li>链路追踪</li>
+                  <li>性能测试</li>
+                </ul>
+                <h4 id="如何保证系统的可用性和稳定性"><a class="markdownIt-Anchor"
+                                                         href="#如何保证系统的可用性和稳定性"></a> 如何保证系统的可用性和稳定性
+                </h4>
+                <ul>
+                  <li>链路梳理：核心链路、流量漏洞、强弱依赖</li>
+                  <li>可观测性：链路追踪、核心监控、业务报警</li>
+                  <li>全链路测试：压力测试、负载测试、容量测试</li>
+                  <li>稳定性控制：系统限流、业务兜底、熔断降级</li>
+                  <li>容灾演练：混沌工程、应急手册、容灾预案</li>
+                </ul>
+                <h3 id="2电商秒杀业务介绍"><a class="markdownIt-Anchor" href="#2电商秒杀业务介绍"></a> 2.电商秒杀业务介绍
+                </h3><h4 id="电商介绍"><a class="markdownIt-Anchor" href="#电商介绍"></a> 电商介绍</h4>
+                <ul>
+                  <li>供给侧：商品、商家、供应链</li>
+                  <li>消费侧：消费者、用户、流量来源</li>
+                  <li>交易环境：线下商城、线上电商</li>
+                </ul>
+                <p>进一步分析</p>
+                <ul>
+                  <li><p>商品：具有交易价值和属性的信息载体。</p></li>
+                  <li><p>关于电商涉及到两个概念：SPU 和 SKU</p>
+                    <blockquote><p>SPU(Standard Product
+                      Unit)：标准化产品单元。是商品信息聚合的最小单位，是一组可复用、易检索的标准化信息的集合，该集合描述了一个产品的特性。通俗点讲，属性值、特性相同的商品就可以称为一个SPU</p>
+                      <p>SKU(Stock Keeping Unit): 库存量单位。SKU即库存进出计量的单位， 可以是以件、盒、托盘等为单位</p>
+                    </blockquote>
+                  </li>
+                </ul>
+                <h4 id="秒杀业务的特点"><a class="markdownIt-Anchor" href="#秒杀业务的特点"></a> 秒杀业务的特点</h4>
+                <ul>
+                  <li>瞬时流量高</li>
+                  <li>读多写少</li>
+                  <li>实时性要求高</li>
+                </ul>
+                <h4 id="秒杀业务的难点"><a class="markdownIt-Anchor" href="#秒杀业务的难点"></a> 秒杀业务的难点</h4>
+                <p>高性能、资源成本、扩展性、防止超卖、反欺诈、鲁棒性、流量管控</p><h4 id="设计秒杀系统"><a
+                  class="markdownIt-Anchor" href="#设计秒杀系统"></a> 设计秒杀系统</h4><h5 id="场景scenario"><a
+                  class="markdownIt-Anchor" href="#场景scenario"></a> 场景（Scenario）</h5>
+                <ul>
+                  <li>功能：秒杀活动发布、秒杀商品详情、秒杀下单</li>
+                  <li>并发：万人参与秒杀、QPS 1w+、TPS 1k+</li>
+                </ul>
+                <h5 id="存储storage"><a class="markdownIt-Anchor" href="#存储storage"></a> 存储（Storage）</h5>
+                <p>MySQL —&gt; Redis —&gt; Localcache</p><h5 id="服务service"><a class="markdownIt-Anchor"
+                                                                                 href="#服务service"></a> 服务（Service）
+                </h5>
+                <ul>
+                  <li><p>子服务：用户服务、风控服务、活动服务、订单服务</p></li>
+                  <li><p>基础组件：ID 生成器、缓存组件、MQ 组件、限流组件</p></li>
+                </ul>
+                <h5 id="扩展scale"><a class="markdownIt-Anchor" href="#扩展scale"></a> 扩展（Scale）</h5>
+                <ul>
+                  <li>流量隔离、CDN、缓存优化、流量管控（例如基于速率或信号控制、限流、拦截、过滤以及设置机房流量配比等）</li>
+                  <li>数据库扩展、服务·水平扩展、MQ 扩展、Redis 扩展、服务垂直扩展</li>
+                </ul>
+                <h4 id="系统架构"><a class="markdownIt-Anchor" href="#系统架构"></a> 系统架构</h4>
+                <ul>
+                  <li>用户层：WEB、IOS、Android</li>
+                  <li>接入层：Nginx</li>
+                  <li>应用层：发布活动、秒杀详情、秒杀下单、ID 生成器、限流组件、MQ 组件、Cache 组件</li>
+                  <li>基础层：Redis、RocketMQ、MySQL</li>
+                </ul>
+                <h3 id="3实践"><a class="markdownIt-Anchor" href="#3实践"></a> 3.实践</h3>
+                <p>流程图</p><img lazyload src="/images/loading.svg"
+                                  data-src="/2023/02/06/golang-day10/golang-day10.png" title="golang-day10">
+                <h3 id="4总结"><a class="markdownIt-Anchor" href="#4总结"></a> 4.总结</h3>
+                <ul>
+                  <li><p>服务无状态</p></li>
+                  <li><p>批量写入</p></li>
+                  <li><p>最终一致性</p></li>
+                </ul>
+                <h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/523479439">鲁棒性的含义以及如何提高模型的鲁棒性
+                  - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+                <p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150101068">浅谈电商中的spu和sku
+                  - 知乎 (zhihu.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></div>
+            </div>
+            <div class="toc-content-container">
+              <div class="post-toc-wrap">
+                <div class="post-toc">
+                  <div class="toc-title">此页目录</div>
+                  <div class="page-title">系统设计</div>
+                  <ol class="nav">
+                    <li class="nav-item nav-level-2"><a class="nav-link"
+                                                        href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E4%B9%8B%E7%A7%92%E6%9D%80%E7%B3%BB%E7%BB%9F"><span
+                      class="nav-text">系统设计之秒杀系统</span></a>
+                      <ol class="nav-child">
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#1%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E8%AE%BA"><span
+                          class="nav-text">1.系统设计方法论</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#2%E7%94%B5%E5%95%86%E7%A7%92%E6%9D%80%E4%B8%9A%E5%8A%A1%E4%BB%8B%E7%BB%8D"><span
+                          class="nav-text">2.电商秒杀业务介绍</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#3%E5%AE%9E%E8%B7%B5"><span
+                          class="nav-text">3.实践</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link" href="#4%E6%80%BB%E7%BB%93"><span
+                          class="nav-text">4.总结</span></a></li>
+                        <li class="nav-item nav-level-3"><a class="nav-link"
+                                                            href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span
+                          class="nav-text">参考资料</span></a></li>
+                      </ol>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-content-footer">
+      <footer class="footer">
+        <div class="info-container">
+          <div class="copyright-info">&copy; <span>2023</span> - 2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat"
+                                                                                    style="--fa-animation-duration:0.5s;color:#f54545"></i>&nbsp;&nbsp;<a
+            href="/">Patrick_Star</a></div>
+          <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <div class="website-count info-item"><span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">访问人数&nbsp;<span
+            id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span> </span><span
+            id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">总访问量&nbsp;<span
+            id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span></span>
+          </div>
+          <div id="start_div" style="display:none">2023/5/20 13:14:00</div>
+          <div>资讯站已运行 <span class="odometer" id="runtime_days"></span> 天 <span class="odometer"
+                                                                                      id="runtime_hours"></span> 小时
+            <span class="odometer" id="runtime_minutes"></span> 分钟 <span class="odometer" id="runtime_seconds"></span>
+            秒
+          </div>
+          <script async data-pjax>try {
+            function odometer_init() {
+              document.querySelectorAll(".odometer").forEach(e => {
+                new Odometer({el: e, format: "( ddd).dd", duration: 200})
+              })
+            }
+
+            odometer_init()
+          } catch (e) {
+          }</script>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <div class="right-side-tools-container">
+    <div class="post-tools">
+      <div class="post-tools-container">
+        <ul class="article-tools-list">
+          <li class="right-bottom-tools page-aside-toggle"><i class="fa-regular fa-outdent"></i></li>
+        </ul>
+      </div>
+    </div>
+    <div class="side-tools-container">
+      <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center"><i
+          class="fa-regular fa-magnifying-glass-plus"></i></li>
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center"><i
+          class="fa-regular fa-magnifying-glass-minus"></i></li>
+        <li class="right-bottom-tools tool-expand-width flex-center"><i class="fa-regular fa-expand"></i></li>
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center"><i class="fa-regular fa-moon"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-top flex-center"><i class="fa-regular fa-arrow-up"></i></li>
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center"><i class="fa-regular fa-arrow-down"></i></li>
+      </ul>
+      <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center"><i class="fa-regular fa-cog fa-spin"></i></li>
+      </ul>
+    </div>
+  </div>
+  <div class="image-viewer-container"><img src=""></div>
+</main>
+<script src="/js/utils.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
+<script src="/js/tools/lightDarkSwitch.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+<script src="/js/tools/codeBlock.js"></script>
+<script src="/js/layouts/lazyload.js"></script>
+<script src="/js/tools/runtime.js"></script>
+<script src="/js/layouts/odometer.min.js"></script>
+<link rel="stylesheet" href="/css/assets/odometer-theme-minimal.css">
+<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/plugins/typed.js"></script>
+<div class="post-scripts pjax">
+  <script src="/js/tools/tocToggle.js"></script>
+  <script src="/js/libs/anime.min.js"></script>
+  <script src="/js/layouts/toc.js"></script>
+  <script src="/js/plugins/tabs.js"></script>
+</div>
+<script src="/js/libs/pjax.min.js"></script>
+<script>window.addEventListener("DOMContentLoaded", () => {
+  window.pjax = new Pjax({
+    selectors: ["head title", ".page-container", ".pjax"],
+    history: !0,
+    debug: !1,
+    cacheBust: !1,
+    timeout: 0,
+    analytics: !1,
+    currentUrlFullReload: !1,
+    scrollRestoration: !1
+  }), document.addEventListener("pjax:send", () => {
+    Global.utils.pjaxProgressBarStart()
+  }), document.addEventListener("pjax:complete", () => {
+    Global.utils.pjaxProgressBarEnd(), window.pjax.executeScripts(document.querySelectorAll("script[data-pjax], .pjax script")), Global.refresh()
+  })
+})</script>
+<div id="aplayer"></div>
+<script src="/js/libs/APlayer.min.js"></script>
+<script src="/js/plugins/aplayer.js"></script>
+</body>
+</html>
